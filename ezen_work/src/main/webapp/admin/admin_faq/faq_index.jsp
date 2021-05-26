@@ -28,7 +28,7 @@ body{
 	width:20%;
 	height:512px;
 	float:left;	
-	background:#dcdcdc;		
+	background:#F9FFFF;		
 }
 #section{
 	width:80%;
@@ -49,6 +49,18 @@ div > h1 > span{
 	font-family: "Times New Roman", Times, serif;
 	font-size: 45px;
 }
+a:visited { color: black; font-weight: bold;}
+a:hover { color: black; font-weight: bold;}
+a{
+	text-decoration: none;
+	padding-left: 10px;	
+}
+.frog{
+	padding-left: 200px;
+	padding-top: 40px;
+	opacity: 0.1
+}
+
 </style>
 </head>
 <body>
@@ -59,23 +71,30 @@ div > h1 > span{
 	
 	
 	<div id="container">
-		<div id="nav">
+		<div id="nav">			
+			
 			<h3 id="sub">** 개인 회원 **</h3><br>
-				<a href="faq_index.jsp?req=faq">회원가입·탈퇴</a><br><br>
-				<a href="#">faq2</a><br><br>
-				<a href="#">faq3</a><br><br>
-				<a href="#">faq4</a><br><br>		
+				<a href="faq_index.jsp?req=faq">· 회원가입·탈퇴</a><br><br>
+				<a href="#">· 회원정보수정</a><br><br>
+				<a href="#">· 공고지원</a><br><br>
+				<a href="#">· 기타</a><br><br>
+						
 			<h3 id="sub">** 기업 회원 **</h3><br>
-				<a href="#">faq5</a><br><br>	
-				<a href="#">faq6</a><br><br>
-				<a href="#">faq7</a><br><br>
-				<a href="#">faq8</a><br><br>
+				<a href="#">· faq5</a><br><br>	
+				<a href="#">· faq6</a><br><br>
+				<a href="#">· faq7</a><br><br>
+				<a href="#">· faq8</a><br><br>
 			<hr>
 			<img class="call" src="../image/call.JPG" alt="고객센터">	
 				
 		</div>
 		
 		<div id="section">
+		
+			<c:if test="${param.req == null }">
+				<img class="frog" alt="개구리" src="../image/frog.JPG">
+			</c:if>
+			
 			<c:if test="${param.req == 'faq' }">
 				<jsp:include page="faq_u1.jsp"/>
 			</c:if>
