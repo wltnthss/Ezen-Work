@@ -21,6 +21,6 @@ public class AdminDAO {
 		Map<String, String>map = new HashMap<String,String>();
 		map.put("id", id);
 		map.put("pwd", pwd);
-		return sqlSessionTemplate.selectOne("mybatis.adminMapper.login",map);
+		return sqlSessionTemplate.selectOne("mybatis.adminMapper.login", map);
 	}
 }

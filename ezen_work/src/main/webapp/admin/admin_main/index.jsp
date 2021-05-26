@@ -16,8 +16,6 @@
 	
 	<c:if test="${memId != null }">
 	<a href="../admin_login/logout.do">로그 아웃</a>
-	
 	</c:if>
-	
 </body>
 </html>

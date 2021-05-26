@@ -21,5 +21,10 @@ public class MemberServiceImpl implements MemberService{
 	public boolean isExistId(String id) {
 		return dao.isExistId(id);
 	}
+
+	@Override
+	public String login(String id, String pwd) {
+		return dao.login(id, pwd);
+	}
 	
 }

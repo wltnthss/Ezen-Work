@@ -37,4 +37,14 @@ public class MemberDAO {
 		}
 		return exist;
 	}
+	
+	//로그인
+	public String login(String id, String pwd) {
+		Map<String, String>map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("pwd", pwd);
+		return sqlSession.selectOne("mybatis.memberMapper.login", map);
+	}
+	
+	
 }

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	alert("회원가입 완료");
-	location.href = "../member_main/index.jsp";
+	location.href = "../member_login/loginForm.jsp";
 </script>
 </head>
 <body>

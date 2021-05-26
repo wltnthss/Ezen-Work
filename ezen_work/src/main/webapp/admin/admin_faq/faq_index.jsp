@@ -60,7 +60,6 @@ a{
 	padding-top: 40px;
 	opacity: 0.1
 }
-
 </style>
 </head>
 <body>
@@ -85,14 +84,14 @@ a{
 				<a href="#">· faq7</a><br><br>
 				<a href="#">· faq8</a><br><br>
 			<hr>
-			<img class="call" src="../image/call.JPG" alt="고객센터">	
+			<img class="call" src="../../img/call.jpg" alt="고객센터">	
 				
 		</div>
 		
 		<div id="section">
 		
 			<c:if test="${param.req == null }">
-				<img class="frog" alt="개구리" src="../image/frog.JPG">
+				<img class="frog" alt="개구리" src="../../img/frog.jpg">
 			</c:if>
 			
 			<c:if test="${param.req == 'faq' }">
