@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관리자 페이지</title>
+<title>페이지</title>
 </head>
 <body>
 	<h3>*** 메인 화면 ***</h3>
