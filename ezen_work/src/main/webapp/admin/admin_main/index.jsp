@@ -15,9 +15,9 @@
 	</c:if>
 	
 	<c:if test="${memId != null }">
-	<a href="../admin_main/logout.do">로그 아웃</a>
+	<a href="../admin_login/logout.do">로그 아웃</a>
 	
 	</c:if>
-	어드민 인덱스 변경사항입니다. (디벨롭 브랜치)
+	
 </body>
 </html>

@@ -43,7 +43,7 @@ public class AdminController {
 		return modelAndView;		
 	}
 	
-	@RequestMapping(value="/admin/admin_main/logout.do")
+	@RequestMapping(value="/admin/admin_login/logout.do")
 	public ModelAndView logout(HttpServletRequest request,HttpServletResponse response) throws Exception{
 				
 		HttpSession session = request.getSession();
@@ -60,5 +60,7 @@ public class AdminController {
 		modelAndView.setViewName("../admin_login/logout.jsp");
 		return modelAndView;				
 	}
+	
+	
 	
 }

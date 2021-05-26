@@ -18,6 +18,6 @@
 	<a href="../admin_login/logout.do">로그 아웃</a>
 	
 	</c:if>
-	메인이 제일 어려워요
+	ㅁㄴㅇㄻㄴㅇㄻㄴㅇㅎ
 </body>
 </html>
