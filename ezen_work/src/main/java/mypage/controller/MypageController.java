@@ -1,5 +1,8 @@
 package mypage.controller;
 
-public class MypageController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class MypageController {
+	
 }

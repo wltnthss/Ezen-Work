@@ -97,12 +97,7 @@ a{
 			
 			<c:if test="${param.req == 'faq' }">
 				<jsp:include page="faq_u1.jsp"/>
-			</c:if>
-		
-		
-			adsf
-			Test
-			
+			</c:if>			
 		</div>				
 	</div>	
 </body>
