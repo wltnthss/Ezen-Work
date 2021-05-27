@@ -100,8 +100,7 @@ a{
 			</c:if>
 		
 		
-			adsf
-			Test
+			
 			
 		</div>				
 	</div>	
