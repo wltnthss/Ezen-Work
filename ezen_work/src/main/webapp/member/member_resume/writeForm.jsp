@@ -13,6 +13,7 @@
 		<tr>
 			<td colspan="4">기본정보</td>
 		</tr>
+		
 		<tr>
 			<td>프로필이미지</td>
 			<td>휴대폰번호</td>
