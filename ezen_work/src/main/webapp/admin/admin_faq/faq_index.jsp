@@ -99,7 +99,8 @@ a{
 			
 			<c:if test="${param.req == 'faq' }">
 				<jsp:include page="faq_u1.jsp"/>
-			</c:if>
+
+			</c:if>			
 			
 			<c:if test="${param.req == 'faq1' }">
 				<jsp:include page="faq_u2.jsp"/>
@@ -112,10 +113,7 @@ a{
 			<c:if test="${param.req == 'faq3' }">
 				<jsp:include page="faq_u4.jsp"/>
 			</c:if>
-		
-		
-			
-			
+
 		</div>				
 	</div>	
 </body>
