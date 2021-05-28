@@ -37,6 +37,8 @@ body{
 }
 #sub{
 	text-align: center;
+	text-decoration: underline;
+	font-weight: bold;
 }
 .call{		
 	padding-left: 10px;
@@ -73,13 +75,13 @@ a{
 	<div id="container">
 		<div id="nav">			
 			
-			<h3 id="sub">** 개인 회원 **</h3><br>
+			<h3 id="sub"> 개인 회원 </h3><br>
 				<a href="faq_index.jsp?req=faq">· 회원가입·탈퇴</a><br><br>
-				<a href="#">· 회원정보수정</a><br><br>
-				<a href="#">· 공고지원</a><br><br>
-				<a href="#">· 기타</a><br><br>
+				<a href="faq_index.jsp?req=faq1">· 회원정보관리</a><br><br>
+				<a href="faq_index.jsp?req=faq2">· 공고지원</a><br><br>
+				<a href="faq_index.jsp?req=faq3">· 기타</a><br><br>
 						
-			<h3 id="sub">** 기업 회원 **</h3><br>
+			<h3 id="sub"> 기업 회원 </h3><br>
 				<a href="#">· faq5</a><br><br>	
 				<a href="#">· faq6</a><br><br>
 				<a href="#">· faq7</a><br><br>
@@ -97,6 +99,18 @@ a{
 			
 			<c:if test="${param.req == 'faq' }">
 				<jsp:include page="faq_u1.jsp"/>
+			</c:if>
+			
+			<c:if test="${param.req == 'faq1' }">
+				<jsp:include page="faq_u2.jsp"/>
+			</c:if>
+			
+			<c:if test="${param.req == 'faq2' }">
+				<jsp:include page="faq_u3.jsp"/>
+			</c:if>
+			
+			<c:if test="${param.req == 'faq3' }">
+				<jsp:include page="faq_u4.jsp"/>
 			</c:if>
 		
 		
