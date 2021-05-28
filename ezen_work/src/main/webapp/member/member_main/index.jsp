@@ -20,5 +20,7 @@
 		<a href="../member_login/logout.do">로그 아웃</a>		
 	</c:if>
 	
+	Test
+	
 </body>
 </html>
