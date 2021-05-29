@@ -70,11 +70,11 @@ a{
 						
 						<div class="header_person_who_name">
 							<strong>
-								<%=request.getAttribute("name") %>
+								${dto.name }
 							</strong>
 						</div>
 						<div class="header_person_who_modify">
-							<input type="button" value="개인정보수정" onclick="location.href='../member_modify/modifyForm.jsp'">	
+							<input type="button" value="개인정보수정" onclick="location.href='../member_resume/modifyForm.jsp'">	
 						</div>
 				</div>	
 		

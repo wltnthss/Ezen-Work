@@ -73,7 +73,7 @@ public class MemberController {
 		if(name != null) {
 			session.setAttribute("memId", id);
 			session.setAttribute("memName", name);
-			
+		
 			modelAndView.setViewName("../member_main/index.jsp");
 		} else {
 			modelAndView.setViewName("loginFail.jsp");

@@ -8,4 +8,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(#{title}, #{age}, #{tall}, #{weight}, #{career}, #{achieve}, 
 		#{loc}, sysdate)
 	</insert>	
+	
+	<!-- 이력서 제목 확인 -->
+	<select id="getTitle" parameterType="String" resultType="resumeDTO">
+	 	select * from resume where title=#{title}
+	</select>
+	
+	<update id="modify" parameterType="resumeDTO">
+		update resume set title=#{title}, age=#{age}, tall=#{tall}, 
+		weight=#{weight}, career=#{career}, achieve=#{achieve}, loc=#{loc} where title=#{title};
+	</update>
 </mapper>

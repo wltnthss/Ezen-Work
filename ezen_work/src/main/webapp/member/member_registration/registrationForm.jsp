@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>회원 회원가입</title>
 <script type="text/javascript" src="../../script/memberScript.js"></script>
 </head>
 <body>

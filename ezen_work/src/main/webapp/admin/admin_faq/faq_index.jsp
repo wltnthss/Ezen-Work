@@ -101,8 +101,6 @@ a{
 				<jsp:include page="faq_u1.jsp"/>
 <<<<<<< HEAD
 			</c:if>			
-=======
-			</c:if>
 			
 			<c:if test="${param.req == 'faq1' }">
 				<jsp:include page="faq_u2.jsp"/>
