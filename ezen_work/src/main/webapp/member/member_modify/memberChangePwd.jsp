@@ -5,10 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	alert("이력서 수정 완료");
-	location.href = "../member_mypage/mypageindex.jsp";
-</script>
 </head>
 <body>
 

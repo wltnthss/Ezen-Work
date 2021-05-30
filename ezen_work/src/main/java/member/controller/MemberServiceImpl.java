@@ -12,9 +12,8 @@ public class MemberServiceImpl implements MemberService{
 	MemberDAO dao;
 	
 	@Override
-	public String register(String name, String id, String pwd, String gender, String email1, String email2, String tel1,
-			String tel2, String tel3, String addr) {
-		return dao.register(name, id, pwd, gender, email1, email2, tel1, tel2, tel3, addr);
+	public String register(String name, String id, String pwd, String gender, String email, String tel, String addr) {
+		return dao.register(name, id, pwd, gender, email, tel, addr);
 	}
 
 	@Override

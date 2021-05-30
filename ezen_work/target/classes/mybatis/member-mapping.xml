@@ -5,8 +5,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="mybatis.memberMapper">
 	<insert id="register" parameterType="memberDTO">
 		insert into member values
-		(#{name}, #{id}, #{pwd}, #{gender}, #{email1}, #{email2}, 
-		#{tel1}, #{tel2}, #{tel3}, #{addr})
+		(#{name}, #{id}, #{pwd}, #{gender}, #{email}, 
+		#{tel}, #{addr})
 	</insert>	
 	
 	<select id="isExistId" parameterType="String" resultType="String">

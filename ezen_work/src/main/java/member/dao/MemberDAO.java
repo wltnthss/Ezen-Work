@@ -14,17 +14,14 @@ public class MemberDAO {
 	SqlSessionTemplate sqlSession;
 	
 	//회원가입
-	public String register(String name, String id, String pwd, String gender, String email1, String email2, String tel1, String tel2, String tel3, String addr) {
+	public String register(String name, String id, String pwd, String gender, String email, String tel, String addr) {
 		Map<String, String>map = new HashMap<String, String>();
 		map.put("name", name);
 		map.put("id", id);
 		map.put("pwd", pwd);
 		map.put("gender", gender);
-		map.put("email1", email1);
-		map.put("email2", email2);
-		map.put("tel1", tel1);
-		map.put("tel2", tel2);
-		map.put("tel3", tel3);
+		map.put("email", email);
+		map.put("tel", tel);
 		map.put("addr", addr);
 		return sqlSession.selectOne("mybatis.memberMapper.register",map);
 	}
