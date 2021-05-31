@@ -205,15 +205,15 @@ public class AdvertiseController {
 	@RequestMapping(value = "/company/advertise/advertiseView.do")
 	public ModelAndView boardView(HttpServletRequest request, HttpServletResponse response) {
 		//데이터
-		int seq = Integer.parseInt(request.getParameter("seq"));
+		int num = Integer.parseInt(request.getParameter("num"));
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		
 		//DB
-		AdvertiseDTO dto = advertiseService.advertiseView(seq); 
+		AdvertiseDTO dto = advertiseService.advertiseView(num); 
 		
 		// 화면 네비게이션 : 데이터 공유 + view 처리 파일 선택
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("seq", seq);
+		modelAndView.addObject("num", num);
 		modelAndView.addObject("pg", pg);
 		modelAndView.addObject("dto", dto);
 		

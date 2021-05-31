@@ -32,7 +32,9 @@
 				<tr bgcolor="ffffcc" align="center">
 					<td>${dto.num}</td>
 					<td>
-						<img alt="회사사진" src="../../storage/${dto.image}" width="450" height="300">
+						<a href="advertiseView.do?num=${dto.num}&pg=${pg}">
+							<img alt="회사사진" src="../../storage/${dto.image}" width="450" height="300">
+						</a>
 					</td>
 					<td>${dto.cname}</td>
 					<td>${dto.ad_subject}</td>

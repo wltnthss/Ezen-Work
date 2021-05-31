@@ -9,121 +9,125 @@
 </head>
 <body>
 	<table border="1">
-	<!--
 		<tr>
-			<th>공고 제목</th>
-			<td><input type="text" name="ad_subject" size="30"></td>
+			<td>공고 제목 : ${dto.ad_subject}</td>
 		</tr>
 		<tr>
-			<th>회사사진</th>
-			<td><input type="file" name="image"></td>
+			<td>회사 사진 : <img alt="회사사진" src="../../storage/${dto.image}" width="180" height="130"></td>
 		</tr>
 		<tr>
-			<th>공고 내용</th>
-			<td><textarea rows="15" cols="45" name="ad_content"></textarea></td>
-		</tr>
-		<tr>
-			<th>모집인원</th>
 			<td>
-				<input type="text" name="ad_num" size="5"> (명)
-				<select name="numselect" onchange="change();" >
-					<option value="direct">직접입력</option>
-					<option value="00">인원미정</option>
-				</select>
+				공고내용 : 
+				<pre>${dto.ad_content}</pre>
 			</td>
 		</tr>
 		<tr>
-			<th>성별</th>
 			<td>
-				<input type="radio" name="gender" value="1">남
-				<input type="radio" name="gender" value="2">여
-				<input type="radio" name="gender" value="0" checked="checked"> 무관
+				모집인원 :
+				<c:if test="${dto.ad_num == '00'}">
+					인원미정(00)
+				</c:if>
+				<c:if test="${dto.ad_num != '00'}">
+					${dto.ad_num}
+				</c:if>
 			</td>
 		</tr>
 		<tr>
-			<th>모집나이</th>
 			<td>
-				<input type="radio" name="age" value="20"> 20대
-				<input type="radio" name="age" value="30"> 30대
-				<input type="radio" name="age" value="40"> 40대
-				<input type="radio" name="age" value="0" checked="checked"> 무관
+				성별 : 
+				<c:if test="${dto.gender == '1'}">
+					남자
+				</c:if>
+				<c:if test="${dto.gender == '2'}">
+					여자
+				</c:if>
+				<c:if test="${dto.gender == '0'}">
+					성별무관
+				</c:if>
 			</td>
 		</tr>
 		<tr>
-			<th>근무시간</th>
 			<td>
-				<select name="ad_time">
-					<option value="0">무관</option>
-					<option value="9">오전9-오후6</option>
-					<option value="6">오후12-오후6</option>
-					<option value="7">오후3-오후10</option>
-				</select>
+				모집나이 : 
+				<c:if test="${dto.age == '20'}">
+					20대
+				</c:if>
+				<c:if test="${dto.age == '30'}">
+					30대
+				</c:if>
+				<c:if test="${dto.age == '40'}">
+					40대
+				</c:if>
+				<c:if test="${dto.age == '0'}">
+					연령무관
+				</c:if>
 			</td>
 		</tr>
 		<tr>
-			<th>근무기간</th>
 			<td>
-				<input type="radio" name="ad_period" value="3"> 3개월
-				<input type="radio" name="ad_period" value="6"> 6개월
-				<input type="radio" name="ad_period" value="12"> 1년이상
-				<input type="radio" name="ad_period" value="0" checked="checked"> 무관
+				근무시간 : 
+				<c:if test="${dto.ad_time == '0'}">
+					시간무관
+				</c:if>
+				<c:if test="${dto.ad_time == '9'}">
+					오전9-오후6
+				</c:if>
+				<c:if test="${dto.ad_time == '6'}">
+					오후12-오후6
+				</c:if>
+				<c:if test="${dto.ad_time == '7'}">
+					오후3-오후10
+				</c:if>
 			</td>
 		</tr>
 		<tr>
-			<th>위치(지역)</th>
-			<td><input type="text" name="ad_area" size="30"></td>
-		</tr>
-		<tr>
-			<th>직종</th>
 			<td>
-				<select name="ad_job">
-					<option value="service">서비스</option>
-					<option value="IT">IT.컴퓨터</option>
-					<option value="design">디자인</option>
-				</select>
+				근무기간 : 
+				<c:if test="${dto.ad_period == '0'}">
+					기간무관
+				</c:if>
+				<c:if test="${dto.ad_period == '3'}">
+					3개월
+				</c:if>
+				<c:if test="${dto.ad_period == '6'}">
+					6개월
+				</c:if>
+				<c:if test="${dto.ad_period == '12'}">
+					1년이상
+				</c:if>
 			</td>
 		</tr>
 		<tr>
-			<th>시급</th>
-			<td><input type="text" name="salary" size="5"></td>
+			<td>위치(지역) : ${dto.ad_area}</td>
 		</tr>
 		<tr>
-			<th>회사명</th>
-			<td><input type="text" name="cname" size="10" value="${cname}" readonly></td>
-		</tr>
-		<tr>
-			<th>기타</th>
-			<td><textarea rows="15" cols="45" name="content"></textarea></td>
-		</tr>
-		<tr>				
-			<td colspan="2" align="center">
-				<input type="submit" value="공고등록" onclick="checkWrite() return false;">
-				<input type="reset" value="다시작성">
+			<td>
+				직종 : 
+				<c:if test="${dto.ad_job == 'service'}">
+					서비스
+				</c:if>
+				<c:if test="${dto.ad_job == 'IT'}">
+					IT.컴퓨터
+				</c:if>
+				<c:if test="${dto.ad_job == 'design'}">
+					디자인
+				</c:if>
 			</td>
 		</tr>
-		  -->
-		<tr align="center">
-			<td width="150">성별 : ${dto.gender}</td>
-			<td width="150">시간 : ${dto.ad_time}</td>
+		<tr>
+			<td>시급 : ${dto.salary}</td>
 		</tr>
 		<tr>
-			<td colspan="3" height="200" valign="top">
-				<!-- <pre> 태그 : 문자열을 있는 그대로 보여줌 -->
-				<pre>${dto.content }</pre>
+			<td>회사명 : ${cname}</td>
+		<tr>
+			<td>
+				기타 : 
+				<pre>${dto.content}</pre>
 			</td>
 		</tr>
 	</table>
 	
 	<input type="button" value="목록" 
-		   onclick="location.href='boardList.do?pg=${pg}'">
-		   
-	<%--글수정과 글삭제는 로그인된 사람과 글쓴 사람이 같을 때만 보이게 설정함 
-	<c:if test="${memId == dto.id}">
-		<input type="button" value="글수정" 
-				onclick="location.href='boardModifyForm.do?seq=${seq}&pg=${pg}'">		
-		<input type="button" value="글삭제" 
-			   onclick="location.href='boardDelete.do?seq=${seq}&pg=${pg}'">
-	</c:if>
-	--%>		   
+		   onclick="location.href='advertiseList.do?pg=${pg}'">	   
 </body>
 </html>

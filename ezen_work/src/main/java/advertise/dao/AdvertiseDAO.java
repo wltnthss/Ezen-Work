@@ -43,7 +43,6 @@ public class AdvertiseDAO {
 	}	
 	// 글삭제 : delete
 	public int advertiseDelete(int seq) {
-		System.out.println("seq = " + seq);
 		return sqlSession.delete("mybatis.advertiseMapper.advertiseDelete",seq);
 	}
 }
