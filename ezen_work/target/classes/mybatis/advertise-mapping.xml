@@ -5,8 +5,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="mybatis.advertiseMapper">
 	<insert id="advertiseWrite" parameterType="advertiseDTO">
 		insert into advertise values
-		(#{cname}, #{image}, #{ad_subject}, #{ad_num}, #{gender}, #{age}, #{salary},
-		#{ad_content}, #{ad_job}, #{ad_area}, #{ad_time}, #{ad_period},
-		#{ad_name}, #{content})
+		(num.nextval, #{cname}, #{image}, #{ad_subject}, #{ad_num}, #{gender}, #{age}, #{salary},
+		#{ad_content}, #{ad_job}, #{ad_area}, #{ad_time}, #{ad_period}, #{content})
 	</insert>
+	<select id="getMember" parameterType="String" resultType="advertiseDTO">
+		select * from advertise where cname=#{cname}
+	</select>
+	<update id="advertiseModify" parameterType="advertiseDTO">
+		update advertise set image=#{image}, ad_subject=#{ad_subject}, ad_num=#{ad_num}, gender=#{gender},
+						 age=#{age}, salary=#{salary}, ad_content=#{ad_content}, ad_job=#{ad_job},
+						 ad_area=#{ad_area}, ad_time=#{ad_time}, ad_period=#{ad_period}, content=#{content} where cname=#{cname}
+	</update>
+	<select id="advertiseView" parameterType="int" resultType="advertiseDTO">
+		select * from advertise where num=#{num}
+	</select>
+	
+	<select id="advertiseList" parameterType="java.util.Map" resultType="advertiseDTO">
+		<![CDATA[select num, image, cname, ad_subject, salary, ad_content from 
+		(select rownum rn, tt.* from  (select * from advertise order by num desc) tt) 
+		where rn>=#{startNum} and rn<=#{endNum}]]>
+	</select>
+	
+	<select id="getTotalA" resultType="int">
+		select count(*) as cnt from advertise
+	</select>
 </mapper>

@@ -99,7 +99,7 @@
 			</tr>
 			<tr>				
 				<td colspan="2" align="center">
-					<input type="button" value="공고등록" onclick="checkWrite()">
+					<input type="submit" value="공고등록" onclick="checkWrite() return false;">
 					<input type="reset" value="다시작성">
 				</td>
 			</tr>

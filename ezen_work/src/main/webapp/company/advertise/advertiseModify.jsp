@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+		alert("공고수정 완료*-*");
+		location.href = "../mypage/mypageForm.jsp"; //마이페이지 연결 코드
+</script>
 </head>
 <body>
 

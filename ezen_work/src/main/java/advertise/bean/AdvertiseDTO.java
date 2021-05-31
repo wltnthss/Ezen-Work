@@ -1,6 +1,7 @@
 package advertise.bean;
 
 public class AdvertiseDTO {
+	private int num;
 	private String cname;
 	private String image;
     private String ad_subject;
@@ -13,11 +14,18 @@ public class AdvertiseDTO {
     private String ad_area;
     private String ad_time;
     private String ad_period;
-    private String ad_name;
     private String content;
     
 	public AdvertiseDTO() {
 		super();
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
 	}
 
 	public String getCname() {
@@ -114,14 +122,6 @@ public class AdvertiseDTO {
 
 	public void setAd_period(String ad_period) {
 		this.ad_period = ad_period;
-	}
-
-	public String getAd_name() {
-		return ad_name;
-	}
-
-	public void setAd_name(String ad_name) {
-		this.ad_name = ad_name;
 	}
 
 	public String getContent() {
