@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.advertiseMapper">
+	<insert id="advertiseWrite" parameterType="advertiseDTO">
+		insert into advertise values
+		(#{cname}, #{image}, #{ad_subject}, #{ad_num}, #{gender}, #{age}, #{salary},
+		#{ad_content}, #{ad_job}, #{ad_area}, #{ad_time}, #{ad_period},
+		#{ad_name}, #{content})
+	</insert>
+</mapper>
