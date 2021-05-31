@@ -28,7 +28,7 @@ public class AdminController {
 		//DB
 		String name = adminService.login(id,pwd);
 				
-		//�솕硫� �꽕鍮꾧쾶�씠�뀡
+		//화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
 		HttpSession session = request.getSession();
 						
