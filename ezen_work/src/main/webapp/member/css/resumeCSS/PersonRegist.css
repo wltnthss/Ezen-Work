@@ -710,7 +710,7 @@ p.result {display:none}
 #RegistBaseInfo {z-index:1}
 #RegistBaseInfo .registForm {padding-bottom:20px;border-bottom:1px solid #ebebeb}
 #RegistBaseInfo .tip a {float:right;height:26px;margin:-2px 0 0 10px;padding:0 10px;border:1px solid #bbb;font-size:12px;line-height:26px;text-align:center;vertical-align:top;background-color:#fff}
-#RegistBaseInfo .photoArea {float:left;width:116px;padding:10px 10px 0;border:1px solid #ddd}
+#RegistBaseInfo .photoArea {float:left;width:116px;padding:0px 10px 0;border:1px solid #ddd; margin-top: 55px}
 #RegistBaseInfo .photoArea .photo {display:block}
 #RegistBaseInfo .photoArea .photo img {width:116px;height:139px}
 #RegistBaseInfo .photoArea .applyBtn {display:block}

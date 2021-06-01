@@ -4,13 +4,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko" class=" js "><head>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 <title>이력서 작성</title>
-<link rel="stylesheet" href="../css/resumeCSS/PersonRegist.css" type="text/css">
+<link rel="stylesheet" href="../css/resumeCSS/PersonRegist.css?v=1" type="text/css">
 <link rel="stylesheet" href="../css/resumeCSS/Repute.css" type="text/css">
 <link rel="stylesheet" href="../css/resumeCSS/jquery-ui.css" type="text/css">
 <meta name="referrer" content="always">
+<style type="text/css">
+html.pc .join-submit-btn{
+    height: 54px;
+    line-height: 54px;
+}
 
+.join-submit-btn{
+	width: 100%;
+    height: 70px;
+    font-size: 25px;
+    background-color: #ffe000;
+    font-style: bold;
+}
+button{
+	padding: 0;
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", Gulim, Sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    cursor: pointer;
+    border: 0;
+}
+</style>
 </head>
-
+<script type="text/javascript" src="../../script/resumeScript.js"></script>
 <body id="RegistStep" class="registStep" cz-shortcut-listen="true">
 
 <!-- Global -->
@@ -68,12 +89,13 @@
 
 <!-- subWrap-->
 <div id="SubWrap">
+	
 	<!-- subContents -->
 	<div id="SubContents">
 		<!-- Contents -->
-		<form name="writeForm" id="regResume" method="post" action="write.do">
 		<div id="Contents">
-		<div id="step1">		
+		<div id="step1">	
+		<form name="resumeWriteForm" id="regResume" method="post" action="write.do" enctype="multipart/form-data">	
 			<!-- 개인정보 -->
 			<div id="RegistBaseInfo" class="registArea">
 				<h2>기본정보<span class="necessary">*</span></h2>
@@ -83,26 +105,17 @@
 				<div class="registForm">
 					<div class="photoArea">
 						<span class="photo" id="idmainresumephoto">
-						<a href="https://www.alba.co.kr/person/popup/PicRegistResume.asp" onclick="window.open(this.href, 'popupName','width=567,height=740,top=0,left=0,status=no,scrollbars=no,resizable=no'); return false">
-						<img id="resumephoto" src="//image.alba.kr/person/profile_no_male.png" alt=""></a>
 						</span>
 						<!-- 사진아이콘 -->
 						<span class="applyBtn">
 							<!-- 사진없을 때 -->
 							<span id="picReigst" style="">
-								<a class="noImgReg" href="https://www.alba.co.kr/person/popup/PicRegistResume.asp?registreform=Y" onclick="window.open(this.href, 'popupName','width=567,height=740,top=0,left=0,status=no,scrollbars=yes,resizable=no'); return false"><span></span>사진등록</a>
+								<a class="noImgReg"><span></span>사진등록</a>
+								<input type="file" class="input_file" name="image">
 							</span>
 							<!-- //사진없을 때 -->
-							<!-- 사진있을 때 -->
-							<span id="picModify" style="display: none;">
-								<span class="modifyBtn">
-									<a class="imgModify" href="https://www.alba.co.kr/person/popup/PicRegistResume.asp" onclick="window.open(this.href, 'popupName','width=567,height=740,top=0,left=0,status=no,scrollbars=yes,resizable=no'); return false"><span></span>변경</a>
-									<a class="imgdel" href="#" onclick="delMainPhoto(); return false;"><span></span>삭제</a>
-								</span>
-							</span>
-							<!-- //사진있을 때 -->
 						</span>
-						<!-- 사진아이콘 -->
+						<!-- //사진아이콘 -->
 					</div>
 					<div class="baseInfo">
 						<table cellpadding="0" cellspacing="0">
@@ -151,25 +164,25 @@
 			<!-- //이력서 저장 불러오기 -->
 
 			<!-- 이력서 제목 -->
+		
 			<div id="RegistTitle" class="registArea">
 				<h2>이력서 제목<span class="necessary">*</span></h2>
 				<div class="registForm registForm--title">
-					<input type="text" id="title" name="title" value="" maxlength="25" autocomplete="off">
-					<label for="title">나를 표현할 한마디를 적어보세요 (최대 25자)</label>
+					<input type="text" name="title" value="" maxlength="25" placeholder="나를 표현할 한마디를 적어보세요" required="required">
 				</div>
 			</div>
 			<!-- //이력서 제목 -->
 
 			<!-- 학력 -->
 			<div id="RegistTitle01">
-				<a href="#" class="fullsizeBtn" onclick="_REGFRM.showfield('RegistEducation', this); return false;" id="edu-fullsizeBtn" style="display:none"><span></span>학력</a>
+				<a href="#" class="fullsizeBtn" id="edu-fullsizeBtn" style="display:none"><span></span>학력</a>
 				<div id="RegistEducation" class="registArea">
 					<h2>
 						학력<span class="necessary">*</span>
 					</h2>
-				<div class="registForm registForm--title">
-					<input type="text" id="title" name="achieve" value="" maxlength="40" autocomplete="off" placeholder="학력을 입력하세요" required="required" style="width: 728px;">
-				</div>
+					<div class="registForm registForm--title">
+						<input type="text" id="achieve1" name="achieve" value="" maxlength="40" autocomplete="off" placeholder="학력을 입력하세요" required="required" style="width: 728px;">
+					</div>
 				</div>
 			</div>
 			<!-- //학력 -->
@@ -182,11 +195,11 @@
 						<div class="regist__title"><strong>경력구분</strong></div>
 						<div class="regist__item regist__item-input">
 							<span class="input">
-								<input type="radio" id="newcomer" name="career" value="신입">
+								<input type="radio" id="newcomer" name="career" value="신입" checked="checked">
 								<label for="newcomer">신입</label>
 							</span>
 							<span class="input">
-								<input type="radio" id="careercomer" name="career" value="경력" check>
+								<input type="radio" id="careercomer" name="career" value="경력">
 								<label for="careercomer">경력</label>
 							</span>
 						</div>
@@ -216,13 +229,10 @@
 				</div>
 			</div>
 		</div>
-			<p class="completeBtn">
-				<a href="#" class="btn reviewBtn" onclick="preSave('RegistResume'); return false;">미리보기</a>
-				<a href="#" class="btn yellowBtn" onclick="doSubmit(); return false;">이력서 작성 완료</a>
-			</p>
-		</div>
-		</div>
+				<button type="submit" class="join-submit-btn join-submit-btn--person">이력서 등록 완료</button>
 		</form>
+		</div>
+		</div>
 	</div>
 </div>		
 </body>

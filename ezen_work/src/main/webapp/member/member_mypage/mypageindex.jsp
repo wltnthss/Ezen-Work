@@ -102,8 +102,7 @@
 			ReputeCLS.viewReputeCareerList();
 		</script>
 
-		<div class="listForm person-main__resumelist">
-			<div class="listForm__title">내 이력서 : <a href="../member_resume/resumeManageForm.jsp">총 <em>1</em>개</a></div>
+		<div class="listForm person-main__resumelist" style="padding-top: 35px;">
 			<table id="resumelist" cellspacing="0" summary="내 이력서 목록">
 				<thead>
 					<tr>

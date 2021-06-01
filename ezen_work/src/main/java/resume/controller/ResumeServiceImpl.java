@@ -11,21 +11,10 @@ public class ResumeServiceImpl implements ResumeService{
 	
 	@Autowired
 	ResumeDAO dao;
-	
-	@Override
-	public String write(String title, String age, String tall, String weight, String career, String achieve, String loc,
-			String logtime) {
-		return dao.write(title, age, tall, weight, career, achieve, loc, logtime);
-	}
 
 	@Override
-	public ResumeDTO getTitle(String title) {
-		return dao.getTitle(title);
-	}
-
-	@Override
-	public int modify(ResumeDTO dto) {
-		return dao.modify(dto);
+	public int resumeWrite(ResumeDTO dto) {
+		return dao.resumeWrite(dto);
 	}
 
 }

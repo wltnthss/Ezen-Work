@@ -82,8 +82,6 @@ public class MemberController {
 		ModelAndView modelAndView = new ModelAndView();
 		HttpSession session = request.getSession();
 		
-		System.out.println(id);
-		
 		if(name != null) {
 			session.setAttribute("memId", id);
 			session.setAttribute("memName", name);
@@ -151,14 +149,6 @@ public class MemberController {
 		String tel = request.getParameter("tel");
 		String addr = request.getParameter("addr");
 		String gender = request.getParameter("gender");
-		
-		System.out.println(name);
-		System.out.println(pwd);
-		System.out.println(id);
-		System.out.println(email);
-		System.out.println(tel);
-		System.out.println(addr);
-		System.out.println(gender);
 
 		MemberDTO dto = new MemberDTO();
 		dto.setName(name);
@@ -215,6 +205,5 @@ public class MemberController {
 		modelAndView.addObject("dto", dto);
 		modelAndView.setViewName("resumeWriteForm.jsp");
 		return modelAndView;
-		//Test
 	}
 }
