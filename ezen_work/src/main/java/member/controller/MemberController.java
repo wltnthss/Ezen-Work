@@ -215,5 +215,6 @@ public class MemberController {
 		modelAndView.addObject("dto", dto);
 		modelAndView.setViewName("resumeWriteForm.jsp");
 		return modelAndView;
+		//Test
 	}
 }
