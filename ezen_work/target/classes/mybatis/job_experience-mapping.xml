@@ -47,6 +47,10 @@
  		exp_image=#{exp_image} where exp_seq=#{exp_seq}
 	</update>
 	
+	<delete id="exp_del" parameterType="int">
+		delete from exp where exp_seq=#{exp_seq}
+	</delete>
+	
 	<select id="exp_reply_list" parameterType="int" resultType="job_exp_replyDTO">
 		select id, exp_reply_seq, exp_seq, exp_reply_content,
  		exp_reply_date from 

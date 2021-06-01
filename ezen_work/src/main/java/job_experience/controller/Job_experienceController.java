@@ -247,7 +247,8 @@ public class Job_experienceController {
 		//DB
 		int result = job_experienceService.exp_del(seq);		
 								
-		modelAndView.addObject("result", result);		
+		modelAndView.addObject("result", result);
+		modelAndView.addObject("seq", seq);
 		modelAndView.addObject("pg", pg);
 		modelAndView.setViewName("../admin_exp/exp_del_ok.jsp");	
 		
