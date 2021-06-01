@@ -6,7 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	alert("이력서 등록 완료");
+	if(${result > 0}){
+		alert("회원정보 수정 완료");	
+	} else{
+		alert("회원정보 수정 실패");
+	}	
 	location.href = "../member_mypage/mypageindex.do";
 </script>
 </head>

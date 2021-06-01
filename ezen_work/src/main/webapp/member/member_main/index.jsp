@@ -18,7 +18,7 @@
 	
 	<c:if test="${memId != null }">
 		<a href="../member_login/logout.do">로그 아웃</a>	
-		<a href="../member_mypage/mypageindex.jsp">마이페이지</a>
+		<a href="../member_mypage/mypageindex.do">마이페이지</a>
 	</c:if>
 	
 </body>

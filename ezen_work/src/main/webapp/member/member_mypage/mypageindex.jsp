@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>     
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
 	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 	<title>마이페이지</title>
@@ -28,34 +29,18 @@
 		<!-- HeaderMenu -->
 		<div id="HeaderMenu">
 					<!-- 알바스토리 /rsc/inc/common/GlobalMenuStory.inc 중복 관리 -->
-			<ul class="headerMenu headerMenu--login">
-					<div class="headerMenuFull">				
-						<ul class="headerMenuFull-section person">
-					
-							<li>
-								<a href="http://www.alba.co.kr/person/Main.asp">마이페이지 <span class="header-icon header-icon--home"></span></a>
-							</li>				
-						</ul>
-					</div>
-				</li>
-				
+			<ul class="headerMenu headerMenu--login">				
 				<li class="person on">
-					<a href="../member_mypage/mypageindex.jsp"><span></span>마이페이지</a>	
-				</li>
-				
+					<a href="../member_mypage/mypageindex.do"><span></span>마이페이지</a>	
+				</li>		
 				<li class="job">
-					<a href="../member_resume/resumeWriteForm.jsp">이력서등록</a>	
-				</li>
-				
+					<a href="../member_resume/resumeWriteForm.do">이력서등록</a>	
+				</li>			
 				<li class="brand">
 					<a href="../member_resume/resumeManageForm.jsp">이력서관리</a>
-				</li>
-				
-				<li class="genius">
-					<a href="../member_resume/resumeModifyForm.jsp">이력서수정</a></li>
-				</li>
+				</li>		
 				<li class="story">
-					<a href="../member_modify/memberModifyForm.jsp">개인정보수정</a>
+					<a href="../member_modify/memberModifyForm.do">개인정보수정</a>
 				</li>				
 			</ul>
 		</div>
@@ -89,10 +74,10 @@
 				</div>			
 			</div>
 			<div class="person-head__who-name">
-				<strong>손지수</strong>
-				<em class="num">27</em>세
+				<strong>${dto.name }</strong>
+				<em class="num">${dto.gender }</em>
 			</div>
-			<a href="../member_modify/memberModifyForm.jsp" class="person-head__who-modify" target="_blank">개인정보수정</a>
+			<a href="../member_modify/memberModifyForm.do" class="person-head__who-modify" target="_blank">개인정보수정</a>
 		</div>
 
 		<ul class="person-head__state">
@@ -118,19 +103,19 @@
 		</script>
 
 		<div class="listForm person-main__resumelist">
-			<div class="listForm__title">내 이력서 : <a href="http://www.alba.co.kr/person/resume/MagResume.asp">총 <em>1</em>개</a></div>
+			<div class="listForm__title">내 이력서 : <a href="../member_resume/resumeManageForm.jsp">총 <em>1</em>개</a></div>
 			<table id="resumelist" cellspacing="0" summary="내 이력서 목록">
 				<thead>
 					<tr>
 						<th scope="col" class="title">이력서 제목</th>
 						<th scope="col" class="date">작성일</th>
-						<th scope="col" class="count">열람수</th>
+						<th scope="col" class="count">열람확인</th>
 						<th scope="col" class="mag">이력서 관리</th>
 					</tr>
 				</thead>
-				<tbody><tr class="default"> 	<td class="title">  <a href="/resume/Detail.asp?adid=5035210">알바지원합니다.</a></td> 	<td class="date">2013-12-25</td> 	<td class="count">1</td> 	<td class="mag">		<a class="button-type" href="../member_resume/resumeModifyForm.jsp">수정</a> 	</td>	<td class="state"> 	</td> </tr> </tbody>
+				<tbody><tr class="default"> 	<td class="title">  <a href="/resume/Detail.asp?adid=5035210">알바지원합니다.</a></td> 	<td class="date">2013-12-25</td> 	<td class="count">1</td> 	<td class="mag">		<a class="button-type" href="../member_resume/resumeModifyForm.jsp">수정</a> 	</tr> </tbody>
 			</table>
-			<a href="http://www.alba.co.kr/person/resume/MagResume.asp" class="moreBtn">내 이력서 더보기<span></span></a>
+			<a href="../member_resume/resumeManageForm.jsp" class="moreBtn">내 이력서 더보기<span></span></a>
 		</div>
 	</div>
 	<!-- //subContents -->

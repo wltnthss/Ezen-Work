@@ -7,6 +7,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import member.bean.MemberDTO;
+
 @Repository
 public class MemberDAO {
 	
@@ -43,5 +45,14 @@ public class MemberDAO {
 		return sqlSession.selectOne("mybatis.memberMapper.login", map);
 	}
 	
+	//회원1명 데이터 확인
+	public MemberDTO getMember(String id) {
+		return sqlSession.selectOne("mybatis.memberMapper.getMember", id);
+	}
+	
+	//회원정보 수정
+	public int modify(MemberDTO dto) {		
+		return sqlSession.update("mybatis.memberMapper.modify", dto);	
+	}
 	
 }
