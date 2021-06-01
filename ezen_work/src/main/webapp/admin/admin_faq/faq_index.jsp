@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,47 +73,61 @@ a{
 	
 	
 	<div id="container">
-		<div id="nav">			
+		<div id="nav">
 			
 			<h3 id="sub"> 개인 회원 </h3><br>
-				<a href="faq_index.jsp?req=faq">· 회원가입·탈퇴</a><br><br>
-				<a href="faq_index.jsp?req=faq1">· 회원정보관리</a><br><br>
-				<a href="faq_index.jsp?req=faq2">· 공고지원</a><br><br>
-				<a href="faq_index.jsp?req=faq3">· 기타</a><br><br>
+				<a href="faq_index.jsp?req=faq1">· 회원가입·탈퇴</a><br><br>
+				<a href="faq_index.jsp?req=faq2">· 회원정보관리</a><br><br>
+				<a href="faq_index.jsp?req=faq3">· 공고지원</a><br><br>
+				<a href="faq_index.jsp?req=faq4">· 기타 문의</a><br><br>
 						
 			<h3 id="sub"> 기업 회원 </h3><br>
-				<a href="#">· faq5</a><br><br>	
-				<a href="#">· faq6</a><br><br>
-				<a href="#">· faq7</a><br><br>
-				<a href="#">· faq8</a><br><br>
+				<a href="faq_index.jsp?req=faq5">· 회원가입·탈퇴</a><br><br>	
+				<a href="faq_index.jsp?req=faq6">· 기업정보관리</a><br><br>				
+				<a href="faq_index.jsp?req=faq7">· 이력서·지원관리</a><br><br>
+				<a href="faq_index.jsp?req=faq8">· 기타 문의</a><br><br>
 			<hr>
 			<img class="call" src="../image/call.JPG" alt="고객센터">	
 				
-		</div>
+			</div>
 		
-		<div id="section">
-		
-			<c:if test="${param.req == null }">
-				<img class="frog" alt="개구리" src="../image/frog.JPG">
-			</c:if>
+			<div id="section">
 			
-			<c:if test="${param.req == 'faq' }">
-				<jsp:include page="faq_u1.jsp"/>
-
-			</c:if>			
-			
-			<c:if test="${param.req == 'faq1' }">
-				<jsp:include page="faq_u2.jsp"/>
-			</c:if>
-			
-			<c:if test="${param.req == 'faq2' }">
-				<jsp:include page="faq_u3.jsp"/>
-			</c:if>
-			
-			<c:if test="${param.req == 'faq3' }">
-				<jsp:include page="faq_u4.jsp"/>
-			</c:if>
-
+				<c:if test="${param.req == null }">
+					<img class="frog" alt="개구리" src="../image/frog.JPG">
+				</c:if>
+				
+				<c:if test="${param.req == 'faq1' }">
+					<jsp:include page="faq_u1.jsp"/>	
+				</c:if>
+									
+				<c:if test="${param.req == 'faq2' }">
+					<jsp:include page="faq_u2.jsp"/>
+				</c:if>
+				
+				<c:if test="${param.req == 'faq3' }">
+					<jsp:include page="faq_u3.jsp"/>
+				</c:if>
+				
+				<c:if test="${param.req == 'faq4' }">
+					<jsp:include page="faq_u4.jsp"/>
+				</c:if>
+				
+				<c:if test="${param.req == 'faq5' }">
+					<jsp:include page="faq_u5.jsp"/>
+				</c:if>
+				
+				<c:if test="${param.req == 'faq6' }">
+					<jsp:include page="faq_u6.jsp"/>
+				</c:if>
+				
+				<c:if test="${param.req == 'faq7' }">
+					<jsp:include page="faq_u7.jsp"/>
+				</c:if>
+				
+				<c:if test="${param.req == 'faq8' }">
+					<jsp:include page="faq_u8.jsp"/>
+				</c:if>
 		</div>				
 	</div>	
 </body>
