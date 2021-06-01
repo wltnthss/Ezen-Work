@@ -118,7 +118,6 @@ public class AdvertiseController {
 	public ModelAndView modify(HttpServletRequest request, HttpServletResponse response, MultipartFile image) throws Exception{
 		String filePath = request.getSession().getServletContext().getRealPath("/storage");
 		String fileName = image.getOriginalFilename();
-		System.out.println(fileName);
 		// 파일 복사 : 파일 저장
 		File file = new File(filePath, fileName);
 		try {
@@ -129,7 +128,6 @@ public class AdvertiseController {
 			e.printStackTrace();
 		}
 		HttpSession session = request.getSession();
-		int num = Integer.parseInt(request.getParameter("num"));
 		String cname = (String)session.getAttribute("cname");
 		String ad_subject = request.getParameter("ad_subject");
 		String ad_num = request.getParameter("ad_num");
@@ -144,6 +142,9 @@ public class AdvertiseController {
 		String content = request.getParameter("content");
 		String name = (String)session.getAttribute("memName");
 		String id = (String)session.getAttribute("memId");
+		
+		int num = Integer.parseInt(request.getParameter("num"));
+		int pg = Integer.parseInt(request.getParameter("pg"));
 		
 		//DB
 		AdvertiseDTO dto = new AdvertiseDTO();
@@ -163,7 +164,7 @@ public class AdvertiseController {
 		dto.setContent(content);
 				
 		int result = advertiseService.advertiseModify(dto);
-				
+		System.out.println(result);
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("result", result);
@@ -183,10 +184,11 @@ public class AdvertiseController {
 	    int endNum = pg*limit;  // 1 * 5 = 5
 	    int startNum = endNum - (limit -1); // 5 - (5-1) = 1
 	    
-	    List<AdvertiseDTO> list = advertiseService.advertiseList(startNum, endNum);
-	    
+	    HttpSession session = request.getSession();
+	    String cname = (String) session.getAttribute("cname");
+	    List<AdvertiseDTO> list = advertiseService.advertiseList(cname);
 	    // 페이징 : 10블럭
-	    int totalA = advertiseService.getTotalA();
+	    int totalA = advertiseService.getTotalA(cname);
 	    int totalP = (totalA + (limit -1))/ limit;
 	    
 	    int startPage = (pg-1)/10*10+1;
@@ -222,6 +224,36 @@ public class AdvertiseController {
 		
 		modelAndView.setViewName("../advertise/advertiseView.jsp");
 		
+		return modelAndView;
+	}
+	
+	//삭제창
+	@RequestMapping(value = "/company/advertise/advertiseDeleteForm.do")
+	public ModelAndView deleteForm(HttpServletRequest request) {
+		
+		int num = Integer.parseInt(request.getParameter("num"));
+		int pg = Integer.parseInt(request.getParameter("pg"));
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("num", num);
+		modelAndView.addObject("pg", pg);
+		modelAndView.setViewName("../advertise/advertiseDeleteForm.jsp");
+		return modelAndView;
+	}
+	//삭제
+	@RequestMapping(value = "/company/advertise/advertiseDelete.do")
+	public ModelAndView delete(HttpServletRequest request) {
+		//데이터
+		int num = Integer.parseInt(request.getParameter("num"));
+		int pg = Integer.parseInt(request.getParameter("pg"));
+			
+		int result = advertiseService.advertiseDelete(num);
+				
+		// 화면 네비게이션
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("result", result);
+		modelAndView.addObject("pg", pg);
+		modelAndView.setViewName("../advertise/advertiseDelete.jsp");
 		return modelAndView;
 	}
 }

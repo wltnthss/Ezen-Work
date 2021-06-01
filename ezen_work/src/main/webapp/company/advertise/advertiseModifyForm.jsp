@@ -9,7 +9,7 @@
 <script type="text/javascript" src="../../script/advertiseScript.js"></script>
 </head>
 <body>
-	<form action="advertiseModify.do" method="post" name="advertiseModifyForm" enctype="multipart/form-data">
+	<form action="advertiseModify.do?num=${num}&pg=${pg}" method="post" name="advertiseModifyForm" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<th>공고 제목</th>

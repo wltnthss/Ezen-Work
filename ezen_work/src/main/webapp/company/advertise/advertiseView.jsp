@@ -128,7 +128,7 @@
 	</table>
 	
 	<input type="button" value="목록" onclick="location.href='advertiseList.do?pg=${pg}'">
-	<input type="button" value="글수정" onclick="location.href='advertiseModify.do?num=${num}&pg=${pg}'">		
-	<input type="button" value="글삭제" onclick="location.href='advertiseDelete.do?num=${num}&pg=${pg}'">	   
+	<input type="button" value="글수정" onclick="location.href='advertiseModifyForm.do?num=${num}&pg=${pg}'">		
+	<input type="button" value="글삭제" onclick="location.href='advertiseDeleteForm.do?num=${num}&pg=${pg}'">	   
 </body>
 </html>

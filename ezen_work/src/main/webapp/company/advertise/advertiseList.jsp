@@ -19,6 +19,9 @@
 </head>
 <body>
 	<table border="1">
+			<tr>
+				<input type="button" value="신고" onclick="">
+			<tr>
 			<tr bgcolor="ffff00">
 				<th>글번호</th>
 				<th>회사사진</th>

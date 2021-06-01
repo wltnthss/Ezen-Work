@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../../script/advertise.js">
+<script type="text/javascript" src="../../script/advertiseScript.js">
 
 </script>
 </head>
@@ -99,7 +99,7 @@
 			</tr>
 			<tr>				
 				<td colspan="2" align="center">
-					<input type="submit" value="공고등록" onclick="checkWrite() return false;">
+					<input type="button" value="공고등록" onclick="checkWrite()">
 					<input type="reset" value="다시작성">
 				</td>
 			</tr>

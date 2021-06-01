@@ -23,19 +23,16 @@ public class AdvertiseDAO {
 		return sqlSession.update("mybatis.advertiseMapper.advertiseModify", dto);	
 	}
 	// 목록보기 : select
-	public List<AdvertiseDTO> advertiseList(int startNum, int endNum) {
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		map.put("startNum", startNum);
-		map.put("endNum", endNum);
-		return sqlSession.selectList("mybatis.advertiseMapper.advertiseList",map);
+	public List<AdvertiseDTO> advertiseList(String cname) {
+		return sqlSession.selectList("mybatis.advertiseMapper.advertiseList",cname);
 	}	
 	// 상세보기 : select
 	public AdvertiseDTO advertiseView(int num) {
 		return sqlSession.selectOne("mybatis.advertiseMapper.advertiseView",num);
 	}	
 	// 총 데이터 갯수 구하기
-	public int getTotalA() {
-		return sqlSession.selectOne("mybatis.advertiseMapper.getTotalA");
+	public int getTotalA(String cname) {
+		return sqlSession.selectOne("mybatis.advertiseMapper.getTotalA",cname);
 	}	
 	// 글삭제 : delete
 	public int advertiseDelete(int num) {

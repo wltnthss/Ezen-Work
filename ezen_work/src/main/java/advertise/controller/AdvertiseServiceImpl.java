@@ -22,8 +22,8 @@ public class AdvertiseServiceImpl implements AdvertiseService{
 		return dao.advertiseModify(dto);
 	}
 	@Override
-	public List<AdvertiseDTO> advertiseList(int startNum, int endNum) {
-		return dao.advertiseList(startNum, endNum);
+	public List<AdvertiseDTO> advertiseList(String cname) {
+		return dao.advertiseList(cname);
 	}
 
 	@Override
@@ -32,8 +32,8 @@ public class AdvertiseServiceImpl implements AdvertiseService{
 	}
 
 	@Override
-	public int getTotalA() {
-		return dao.getTotalA();
+	public int getTotalA(String cname) {
+		return dao.getTotalA(cname);
 	}
 
 	@Override
