@@ -18,10 +18,6 @@ public class AdvertiseServiceImpl implements AdvertiseService{
 		return dao.advertiseWrite(dto);
 	}
 	@Override
-	public AdvertiseDTO getMember(String id) {
-		return dao.getMember(id);
-	}
-	@Override
 	public int advertiseModify(AdvertiseDTO dto) {
 		return dao.advertiseModify(dto);
 	}
@@ -31,8 +27,8 @@ public class AdvertiseServiceImpl implements AdvertiseService{
 	}
 
 	@Override
-	public AdvertiseDTO advertiseView(int seq) {
-		return dao.advertiseView(seq);
+	public AdvertiseDTO advertiseView(int num) {
+		return dao.advertiseView(num);
 	}
 
 	@Override
@@ -41,8 +37,8 @@ public class AdvertiseServiceImpl implements AdvertiseService{
 	}
 
 	@Override
-	public int advertiseDelete(int seq) {
-		return dao.advertiseDelete(seq);
+	public int advertiseDelete(int num) {
+		return dao.advertiseDelete(num);
 	}
 
 }

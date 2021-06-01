@@ -89,14 +89,13 @@ public class AdvertiseController {
 	}
 	
 	//수정(데이터 읽어오기)
-	@RequestMapping(value = "/company/advertise/advertiseModify1.do")
+	@RequestMapping(value = "/company/advertise/advertiseModifyForm.do")
 	public ModelAndView memberModify(HttpServletRequest request) {
-			
-		HttpSession session = request.getSession();
+		//데이터
+		int num = Integer.parseInt(request.getParameter("num"));
+		int pg = Integer.parseInt(request.getParameter("pg"));
 		// DB
-		String cname = (String)session.getAttribute("cname");
-		// 1명 데이터 읽어오기
-		AdvertiseDTO dto = advertiseService.getMember(cname);
+		AdvertiseDTO dto = advertiseService.advertiseView(num);
 		dto.setCname(dto.getCname());
 		dto.setAd_subject(dto.getAd_subject());
 		dto.setGender(dto.getGender());
@@ -108,6 +107,8 @@ public class AdvertiseController {
 		dto.setContent(dto.getAd_content());
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("num", num);
+		modelAndView.addObject("pg", pg);
 		modelAndView.addObject("dto", dto);
 		modelAndView.setViewName("../advertise/advertiseModifyForm.jsp");
 		return modelAndView;
@@ -117,7 +118,7 @@ public class AdvertiseController {
 	public ModelAndView modify(HttpServletRequest request, HttpServletResponse response, MultipartFile image) throws Exception{
 		String filePath = request.getSession().getServletContext().getRealPath("/storage");
 		String fileName = image.getOriginalFilename();
-		
+		System.out.println(fileName);
 		// 파일 복사 : 파일 저장
 		File file = new File(filePath, fileName);
 		try {
@@ -128,6 +129,7 @@ public class AdvertiseController {
 			e.printStackTrace();
 		}
 		HttpSession session = request.getSession();
+		int num = Integer.parseInt(request.getParameter("num"));
 		String cname = (String)session.getAttribute("cname");
 		String ad_subject = request.getParameter("ad_subject");
 		String ad_num = request.getParameter("ad_num");
@@ -145,6 +147,7 @@ public class AdvertiseController {
 		
 		//DB
 		AdvertiseDTO dto = new AdvertiseDTO();
+		dto.setNum(num);
 		dto.setCname(cname);
 		dto.setImage(fileName);
 		dto.setAd_subject(ad_subject);
@@ -169,7 +172,7 @@ public class AdvertiseController {
 		}
 	
 	@RequestMapping(value = "/company/advertise/advertiseList.do")
-	public ModelAndView boardList(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView advertiseList(HttpServletRequest request, HttpServletResponse response) {
 		//데이터 처리 
 	    int pg = 1;
 	    if(request.getParameter("pg")!= null) {

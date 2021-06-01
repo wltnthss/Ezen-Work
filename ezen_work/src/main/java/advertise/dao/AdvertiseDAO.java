@@ -18,11 +18,7 @@ public class AdvertiseDAO {
 	public int advertiseWrite(AdvertiseDTO dto) {
 		return sqlSession.insert("mybatis.advertiseMapper.advertiseWrite", dto);
 	}
-	// 회원1명 데이터 확인
-	public AdvertiseDTO getMember(String id) {
-		return sqlSession.selectOne("mybatis.advertiseMapper.getMember", id);
-	}
-	//회원정보 수정
+	//공고 수정
 	public int advertiseModify(AdvertiseDTO dto) {		
 		return sqlSession.update("mybatis.advertiseMapper.advertiseModify", dto);	
 	}
@@ -34,15 +30,15 @@ public class AdvertiseDAO {
 		return sqlSession.selectList("mybatis.advertiseMapper.advertiseList",map);
 	}	
 	// 상세보기 : select
-	public AdvertiseDTO advertiseView(int seq) {
-		return sqlSession.selectOne("mybatis.advertiseMapper.advertiseView",seq);
+	public AdvertiseDTO advertiseView(int num) {
+		return sqlSession.selectOne("mybatis.advertiseMapper.advertiseView",num);
 	}	
 	// 총 데이터 갯수 구하기
 	public int getTotalA() {
 		return sqlSession.selectOne("mybatis.advertiseMapper.getTotalA");
 	}	
 	// 글삭제 : delete
-	public int advertiseDelete(int seq) {
-		return sqlSession.delete("mybatis.advertiseMapper.advertiseDelete",seq);
+	public int advertiseDelete(int num) {
+		return sqlSession.delete("mybatis.advertiseMapper.advertiseDelete",num);
 	}
 }

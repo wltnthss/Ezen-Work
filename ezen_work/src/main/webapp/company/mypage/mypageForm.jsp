@@ -16,7 +16,6 @@
 			<li><a href="../regist/deleteForm.do">회원 탈퇴</a></li>
 			<li><a href="">이력서관리</a></li>
 			<li><a href="../advertise/advertiseForm.jsp">공고등록</a></li>
-			<li><a href="../advertise/advertiseModify1.do">공고수정</a></li>
 			<li><a href="../advertise/advertiseList.do">공고목록</a></li>
 		</ul>
 	</div>
