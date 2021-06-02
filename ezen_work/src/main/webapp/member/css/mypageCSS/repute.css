@@ -1,0 +1,383 @@
+/* 알바리뷰 (person.css / personRegist.css / story.css 참조) */
+.reputeList .searchBox {height:auto;padding:35px 0 10px}
+.reputeList .searchBox>span {margin-right:7px;font-size:14px;vertical-align:middle;color:#717171}
+.reputeList .searchBox>input {vertical-align:middle}
+.reputeList .searchBox>input[type="text"] {width:165px;height:27px;padding:0 5px;margin:0;line-height:27px;border:1px solid #bbb;border-right:0 none}
+.reputeList .searchBox>input[type="submit"] {width:46px;height:29px;font:12px 'Malgun Gothic';letter-spacing:-0.1em;border:1px solid #383e52;background:#626a70;color:#fff;cursor:pointer}
+
+.reputeList .formList table th img {margin-top:2px}
+.reputeList .formList table th.cnt {width:74px}
+.reputeList .formList table th.workcomnm {width:auto}
+.reputeList .formList table th.repcnt {width:90px}
+.reputeList .formList table th.repscore {width:100px}
+.reputeList .formList table th.repscore .wrap {position:relative;font-weight:bold}
+.reputeList .formList table th.repscore .icon {display:inline-block;width:16px;height:18px;margin-top:-1px;vertical-align:top;background:url('//image.alba.kr/story/repute1.png') no-repeat -60px -118px}
+.reputeList .formList table th.repscore .markReputeHelp {left:-77px}
+.reputeList .formList table th.jobing {width:110px}
+.reputeList .formList table th.lastregymd {width:110px}
+.reputeList .formList table td {letter-spacing:0;text-align:center}
+.reputeList .formList table td.notice-tit {padding-left:20px;text-align:left}
+.reputeList .formList table td.workcomnm {padding-left:20px;letter-spacing:-1px;text-align:left}
+.reputeList .formList table td.repscore {padding-left:30px;text-align:left}
+.reputeList .formList table td.repscore .icon {display:inline-block;width:14px;height:15px;margin:2px 0 0;vertical-align:top;background:url('//image.alba.kr/story/repute1.png') no-repeat -100px -120px}
+.reputeList .formList table td.repscore .text {display:inline-block;width:22px;text-align:center}
+.reputeList .formList table td.jobing>a {font-weight:bold;font-size:13px;color:#2073f0}
+.reputeList .formList table td.jobing .icon {position:relative;top:2px;display:inline-block;width:14px;height:14px;margin:2px 5px 0 0;vertical-align:top;background:url('//image.alba.kr/story/story_v3.png') no-repeat -330px -263px}
+.reputeList .formList table td.lastregymd.recent {color:#4e92d3}
+
+/* 리뷰점수 레이어 */
+.markReputeHelp {display:none;position:absolute;top:auto;bottom:24px;left:-89px;width:172px;padding:7px 10px;border:1px solid #666;font:12px/1.3 'Malgun Gothic','AppleGothicNeoSD','Microsoft NeoGothic','Droid sans',Sans-serif;color:#666;background-color:#fff}
+.markReputeHelp>span {position:absolute;top:auto;bottom:-6px;left:50%;width:12px;height:6px;margin-left:-6px;background:url('//image.alba.kr/story/arrow_bottom.png') no-repeat 0 0}
+
+/* 리스트형 상품 */
+.reputeContent .goodsList {position:relative;width:100%;margin:0 auto}
+.reputeContent .goodsList h2 {margin:0 0 7px;font:bold 19px/1.2 'Malgun Gothic';letter-spacing:-0.1em;color:#000}
+.reputeContent .goodsList table {position:relative;width:100%;margin:0;padding:0;font-family:tahoma, 'Malgun Gothic';letter-spacing:-1px;border-top:1px solid #aaa}
+.reputeContent .goodsList table tr th {padding:9px 0 10px;padding:11px 0 8px\0;*padding:11px 0 8px;line-height:1;color:#666a5b;background-color:#f2f2f2;border-bottom:1px solid #b5b5b5}
+.reputeContent .goodsList table tr td {padding:12px 0;line-height:1;text-align:center;color:#474747;border-bottom:1px solid #e4e4e4}
+.reputeContent .goodsList table tr td.local {width:80px;padding-left:30px;font-family:'Malgun Gothic';text-align:left}
+.reputeContent .goodsList table tr td.title {width:auto;text-align:left}
+.reputeContent .goodsList table tr td.title a {overflow:hidden;display:block;margin:0 0 6px}
+.reputeContent .goodsList table tr td.title a span.company {display:block;height:auto;padding:2px 0 6px !important;font-size:13px;font-family:Malgun Gothic;background:none !important;color:#0075ab}
+.reputeContent .goodsList table tr td.title a span.company img {margin:-1px 0 0;*margin:2px 0 0}
+.reputeContent .goodsList table tr td.title a span.title {height:auto;font:15px/1.2 'Malgun Gothic';color:#000}
+.reputeContent .goodsList table tr td.title a.color span.title {color:#0040ce !important}
+.reputeContent .goodsList table tr td.title a.bold span {font-weight:bold;letter-spacing:-1px}
+.reputeContent .goodsList table tr td.title a.bg span.title {background-color:#01abce;color:#fff !important}
+.reputeContent .goodsList table tr td.title a.bg_color span.title {background-color:#01abce;color:#fff642 !important}
+.reputeContent .goodsList table tr td.title span.funcBtn {position:relative;display:inline-block;padding-top:6px}
+.reputeContent .goodsList table tr td.title a.applBtn {display:inline-block;width:auto;height:14px;height:13px\0;*height:13px;padding:4px 15px 0 20px;padding:5px 15px 0 20px\0;*padding:5px 15px 0 20px;font:11px 'Malgun Gothic';letter-spacing:-1px;vertical-align:top;color:#888;background:url('//image.alba.kr/e/goods/201505/goodsJob.png') no-repeat}
+.reputeContent .goodsList table tr td.title a.applBtn span {top:0;height:14px;padding:0;font-family:'Malgun Gothic';line-height:initial}
+.reputeContent .goodsList table tr td.title a.applBtn.scrap {background-position:-1300px -797px}
+.reputeContent .goodsList table tr td.title a.applBtn.scrap.on {background-position:-1300px -818px}
+.reputeContent .goodsList table tr td.title a.applBtn.thumbView {background-position:-1300px -839px}
+.reputeContent .goodsList table tr td.title a.applBtn.thumbView.viewchk {background-position:-1300px -861px}
+.reputeContent .goodsList table tr td.title a.applBtn.blankView {background-position:-1300px -883px}
+.reputeContent .goodsList table tr td.title span.markContract {display:inline-block;width:auto;height:13px;height:12px\0;*height:12px;margin:1px 0 0;padding:2px 5px 0;padding-top:3px\0;*padding-top:3px;font:11px 'Malgun Gothic';letter-spacing:-1px;vertical-align:top;color:#9e713b;background-color:#fff !important;border:1px solid #d9b764}
+.reputeContent .goodsList table tr td.title span.markRepute {display:inline-block;width:auto;height:13px;height:12px\0;*height:12px;margin:6px 0 0 10px;padding:2px 5px 0;padding-top:3px\0;*padding-top:3px;font:11px 'Malgun Gothic';letter-spacing:-1px;vertical-align:top;cursor:default;color:#3a7bdb;background-color:#fff !important;border:1px solid #69a4fb}
+.reputeContent .goodsList table tr td.data {width:90px;padding-left:60px;font:12px/1.8 'Malgun Gothic';text-align:left;color:#474747}
+.reputeContent .goodsList table tr td.data span {font-family:'Malgun Gothic'}
+.reputeContent .goodsList table tr td.data .time {letter-spacing:0}
+.reputeContent .goodsList table tr td.summaryView {width:36px}
+.reputeContent .goodsList table tr td.summaryView a {position:relative;display:block;width:36px;height:16px}
+.reputeContent .goodsList table tr td.summaryView span {position:absolute;top:0;left:2px;width:36px;height:16px;text-indent:-999em;cursor:pointer;background:url('//image.alba.kr/e/goods/201505/goodsJob.png') no-repeat -496px -930px}
+.reputeContent .goodsList table tr td.summaryView span.viewchk {background-position:-537px -930px}
+.reputeContent .goodsList table tr td.sex {width:28px}
+.reputeContent .goodsList table tr td.sex span {overflow:hidden;display:inline-block;width:15px;height:16px;line-height:999em;vertical-align:top;background:url('//image.alba.kr/e/goods/201505/goodsJob.png') no-repeat}
+.reputeContent .goodsList table tr td.sex span.man {background-position:-436px -930px}
+.reputeContent .goodsList table tr td.sex span.woman {background-position:-456px -930px}
+.reputeContent .goodsList table tr td.sex span.both {background-position:-476px -930px}
+.reputeContent .goodsList table tr td.company {width:100px;padding-left:8px;text-align:left}
+.reputeContent .goodsList table tr td.company a {color:#738841}
+.reputeContent .goodsList table tr td.time {width:68px}
+.reputeContent .goodsList table tr td.time span {position:relative\9;top:1px\9}
+.reputeContent .goodsList table tr td.pay {width:70px;padding-right:35px;font:14px/1.8 tahoma;text-align:right}
+.reputeContent .goodsList table tr td.pay span.payIcon {position:relative;font:0/0 'Malgun Gothic';color:transparent}
+.reputeContent .goodsList table tr td.regDate {width:90px;font-family:tahoma}
+.reputeContent .goodsList table tr td.regDate strong {font:normal 12px 'Malgun Gothic'}
+.reputeContent .goodsList table tr td.title a:visited span.title {color:#999}
+.reputeContent .goodsList table tr.divide td {border-bottom:1px solid #a9a9a9}
+.reputeContent .goodsList table tr.on td {padding-top:14px;border-top:2px solid #67a9d3;background-color:#eafaff !important}
+.reputeContent .goodsList table tr.on td.title {padding-top:10px}
+.reputeContent .goodsList table tr.on td.first {width:80px;padding-left:13px;padding-right:5px;border-left:2px solid #67a9d3} 
+.reputeContent .goodsList table tr.on td.last {width:70px;padding-right:8px;border-right:2px solid #67a9d3}
+.reputeContent .goodsList table tr.on td.last.regDate {width:66px;padding-right:0;padding-left:2px}
+.reputeContent .goodsList table tr.summaryView td {padding:0;border:2px solid #67a9d3;border-top:0 none}
+.reputeContent .goodsList table tr:hover td,
+.reputeContent .goodsList table tr.listImpact:hover td {background-color:#f2fdff !important}
+
+/* 리스트형 급여 옵션 */
+.goodsList table tr td.pay span.payIcon {font-size:13px !important;line-height:1.5}
+.goodsList .pay>.payIcon {position:relative;*top:-1px;overflow:hidden;display:inline-block}
+.goodsList .pay>.payIcon.hour {color:#4c93ac}
+.goodsList .pay>.payIcon.day {color:#59ab4b}
+.goodsList .pay>.payIcon.week {color:#5a74f1}
+.goodsList .pay>.payIcon.month {color:#cb7c1b}
+.goodsList .pay>.payIcon.year {color:#8c6ae7}
+.goodsList .pay>.payIcon.count {color:#e47852}
+.goodsList .pay>.payIcon.talk,
+.goodsList .pay>.payIcon.rule {color:#222}
+.goodsList .pay>.number {margin-left:1px;letter-spacing:0}
+
+/* 알바리뷰 - 작성하기 (person.css 참조)*/
+.reputeWrite {z-index:1000;position:fixed;left:50%;top:50%;width:1038px;height:75px;padding-left:32px;margin:-38px 0 0 -535px;background:#e9f4fc}
+.reputeWrite::after {content:"";display:block;clear:both}
+.reputeWrite>p {float:left;margin:23px 15px 0 0;font:bold 20px 'Malgun Gothic';letter-spacing:-0.12em;color:#185cc2}
+.reputeWrite>ul {overflow:hidden;padding-top:17px}
+.reputeWrite>ul.career {padding-top:28px}
+.reputeWrite>ul>li {position:relative;padding:0 0 0 6px;font-size:14px;letter-spacing:-0.1em;color:#3f72ce}
+.reputeWrite>ul>li:first-child {margin-bottom:5px}
+.reputeWrite>ul>li>.square {position:absolute;left:0;top:50%;width:2px;height:2px;margin-top:-1px;background:#185cc2}
+.reputeWrite>.reputeWrite-btn {position:absolute;right:0;top:0;width:206px;height:50px;padding-top:25px;font:bold 20px 'Malgun Gothic';letter-spacing:-0.12em;text-align:center;color:#fff;background:#185cc2}
+.reputeWrite>.reputeWrite-btn>span {position:relative;top:9px;display:inline-block;width:7px;height:10px;margin-left:6px;vertical-align:top;background:url('//image.alba.kr/story/story_v3.png') no-repeat -348px -263px}
+.reputeWrite-close {position:absolute;top:10px;right:15px;width:29px;height:28px;font:0\0 'Malgun Gothic' !important;color:transparent !important;background:url('//image.alba.kr/story/repute1.png') no-repeat -100px 0}
+#PersonMain .reputeWrite ,
+#ReputeList .reputeWrite {position:relative;left:auto;top:auto;margin:0}
+
+.reputeWriteList {position:relative}
+.reputeWriteList-guide {padding:26px 0 12px;font-size:18px}
+.reputeWriteList-slider {overflow:hidden;width:1010px;height:88px;padding:30px;background-color:#f5f7fa}
+.reputeWriteList-wrap {position:relative}
+.reputeWriteList-list>li {position:relative;float:left;display:inline;width:335px;height:68px;margin-left:10px;padding:20px 135px 0 30px;background-color:#fff}
+.reputeWriteList-list>li:first-child {margin-left:0}
+.reputeWriteList-list>li>.comnm {overflow:hidden;display:block;margin:0 0 4px;font-size:18px;text-overflow:ellipsis;white-space:nowrap}
+.reputeWriteList-list>li>.workCareer {font-size:15px;color:#666}
+.reputeWriteList-list>li>.write {position:absolute;top:25px;right:30px;width:104px;height:38px;font-size:18px;line-height:38px;text-align:center;color:#fff;background-color:#5b79fe}
+.reputeWriteList-list>li.noInfo {width:500px;height:88px;padding:0}
+.reputeWriteList-list>li.noInfo>a {display:block;height:88px;font-size:18px;line-height:88px;text-align:center;color:#666}
+.reputeWriteList-paging {position:absolute;top:auto;bottom:11px;left:0;width:100%;text-align:center}
+.reputeWriteList-paging>.btn_page {display:inline-block;width:6px;height:6px;margin:0 4px;font-size:0;color:transparent;background-color:#c9cdd0;border-radius:50%}
+.reputeWriteList-paging>.btn_page.on {background-color:#626a70}
+.reputeWriteList-paging>.btn_prev {position:absolute;top:auto;bottom:48px;left:17px;width:15px;height:28px;font:0\0 'Malgun Gothic';color:transparent;background:url('//image.alba.kr/story/repute1.png') no-repeat 0 0}
+.reputeWriteList-paging>.btn_next {position:absolute;top:auto;bottom:48px;right:17px;width:15px;height:28px;font:0\0 'Malgun Gothic';color:transparent;background:url('//image.alba.kr/story/repute1.png') no-repeat -20px 0}
+.reputeWriteList-close {position:absolute;top:-40px;right:0;width:27px;height:27px;font:0\0 'Malgun Gothic' !important;color:transparent !important;background:url('//image.alba.kr/story/repute1.png') no-repeat -101px -88px}
+#ReputeDetailList .reputeWriteList {z-index:9999;position:fixed;top:50%;left:50%;margin:-87px 0 0 -535px}
+#PersonMain .reputeWriteList-close,
+#ReputeList .reputeWriteList-close {display:none}
+
+/* 알바리뷰 - 상세보기 */
+.reputeDetailCompany {width:1070px;margin:0 0 20px}
+.reputeDetailCompany:after {content:"";clear:both;display:block}
+.reputeDetailCompany-name {position:relative;float:left;width:768px;height:71px;padding-left:172px;background-color:#464a56}
+.reputeDetailCompany-name.no-logo {width:910px;padding:0 0 0 30px}
+.reputeDetailCompany-name>.logoUrl {position:absolute;top:5px;left:5px;width:150px;height:51px;padding:5px 0;text-align:center;background-color:#fff}
+.reputeDetailCompany-name>.logoUrl>img {width:128px;height:51px}
+.reputeDetailCompany-name>.workcomnm {font-weight:bold;font-size:20px;line-height:71px;color:#fff}
+.reputeDetailCompany-name>.addr {float:right;padding-right:25px;font-size:14px;line-height:71px;color:#c8cee0}
+.reputeDetailCompany-name>.addr>.map {display:inline-block;width:60px;height:20px;font-size:13px;line-height:20px;text-align:center;color:#c8cee0;background-color:#73798a;border-bottom:1px solid #33363e}
+.reputeDetailCompany-name>.gbnRepute {position:absolute;top:23px;right:35px;font-size:16px;color:#cdcdcd}
+.reputeDetailCompany-name>.gbnRepute .icon {display:inline-block;width:16px;height:17px;margin-top:4px;vertical-align:top;background:url('//image.alba.kr/story/repute1.png') no-repeat}
+.reputeDetailCompany-name>.gbnRepute .cntRepute .icon {background-position:-40px -118px}
+.reputeDetailCompany-name>.gbnRepute .scoreRepute {position:relative;margin-left:20px}
+.reputeDetailCompany-name>.gbnRepute .scoreRepute .icon {background-position:-80px -118px}
+.reputeDetailCompany-name>.gbnRepute em {font-weight:bold;letter-spacing:0;color:#fff}
+.reputeDetailCompany-state {float:right;width:126px;height:71px;font-size:16px;line-height:71px;text-align:center;color:#fff;background-color:#185cc2}
+.reputeDetailCompany-state.no-data {background-color:#76809b}
+.reputeDetailCompany-state>a {color:#fff}
+.reputeDetailCompany-state>a>span {display:inline-block;width:15px;height:15px;margin:-3px 5px 0 0;vertical-align:middle;background:url('//image.alba.kr/story/repute1.png') no-repeat -40px 0}
+
+.reputeDetailHead {position:relative;padding:20px 0 0}
+.reputeDetailHead__h2 {padding-bottom:8px;font:bold 18px 'Malgun Gothic';letter-spacing:-1px;border-bottom:2px solid #000}
+.reputeDetailHead__cnt {position:absolute;top:22px;right:0}
+.reputeDetailHead__cnt>span {position:relative;display:inline-block;margin-left:10px;font:15px 'Malgun Gothic';letter-spacing:-1px;color:#333}
+.reputeDetailHead__cnt>span em {font-weight:bold;color:#185cc2}
+.reputeDetailHead__cnt>span .icon {display:inline-block;width:16px;height:18px;margin-top:3px;vertical-align:top;background:url('//image.alba.kr/story/repute1.png') no-repeat}
+.reputeDetailHead__cnt>span.count .icon {background-position:0 -119px}
+.reputeDetailHead__cnt>span.score .icon {background-position:-60px -118px}
+.reputeDetailHead__guide {padding:8px 5px}
+.reputeDetailHead__guide>li {font:13px/1.4 'Malgun Gothic';letter-spacing:-1px;color:#999}
+.reputeDetailHead__view {position:absolute;top:auto;right:0;bottom:14px;width:113px;height:20px;padding:3px 0 0;margin-left:10px;border:1px solid #dcdcdc;font:12px/1.4 'Malgun Gothic';letter-spacing:-1px;text-align:center;color:#999 !important}
+.reputeDetailHead__view>span {position:relative;top:-1px;display:inline-block;width:4px;height:5px;vertical-align:middle;background:url('//image.alba.kr/story/repute1.png') no-repeat -85px -19px}
+
+.reputeDetailList-list {border-top:1px solid #ddd}
+.reputeDetailList-list>li {position:relative;padding:0 0 20px;border-bottom:1px solid #ddd}
+.reputeDetailList-list-head {overflow:hidden;width:1010px;margin:0 0 20px;padding:15px 30px;background-color:#f8f8f8}
+.reputeDetailList-list-head>span {font-family:'Malgun Gothic'}
+.reputeDetailList-list-head>.workCareer {float:left;width:800px;margin:0 0 5px;font-size:18px;color:#333}
+.reputeDetailList-list-head>.workCareer>strong {font-weight:normal;color:#185cc2}
+.reputeDetailList-list-head>.duty {float:left;width:800px;font-size:14px;color:#888}
+.reputeDetailList-list-head>.duty>em {margin-left:5px;color:#333}
+.reputeDetailList-list-head>.regDt {float:right;width:200px;font-size:14px;letter-spacing:0;text-align:right;color:#999}
+.reputeDetailList-list-head>.notify {float:right;width:200px;text-align:right}
+.reputeDetailList-list-head>.notify>a {font-size:14px;color:#999}
+.reputeDetailList-list-head>.notify>a>span {display:inline-block;width:14px;height:10px;margin:-3px 5px 0 0;vertical-align:middle;background:url('//image.alba.kr/story/repute1.png') no-repeat -60px 0}
+
+.reputeDetailList-list-content {overflow:hidden;width:1070px}
+.reputeDetailList-list-dl {float:left;width:850px;font-family:'Malgun Gothic'}
+.reputeDetailList-list-dl>dt {clear:both;float:left;width:102px;padding:5px 0 0 28px;font-size:16px;color:#333}
+.reputeDetailList-list-dl>dt>span {display:inline-block;margin-top:-5px;font-size:11px;vertical-align:middle;color:#185cc2}
+.reputeDetailList-list-dl>dd {float:right;width:720px;padding-bottom:10px}
+.reputeDetailList-list-dl>dd>em {display:inline-block;height:30px;margin:0 5px 5px 0;padding:0 10px;font-size:16px;line-height:30px}
+.reputeDetailList-list-dl>dd>em.positive {background-color:#e9f4fc;color:#185cc2}
+.reputeDetailList-list-dl>dd>em.negative {background-color:#f2f2f2;color:#888}
+.reputeDetailList-list-ul {float:right;display:inline;width:180px;margin-right:28px}
+.reputeDetailList-list-ul>.likecnt {width:95px;height:76px;margin:0 0 20px 85px;padding:10px 0 0;text-align:center;background:url('//image.alba.kr/story/repute1.png') no-repeat 0 -30px}
+.reputeDetailList-list-ul>.likecnt>em {display:block;font-weight:bold;font-size:40px;font-family:'Malgun Gothic';letter-spacing:-1px;text-align:center;color:#185cc2}
+.reputeDetailList-list-ul>.likecnt>span {display:inline-block;height:27px;padding:0 15px;font-size:14px;line-height:27px;font-family:'Malgun Gothic';color:#fff;background-color:#185cc2;border-radius:13px}
+.reputeDetailList-list-ul.blind>.likecnt {margin-bottom:60px}
+.reputeDetailList-list-ul>.recomcnt {height:28px}
+.reputeDetailList-list-ul>.recomcnt>a {position:absolute;top:auto;bottom:20px;right:28px;width:180px;height:26px;line-height:26px;text-align:center;color:#999;border:1px solid #ddd}
+.reputeDetailList-list-ul>.recomcnt>a:hover {text-decoration:none}
+.reputeDetailList-list-ul>.recomcnt>a>.text {padding-right:10px;margin-right:6px;font-family:'Malgun Gothic';letter-spacing:-1px;border-right:1px solid #ddd}
+.reputeDetailList-list-ul>.recomcnt>a>.icon {display:inline-block;width:17px;height:14px;margin:-3px 4px 0 0;vertical-align:middle;background:url('//image.alba.kr/story/repute1.png') no-repeat -80px 0}
+.reputeDetailList-list-ul>.recomcnt>a.on>.icon {background-position:-126px -120px}
+.reputeDetailList-list-ul>.recomcnt>a>em {color:#333}
+body.registStep .reputeDetailList-list-content {width:768px;padding:20px 0 0}
+body.registStep .reputeDetailList-list-dl {width:660px}
+body.registStep .reputeDetailList-list-dl>dt {padding-left:0}
+body.registStep .reputeDetailList-list-dl>dd {width:558px}
+body.registStep .reputeDetailList-list-ul {width:95px;margin-right:0}
+body.registStep .reputeDetailList-list-ul>.likecnt {margin:0;padding:10px 0}
+
+.reputeDetailList-list-view {position:absolute;top:77px;left:0;width:100%;padding:40px 0;background:url('//image.alba.kr/story/repute_blind.png') no-repeat 0 0}
+.reputeDetailList-list-view>a {display:block;width:325px;height:50px;margin:0 auto 5px;font-size:16px;line-height:50px;font-family:'Malgun Gothic';letter-spacing:-1px;text-align:center;color:#fff;background-color:#185cc2}
+.reputeDetailList-list-view>a.point {background-color:#888}
+
+/* 알바리뷰 레이어 */
+#ReputationLayer {z-index:9999;position:fixed;left:50%;top:50%;width:850px;max-height:700px;margin:-350px 0 0 -535px;background-color:#fff;border:1px solid #333230}
+#ReputationLayer .reputeContent {overflow-y:auto;z-index:9999;position:relative;max-height:700px;background:#fff}
+#ReputationLayer .reputeHead {position:relative;height:45px;padding:15px 0 0 20px;background:#464a56}
+#ReputationLayer .reputeHead h1 {width:auto;font:bold 19px 'Malgun Gothic';color:#fff;text-indent:0;background:none}
+#ReputationLayer .reputeHead a {position:absolute;top:13px}
+#ReputationLayer .reputeHead a.closeBtn {right:13px;width:29px;height:29px;font:0/0 'Malgun Gothic';color:transparent;background:url('//image.alba.kr/person/newRegist_bg.png') no-repeat -244px -63px}
+#ReputationLayer .reputeInfo {z-index:1;position:relative;padding:0 30px}
+#ReputationLayer .reputeInfo-text>ul {padding:30px 0 10px}
+#ReputationLayer .reputeInfo-text>ul>li {position:relative;padding-left:10px;margin-top:8px;color:#878787}
+#ReputationLayer .reputeInfo-text>ul>li:first-child {margin-top:0}
+#ReputationLayer .reputeInfo-text>ul>li>em {color:#343434}
+#ReputationLayer .reputeInfo-text>ul>li>strong {font-weight:normal;color:#ff5500}
+#ReputationLayer .reputeInfo-text>ul>li>.square {position:absolute;left:0;top:8px;width:2px;height:2px;background:#888}
+#ReputationLayer .reputeInfo-btn {overflow:hidden}
+#ReputationLayer .reputeInfo-btn>a {float:left;display:block;width:148px;height:28px;margin-right:5px;line-height:28px;text-align:center;border:1px solid #bbb;border-bottom:1px solid #868686}
+#ReputationLayer .reputeInfo-btn>a.reputeInfo-btnHistory {background:#34a6fe;border:1px solid #198ee8;color:#fff}
+#ReputationLayer .reputeInfo-btn>a.reputeInfo-btnHistory>span {position:relative;top:11px;display:inline-block;width:9px;height:6px;vertical-align:top;background:url('//image.alba.kr/person/newRegist_bg.png') no-repeat -245px -168px}
+#ReputationLayer .reputeInfo-btn>a.reputeInfo-btnHistory.on>span {background-position:-245px -192px}
+#ReputationLayer .reputeItem {position:relative;padding:10px 30px 15px;margin-top:-24px}
+#ReputationLayer .reputeItem-count {display:block;padding-bottom:10px;font:12px 'Malgun Gothic';text-align:right}
+#ReputationLayer .reputeItem-count>.num {letter-spacing:0}
+#ReputationLayer .reputeItem-count>.num>#selcnt {font-weight:bold;color:#1f75ee}
+#ReputationLayer .reputeItem-list {overflow:hidden;width:100%;border-top:2px solid #444;border-bottom:1px solid #444}
+#ReputationLayer .reputeItem-list th {width:80px;font-weight:normal;background-color:#eee;border-top:1px solid #ddd}
+#ReputationLayer .reputeItem-list td {width:auto;padding:12px 5px 12px 12px;border-top:1px solid #ddd}
+#ReputationLayer .reputeItem-list tr:first-child>th,
+#ReputationLayer .reputeItem-list tr:first-child>td {border-top:0 none}
+#ReputationLayer .reputeItem-list td>.input {float:left;width:25%;margin:0}
+#ReputationLayer .reputeItem-select {overflow:hidden;width:100%;padding:18px 0;border-bottom:1px solid #969798}
+#ReputationLayer .reputeItem-select>dt {float:left;width:80px;padding-top:6px;text-align:center}
+#ReputationLayer .reputeItem-select>dt.kind {margin-left:50px}
+#ReputationLayer .reputeItem-select>dd {float:left}
+#ReputationLayer .reputeItem-select>dd>select {width:130px;height:29px;border:1px solid #bbb;padding-left:10px;line-height:28px}
+#ReputationLayer .reputeItem-description {padding:14px 0;font:12px 'Malgun Gothic';color:#898989}
+#ReputationLayer .reputeItem-descriptionBtn {display:block;width:118px;height:28px;line-height:28px;text-align:center;border:1px solid #188ee8;background:#34a6fe;color:#fff}
+#ReputationLayer .reputeItem-descriptionBtn>span {position:relative;top:11px;display:inline-block;width:9px;height:6px;vertical-align:top;background:url('//image.alba.kr/person/newRegist_bg.png') no-repeat -245px -168px}
+#ReputationLayer .reputeItem-descriptionBtn.on>span {background-position:-245px -192px}
+#ReputationLayer .reputeBtnArea {position:relative;height:45px;padding-top:16px;margin-top:38px;text-align:center;border-top:1px solid #dcdcdc;background:#fbfbfb}
+#ReputationLayer .reputeBtnArea>a {display:inline-block;width:65px;height:28px;line-height:28px;text-align:center;border:1px solid #bcbcbc;background:#fff;color:#000}
+#ReputationLayer .reputeBtnArea>a.save {border-color:#52575b;background:#52575b;color:#fff}
+#ReputationLayer .reputeBtnArea.reputeBtnLike {margin-top:0}
+
+/* 알바리뷰 레이어 - 채용공고 */
+#ReputeJobListLayer {z-index:9998;position:fixed;left:50%;top:50%;width:808px;height:452px;margin:-226px 0 0 -405px;border:1px solid #333;background:#fff}
+#ReputeJobListLayer .reputeJobListLayer-head {position:relative;height:45px;padding:15px 0 0 20px;background:#464a56}
+#ReputeJobListLayer .reputeJobListLayer-head h1 {font:bold 19px 'Malgun Gothic';color:#fff}
+#ReputeJobListLayer .reputeJobListLayer-head a {position:absolute;top:13px}
+#ReputeJobListLayer .reputeJobListLayer-head a.closeBtn {right:13px;width:29px;height:29px;font:0/0 'Malgun Gothic';color:transparent;background:url('//image.alba.kr/person/newRegist_bg.png') no-repeat -244px -63px}
+#ReputeJobListLayer .reputeJobListLayer-list {overflow:hidden;position:relative;height:213px;padding:20px}
+#ReputeJobListLayer .reputeJobListLayer-btn {position:relative;height:45px;padding-top:16px;text-align:center;border-top:1px solid #dcdcdc;background:#fbfbfb}
+#ReputeJobListLayer .reputeJobListLayer-btn>a {display:inline-block;width:65px;height:28px;line-height:28px;text-align:center;border:1px solid #52575b;background:#52575b;color:#fff}
+#ReputeJobListLayer .goodsList.goodsJob {overflow-y:scroll;height:330px}
+
+/* 알바리뷰 레이어 -  내가 작성한 평판 */
+.reputeState {overflow:hidden;padding:20px 30px}
+.reputeState-write {padding:0 0 18px;text-align:right;color:#888}
+.reputeState-like {float:left;width:95px;height:80px;padding-top:6px;font-size:42px;font-weight:bold;text-align:center;margin-right:20px;background:url('//image.alba.kr/person/newRegist_bg.png') no-repeat -59px -214px;color:#185cc2}
+.reputeState-word {overflow:hidden}
+.reputeState-word>span {display:inline-block;padding:6px 12px;margin-left:5px}
+.reputeState-word>span:first-child {margin-left:0}
+.reputeState-word-positive {background:#e9f4fc;color:#185cc2}
+.reputeState-word-negative {background:#f2f2f2;color:#888}
+
+/* 알바리뷰 레이어 - 작성이력 */
+#MyReputeHistory {padding:0 30px 40px}
+#MyReputeHistory .reputeHistory-count {padding:14px 0 6px}
+#MyReputeHistory .reputeHistory-count>span {font-weight:bold;color:#1f74f1}
+#MyReputeHistory .reputeHistory-list {overflow:hidden;width:100%}
+#MyReputeHistory .reputeHistory-list>li {float:left;height:34px;line-height:34px;text-align:center}
+#MyReputeHistory .reputeHistory-list>li.number {width:82px}
+#MyReputeHistory .reputeHistory-list>li.company {width:336px}
+#MyReputeHistory .reputeHistory-list>li.regDate {width:200px;letter-spacing:0}
+#MyReputeHistory .reputeHistory-list>li.point {width:150px}
+#MyReputeHistory .reputeHistory-list>li.noInfo {float:none;width:auto}
+#MyReputeHistory .reputeHistory-list.reputeHistory-log {overflow-y:auto;max-height:170px;border-bottom:1px solid #979797}
+#MyReputeHistory .reputeHistory-list.reputeHistory-head>li {height:40px;font-weight:bold;line-height:40px;border-top:2px solid #444;border-bottom:1px solid #979797;background:#fbfbfb}
+
+/* 알바리뷰 레이어 - 문장추가 */
+#ReputeTagRequest {position:relative;padding:0 30px}
+#ReputeTagRequest>form {padding:12px 0 16px;border-top:2px solid #444;border-bottom:1px solid #979797}
+#ReputeTagRequest .ReputeTagRequest-tip>li {position:relative;padding-left:10px;color:#888}
+#ReputeTagRequest .ReputeTagRequest-tip>li:first-child {margin-bottom:6px}
+#ReputeTagRequest .ReputeTagRequest-tip>li>.square {position:absolute;left:0;top:8px;width:2px;height:2px;background:#888}
+#ReputeTagRequest #TagInputBox {margin-top:12px}
+#ReputeTagRequest #TagInputBox input[type="text"] {width:130px;height:26px}
+#ReputeTagRequest #TagInputBox .action {display:inline-block;width:68px;height:28px;font:12px/28px 'Malgun Gothic';text-align:center;border:1px solid #52575b;background:#52575b;color:#fff}
+#ReputeTagRequest #TagInputBox .tagInputBox-write {display:inline-block;margin-right:8px}
+#ReputeTagRequest #TagInputBox .tagInputBox-write>.action {border:1px solid #bcbcbc;border-bottom:1px solid #868686;background:#fff;color:#000}
+
+/* 레이어 Form */
+.layerPop-h1 {height:60px;padding-left:25px;font-weight:bold;font-size:20px;line-height:60px;color:#fff;background-color:#464a56;background-image:none}
+.layerPop-wrap {padding:30px 30px 87px}
+.layerPop-action {position:absolute;top:auto;bottom:0;width:100%;padding:14px 0 17px;text-align:center;background-color:#fbfbfb;border-top:1px solid #dcdcdc}
+.layerPop-action>a {display:inline-block;height:28px;padding:0 20px;line-height:28px;color:#333;background-color:#fff;border:1px solid #bbb;border-bottom-color:#868686}
+.layerPop-action>a.strong {color:#fff;background-color:#52575c;border-color:#52575c}
+.layerPop-close {position:absolute;top:13px;right:13px;width:29px;height:29px}
+.layerPop-close>a {display:block;height:29px;font:0/0 'Malgun Gothic';color:transparent;background:url('//image.alba.kr/story/repute1.png') no-repeat -100px -30px}
+
+/* 레이어 - 알바포인트 사용 */
+.reputeAlbaPoint {z-index:9999;position:fixed;left:50%;top:50%;width:368px;margin:-150px 0 0 -185px;background-color:#fff;border:1px solid #333}
+.reputeAlbaPoint-who {margin:0 0 15px;font-size:14px;color:#888}
+.reputeAlbaPoint-who>strong {font-weight:normal;color:#333}
+.reputeAlbaPoint-alpo {height:60px;margin:0 0 15px;padding:0 35px 0 18px;font-size:14px;line-height:60px;color:#333;background-color:#fdfbea}
+.reputeAlbaPoint-alpo>span {display:inline-block;width:28px;height:28px;margin-top:-3px;font:0/0 'Malgun Gothic';vertical-align:middle;color:transparent;background:url('//image.alba.kr/story/repute1.png') no-repeat -100px -60px}
+.reputeAlbaPoint-alpo>strong {float:right;font-size:32px}
+.reputeAlbaPoint-guide {font-size:14px;line-height:1.4;text-align:center;letter-spacing:-1px;color:#888}
+.reputeAlbaPoint-guide>strong {font-weight:normal;color:#333}
+.reputeAlbaPoint-guide>strong>em {letter-spacing:0;color:#ff5c6b}
+
+/* 레이어 - 평판 신고 */
+.reputeReportPopup-guide {margin:0 0 13px}
+.reputeReportPopup-guide>li {position:relative;padding-left:8px;font-size:14px;line-height:1.5;color:#888}
+.reputeReportPopup-guide>li>strong {font-weight:normal;color:#ff5c6b}
+.reputeReportPopup-guide>li>em {color:#333}
+.reputeReportPopup-guide>li>span {position:absolute;top:-1px;left:0;font-weight:bold}
+
+.reputeReportPopup-write {width:100%;border-top:2px solid #444;border-bottom:1px solid #969798}
+.reputeReportPopup-write th {width:118px;padding-left:17px;font-weight:normal;font-size:14px;text-align:left;color:#888;background-color:#f8f8f8;border-top:1px solid #ddd}
+.reputeReportPopup-write th>em {color:#ff5c6b}
+.reputeReportPopup-write td {width:auto;padding:5px 0 5px 17px;font-size:14px;color:#333;border-top:1px solid #ddd}
+.reputeReportPopup-write td>input {width:230px;height:28px;padding:0 15px;line-height:28px;border:1px solid #bbb}
+.reputeReportPopup-write td>textarea {width:355px;height:100px;padding:5px 15px;line-height:1.4;border:1px solid #bbb}
+.reputeReportPopup-write tr:first-child>th,
+.reputeReportPopup-write tr:first-child>td {border-top:0 none}
+.reputeReportPopup-write .workcomnm>td {padding-top:12px;padding-bottom:11px;color:#185cc2}
+.reputeReportPopup-write .htel>td>input {width:77px;padding:0;text-align:center}
+
+/* 레이어 - 알바리뷰 작성*/
+.layerReputeWrite {z-index:9999;position:fixed;left:50%;top:50%;width:368px;height:auto;padding:0;margin:-150px 0 0 -185px;background-color:#fff;border:1px solid #333}
+
+/* 팝업창 - 평판 개인정보 약관 */
+.reputeReportPopup .layerPop-wrap {padding:30px}
+.reputeReportPopup .agree-area {position:relative}
+.reputeReportPopup .agree-title {font-weight:bold;padding:20px 0 10px}
+.reputeReportPopup .agree-cont>p {padding:3px 0 2px}
+.reputeReportPopup .agree-area>.input {display:block;padding:10px 0;text-align:center}
+.reputeReportPopup .layerPop-action {position:static}
+
+.reputeListBtn {padding-top:20px}
+
+/* 알바포인트 */
+#ReputeAlbaPoint .layerPop-h1 {width:auto;height:60px;margin:0;padding-left:25px;text-indent:0;background:#464a56;background-image:none}
+
+/* 알바리뷰 리스트 카운트 */
+.listTop {top:-32px}
+.listTop p.total>span {font-size:14px;color:#333}
+.listTop p.total>span>span {display:inline-block;width:16px;height:15px;margin-top:4px;vertical-align:top;background:url('//image.alba.kr/story/repute1.png') no-repeat}
+.listTop p.total>span.cntRepute>span {background-position:0 -120px}
+.listTop p.total>span.cntCompany {margin-left:15px}
+.listTop p.total>span.cntCompany>span {background-position:-20px -120px}
+.listTop p.total em {font-weight:bold;color:#185bc3}
+
+/* 주요 태그별 리뷰 */
+.repute-select {overflow:hidden;position:relative;width:1070px;margin:55px 0 0}
+.repute-select__h2 {margin:0 0 15px;padding-left:12px;font-size:26px;letter-spacing:-0.1em;color:#333}
+.repute-select__list {width:2004px;height:80px;padding:0 34px;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+.repute-select__list>li {float:left;width:167px;height:80px;font-size:18px;line-height:1.3;text-align:center;background-color:#fff}
+.repute-select__list>li a {display:block;height:66px;padding-top:14px;text-decoration:none}
+.repute-select__list>li a:hover {font-weight:bold}
+.repute-select__list>li em {color:#195cc4}
+.repute-select__list>li.on a {height:63px;font-weight:bold;border-bottom:3px solid #195cc4}
+.repute-select-btn {position:absolute;top:auto;bottom:1px;width:34px;height:49px;padding-top:31px;text-align:center;font:0/0 'Malgun Gothic';color:transparent;background-color:#fff}
+.repute-select-btn>span {display:inline-block;width:10px;height:17px;background:url('//image.alba.kr/story/repute1.png') no-repeat}
+.repute-select-prev {left:0}
+.repute-select-prev>span {background-position:-134px 0}
+.repute-select-next {right:0}
+.repute-select-next>span {background-position:-134px -22px}
