@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import member.bean.MemberDTO;
+import resume.bean.ResumeDTO;
 
 @Controller
 public class MemberController {
@@ -174,12 +175,13 @@ public class MemberController {
 		HttpSession session = request.getSession();
 		// DB
 		String id = (String)session.getAttribute("memId");
-		String name = request.getParameter("name");
 		// 1명 데이터 읽어오기
 		MemberDTO dto = memberservice.getMember(id);
+		ResumeDTO dto1 = memberservice.getResume(id);
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("dto", dto);
+		modelAndView.addObject("dto1", dto1);
 		modelAndView.setViewName("mypageindex.jsp");
 		System.out.println(id);
 		return modelAndView;		

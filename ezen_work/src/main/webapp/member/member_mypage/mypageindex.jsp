@@ -57,7 +57,7 @@
 		<div class="person-head__who">
 			<div class="person-head__who-photo">
 				<div class="who-photo__picture" id="idmainresumephoto">
-					<img src="//image.alba.kr/person/profile_no_male.png" id="resumephoto" alt="">
+					<img src="../../storage/${dto1.image }" id="resumephoto" alt="">
 				</div>
 				<div class="who-photo__action">
 					<!-- 사진없을 때 -->
@@ -84,8 +84,8 @@
 			<li class="person-head__state-item--resume">				
 					<a class="state-item__link state-item__link--Y" href="/resume/Detail.asp?adid=5035210">
 						<span class="state-item__link-icon"><span></span></span>
-						<span class="state-item__link-title">알바지원합니다.</span>
-						<span class="state-item__link-date">작성일 <em>2013-12-25</em></span>
+						<span class="state-item__link-title">${dto1.title }</span>
+						<span class="state-item__link-date">작성일 <em>${dto1.logtime }</em></span>
 					</a>
 			</li>
 		</ul>
@@ -112,7 +112,21 @@
 						<th scope="col" class="mag">이력서 관리</th>
 					</tr>
 				</thead>
-				<tbody><tr class="default"> 	<td class="title">  <a href="/resume/Detail.asp?adid=5035210">알바지원합니다.</a></td> 	<td class="date">2013-12-25</td> 	<td class="count">1</td> 	<td class="mag">		<a class="button-type" href="../member_resume/resumeModifyForm.jsp">수정</a> 	</tr> </tbody>
+				<tbody>
+					<tr class="default"> 	
+						<td class="title">  
+							<a href="/resume/Detail.asp?adid=5035210">${dto1.title }</a>
+						</td> 	
+						<td class="date">
+							${dto1.logtime }
+						</td> 	
+						<td class="count">
+							${dto1.opencount }
+						</td> 	
+						<td class="mag">		
+						<a class="button-type" href="../member_resume/resumeModifyForm.jsp">수정</a> 	
+					</tr> 
+				</tbody>
 			</table>
 			<a href="../member_resume/resumeManageForm.jsp" class="moreBtn">내 이력서 더보기<span></span></a>
 		</div>

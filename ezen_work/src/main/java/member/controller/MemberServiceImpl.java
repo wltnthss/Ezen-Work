@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import member.bean.MemberDTO;
 import member.dao.MemberDAO;
+import resume.bean.ResumeDTO;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -35,5 +36,10 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public int modify(MemberDTO dto) {
 		return dao.modify(dto);
+	}
+
+	@Override
+	public ResumeDTO getResume(String id) {
+		return dao.getResume(id);
 	}
 }

@@ -1,6 +1,7 @@
 package member.controller;
 
 import member.bean.MemberDTO;
+import resume.bean.ResumeDTO;
 
 public interface MemberService {
 	//회원가입
@@ -13,4 +14,6 @@ public interface MemberService {
 	public MemberDTO getMember(String id);
 	//회원정보 수정
 	public int modify(MemberDTO dto);
+	//이력서 데이터 확인
+	public ResumeDTO getResume(String id);
 }

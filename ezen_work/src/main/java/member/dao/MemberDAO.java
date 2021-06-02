@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import member.bean.MemberDTO;
+import resume.bean.ResumeDTO;
 
 @Repository
 public class MemberDAO {
@@ -54,5 +55,8 @@ public class MemberDAO {
 	public int modify(MemberDTO dto) {		
 		return sqlSession.update("mybatis.memberMapper.modify", dto);	
 	}
-	
+	//이력서 데이터 확인
+	public ResumeDTO getResume(String id) {
+		return sqlSession.selectOne("mybatis.memberMapper.getResume", id);
+	}	
 }
