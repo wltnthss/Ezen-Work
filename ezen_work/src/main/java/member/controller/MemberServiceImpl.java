@@ -3,7 +3,9 @@ package member.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import member.bean.MemberDTO;
 import member.dao.MemberDAO;
+import resume.bean.ResumeDTO;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -12,9 +14,8 @@ public class MemberServiceImpl implements MemberService{
 	MemberDAO dao;
 	
 	@Override
-	public String register(String name, String id, String pwd, String gender, String email1, String email2, String tel1,
-			String tel2, String tel3, String addr) {
-		return dao.register(name, id, pwd, gender, email1, email2, tel1, tel2, tel3, addr);
+	public String register(String name, String id, String pwd, String gender, String email, String tel, String addr) {
+		return dao.register(name, id, pwd, gender, email, tel, addr);
 	}
 
 	@Override
@@ -26,5 +27,19 @@ public class MemberServiceImpl implements MemberService{
 	public String login(String id, String pwd) {
 		return dao.login(id, pwd);
 	}
-	
+
+	@Override
+	public MemberDTO getMember(String id) {
+		return dao.getMember(id);
+	}
+
+	@Override
+	public int modify(MemberDTO dto) {
+		return dao.modify(dto);
+	}
+
+	@Override
+	public ResumeDTO getresume(String id) {		
+		return dao.getresume(id);
+	}
 }

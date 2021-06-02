@@ -37,6 +37,8 @@ body{
 }
 #sub{
 	text-align: center;
+	text-decoration: underline;
+	font-weight: bold;
 }
 .call{		
 	padding-left: 10px;
@@ -60,6 +62,7 @@ a{
 	padding-top: 40px;
 	opacity: 0.1
 }
+
 </style>
 </head>
 <body>
@@ -72,33 +75,43 @@ a{
 	<div id="container">
 		<div id="nav">			
 			
-			<h3 id="sub">** 개인 회원 **</h3><br>
+			<h3 id="sub"> 개인 회원 </h3><br>
 				<a href="faq_index.jsp?req=faq">· 회원가입·탈퇴</a><br><br>
-				<a href="#">· 회원정보수정</a><br><br>
-				<a href="#">· 공고지원</a><br><br>
-				<a href="#">· 기타</a><br><br>
+				<a href="faq_index.jsp?req=faq1">· 회원정보관리</a><br><br>
+				<a href="faq_index.jsp?req=faq2">· 공고지원</a><br><br>
+				<a href="faq_index.jsp?req=faq3">· 기타</a><br><br>
 						
-			<h3 id="sub">** 기업 회원 **</h3><br>
+			<h3 id="sub"> 기업 회원 </h3><br>
 				<a href="#">· faq5</a><br><br>	
 				<a href="#">· faq6</a><br><br>
 				<a href="#">· faq7</a><br><br>
 				<a href="#">· faq8</a><br><br>
 			<hr>
-			<img class="call" src="../../img/call.jpg" alt="고객센터">	
+			<img class="call" src="../image/call.JPG" alt="고객센터">	
 				
 		</div>
 		
 		<div id="section">
 		
 			<c:if test="${param.req == null }">
-				<img class="frog" alt="개구리" src="../../img/frog.jpg">
+				<img class="frog" alt="개구리" src="../image/frog.JPG">
 			</c:if>
 			
 			<c:if test="${param.req == 'faq' }">
 				<jsp:include page="faq_u1.jsp"/>
+			</c:if>			
+			
+			<c:if test="${param.req == 'faq1' }">
+				<jsp:include page="faq_u2.jsp"/>
 			</c:if>
-		
-		
+			
+			<c:if test="${param.req == 'faq2' }">
+				<jsp:include page="faq_u3.jsp"/>
+			</c:if>
+			
+			<c:if test="${param.req == 'faq3' }">
+				<jsp:include page="faq_u4.jsp"/>
+			</c:if>
 		</div>				
 	</div>	
 </body>
