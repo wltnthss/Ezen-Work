@@ -1,6 +1,7 @@
 package resume.bean;
 
 public class ResumeDTO {
+	private String id;
 	private int seq;			// 이력서 번호
 	private String image;		// 이력서 이미지
 	private String title;		// 이력서 제목
@@ -11,6 +12,12 @@ public class ResumeDTO {
 	private int opencount;		// 이력서 열람수
 	private String logtime;		// 이력서 작성일
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public int getSeq() {
 		return seq;
 	}
@@ -65,4 +72,6 @@ public class ResumeDTO {
 	public void setLogtime(String logtime) {
 		this.logtime = logtime;
 	}
+	
+	
 }

@@ -5,6 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="mybatis.resumeMapper">
 	<insert id="resumeWrite" parameterType="resumeDTO">
 		insert into resume values
-		(seq.nextval, #{image}, #{title}, #{age}, #{career}, #{achieve}, #{loc}, 0, sysdate)
+		(#{id}, seq.nextval, #{image}, #{title}, #{age}, #{career}, #{achieve}, #{loc}, 0, sysdate)
 	</insert>	
 </mapper>

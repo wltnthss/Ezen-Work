@@ -82,7 +82,7 @@
 
 		<ul class="person-head__state">
 			<li class="person-head__state-item--resume">				
-					<a class="state-item__link state-item__link--Y" href="/resume/Detail.asp?adid=5035210">
+					<a class="state-item__link state-item__link--Y" href="../member_resume/resumeManageForm.jsp">
 						<span class="state-item__link-icon"><span></span></span>
 						<span class="state-item__link-title">${dto1.title }</span>
 						<span class="state-item__link-date">작성일 <em>${dto1.logtime }</em></span>
@@ -98,14 +98,11 @@
 	<!-- subContents -->
 	<div id="SubContents" class="person-main">
 		<div id="ReputeCareerList" class="displayNone" style="display: block;"></div>
-		<script type="text/javascript">
-			ReputeCLS.viewReputeCareerList();
-		</script>
-
 		<div class="listForm person-main__resumelist" style="padding-top: 35px;">
 			<table id="resumelist" cellspacing="0" summary="내 이력서 목록">
 				<thead>
 					<tr>
+						<th scope="col" class="num">이력서 번호</th>
 						<th scope="col" class="title">이력서 제목</th>
 						<th scope="col" class="date">작성일</th>
 						<th scope="col" class="count">열람확인</th>
@@ -114,8 +111,11 @@
 				</thead>
 				<tbody>
 					<tr class="default"> 	
+						<td class="num">  
+							${dto1.seq }
+						</td> 	
 						<td class="title">  
-							<a href="/resume/Detail.asp?adid=5035210">${dto1.title }</a>
+							<a href="../member_resume/resumeManageForm.jsp">${dto1.title }</a>
 						</td> 	
 						<td class="date">
 							${dto1.logtime }
@@ -124,7 +124,7 @@
 							${dto1.opencount }
 						</td> 	
 						<td class="mag">		
-						<a class="button-type" href="../member_resume/resumeModifyForm.jsp">수정</a> 	
+						<a class="button-type" href="../member_resume/resumeManageForm.jsp">관리</a> 	
 					</tr> 
 				</tbody>
 			</table>

@@ -39,16 +39,24 @@ public class ResumeController {
 			File file = new File(filePath, fileName);
 			FileCopyUtils.copy(image.getInputStream(), new FileOutputStream(file));
 			
+			String id = (String) session.getAttribute("memId");
 			String title = request.getParameter("title");
 			String age = request.getParameter("age");
 			String career = request.getParameter("career");
 			String achieve = request.getParameter("achieve");
 			String loc = request.getParameter("loc");
 			
+			System.out.println(id);
+			System.out.println(fileName);
 			System.out.println(title);
+			System.out.println(age);
+			System.out.println(career);
+			System.out.println(achieve);
+			System.out.println(loc);
 			
 			//DB
 			ResumeDTO dto = new ResumeDTO();
+			dto.setId(id);
 			dto.setImage(fileName);
 			dto.setTitle(title);
 			dto.setAge(age);
@@ -56,7 +64,6 @@ public class ResumeController {
 			dto.setAchieve(achieve);
 			dto.setLoc(loc);
 			
-
 			int result = resumeservice.resumeWrite(dto);
 			System.out.println(result);
 			

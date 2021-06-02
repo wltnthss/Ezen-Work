@@ -183,7 +183,6 @@ public class MemberController {
 		modelAndView.addObject("dto", dto);
 		modelAndView.addObject("dto1", dto1);
 		modelAndView.setViewName("mypageindex.jsp");
-		System.out.println(id);
 		return modelAndView;		
 	}
 	
