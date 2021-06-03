@@ -13,15 +13,12 @@ function checkRegister(){
    } else if(frm.pwd.value != frm.repwd.value) { 
    	  alert("비밀번호가 맞지 않습니다.");
    	  frm.pwd.focus();
-   } else if(!frm.email1.value) {
+   } else if(!frm.email.value) {
       alert("이메일을 입력하세요.")
-      frm.email1.focus();
-   }  else if(!frm.tel2.value) {
+      frm.email.focus();
+   }  else if(!frm.tel.value) {
       alert("핸드폰번호를 입력하세요.")
-      frm.tel2.focus();
-   } else if(!frm.tel3.value) {
-      alert("핸드폰번호를 입력하세요.")
-      frm.tel3.focus();
+      frm.tel.focus();
    } else if(!frm.addr.value) {
       alert("주소를 입력하세요.")
       frm.addr.focus();
@@ -54,4 +51,30 @@ function checkLogin(){
 	}else{		
 		frm.submit();
 	}
+}
+
+function checkModify(){
+	var frm = document.modifyForm;
+	
+	 if(!frm.pwd.value) {
+      alert("새 비밀번호를 입력하세요.")
+      frm.pwd.focus();
+   } else if(frm.pwd.value != frm.repwd.value) { 
+   	  alert("비밀번호가 맞지 않습니다.");
+   	  frm.pwd.focus();
+   } else if(!frm.name.value) {
+      alert("이름을 입력하세요.");
+      frm.name.focus();
+   } else if(!frm.email.value) {
+      alert("이메일을 입력하세요.")
+      frm.email.focus();
+   } else if(!frm.tel.value) {
+      alert("핸드폰번호를 입력하세요.")
+      frm.tel.focus();
+   } else if(!frm.addr.value) {
+      alert("주소를 입력하세요.")
+      frm.addr.focus();
+   } else {
+	  frm.submit();
+   }
 }

@@ -1,5 +1,7 @@
 package member.controller;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import member.bean.MemberDTO;
+import resume.bean.ResumeDTO;
 
 @Controller
 public class MemberController {
@@ -20,21 +23,24 @@ public class MemberController {
 	//회원 회원가입 등록
 	@RequestMapping(value = "/member/member_registration/register.do")
 	public ModelAndView register(HttpServletRequest request, HttpServletResponse response) throws Exception{
-			
+		
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
 		//Data
 		String name = request.getParameter("name");
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		String gender = request.getParameter("gender");
-		String email1 = request.getParameter("email1");                        
-		String email2 = request.getParameter("email2");
-		String tel1 = request.getParameter("tel1");
-		String tel2 = request.getParameter("tel2");
-		String tel3 = request.getParameter("tel3");
+		String email = request.getParameter("email");                        
+		String tel = request.getParameter("tel");
 		String addr = request.getParameter("addr");
 		
 		//DB
-		String result = memberservice.register(name, id, pwd, gender, email1, email2, tel1, tel2, tel3, addr);
+		String result = memberservice.register(name, id, pwd, gender, email, tel, addr);
 		System.out.println(result);
 		
 		//화면 네비게이션
@@ -61,6 +67,13 @@ public class MemberController {
 	//회원 로그인
 	@RequestMapping(value = "/member/member_login/login.do")
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
 		//Data
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
@@ -73,7 +86,7 @@ public class MemberController {
 		if(name != null) {
 			session.setAttribute("memId", id);
 			session.setAttribute("memName", name);
-			
+		
 			modelAndView.setViewName("../member_main/index.jsp");
 		} else {
 			modelAndView.setViewName("loginFail.jsp");
@@ -95,7 +108,103 @@ public class MemberController {
 		
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("../member_login/logout.jsp");
+		modelAndView.setViewName("logout.jsp");
 		return modelAndView;				
+	}
+	//회원 수정폼 데이터 가져오기
+	@RequestMapping(value = "/member/member_modify/memberModifyForm.do")
+	public ModelAndView modifyForm(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
+		// DB
+		String id = (String)session.getAttribute("memId");
+		// 1명 데이터 읽어오기
+		MemberDTO dto = memberservice.getMember(id);
+		// 화면 네비게이션
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("dto", dto);
+		modelAndView.setViewName("memberModifyForm.jsp");
+		return modelAndView;
+	}
+	//회원 수정
+	@RequestMapping(value = "/member/member_modify/modify.do")
+	public ModelAndView modify(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		String name = request.getParameter("name");
+		//String id = request.getParameter("id");
+		String id = (String) session.getAttribute("memId");
+		String pwd = request.getParameter("pwd");
+		String email = request.getParameter("email");
+		String tel = request.getParameter("tel");
+		String addr = request.getParameter("addr");
+		String gender = request.getParameter("gender");
+
+		MemberDTO dto = new MemberDTO();
+		dto.setName(name);
+		dto.setId(id);
+		dto.setPwd(pwd);
+		dto.setEmail(email);
+		dto.setTel(tel);
+		dto.setAddr(addr);
+		dto.setGender(gender);
+		
+		int result = memberservice.modify(dto);
+		System.out.println(result);
+		
+		// 화면 네비게이션
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("result", result);
+		modelAndView.setViewName("memberModifyOk.jsp");
+		return modelAndView;
+	}
+	//마이페이지 데이터 읽어오기
+	@RequestMapping(value = "/member/member_mypage/mypageindex.do")
+	public ModelAndView mypageform(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		// DB
+		String id = (String)session.getAttribute("memId");
+		// 1명 데이터 읽어오기
+		MemberDTO dto = memberservice.getMember(id);
+		ResumeDTO dto1 = memberservice.getResume(id);
+		// 화면 네비게이션
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("dto", dto);
+		modelAndView.addObject("dto1", dto1);
+		modelAndView.setViewName("mypageindex.jsp");
+		return modelAndView;		
+	}
+	
+	//이력서 등록 데이터 가져오기
+	@RequestMapping(value = "/member/member_resume/resumeWriteForm.do")
+	public ModelAndView writeForm(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
+		// DB
+		String id = (String)session.getAttribute("memId");
+		// 1명 데이터 읽어오기
+		MemberDTO dto = memberservice.getMember(id);
+		// 화면 네비게이션
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("dto", dto);
+		modelAndView.setViewName("resumeWriteForm.jsp");
+		return modelAndView;
 	}
 }
