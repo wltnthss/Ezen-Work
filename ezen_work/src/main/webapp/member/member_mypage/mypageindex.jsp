@@ -10,7 +10,21 @@
 	<meta name="referrer" content="always">
 
 </head>
+<style type="text/css">
+#subjectA:link {color:black; text-decoration: none;}
+#subjectA:visited {color:black; text-decoration: none;}
+#subjectA:hover {color:blue; text-decoration: underline;}
+#subjectA:active {color:black; text-decoration: none;}
 
+/* paging */
+.paging {color: blue; text-decoration: none;}
+.currentPaging {color: red; text-decoration: underline;}
+</style>
+<script type="text/javascript">
+	function isView(seq){
+		location.href = "../member_resume/resumeViewForm.do?seq=" + seq + "&pg=" + ${pg}; 
+	}
+</script>
 <body id="PersonMain" class="person" cz-shortcut-listen="true">
 <!-- Global -->
 <div id="Global">
@@ -37,7 +51,7 @@
 					<a href="../member_resume/resumeWriteForm.do">이력서등록</a>	
 				</li>			
 				<li class="brand">
-					<a href="../member_resume/resumeManageForm.jsp">이력서관리</a>
+					<a href="../member_resume/resumeManageForm.do">이력서관리</a>
 				</li>		
 				<li class="story">
 					<a href="../member_modify/memberModifyForm.do">개인정보수정</a>
@@ -82,7 +96,7 @@
 
 		<ul class="person-head__state">
 			<li class="person-head__state-item--resume">				
-					<a class="state-item__link state-item__link--Y" href="../member_resume/resumeManageForm.jsp">
+					<a class="state-item__link state-item__link--Y" href="../member_resume/resumeManageForm.do">
 						<span class="state-item__link-icon"><span></span></span>
 						<span class="state-item__link-title">${dto1.title }</span>
 						<span class="state-item__link-date">작성일 <em>${dto1.logtime }</em></span>
@@ -110,22 +124,47 @@
 					</tr>
 				</thead>
 				<tbody>
+					<c:forEach var="bean" items="${list }">
 					<tr class="default"> 	
 						<td class="num">  
-							${dto1.seq }
+							${bean.seq }
 						</td> 	
 						<td class="title">  
-							<a href="../member_resume/resumeManageForm.jsp">${dto1.title }</a>
+							<a href="#" id="subjectA" onclick="isView(${bean.seq})">${bean.title }</a>
 						</td> 	
 						<td class="date">
-							${dto1.logtime }
+							${bean.logtime }
 						</td> 	
 						<td class="count">
-							${dto1.opencount }
+							${bean.opencount }
 						</td> 	
+					
 						<td class="mag">		
-						<a class="button-type" href="../member_resume/resumeManageForm.jsp">관리</a> 	
+						<a class="button-type" href="../member_resume/resumeManageForm.do">관리</a> 	
 					</tr> 
+					</c:forEach>
+					<!-- 페이지 표시 -->
+					<tr>
+						<td colspan="5" align="center">
+							<c:if test="${startPage > 3 }">               
+			                  [ <a  class="paging" href="mypageindex.do?pg=${startPage - 1}">이전</a> ]
+			                </c:if>
+			               
+			               	<c:forEach var="i" begin="${startPage }" end="${endPage }">               
+			                  <c:if test="${pg == i }">                  
+			                     [ <a class="currentPaging" href="mypageindex.do?pg=${i }">${i }</a> ]
+			                  </c:if>
+			                  
+			                  <c:if test="${pg != i }">
+			                     [ <a class="paging"  href="mypageindex.do?pg=${i }">${i }</a> ]   
+			                  </c:if>
+			               </c:forEach>
+			               
+			               	  <c:if test="${endPage < totalP }">               
+			                  	 [ <a class="paging"  href="mypageindex.do?pg=${endPage + 1}">다음</a> ]
+			                  </c:if>
+						</td>
+					</tr>					
 				</tbody>
 			</table>
 			<a href="../member_resume/resumeManageForm.jsp" class="moreBtn">내 이력서 더보기<span></span></a>

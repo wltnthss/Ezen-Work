@@ -11,6 +11,21 @@
 <meta name="referrer" content="always">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
+<style type="text/css">
+#subjectA:link {color:black; text-decoration: none;}
+#subjectA:visited {color:black; text-decoration: none;}
+#subjectA:hover {color:blue; text-decoration: underline;}
+#subjectA:active {color:black; text-decoration: none;}
+
+/* paging */
+.paging {color: blue; text-decoration: none;}
+.currentPaging {color: red; text-decoration: underline;}
+</style>
+<script type="text/javascript">
+	function isView(seq){
+		location.href = "../member_resume/resumeViewForm.do?seq=" + seq + "&pg=" + ${pg}; 
+	}
+</script>
 <body id="MagResume" class="person" cz-shortcut-listen="true">
 	<!-- Global -->
 	<div id="Global">
@@ -34,14 +49,18 @@
 			<div id="HeaderMenu">
 				<!-- 알바스토리 /rsc/inc/common/GlobalMenuStory.inc 중복 관리 -->
 				<ul class="headerMenu headerMenu--login">
-					<li class="person on"><a
-						href="../member_mypage/mypageindex.do"><span></span>마이페이지</a></li>
-					<li class="job"><a href="../member_resume/resumeWriteForm.do">이력서등록</a>
+					<li class="person on">
+						<a href="../member_mypage/mypageindex.do"><span></span>마이페이지</a>
 					</li>
-					<li class="brand"><a
-						href="../member_resume/resumeManageForm.jsp">이력서관리</a></li>
-					<li class="story"><a
-						href="../member_modify/memberModifyForm.do">개인정보수정</a></li>
+					<li class="job">
+						<a href="../member_resume/resumeWriteForm.do">이력서등록</a>
+					</li>
+					<li class="brand">
+						<a href="../member_resume/resumeManageForm.do">이력서관리</a>
+					</li>
+					<li class="story">
+						<a href="../member_modify/memberModifyForm.do">개인정보수정</a>
+					</li>
 				</ul>
 			</div>
 			<!-- //HeaderMenu -->
@@ -64,48 +83,54 @@
 					<table id="resumelist" cellspacing="0" summary="내 이력서 목록">
 						<thead>
 							<tr>
-								<th scope="col" class="select"></th>
-								<th scope="col" class="title">이력서 제목</th>
-								<th scope="col" class="date">최종수정일</th>
-								<th scope="col" class="count">열람수</th>
-								<th scope="col" class="mag">이력서 관리</th>
+								<th scope="col" class="select" style="width: 75px;">이력서 번호</th>
+								<th scope="col" class="title" style="width: 750px;">이력서 제목</th>
+								<th scope="col" class="date" style="width: 160px;">최종수정일</th>
+								<th scope="col" class="count">열람확인</th>
 							</tr>
 						</thead>
 						<tbody>
+							<c:forEach var="bean" items="${list }">
+								<tr>
+									<td class="select">
+										${bean.seq }
+									</td>
+									<td class="title">  
+										<a href="#" id="subjectA" onclick="isView(${bean.seq})">${bean.title }</a>
+									</td> 	
+									<td class="date">
+										${bean.logtime }
+									</td>
+									<td class="count">
+										${bean.opencount }
+									</td>
+								</tr>
+								<tr>
+							</c:forEach>
+					<!-- 페이지 표시 -->
 							<tr>
-								<td class="select"><span class="check input alone">
-										<input type="checkbox" id="adid14436314" name="adid"
-										value="14436314"><label for="adid14436314">선택</label>
-								</span></td>
-								<td class="title"><a
-									href="http://www.alba.co.kr/resume/Detail.asp?adid=14436314">1</a>
+								<td colspan="5" align="center">
+									<c:if test="${startPage > 3 }">               
+					                  [ <a  class="paging" href="resumeManageForm.do?pg=${startPage - 1}">이전</a> ]
+					                </c:if>
+					               
+					               	<c:forEach var="i" begin="${startPage }" end="${endPage }">               
+					                  <c:if test="${pg == i }">                  
+					                     [ <a class="currentPaging" href="resumeManageForm.do?pg=${i }">${i }</a> ]
+					                  </c:if>
+					                  
+					                  <c:if test="${pg != i }">
+					                     [ <a class="paging"  href="resumeManageForm.do?pg=${i }">${i }</a> ]   
+					                  </c:if>
+					               </c:forEach>
+					               
+					               	  <c:if test="${endPage < totalP }">               
+					                  	 [ <a class="paging"  href="resumeManageForm.do?pg=${endPage + 1}">다음</a> ]
+					                  </c:if>
 								</td>
-								<td class="date">2021-05-31</td>
-								<td class="count">0</td>
-								<td class="mag"><a class="button-type"
-									href="http://www.alba.co.kr/person/resume/Modify.asp?adid=14436314">수정</a>
-								</td>
-							</tr>
-							<tr>
-								<td class="select"><span class="check input alone">
-										<input type="checkbox" id="adid5035210" name="adid"
-										value="5035210" disabled="disabled" readonly="readonly">
-										<label for="adid5035210">선택</label>
-								</span></td>
-								<td class="title"><a
-									href="http://www.alba.co.kr/resume/Detail.asp?adid=5035210">알바지원합니다.</a>
-								</td>
-								<td class="date">2013-12-25</td>
-								<td class="count">1</td>
-								<td class="mag"><a class="button-type"
-									href="../member_resume/resumeModifyForm.jsp">수정</a></td>
-							</tr>
+							</tr>	
 						</tbody>
 					</table>
-					<div class="listForm__action">
-						<button type="button" class="button-type"
-							onclick="submitDelChk(); return false;">선택삭제</button>
-					</div>
 				</div>
 			</form>
 			<!-- //리스트 -->
@@ -139,6 +164,8 @@
 					</form>
 				</div>
 			</div>
-			<!-- // 이력서공개 선택창 -->
+		</div>
+	</div>
+	<!-- // 이력서공개 선택창 -->
 </body>
 </html>

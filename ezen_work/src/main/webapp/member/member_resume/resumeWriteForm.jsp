@@ -73,7 +73,7 @@ button{
 					<a href="../member_resume/resumeWriteForm.do">이력서등록</a>	
 				</li>			
 				<li class="brand">
-					<a href="../member_resume/resumeManageForm.jsp">이력서관리</a>
+					<a href="../member_resume/resumeManageForm.do">이력서관리</a>
 				</li>		
 				<li class="story">
 					<a href="../member_modify/memberModifyForm.do">개인정보수정</a>
@@ -103,16 +103,26 @@ button{
 					<a href="../member_modify/memberModifyForm.do" class="btn modify">회원정보 수정</a>
 				</span>
 				<div class="registForm">
-					<div class="photoArea">
+					<div class="photoArea" style="margin-top: 5px;">
 						<span class="photo" id="idmainresumephoto">
 						</span>
 						<!-- 사진아이콘 -->
 						<span class="applyBtn">
+							<!-- 사진있을 때 -->
+							<c:if test="${dto1.image != null }">
+								<img src="../../storage/${dto1.image }" id="resumephoto" alt="" style="width: 112px; height="134px; margin-top: 5px;" >
+								<button onclick="btnDelete();" style="margin-left: 25px; font-weight: bold" >이미지 삭제</button>
+							</c:if>
+							<!-- //사진 있을 때 -->
 							<!-- 사진없을 때 -->
-							<span id="picReigst" style="">
+							<c:if test="${dto1.image == null }">
+								<span id="picReigst" style="">
+								<img src="../../storage/${dto1.image }" id="resumephoto" alt="">
 								<a class="noImgReg"><span></span>사진등록</a>
 								<input type="file" class="input_file" name="image">
-							</span>
+								</span>
+							</c:if>
+							
 							<!-- //사진없을 때 -->
 						</span>
 						<!-- //사진아이콘 -->

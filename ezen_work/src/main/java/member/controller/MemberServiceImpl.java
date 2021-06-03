@@ -1,5 +1,7 @@
 package member.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,5 +43,30 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public ResumeDTO getResume(String id) {
 		return dao.getResume(id);
+	}
+
+	@Override
+	public List<ResumeDTO> resumeList(int startNum, int endNum) {
+		return dao.resumeList(startNum, endNum);
+	}
+
+	@Override
+	public int getTotalA() {
+		return dao.getTotalA();
+	}
+
+	@Override
+	public int resumeDelete(int seq) {
+		return dao.resumeDelete(seq);
+	}
+
+	@Override
+	public ResumeDTO resumeView(int seq) {
+		return dao.resumeView(seq);
+	}
+
+	@Override
+	public int resumeModify(ResumeDTO dto) {
+		return dao.resumeModify(dto);
 	}
 }

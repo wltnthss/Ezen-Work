@@ -122,18 +122,6 @@
 <footer id="Footer">
 	Copyright ⓒ <strong>EZEN-IT</strong>. All Rights Reserved.
 </footer>
-<![endif]-->
-
-<input type="hidden" id="mobileyn" value="N"><!-- DO NOT DELETE //-->
-<iframe id="hideFrame" name="hideFrame" src="about:blank" class="hide" title="빈 프레임"></iframe><!-- DO NOT DELETE //-->
-<script>
-// placeholder 적용 (플러그인)
-if (!Modernizr.input.placeholder) {
-	$("input, textarea").placeholder();
-}
-</script>
-
-
 <!-- //Footer -->
 
 </body></html>

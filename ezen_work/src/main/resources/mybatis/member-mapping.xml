@@ -29,5 +29,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="getResume" parameterType="String" resultType="resumeDTO">
 		select * from resume where id=#{id}
-	</select>			
+	</select>		
+	
+	<select id="resumeList" parameterType="java.util.Map" resultType="resumeDTO">
+		<![CDATA[select seq, title, logtime, opencount, to_char(logtime, 'YYYY.MM.DD') as logtime  from 
+		(select rownum rn, tt.* from  (select * from resume order by seq desc) tt) 
+		where rn>=#{startNum} and rn<=#{endNum}]]>
+	</select>
+	
+	<select id="getTotalA" resultType="int">
+		select count(*) as cnt from resume
+	</select>
+
+	<select id="resumeView" parameterType="int" resultType="resumeDTO">
+		select * from resume where seq=#{seq}
+	</select>
+	
+	<delete id="resumeDelete" parameterType="int">
+		delete resume where seq=#{seq}
+	</delete>
+	
+	<update id="resumeModify" parameterType="resumeDTO">
+		update resume set image=#{image}, title=#{title}, achieve=#{achieve}, career=#{career}, loc=#{loc}, age=#{age} where seq=#{seq}
+	</update>
 </mapper>

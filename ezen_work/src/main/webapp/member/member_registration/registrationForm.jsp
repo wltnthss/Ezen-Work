@@ -97,7 +97,6 @@
 						<div class="sign__input-frame">
 							<input type="email" id="email" class="chain-input" name="email" value="" placeholder="이메일을 입력하세요" maxlength="50">
 						</div>
-
 					</li>
 					<li class="join__info-item join__info-item--tel">
 						<label class="chain-label" for="htel">휴대폰</label>

@@ -1,6 +1,7 @@
 package member.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -59,4 +60,27 @@ public class MemberDAO {
 	public ResumeDTO getResume(String id) {
 		return sqlSession.selectOne("mybatis.memberMapper.getResume", id);
 	}	
+	// 목록보기
+	public List<ResumeDTO> resumeList(int startNum, int endNum){
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		return sqlSession.selectList("mybatis.memberMapper.resumeList", map);
+	}
+	// 총 데이터 갯수 구하기
+	public int getTotalA() {
+		return sqlSession.selectOne("mybatis.memberMapper.getTotalA");
+	}
+	// 이력서 삭제
+	public int resumeDelete(int seq) {
+		return sqlSession.delete("mybatis.memberMapper.resumeDelete", seq);
+	}
+	// 이력서 상세보기
+	public ResumeDTO resumeView(int seq) {
+		return sqlSession.selectOne("mybatis.memberMapper.resumeView", seq);
+	}
+	// 이력서 수정 : modify
+	public int resumeModify(ResumeDTO dto) {		
+		return sqlSession.update("mybatis.memberMapper.resumeModify", dto);
+	}
 }
