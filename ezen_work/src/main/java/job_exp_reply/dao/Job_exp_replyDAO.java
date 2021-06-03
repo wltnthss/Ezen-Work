@@ -21,5 +21,10 @@ public class Job_exp_replyDAO {
 	public int exp_reply_del(int exp_reply_seq) {
 		return sqlSessionTemplate.delete("mybatis.job_exp_replyMapper.exp_reply_del",exp_reply_seq);
 	}
+	
+	//댓글 숫자 카운트
+	public int exp_reply_count(int seq) {
+		return sqlSessionTemplate.update("mybatis.job_exp_replyMapper.exp_reply_count",seq);
+	}	
 
 }

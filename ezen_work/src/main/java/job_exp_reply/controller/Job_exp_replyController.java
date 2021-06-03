@@ -32,7 +32,12 @@ public class Job_exp_replyController {
 		dto1.setExp_seq(seq);
 		dto1.setExp_reply_content(exp_reply_content);
 				
-		int result = job_exp_replyService.exp_reply_write(dto1);			
+		int result = job_exp_replyService.exp_reply_write(dto1);
+		
+		Job_experienceDTO dto = new Job_experienceDTO();
+		
+		int result1 = job_exp_replyService.exp_reply_count(seq);
+		
 		
 	    // 화면 네비게이션 : 데이터 전달 + view처리		
 		ModelAndView modelAndView = new ModelAndView();

@@ -29,7 +29,9 @@ public class Job_experienceController {
 	
 	@RequestMapping(value="/admin/admin_exp/job_experience_main.do")
 	public ModelAndView exp_list(HttpServletRequest request,HttpServletResponse response) throws Exception{
-						
+		//HttpSession session = request.getSession();
+	    //String id = (String) session.getAttribute("memId");
+	    
 		int pg = 1;
 		if(request.getParameter("pg")!= null) {
 	         pg = Integer.parseInt(request.getParameter("pg"));
@@ -39,10 +41,11 @@ public class Job_experienceController {
 	    int endNum = pg*limit; 
 	    int startNum = endNum - (limit -1);
 	    
-	    List<Job_experienceDTO> list = job_experienceService.exp_list(startNum, endNum);
+	    List<Job_experienceDTO> list = job_experienceService.exp_list(startNum, endNum);	    
 	    
 	    // 페이징 : 10블럭
-	    int totalA = job_experienceService.exp_getTotalA();
+	    int totalA = job_experienceService.exp_getTotalA();	    
+	    
 	    int totalP = (totalA + (limit -1))/ limit;
 	    
 	    int startPage = (pg-1)/10*10+1;
@@ -52,7 +55,7 @@ public class Job_experienceController {
 	    // 화면 네비게이션 : 데이터 전달 + view처리
 	    ModelAndView modelAndView = new ModelAndView();
 	    modelAndView.addObject("pg", pg);
-	    modelAndView.addObject("list", list);
+	    modelAndView.addObject("list", list);	 
 	    modelAndView.addObject("totalP", totalP);
 	    modelAndView.addObject("startPage", startPage);
 	    modelAndView.addObject("endPage", endPage);
@@ -174,6 +177,30 @@ public class Job_experienceController {
 		return modelAndView;		
 	}
 	
+	@RequestMapping(value="/admin/admin_exp/job_experience_view_reply.do")
+	public ModelAndView job_experience_view_reply(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		request.setCharacterEncoding("utf-8");
+		ModelAndView modelAndView = new ModelAndView();	
+		Job_experienceDTO dto = new Job_experienceDTO();	
+		
+		//Data	
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		int pg = Integer.parseInt(request.getParameter("pg"));
+		
+		//DB
+		dto = job_experienceService.exp_view(seq);		
+		
+		List<Job_exp_replyDTO> list = job_experienceService.exp_reply_list(seq); 
+		
+		modelAndView.addObject("list", list);						
+		modelAndView.addObject("dto", dto);
+		modelAndView.addObject("seq", seq);
+		modelAndView.addObject("pg", pg);
+		modelAndView.setViewName("../admin_exp/exp_view.jsp");	
+		
+		return modelAndView;		
+	}
+	
 	@RequestMapping(value="/admin/admin_exp/job_experience_modifyForm.do")
 	public ModelAndView exp_modifyForm(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		request.setCharacterEncoding("utf-8");
@@ -246,7 +273,8 @@ public class Job_experienceController {
 		
 		//DB
 		int result = job_experienceService.exp_del(seq);		
-								
+		job_experienceService.exp_reply_del(seq);
+		
 		modelAndView.addObject("result", result);
 		modelAndView.addObject("seq", seq);
 		modelAndView.addObject("pg", pg);

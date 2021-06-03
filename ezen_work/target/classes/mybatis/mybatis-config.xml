@@ -9,7 +9,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="member.bean.MemberDTO" alias="memberDTO"/>
 		<typeAlias type="resume.bean.ResumeDTO" alias="resumeDTO"/>	
 		<typeAlias type="job_experience.bean.Job_experienceDTO" alias="job_experienceDTO"/>	
-		<typeAlias type="job_exp_reply.bean.Job_exp_replyDTO" alias="job_exp_replyDTO"/>	
+		<typeAlias type="job_exp_reply.bean.Job_exp_replyDTO" alias="job_exp_replyDTO"/>
+		<typeAlias type="talk.bean.TalkDTO" alias="talkDTO"/>	
 	</typeAliases>
 	
 	<mappers>
@@ -17,6 +18,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/member-mapping.xml"/>
 		<mapper resource="mybatis/resume-mapping.xml"/>	
 		<mapper resource="mybatis/job_experience-mapping.xml"/>	
-		<mapper resource="mybatis/job_exp_reply-mapping.xml"/>			
+		<mapper resource="mybatis/job_exp_reply-mapping.xml"/>	
+		<mapper resource="mybatis/talk-mapping.xml"/>			
 	</mappers>
 </configuration>

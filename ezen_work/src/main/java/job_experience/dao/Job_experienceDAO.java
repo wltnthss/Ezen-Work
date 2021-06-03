@@ -61,5 +61,10 @@ public class Job_experienceDAO {
 	public List<Job_exp_replyDTO> exp_reply_list(int seq) {
 		return sqlSessionTemplate.selectList("mybatis.job_experienceMapper.exp_reply_list",seq);
 	}
+	
+	public int exp_reply_del(int seq) {
+		return sqlSessionTemplate.delete("mybatis.job_experienceMapper.exp_reply_del",seq);
+	}
+	
 
 }

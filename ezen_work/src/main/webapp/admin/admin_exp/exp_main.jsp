@@ -39,6 +39,7 @@
 				<td>작성일</td>
 				<td>제목</td>
 				<td>작성자</td>
+				<td>댓글수</td>
 				<td>조회수</td>
 			</tr>
 			<c:forEach var="dto" begin="0" end="19" items="${list}">
@@ -49,6 +50,7 @@
 							${dto.exp_subject}
 						</a>
 					</td>
+					<td>${dto.exp_reply_count}</td>
 					<td>${dto.id}</td>
 					<td>${dto.exp_readcount}</td>
 				</tr>		

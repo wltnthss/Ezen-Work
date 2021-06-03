@@ -8,5 +8,8 @@ public interface Job_exp_replyService {
 	public int exp_reply_write(Job_exp_replyDTO dto);
 	
 	//댓글 삭제
-	public int exp_reply_del(int exp_reply_seq);	 		
+	public int exp_reply_del(int exp_reply_seq);
+	
+	//댓글 숫자 카운트
+	public int exp_reply_count(int seq);
 }

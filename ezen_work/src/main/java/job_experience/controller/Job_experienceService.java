@@ -36,4 +36,8 @@ public interface Job_experienceService {
 	
 	//알바경험담 답글 불러오기
 	public List<Job_exp_replyDTO> exp_reply_list(int seq);
+	
+	//알바경험담댓글 삭제
+	public int exp_reply_del(int seq);
+	
 }

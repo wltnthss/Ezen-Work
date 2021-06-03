@@ -7,12 +7,12 @@
  	<insert id="exp_write" parameterType="job_experienceDTO">
  		insert into exp values
 		(exp_seq.nextval,#{id}, #{exp_subject}, #{exp_content},
-		#{exp_image}, 0, sysdate)
+		#{exp_image}, 0, sysdate,0)
  	</insert> 
  	
  	<select id="exp_list" parameterType="java.util.Map" resultType="job_experienceDTO">
  		<![CDATA[select exp_seq, id, exp_subject, exp_content, exp_image, exp_readcount,
- 		to_char(exp_date, 'YYYY.MM.DD') as exp_date from 
+ 		to_char(exp_date, 'YYYY.MM.DD') as exp_date,exp_reply_count from 
 		(select rownum rn, tt.* from  (select * from exp order by exp_seq desc) tt) 
 		where rn>=#{startNum} and rn<=#{endNum}]]>
  	</select>	
@@ -24,7 +24,7 @@
 	<select id="exp_search" parameterType="String" resultType="job_experienceDTO">
 		<bind name="search" value="'%'+search+'%'"/>
  		<![CDATA[select exp_seq, id, exp_subject, exp_content, exp_image, exp_readcount,
- 		to_char(exp_date, 'YYYY.MM.DD') as exp_date from 
+ 		to_char(exp_date, 'YYYY.MM.DD') as exp_date,exp_reply_count from 
 		(select rownum rn, tt.* from  (select * from exp order by exp_seq desc) tt) 
 		where exp_subject like #{search} or exp_content like #{search}]]>
  	</select>
@@ -56,8 +56,12 @@
  		exp_reply_date from 
 		(select rownum rn, tt.* from (select * from exp_reply order by exp_reply_seq desc) tt) 
 		where exp_seq=#{seq}
-	</select>	
-		
+	</select>
+	
+	<delete id="exp_reply_del" parameterType="int">
+		delete from exp_reply where exp_seq=#{seq}
+	</delete>
+	
  </mapper>
  
  

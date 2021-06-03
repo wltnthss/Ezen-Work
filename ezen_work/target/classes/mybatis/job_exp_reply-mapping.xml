@@ -11,8 +11,11 @@
  	
  	<delete id="exp_reply_del" parameterType="int">
  		delete from exp_reply where exp_reply_seq=#{exp_reply_seq}
- 	</delete>
- 	 			
+ 	</delete> 
+ 	
+ 	<update id="exp_reply_count" parameterType="int">
+ 		 update exp set exp_reply_count = exp_reply_count+1 where exp_seq=#{seq}
+ 	</update>		 			
  </mapper>
  
  

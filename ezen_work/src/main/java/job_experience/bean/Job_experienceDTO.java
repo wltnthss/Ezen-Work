@@ -8,6 +8,7 @@ public class Job_experienceDTO {
 	private String exp_image;
 	private int exp_readcount;
 	private String exp_date;
+	private int exp_reply_count;
 	
 	public int getExp_seq() {
 		return exp_seq;
@@ -51,6 +52,15 @@ public class Job_experienceDTO {
 	public void setExp_date(String exp_date) {
 		this.exp_date = exp_date;
 	}
+	public int getExp_reply_count() {
+		return exp_reply_count;
+	}
+	public void setExp_reply_count(int exp_reply_count) {
+		this.exp_reply_count = exp_reply_count;
+	}
+	
+	
+	
 	
 	
 }

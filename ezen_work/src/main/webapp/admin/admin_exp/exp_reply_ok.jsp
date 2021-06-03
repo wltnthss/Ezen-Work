@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	if(${result>0}){
-		location.href="job_experience_view.do?pg=${pg}&seq=${seq}";		
+		location.href="job_experience_view_reply.do?pg=${pg}&seq=${seq}";		
 	}else{
 		history.back();
 	}

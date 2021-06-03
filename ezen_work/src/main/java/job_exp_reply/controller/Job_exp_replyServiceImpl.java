@@ -22,4 +22,11 @@ public class Job_exp_replyServiceImpl implements Job_exp_replyService{
 		return dao.exp_reply_del(exp_reply_seq);
 	}
 
+	@Override
+	public int exp_reply_count(int seq) {		
+		return dao.exp_reply_count(seq);
+	}
+
+	
+
 }

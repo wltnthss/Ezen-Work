@@ -65,4 +65,10 @@ public class Job_experienceServiceImpl implements Job_experienceService{
 	public List<Job_exp_replyDTO> exp_reply_list(int seq) {		
 		return dao.exp_reply_list(seq);
 	}
+
+	@Override
+	public int exp_reply_del(int seq) {		
+		return dao.exp_reply_del(seq);
+	}
+
 }
