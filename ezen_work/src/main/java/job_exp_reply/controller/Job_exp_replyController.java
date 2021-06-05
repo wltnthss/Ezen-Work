@@ -22,7 +22,7 @@ public class Job_exp_replyController {
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		
-		String id = (String) session.getAttribute("memId");
+		String id = (String) session.getAttribute("amemId");
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		String exp_reply_content = request.getParameter("reply_content");
@@ -51,8 +51,7 @@ public class Job_exp_replyController {
 	
 	@RequestMapping(value="/admin/admin_exp/exp_reply_del.do")
 	public ModelAndView exp_reply_del(HttpServletRequest request,HttpServletResponse response) throws Exception{
-		request.setCharacterEncoding("utf-8");
-		HttpSession session = request.getSession();		
+		request.setCharacterEncoding("utf-8");			
 		
 		int exp_reply_seq = Integer.parseInt(request.getParameter("exp_reply_seq"));
 		int seq = Integer.parseInt(request.getParameter("seq"));

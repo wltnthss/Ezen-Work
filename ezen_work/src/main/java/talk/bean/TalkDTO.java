@@ -5,7 +5,8 @@ public class TalkDTO {
     private String id;
     private String talk_subject;   
     private String talk_date;   
-    private int talk_reply_count;
+    private int talk_good_count;
+    private int talk_bad_count;
     
 	public int getTalk_seq() {
 		return talk_seq;
@@ -31,15 +32,17 @@ public class TalkDTO {
 	public void setTalk_date(String talk_date) {
 		this.talk_date = talk_date;
 	}
-	public int getTalk_reply_count() {
-		return talk_reply_count;
+	public int getTalk_good_count() {
+		return talk_good_count;
 	}
-	public void setTalk_reply_count(int talk_reply_count) {
-		this.talk_reply_count = talk_reply_count;
+	public void setTalk_good_count(int talk_good_count) {
+		this.talk_good_count = talk_good_count;
 	}
-    
-	
-    
-    
+	public int getTalk_bad_count() {
+		return talk_bad_count;
+	}
+	public void setTalk_bad_count(int talk_bad_count) {
+		this.talk_bad_count = talk_bad_count;
+	}    
     
 }

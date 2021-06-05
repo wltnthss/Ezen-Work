@@ -13,13 +13,13 @@
 	
 		<h3>*** 메인 화면 ***</h3>
 		<hr>
-		<c:if test="${memId == null }">
+		<c:if test="${amemId == null }">
 			<a href="../admin_login/loginForm.jsp"><button type="button" class="btn btn-outline-primary" style="border-color: red; color: blue;">로그인 이동</button></a>			
 			<a href="../admin_login/loginForm.jsp">로그인 이동</a>
 		</c:if>
 		<br><br>
 		
-		<c:if test="${memId != null }">	
+		<c:if test="${amemId != null }">	
 			
 		<a href="../admin_login/logout.do"><button type="button" class="btn btn-danger">로그 아웃</button></a>		
 		<a href="../admin_login/logout.do">로그 아웃</a> 
@@ -33,10 +33,9 @@
 		
 		<a href="../admin_exp/job_experience_main.do?pg=1"><button type="button" class="btn btn-outline-secondary">알바경험담</button></a>			
 		<a href="../admin_exp/job_experience_main.do?pg=1">알바경험담</a>				
-		</c:if>	
 		<br><br>
-		<a href="../admin_talk/talk_main.jsp"><button type="button" class="btn btn-danger">한줄톡</button></a>
-			
+		<a href="../admin_talk/talk_list.do"><button type="button" class="btn btn-danger">한줄톡</button></a>
+		</c:if>		
 				
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>	
 </body>

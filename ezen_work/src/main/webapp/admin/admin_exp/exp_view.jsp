@@ -60,7 +60,7 @@ textarea{resize: none;}
 			</div>	
 			<br><br><br><br><br><br>	
 			<div style="padding-left: 830px;">		
-				<c:if test="${memId == dto.id}">
+				<c:if test="${amemId == dto.id}">
 					<a href="job_experience_modifyForm.do?seq=${seq}&pg=${pg}"><img src="../image/modi.JPG" alt="수정" /></a>	
 					<a href="#" onclick="del();"><img src="../image/del.JPG" alt="삭제" /></a>																	
 				</c:if>
@@ -85,15 +85,15 @@ textarea{resize: none;}
 			</div>	
 			<br>		
 			<div class='reply'>
-				<c:if test="${memId != null }">
+				<c:if test="${amemId != null }">
 					<span class='mem'>${memId}</span><br>
 				</c:if>
-				<c:if test="${memId == null }">
+				<c:if test="${amemId == null }">
 					<span class='mem'>* 로그인 후 글 작성 가능합니다.</span><br>
 				</c:if>			
 				<textarea rows="3" cols="115" id="reply_content" name='reply_content' placeholder=
 				"광고글, 타인 비방글 등은 제대를 받을 수 있으며 게시물에 대한 모든 법적인 책임은 작성자 본인에게 있습니다."></textarea>				
-				<c:if test="${memId != null }">					
+				<c:if test="${amemId != null }">					
 					<input type="image" src="../image/exp_enroll.JPG" alt="등록" onclick="reply_enroll(); return false;"/>			
 				</c:if>							
 			</div>

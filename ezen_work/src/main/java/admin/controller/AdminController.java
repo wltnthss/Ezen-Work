@@ -33,10 +33,10 @@ public class AdminController {
 		HttpSession session = request.getSession();
 						
 		if(name != null) {
-			session.setAttribute("memId", id);
-			session.setAttribute("memName", name);
+			session.setAttribute("amemId", id);
+			session.setAttribute("amemName", name);
 					
-			modelAndView.setViewName("../admin_main/index.jsp");
+			modelAndView.setViewName("../admin_main/admin_main.jsp");
 		}else {
 			modelAndView.setViewName("loginFail.jsp");			
 		}
@@ -49,8 +49,8 @@ public class AdminController {
 		HttpSession session = request.getSession();
 			
 		// 세션 삭제
-		session.removeAttribute("memId");
-		session.removeAttribute("memName");
+		session.removeAttribute("amemId");
+		session.removeAttribute("amemName");
 		
 		// 모든 세션 삭제하기 : 무효화
 		session.invalidate();

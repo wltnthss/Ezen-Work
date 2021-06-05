@@ -30,7 +30,7 @@ public class Job_experienceController {
 	@RequestMapping(value="/admin/admin_exp/job_experience_main.do")
 	public ModelAndView exp_list(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		//HttpSession session = request.getSession();
-	    //String id = (String) session.getAttribute("memId");
+	    //String id = (String) session.getAttribute("amemId");
 	    
 		int pg = 1;
 		if(request.getParameter("pg")!= null) {
@@ -122,7 +122,7 @@ public class Job_experienceController {
 		HttpSession session = request.getSession();
 		
 		//Data		
-		String id = (String) session.getAttribute("memId");		
+		String id = (String) session.getAttribute("amemId");		
 		String filePath = request.getSession().getServletContext().getRealPath("/storage");
 		String fileName = exp_image.getOriginalFilename();
 		
@@ -228,7 +228,7 @@ public class Job_experienceController {
 		HttpSession session = request.getSession();
 		
 		//Data		
-		String id = (String) session.getAttribute("memId");		
+		String id = (String) session.getAttribute("amemId");		
 		String filePath = request.getSession().getServletContext().getRealPath("/storage");
 		String fileName = exp_image.getOriginalFilename();
 		int seq = Integer.parseInt(request.getParameter("seq"));
@@ -282,16 +282,4 @@ public class Job_experienceController {
 		
 		return modelAndView;		
 	}
-	
-	
-	
-		
-		
-		
-		
-	
-	
-	
-	
-
 }
