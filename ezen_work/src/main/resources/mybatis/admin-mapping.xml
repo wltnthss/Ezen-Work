@@ -36,4 +36,32 @@
  		delete member where id=#{id}
  	</delete>
  	
+ 	<select id="company_list" parameterType="int" resultType="companyDTO">
+ 		<![CDATA[select company_seq, cname, id, pw, bnumber1, bnumber2, bnumber3,
+ 		email,email2,tel,tel2,tel3, to_char(company_date , 'YYYY.MM.DD') as company_date from 
+		(select rownum rn, tt.* from  (select * from company order by company_seq desc) tt) 
+		where rn>=#{startNum} and rn<=#{endNum}]]>
+ 	</select>
+ 	
+ 	<select id="getTotal_company" resultType="int">
+ 		select count (*) as cnt from company
+ 	</select>
+ 	
+ 	<select id="search_company_list" parameterType="java.util.Map" resultType="companyDTO">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		<![CDATA[select company_seq, cname, id, pw, bnumber1, bnumber2, bnumber3,
+ 		email,email2,tel,tel2,tel3, to_char(company_date , 'YYYY.MM.DD') as company_date from 
+		(select rownum rn, tt.* from  (select * from company order by company_seq desc) tt) 
+		where (rn>=#{startNum} and rn<=#{endNum}) and (id like #{top_subject} or cname like #{top_subject})]]>
+ 	</select>
+ 	
+ 	<select id="search_company_listT" parameterType="String" resultType="int">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		select count(*) as cnt from company where id like #{top_subject} or cname like #{top_subject}
+ 	</select>
+ 	
+ 	<delete id="company_delete" parameterType="String">
+ 		delete company where id=#{id}
+ 	</delete>
+ 	
  </mapper>

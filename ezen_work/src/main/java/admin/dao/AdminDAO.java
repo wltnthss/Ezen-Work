@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import admin.bean.AdminDTO;
+import company.bean.CompanyDTO;
 import member.bean.MemberDTO;
 
 @Repository
@@ -52,8 +53,40 @@ public class AdminDAO {
 		return sqlSessionTemplate.selectOne("mybatis.adminMapper.search_user_listT",top_subject);
 	}
 	
+	//유저 삭제
 	public int user_delete(String id) {
 		return sqlSessionTemplate.delete("mybatis.adminMapper.user_delete",id);
+	}
+	
+	//회사 정보
+	public List<CompanyDTO> company_list(int startNum, int endNum) {	
+		Map<String, Integer>map = new HashMap<String,Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		return sqlSessionTemplate.selectList("mybatis.adminMapper.company_list",map);
+	}
+	
+	//회사 게시글 총갯수
+	public int getTotal_company() {
+		return sqlSessionTemplate.selectOne("mybatis.adminMapper.getTotal_company");
+	}
+	
+	//회사 검색/총수량
+	public List<CompanyDTO> search_company_list(int startNum, int endNum,String top_subject) {
+		Map<Object, Object>map = new HashMap<Object,Object>();		
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		map.put("top_subject", top_subject);
+		return sqlSessionTemplate.selectList("mybatis.adminMapper.search_company_list",map);
+	}
+		
+	public int search_company_listT(String top_subject) {
+		return sqlSessionTemplate.selectOne("mybatis.adminMapper.search_company_listT",top_subject);
+	}
+	
+	//회사 삭제
+	public int company_delete(String id) {
+		return sqlSessionTemplate.delete("mybatis.adminMapper.company_delete",id);
 	}
 	
 }

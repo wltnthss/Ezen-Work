@@ -3,6 +3,7 @@ package admin.controller;
 import java.util.List;
 
 import admin.bean.AdminDTO;
+import company.bean.CompanyDTO;
 import member.bean.MemberDTO;
 
 public interface AdminService {
@@ -21,4 +22,17 @@ public interface AdminService {
 	
 	//유저 삭제
 	public int user_delete(String id);
+	
+	//유저 정보 획득
+	public List<CompanyDTO> company_list(int startNum, int endNum);
+	
+	//유저 총 게시글 수
+	public int getTotal_company();
+	
+	//유저 검색/총수량
+	public List<CompanyDTO> search_company_list(int startNum, int endNum,String top_subject);
+	public int search_company_listT(String top_subject);
+	
+	//유저 삭제
+	public int company_delete(String id);
 }
