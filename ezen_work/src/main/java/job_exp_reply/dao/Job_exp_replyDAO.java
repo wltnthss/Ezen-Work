@@ -25,6 +25,11 @@ public class Job_exp_replyDAO {
 	//댓글 숫자 카운트
 	public int exp_reply_count(int seq) {
 		return sqlSessionTemplate.update("mybatis.job_exp_replyMapper.exp_reply_count",seq);
-	}	
+	}
+	
+	//댓글 카운트 마이너스
+	public int exp_reply_minus(int seq) {
+		return sqlSessionTemplate.update("mybatis.job_exp_replyMapper.exp_reply_minus",seq);
+	}
 
 }

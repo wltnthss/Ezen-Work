@@ -39,4 +39,9 @@ public class TalkServiceImpl implements TalkService{
 		return dao.talk_bad_count(seq);
 	}
 
+	@Override
+	public int talk_del(int seq) {
+		return dao.talk_del(seq);
+	}
+
 }

@@ -57,7 +57,8 @@ public class Job_exp_replyController {
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		int pg = Integer.parseInt(request.getParameter("pg"));
 						
-		int result = job_exp_replyService.exp_reply_del(exp_reply_seq);			
+		int result = job_exp_replyService.exp_reply_del(exp_reply_seq);
+		job_exp_replyService.exp_reply_minus(seq);
 		
 	    // 화면 네비게이션 : 데이터 전달 + view처리		
 		ModelAndView modelAndView = new ModelAndView();

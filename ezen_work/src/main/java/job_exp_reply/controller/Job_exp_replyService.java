@@ -12,4 +12,7 @@ public interface Job_exp_replyService {
 	
 	//댓글 숫자 카운트
 	public int exp_reply_count(int seq);
+	
+	//댓글 카운트 마이너스
+	public int exp_reply_minus(int seq);
 }

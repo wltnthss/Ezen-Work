@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FAQ</title>
+<title>F.A.Q</title>
 <style type="text/css">
 body{
 	margin: 0;
@@ -13,7 +13,7 @@ body{
 	height:100%;
 }
 #header{
-	width:100%;
+	width:1000px;
 	height:10%;
 	text-align: left;
 	border: 0.5px solid #28B4B4;
@@ -21,17 +21,17 @@ body{
 	color: white
 }
 #container{
-	width:100%;
+	width:1000px;
 	height:450px;
 }
 #nav{
-	width:20%;
+	width:250px;
 	height:512px;
 	float:left;	
 	background:#F9FFFF;		
 }
 #section{
-	width:80%;
+	width:750px;
 	height:100%;
 	float:left;
 }

@@ -33,7 +33,9 @@
 	<context:component-scan base-package="resume"/>
 	<context:component-scan base-package="job_experience"/>
 	<context:component-scan base-package="job_exp_reply"/>	
-	<context:component-scan base-package="talk"/>	
+	<context:component-scan base-package="talk"/>
+	<context:component-scan base-package="company"/>
+	<context:component-scan base-package="advertise"/>	
 	
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="5000000"/>

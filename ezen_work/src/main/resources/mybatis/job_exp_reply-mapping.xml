@@ -15,6 +15,10 @@
  	
  	<update id="exp_reply_count" parameterType="int">
  		 update exp set exp_reply_count = exp_reply_count+1 where exp_seq=#{seq}
+ 	</update>
+ 	
+ 	<update id="exp_reply_minus" parameterType="int">
+ 		 update exp set exp_reply_count = exp_reply_count-1 where exp_seq=#{seq}
  	</update>		 			
  </mapper>
  

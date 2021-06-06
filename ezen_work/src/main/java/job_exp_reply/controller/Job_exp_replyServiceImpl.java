@@ -26,7 +26,10 @@ public class Job_exp_replyServiceImpl implements Job_exp_replyService{
 	public int exp_reply_count(int seq) {		
 		return dao.exp_reply_count(seq);
 	}
-
 	
+	@Override
+	public int exp_reply_minus(int seq) {		
+		return dao.exp_reply_minus(seq);
+	}	
 
 }

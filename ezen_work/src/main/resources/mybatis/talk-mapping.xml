@@ -24,4 +24,8 @@
  	<update id="talk_bad_count" parameterType="int">
  		update talkTable set talk_bad_count = talk_bad_count+1 where talk_seq=#{seq}
  	</update>
+ 	
+ 	<delete id="talk_del" parameterType="int">
+ 		delete from talkTable where talk_seq=#{seq}
+ 	</delete>
  </mapper>

@@ -42,6 +42,11 @@ public class TalkDAO {
 	//싫어요 추가
 	public int talk_bad_count(int seq) {
 		return sqlSessionTemplate.update("mybatis.talkMapper.talk_bad_count",seq);
-	}		
+	}
+	
+	//한줄톡 삭제
+	public int talk_del(int seq) {
+		return sqlSessionTemplate.delete("mybatis.talkMapper.talk_del",seq);
+	}
 	
 }

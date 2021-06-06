@@ -8,4 +8,32 @@
  		select * from admin where id=#{id} and pwd=#{pwd}
  	</select>
  	
+ 	<select id="user_list" parameterType="int" resultType="memberDTO">
+ 		<![CDATA[select member_seq, name, id, pwd, gender, email, tel,
+ 		addr, to_char(member_date , 'YYYY.MM.DD') as member_date from 
+		(select rownum rn, tt.* from  (select * from member order by member_seq desc) tt) 
+		where rn>=#{startNum} and rn<=#{endNum}]]>
+ 	</select>
+ 	
+ 	<select id="getTotal_user" resultType="int">
+ 		select count (*) as cnt from member
+ 	</select>
+ 	
+ 	<select id="search_user_list" parameterType="java.util.Map" resultType="memberDTO">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		<![CDATA[select member_seq, name, id, pwd, gender, email, tel,
+ 		addr, to_char(member_date , 'YYYY.MM.DD') as member_date from 
+		(select rownum rn, tt.* from  (select * from member order by member_seq desc) tt) 
+		where (rn>=#{startNum} and rn<=#{endNum}) and (id like #{top_subject} or name like #{top_subject})]]>
+ 	</select>
+ 	
+ 	<select id="search_user_listT" parameterType="String" resultType="int">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		select count(*) as cnt from member where id like #{top_subject} or name like #{top_subject}
+ 	</select>
+ 	
+ 	<delete id="user_delete" parameterType="String">
+ 		delete member where id=#{id}
+ 	</delete>
+ 	
  </mapper>

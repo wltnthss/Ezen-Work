@@ -31,7 +31,7 @@
 				'width=1130,height=730');">faq</a>	
 		<br><br>				
 		
-		<a href="../admin_exp/job_experience_main.do?pg=1"><button type="button" class="btn btn-outline-secondary">알바경험담</button></a>			
+		<a href="../admin_exp/job_experience_main.do?pg=1"></a>			
 		<a href="../admin_exp/job_experience_main.do?pg=1">알바경험담</a>				
 		<br><br>
 		<a href="../admin_talk/talk_list.do"><button type="button" class="btn btn-danger">한줄톡</button></a>

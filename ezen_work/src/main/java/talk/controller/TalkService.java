@@ -20,4 +20,7 @@ public interface TalkService {
 	
 	//싫어요 추가
 	public int talk_bad_count(int seq);
+	
+	//한줄톡 삭제
+	public int talk_del(int seq);
 }

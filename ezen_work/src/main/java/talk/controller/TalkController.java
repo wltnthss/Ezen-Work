@@ -66,8 +66,9 @@ public class TalkController {
 		request.setCharacterEncoding("utf-8");		
 		
 		HttpSession session = request.getSession();
-	    String id = (String) session.getAttribute("memId");	
+	    String id = (String) session.getAttribute("amemId");	
 		String talk_subject = request.getParameter("talk_write1");
+		int pg = Integer.parseInt(request.getParameter("pg"));
 		
 		TalkDTO dto = new TalkDTO();
 		dto.setId(id);
@@ -75,7 +76,7 @@ public class TalkController {
 		
 		talkService.talk_write(dto);
 		ModelAndView modelAndView = new ModelAndView();			
-	    
+	    modelAndView.addObject("pg",pg);
 	    modelAndView.setViewName("../admin_talk/talk_write_ok.jsp");
 	    
 		return modelAndView;	
@@ -86,7 +87,7 @@ public class TalkController {
 		request.setCharacterEncoding("utf-8");		
 		
 		HttpSession session = request.getSession();
-	    String id = (String) session.getAttribute("memId");	
+	    String id = (String) session.getAttribute("amemId");	
 	    int pg = Integer.parseInt(request.getParameter("pg"));
 	    int click = Integer.parseInt(request.getParameter("click"));
 		int talk_count = Integer.parseInt(request.getParameter("count"));	
@@ -111,6 +112,28 @@ public class TalkController {
 			
 		}	 
 		modelAndView.setViewName("../admin_talk/talk_good_ok.jsp");	
+		return modelAndView;	
+	}
+	
+	@RequestMapping(value="/admin/admin_talk/talk_del.do")
+	public ModelAndView talk_del(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		request.setCharacterEncoding("utf-8");		
+		
+		HttpSession session = request.getSession();
+	    String id = (String) session.getAttribute("amemId");	
+	    int seq = Integer.parseInt(request.getParameter("seq"));
+	    
+	    int pg = 1;
+		if(request.getParameter("pg")!= null) {
+	         pg = Integer.parseInt(request.getParameter("pg"));
+	    }	    
+				
+		talkService.talk_del(seq);
+		
+		ModelAndView modelAndView = new ModelAndView();			
+	    modelAndView.addObject("pg",pg);
+	    modelAndView.setViewName("talk_list.do");
+	    
 		return modelAndView;	
 	}
 }
