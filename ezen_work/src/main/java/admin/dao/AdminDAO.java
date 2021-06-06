@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import admin.bean.AdminDTO;
+import advertise.bean.AdvertiseDTO;
 import company.bean.CompanyDTO;
 import member.bean.MemberDTO;
 
@@ -87,6 +88,35 @@ public class AdminDAO {
 	//회사 삭제
 	public int company_delete(String id) {
 		return sqlSessionTemplate.delete("mybatis.adminMapper.company_delete",id);
+	}
+	
+	//공고문 리스트 / 총 리스트수
+	public List<AdvertiseDTO> ad_list(int startNum, int endNum) {
+		Map<String, Integer>map = new HashMap<String,Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		return sqlSessionTemplate.selectList("mybatis.adminMapper.ad_list",map);
+	}	
+	public int ad_listT() {
+		return sqlSessionTemplate.selectOne("mybatis.adminMapper.ad_listT");
+	}
+	
+	//공고문 검색/총수량
+	public List<AdvertiseDTO> search_advertise_list(int startNum, int endNum,String top_subject) {
+		Map<Object, Object>map = new HashMap<Object,Object>();		
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		map.put("top_subject", top_subject);
+		return sqlSessionTemplate.selectList("mybatis.adminMapper.search_advertise_list",map);
+	}
+		
+	public int search_advertise_listT(String top_subject) {
+		return sqlSessionTemplate.selectOne("mybatis.adminMapper.search_advertise_listT",top_subject);
+	}
+	
+	//회사 삭제
+	public int ad_delete(int num) {
+		return sqlSessionTemplate.delete("mybatis.adminMapper.ad_delete",num);
 	}
 	
 }

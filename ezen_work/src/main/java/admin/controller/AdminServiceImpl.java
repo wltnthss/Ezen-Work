@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import admin.bean.AdminDTO;
 import admin.dao.AdminDAO;
+import advertise.bean.AdvertiseDTO;
 import company.bean.CompanyDTO;
 import member.bean.MemberDTO;
 
@@ -68,6 +69,31 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public int company_delete(String id) {
 		return dao.company_delete(id);
+	}
+
+	@Override
+	public List<AdvertiseDTO> ad_list(int startNum, int endNum) {
+		return dao.ad_list(startNum, endNum);
+	}
+
+	@Override
+	public int ad_listT() {
+		return dao.ad_listT();
+	}
+
+	@Override
+	public List<AdvertiseDTO> search_advertise_list(int startNum, int endNum, String top_subject) {
+		return dao.search_advertise_list(startNum, endNum,top_subject);
+	}
+
+	@Override
+	public int search_advertise_listT(String top_subject) {
+		return dao.search_advertise_listT(top_subject);
+	}
+
+	@Override
+	public int ad_delete(int num) {
+		return dao.ad_delete(num);
 	}
 
 }

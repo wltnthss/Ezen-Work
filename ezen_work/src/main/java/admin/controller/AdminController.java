@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import admin.bean.AdminDTO;
+import advertise.bean.AdvertiseDTO;
 import company.bean.CompanyDTO;
 import member.bean.MemberDTO;
 
@@ -227,6 +228,89 @@ public class AdminController {
 		modelAndView.addObject("pg",pg);
 		modelAndView.addObject("result",result);
 		modelAndView.setViewName("../admin_company/admin_company_delete_ok.jsp");
+		return modelAndView;				
+	}
+	
+	@RequestMapping(value="/admin/admin_login/ad_list.do")
+	public ModelAndView ad_list(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		
+		request.setCharacterEncoding("utf-8");
+		
+		int pg = 1;
+		if(request.getParameter("pg")!= null) {
+	         pg = Integer.parseInt(request.getParameter("pg"));
+	    }
+		int limit = 19;
+	    int endNum = pg*limit;  // 1 * 5 = 5
+	    int startNum = endNum - (limit -1); // 5 - (5-1) = 1
+		
+	    List<AdvertiseDTO> list = adminService.ad_list(startNum, endNum);
+	    int totalA = adminService.ad_listT();	
+	    
+	    int totalP = (totalA + (limit -1))/ limit;	    
+		int startPage = (pg-1)/10*10+1;
+	    int endPage = startPage + 9;
+	    if(endPage > totalP) endPage = totalP; 
+		
+	    ModelAndView modelAndView = new ModelAndView();		
+		modelAndView.addObject("pg", pg);
+		modelAndView.addObject("list", list);
+		modelAndView.addObject("totalP", totalP);
+		modelAndView.addObject("startPage", startPage);
+		modelAndView.addObject("endPage", endPage);
+		modelAndView.setViewName("../admin_advertise/admin_advertise.jsp");
+				
+		return modelAndView;					
+	}
+	
+	@RequestMapping(value="/admin/admin_login/search_advertise_list.do")
+	public ModelAndView search_advertise_list(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		
+		request.setCharacterEncoding("utf-8");		
+		
+		String top_subject = request.getParameter("top_subject");		
+		
+		int pg = 1;
+		if(request.getParameter("pg")!= null) {
+	         pg = Integer.parseInt(request.getParameter("pg"));
+	    }
+		int limit = 19;
+	    int endNum = pg*limit;  // 1 * 5 = 5
+	    int startNum = endNum - (limit -1); // 5 - (5-1) = 1
+		
+	    List<AdvertiseDTO> list = adminService.search_advertise_list(startNum, endNum,top_subject);
+	    int totalA = adminService.search_advertise_listT(top_subject);	
+	    
+	    int totalP = (totalA + (limit -1))/ limit;	    
+		int startPage = (pg-1)/10*10+1;
+	    int endPage = startPage + 9;
+	    if(endPage > totalP) endPage = totalP; 
+		
+	    ModelAndView modelAndView = new ModelAndView();
+	    modelAndView.addObject("top_subject",top_subject);
+		modelAndView.addObject("pg", pg);
+		modelAndView.addObject("list", list);
+		modelAndView.addObject("totalP", totalP);
+		modelAndView.addObject("startPage", startPage);
+		modelAndView.addObject("endPage", endPage);
+		modelAndView.setViewName("../admin_advertise/admin_advertise.jsp");
+				
+		return modelAndView;					
+	}
+	
+	@RequestMapping(value="/admin/admin_login/ad_delete.do")
+	public ModelAndView ad_delete(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		request.setCharacterEncoding("utf-8");		
+		
+		int num = Integer.parseInt(request.getParameter("num"));		
+		int pg =  Integer.parseInt(request.getParameter("pg"));
+		int result = adminService.ad_delete(num);
+		
+		// 화면 네비게이션
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("pg",pg);
+		modelAndView.addObject("result",result);
+		modelAndView.setViewName("../admin_advertise/admin_advertise_delete_ok.jsp");
 		return modelAndView;				
 	}
 	

@@ -36,7 +36,7 @@
         </div>
         <h2>회사관리 페이지</h2>
         <p></p>
-        <a href="company_list.do" class="icon-link">
+        <a href="company_list.do" target="_blank" class="icon-link">
           Go to companyList
           <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
         </a>
@@ -49,8 +49,8 @@
         </div>
         <h2>공고관리 페이지</h2>
         <p></p>
-        <a href="#" class="icon-link">
-          Call to action
+        <a href="ad_list.do" target="_blank" class="icon-link">
+          Go to advertise
           <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
         </a>
       </div>
