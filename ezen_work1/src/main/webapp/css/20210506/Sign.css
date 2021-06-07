@@ -1,0 +1,1412 @@
+@charset "utf-8";
+
+html.layerOpen,
+body.layerOpen {position:relative;overflow:hidden}
+html.full, html.full body {height:100%;background-color:#fff}
+html.full.pc, html.full.pc body {height:auto;background-color:#f8f8f8}
+html,body {background-color:#f8f8f8}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {margin:0;padding:0;font-family:"Apple SD Gothic Neo", "Malgun Gothic", Gulim, Sans-serif;font-size:14px;line-height:1.2;letter-spacing:-0.5px}
+body {position:relative;min-width:320px;-ms-text-size-adjust:none;-webkit-text-size-adjust:none;color:#222}
+table {font-family:"Apple SD Gothic Neo", "Malgun Gothic", Gulim, Sans-serif;font-size:14px;border-collapse:collapse;border-spacing:0}
+fieldset,img,button {border:0}
+address,caption,cite,code,dfn,th,var,i {font-style:normal;font-weight:normal}
+em {font-style:normal}
+ol,ul {list-style:none}
+caption,th {text-align:left}
+h1,h2,h3,h4,h5,h6 {font-weight:normal}
+abbr {border:0;font-variant:normal}
+select {height:46px;border:0;outline:0;-webkit-appearance:none;font-size:14px;letter-spacing:-0.5px;cursor:pointer;color:#222;background:url('//image.alba.kr/m/select7.png') no-repeat 100% 18px;background:none\0;*background:none;background-size:30px 10px}
+button {padding:0;font-family:"Apple SD Gothic Neo", "Malgun Gothic", Gulim, Sans-serif;font-size:14px;line-height:1.2;cursor:pointer}
+hr {display:none}
+input[type=text]::-ms-clear, input[type=password]::-ms-clear, input[type=text]::-ms-clear, input[type=email]::-ms-clear,input[type="tel"]::-ms-clear, input[type="number"]::-ms-clear {display:none}
+input[type="search"] {-webkit-appearance:textfield;box-sizing:content-box}
+input[type="radio"],input[type="checkbox"] {opacity:0;filter:alpha(opacity=0)}
+input[type="text"],input[type="password"],input[type="email"],input[type="tel"],input[type="number"],textarea {width:100%;border:0;resize:none}
+.hide {overflow:hidden;visibility:hidden;position:absolute !important;top:-999em;left:-999em;width:0;height:0;font-size:0}
+.hidden {overflow:hidden;position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;clip:rect(0 0 0 0)}
+.filter {z-index:998;position:fixed;top:0;left:0;width:100%;height:100%;background:#222;filter:alpha(opacity=40);opacity:0.4}
+
+ /* input */
+::placeholder {color:#bbb}
+::-webkit-input-placeholder {color:#bbb}
+:-ms-input-placeholder {color:#bbb}
+::-ms-input-placeholder {color:#bbb}
+:-moz-input-placeholder {color:#bbb}
+::-moz-input-placeholder {color:#bbb}
+.placeholder {color:#bbb}  /* IE9이하 placeholder color (placeholder 스크립트 지원) */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {width:100%;height:44px;margin:1px 0;box-sizing:border-box;border-radius:0;font-size:14px;background-color:transparent;-webkit-appearance:none}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {border-color:#3457f1;outline:none}
+body.FINDJOB input[type="text"]:focus,
+body.FINDJOB input[type="password"]:focus,
+body.FINDJOB input[type="email"]:focus,
+body.FINDJOB input[type="tel"]:focus,
+body.FINDJOB input[type="number"]:focus {border-color:#1351d3}
+body.GANHOJOB input[type="text"]:focus,
+body.GANHOJOB input[type="password"]:focus,
+body.GANHOJOB input[type="email"]:focus,
+body.GANHOJOB input[type="tel"]:focus,
+body.GANHOJOB input[type="number"]:focus {border-color:#f32347}
+body.GANGSA input[type="text"]:focus,
+body.GANGSA input[type="password"]:focus,
+body.GANGSA input[type="email"]:focus,
+body.GANGSA input[type="tel"]:focus,
+body.GANGSA input[type="number"]:focus {border-color:#008e9f}
+body.JOBSEARCH input[type="text"]:focus,
+body.JOBSEARCH input[type="password"]:focus,
+body.JOBSEARCH input[type="email"]:focus,
+body.JOBSEARCH input[type="tel"]:focus,
+body.JOBSEARCH input[type="number"]:focus {border-color:#2073f0}
+body.BAR24 input[type="text"]:focus,
+body.BAR24 input[type="password"]:focus,
+body.BAR24 input[type="email"]:focus,
+body.BAR24 input[type="tel"]:focus,
+body.BAR24 input[type="number"]:focus {border-color:#c60816}
+
+/* class - radio/checkbox */
+span.input {position:relative;display:inline-block}
+span.input input {position:absolute;left:0}
+span.input label {display:inline-block;height:20px;padding:0 0 0 25px;line-height:20px;vertical-align:middle;color:#222}
+span.input label.agree-label--info-reception {height:auto !important}
+span.input label.agree-label--info-reception span {color:#2346e4}
+@media (min-width:360px) and (max-width:639px){
+  span.input label.agree-label--info-reception span {display:block}
+}
+span.input label.notel {color:#666}
+span.input input[type="checkbox"] + label {background:url('//image.alba.kr/m/checkbox_button.png') no-repeat;background-size:20px 80px}
+span.input input[type="checkbox"]:checked + label {background-position:0 -60px}
+span.input input[type="radio"] + label {background:url('//image.alba.kr/sign/radio_icon_202104.png') no-repeat;background-size:36px 108px}
+span.input input[type="radio"]:checked + label {background-position:0 -36px}
+span.input input[type="radio"]:disabled + label {color:#bbb;background-position:0 -72px}
+span.input.disabled label {color:#999}
+html.pc span.input label {cursor:pointer}
+
+.agree-label {line-height:19px !important;color:#666 !important}
+.agree-label--all {color:#222 !important}
+.agree-label em {color:#222}
+.invisible-label {font-size:0;color:transparent !important}
+html.ios span.input input[type="checkbox"]+label {box-sizing:border-box;line-height:22px !important;vertical-align:top}
+html.ios span.input input[type="radio"] + label {line-height:22px !important}
+
+/* input File */
+.formInputFile {overflow:hidden;position:relative;width:98px;height:34px}
+.formInputFile input {position:absolute;left:0;top:0;opacity:0}
+.formInputFile label {position:relative;display:block;height:32px;line-height:32px;cursor:pointer}
+
+ /* select - /rsc/js/jquery.selectBox.js */
+.selectBox-dropdown {overflow:hidden;position:relative;display:inline-block;min-width:50px;height:23px;padding:0;vertical-align:middle;background:#fff;border:0 none;-webkit-appearance:none}
+.selectBox-dropdown .selectBox-label {overflow:hidden;display:block;width:auto !important;padding:0 30px 0 3px;line-height:21px;white-space:nowrap;text-overflow:ellipsis}
+.selectBox-dropdown .selectBox-arrow {position:absolute;top:0;right:0;width:20px;height:100%;background:url('/images/common/select.png') no-repeat 100% center}
+.selectBox-dropdown-menu {z-index:99999;overflow:auto;-webkit-overflow-scrolling:touch;position:absolute;max-height:200px;min-height:1em;margin:5px 0;background:#fff;border:1px solid #ececec;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.selectBox-menuShowing {border:1px solid #ffca00;box-sizing:border-box}
+.selectBox-inline {overflow:auto;display:inline-block;background:#fff}
+.selectBox-options,
+.selectBox-options li,
+.selectBox-options li a {display:block;margin:0;padding:0;cursor:default}
+.selectBox-options {margin-left:-1px}
+.selectBox-options.selectBox-options-top {margin-top:-6px}
+.selectBox-options.selectBox-options-bottom {margin-top:6px}
+.selectBox-options li a {overflow:hidden;padding:10px 5px;font-size:12px;white-space:normal}
+.selectBox-options li.selectBox-hover a {background-color:#eee}
+.selectBox-options li.selectBox-disabled a {color:#999}
+.selectBox-options li.selectBox-selected a {background-color:#e0e4eb}
+.selectBox-options .selectBox-optgroup {padding:10px 7px;font-weight:bold;white-space:normal;color:#222;background:#eee}
+.selectBox.selectBox-disabled {color:#999 !important}
+.selectBox-dropdown.selectBox-disabled .selectBox-arrow {border-color:#666;opacity:.5;filter:alpha(opacity=50)}
+.selectBox-inline.selectBox-disabled {color:#999 !important}
+.selectBox-inline.selectBox-disabled .selectBox-options a {background-color:transparent !important}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.selectBox-dropdown .selectBox-arrow {background-image:url('/images/common/select.png');background-size:20px 6px}
+}
+
+/* link */
+a:link,a:visited,a:focus {color:#222;text-decoration:none}
+a:hover,a:active {color:#3457f1;text-decoration:none}
+
+/* skipNav */
+.skipNav {z-index:1;position:absolute}
+.skipNav li a {position:absolute;top:-999em;left:10px;width:120px;height:28px;padding:0 5px;line-height:28px;text-align:center;background-color:#fee49b;border:1px solid #222}
+.skipNav li a:focus,
+.skipNav li a:active {top:14px}
+
+/* Header */
+#Header {z-index:100;overflow:hidden;width:100%;height:60px;background:#fff;border-bottom:1px solid #dadada}
+#Header #HeaderGnb {position:relative;width:600px;margin:0 auto;padding:11px 0 0}
+#Header #HeaderGnb ul {position:absolute;right:-14px;;top:25px}
+#Header #HeaderGnb ul li {float:left;padding:0 14px;background:url('/images/common/line_gray.gif') no-repeat 0 center}
+#Header #HeaderGnb ul li.home {background:none}
+html.mobile #Header {display:none}
+html.pc body.find #Header #HeaderGnb {width:700px}
+
+/* Section */
+#Section {max-width:600px;margin:0 auto}
+html.mobile #Section {padding:0 15px 30px}
+html.mobile body.change #Section {padding:44px 0 0 !important}
+html.mobile body#ChangePwdGuide #Section {padding:60px 20px 0 !important}
+html.mobile body.ALBA #Section {padding-top:60px}
+html.mobile body.ALBA #Section.oldApp {padding-top:6px}
+
+html.mobile body.GANGSA #Section,
+html.mobile body.GANHOJOB #Section,
+html.mobile body.JOBSEARCH #Section {padding-top:0 !important}
+html.mobile body.GANGSA.find #Section,
+html.mobile body.GANGSA.join #Section,
+html.mobile body.GANHOJOB.find #Section,
+html.mobile body.GANHOJOB.join #Section,
+html.mobile body.JOBSEARCH.find #Section,
+html.mobile body.JOBSEARCH.join #Section {padding-top:20px !important}
+html.mobile body.GANGSA#JoinCompleteBiz #Section,
+html.mobile body.GANHOJOB#JoinCompleteBiz #Section {padding:20px !important}
+
+#Section.sectionFixed {padding-bottom:67px}
+#Section::after {content:"";display:block;clear:both}
+
+#Section .header {padding:0 0 14px;font-weight:bold;font-size:24px;text-align:center;line-height:normal;letter-spacing:-0.05em}
+#Section .header em {color:#3457f1}
+html.pc #Section {width:580px}
+html.pc body.find #Section {width:700px;max-width:700px}
+html.pc #Section .header {padding:30px 0;font-size:28px}
+html.pc #Section .joinComplete .header {display:block;padding:70px 0;font-size:23px;line-height:2}
+html.pc #Section .joinComplete .header>span {font-size:28px}
+html.mobile #Section .header {display:none;z-index:9999;position:fixed;top:0;right:0;left:0;height:44px;padding:0 0 0 40px;font-weight:normal;font-size:17px;line-height:44px;letter-spacing:-0.3px;text-align:left;color:#222;background-color:#ffeb00}
+html.mobile.ios #Section .header {line-height:46px}
+html.mobile #Section .header.title {padding-left:17px}
+html.mobile.ios #Section .header {position:absolute !important}
+html.mobile body.biz #Section .header {color:#fff;background-color:#5699ff}
+html.mobile body.ALBA #Section .header {display:block}
+html.mobile #Section .header .backBtn {position:absolute;top:0;left:5px;width:16px;height:24px;padding:10px}
+html.mobile #Section .header .backBtn>span {display:block;width:16px;height:24px;font-size:0;color:transparent;background:url('//image.alba.kr/m/header_202008.png') no-repeat -76px -48px;background-size:144px auto}
+html.mobile body.biz #Section .header .backBtn>span {background-position:-76px -96px}
+html.pc #Section .header .backBtn {display:none}
+
+/* Footer */
+#Footer {clear:both;padding:30px 0;font-size:11px;letter-spacing:-0.3px;text-align:center;color:#aaa}
+#Footer strong {font-size:11px;font-weight:normal}
+html.mobile #Footer {display:none}
+
+/* class - btn */
+.btn {display:inline-block;text-align:center;vertical-align:middle}
+.btn.btnType1 {background-color:#ffe100}
+body.biz .btn.btnType1,
+.searchWrap.biz .btn.btnType1 {color:#fff;background-color:#3266cc}
+.btn.btnType2 {color:#fff;background-color:#46525b}
+.btn.btnType3 {background-color:#fff}
+.btn.btnType4 {color:#fff;background-color:#838d9a}
+.btn.btnType5 {background-color:#f4f5f5}
+.btn.blue, 
+.btn.biz {color:#fff !important;background-color:#3266cc}
+
+body.FINDJOB .btn.btnType1 {color:#fff;background-color:#1351d3 !important}
+body.GANHOJOB .btn.btnType1 {color:#fff;background-color:#ff5b6c !important}
+body.GANGSA .btn.btnType1 {color:#fff;background-color:#008e9f !important}
+body.JOBSEARCH .btn.btnType1 {color:#fff;background-color:#0072f9 !important}
+body.BAR24 .btn.btnType1 {color:#fff;background-color:#d80000 !important}
+body.FINDJOB .btn.biz,
+body.GANHOJOB .btn.biz,
+body.GANGSA .btn.biz,
+body.JOBSEARCH .btn.biz,
+body.BAR24 .btn.biz {background-color:#46525b}
+
+/* class - btnAction */
+.btnAction {padding:0;text-align:center}
+#JoinBiz .btnAction {margin-top:15px}
+#ChangePerson .btnAction,
+#ChangeBiz .btnAction,
+#ChangeMgr .btnAction {padding-top:15px}
+.btnAction.bottom {padding:0 15px 30px;background-color:#fff}
+.btnAction .btn {display:block;width:100%;height:50px;font-size:15px;line-height:50px;cursor:pointer;color:#222}
+.btnAction ul:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.btnAction li {float:right;width:48%}
+.btnAction li:first-child {float:left}
+html.ios .btnAction .btn {line-height:52px}
+html.pc .btnAction.bottom {padding:0}
+
+/* class - promotion */
+.promotion {margin-top:20px}
+.promotion a {display:block;margin:0 auto}
+.promotion a img {display:block;max-width:100%;margin:0 auto}
+
+/* class - coupon */
+.celebration {padding:30px 25px 35px;font-size:14px;text-align:center;background:#fff;border:1px solid #d7d7d7}
+.celebration strong {display:block;margin-bottom:15px;font-weight:normal;font-size:35px}
+.coupon .couponList {background:#fff;border:1px solid #d7d7d7}
+.coupon .couponList:first-child {margin-bottom:20px}
+.coupon .couponList li {position:relative;padding:25px 25px 25px 210px;font-size:19px;border-top:1px dashed #dee1e2}
+.coupon .couponList li.first {border-top:0 none}
+.coupon .couponList li .icon {position:absolute;left:53px;top:50%;margin-top:-53px}
+.coupon .couponList li .icon img {width:109px;height:107px}
+.coupon .couponList li strong {display:block;font-weight:normal;font-size:35px}
+.coupon .couponList li strong em {font-weight:bold;color:#fa9f00}
+.coupon .couponList li .serviceable {display:block;margin-top:10px;font-weight:bold;font-size:13px}
+.coupon .couponList li .serviceable em {font-weight:normal;color:#3457f1}
+.coupon .guide {padding:15px 0 30px;color:#666}
+.coupon .guide strong {display:block;margin-bottom:5px;font-size:15px;color:#222}
+body.FINDJOB .coupon .couponList li strong em {color:#1351d3}
+body.GANGSA .coupon .couponList li strong em {color:#008e9f}
+body.GANHOJOB .coupon .couponList li strong em {color:#f32347}
+
+html.mobile .coupon .couponList li {padding:20px 10px 20px 80px;font-size:15px}
+html.mobile .coupon .couponList li .icon {left:15px;margin-top:-26px}
+html.mobile .coupon .couponList li .icon img {width:54px;height:53px}
+html.mobile .coupon .couponList li strong {font-size:30px}
+html.mobile .coupon .couponList li .serviceable {margin-top:5px}
+
+.banner__stamp {margin:0 0 20px}
+.banner__stamp img {max-width:100%}
+
+/* class - selectTab */
+.selectTab {overflow:hidden;margin-bottom:10px;background-color:#fff}
+.selectTab li {position:relative;float:left;width:33.333%;border-bottom:1px solid #ddd;text-align:center}
+.selectTab li:before {content:'';position:absolute;top:50%;left:0;width:1px;height:10px;margin-top:-5px;background-color:#ddd}
+.selectTab li:first-child:before {display:none}
+.selectTab li a {display:inline-block;position:relative;height:40px;font-size:13px;line-height:40px;color:#666}
+.selectTab li.on a {color:#2346e4}
+.selectTab li.on a::after {content:'';position:absolute;bottom:-1px;left:0;width:100%;height:1px;background-color:#5b79fe}
+html.pc .selectTab {margin:-5px 0 20px;background-color:#eee}
+html.pc .selectTab li {width:192px;margin-right:-1px;border:1px solid #ddd}
+html.pc .selectTab li a {display:block;height:48px;font-size:15px;line-height:48px}
+html.pc .selectTab li.on {z-index:1;position:relative;border-color:#666;background-color:#fff}
+html.pc .selectTab li.on a {color:#222}
+html.pc .selectTab li:before,
+html.pc .selectTab li.on a::after {content:none}
+
+body.change.person.kakao .selectTab li,
+body.change.biz .selectTab li {width:25%}
+body.change.person.sns-change .selectTab li,
+body.join .selectTab li,
+body.find .selectTab li {width:50%}
+html.pc body.change.person.kakao .selectTab li,
+html.pc body.change.biz .selectTab li {width:144px}
+html.pc body.change.person.kakao .selectTab li:first-child,
+html.pc body.change.biz .selectTab li:first-child {width:143px}
+html.pc body.change.person.sns-change .selectTab li {width:288px}
+
+/* class - labelTab */
+.labelTab {width:100%;height:50px;margin-bottom:20px}
+.labelTab--bar24 {margin:6px 0}
+.labelTab:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.labelTab li {position:relative;float:left;width:50%}
+.labelTab li input {position:absolute;left:0;top:0}
+.labelTab li label {display:block;height:48px;padding:0 5px;font-size:15px;text-align:center;color:#222;cursor:pointer;background-color:#fff;border:1px solid #ccc}
+.labelTab li span {display:inline-block;vertical-align:middle}
+.labelTab li span.lhmiddle {height:48px;line-height:48px}
+.labelTab li.on label {color:#222;background-color:#ffca00;border:1px solid #ffba00}
+html.mobile .labelTab {margin-bottom:6px}
+html.mobile .labelTab li label {font-size:14px}
+
+body.FINDJOB .labelTab li.on label {color:#fff;background-color:#1351d3;border:1px solid #1351d3}
+body.GANHOJOB .labelTab li.on label {color:#fff;background-color:#ff5b6c;border:1px solid #ff5b6c}
+body.GANGSA .labelTab li.on label {color:#fff;background-color:#008e9f;border:1px solid #008e9f}
+body.JOBSEARCH .labelTab li.on label {color:#fff;background-color:#0072f9;border:1px solid #0072f9}
+body.BAR24 .labelTab li.on label {color:#fff;background-color:#d80000;border:1px solid #d80000}
+
+/* class - navTab */
+.navTab {overflow:hidden;width:100%}
+.navTab li {position:relative;float:left;width:50%;box-sizing:border-box;border:1px solid #ddd;border-bottom-color:#666}
+.navTab li:first-child {margin-right:-1px}
+.navTab li a {display:block;height:36px;font-size:13px;line-height:36px;text-align:center;color:#666}
+.navTab li.on {z-index:10;border-color:#666;border-bottom-color:#fff}
+.navTab li.on a {color:#222}
+html.ios .navTab li a {line-height:38px}
+
+/* class - formLayer */
+.formLayer {z-index:100;display:none;position:fixed;left:0;top:0;width:100%;height:100%}
+.formLayer .layer {z-index:999;overflow:hidden;position:fixed;left:50%;top:50%;background:#fff;border-radius:5px}
+.formLayer .layer .layerContents {padding:20px}
+.formLayer .layer .closeBtn {position:absolute;right:20px;top:20px;width:16px;height:16px;font:0/0 Dotum;color:transparent;background:url('/images/common/icon.png') no-repeat -252px 0}
+.formLayer .layer.over {overflow:visible}
+.formLayer .layer.over .closeBtn {top:-28px;right:-2px;padding:5px;background-color:#fff;background-position:-247px 5px;border:2px solid #555;border-bottom:0 none}
+
+.sign__layer-header {position:relative;border-bottom:1px solid #ddd;background-color:#fff}
+.sign__layer-title {height:45px;font-weight:bold;font-size:16px;text-align:center;line-height:45px}
+.sign__layer-contents {padding:15px;background-color:#fff}
+.sign__layer-comment {font-size:14px;line-height:1.43;color:#666}
+.sign__layer-radiobox {overflow:hidden;height:46px;border:1px solid #ddd;line-height:46px}
+.sign__layer-radiobox .input {float:left;width:50%;box-sizing:border-box}
+.sign__layer-radiobox .input:first-child {padding-left:12px}
+.sign__layer-guide-wrap {padding:10px 0}
+.sign__layer-guide-list--ipin {display:none}
+.sign__layer-guide-item {position:relative;padding-left:8px;font-size:12px;line-height:1.5;color:#2346e4}
+.sign__layer-guide-item>span {position:absolute;top:0;left:0;color:#666}
+.sign__layer-explain-list {padding:10px 0 0px;border-top:1px solid #eee}
+.sign__layer-explain-item {position:relative;padding-left:7px;font-size:11px;line-height:1.5;color:#999}
+.sign__layer-explain-item>span {position:absolute;top:0;left:0}
+.sign__layer-input-wrap {padding:15px 0}
+.sign__layer-input-wrap>input {height:46px;padding:0 12px;border:1px solid #ddd}
+.sign__layer-input-wrap .msg {font-size:11px;color:#2346e4}
+.sign__layer-input-wrap .msg>em {color:#f00}
+.sign-layer-close {position:absolute;top:0;right:0;padding:15px}
+.sign-layer-close>span {display:block;width:15px;height:15px;font-size:0;color:transparent;background:url('//image.alba.kr/sign/sign_layer_icon.png') no-repeat;background-size:72px 72px}
+.sign-layer-submit {display:block;width:100%;height:50px;font-size:15px;text-align:center;line-height:50px;color:#222 !important;background-color:#ffe000}
+.sign-layer-submit--fix {position:absolute;bottom:0;left:0}
+.biz .sign-layer-submit {color:#fff !important;background-color:#3266cc}
+html.ios .sign__layer-title {line-height:46px}
+html.pc .sign__layer-radiobox .input {width:134px;box-sizing:content-box}
+html.pc .sign__layer-radiobox .input:first-child {width:122px}
+
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.formLayer .layer .closeBtn {background-image:url('/images/common/icon_300.png');background-size:360px 360px}
+}
+
+/* 우편번호 검색 레이어 */
+#addrResult .layer {width:496px;margin-left:-250px;-webkit-overflow-scrolling:touch}
+#addrResult .guide {margin-top:8px;font-size:13px}
+#addrResult .guide em {color:#ff5400}
+#addrResult .addrInput {position:relative;height:42px;padding-right:54px}
+#addrResult .addrInput input {height:40px;line-height:40px;text-indent:5px;border:1px solid #c6c9cf}
+#addrResult .addrInput .btn {position:absolute;right:0;top:0;width:52px;height:40px;font-weight:bold;line-height:40px}
+#addrResult .addrList {margin-top:20px}
+#addrResult .addrList ul {position:relative;overflow-x:hidden;overflow-y:auto;max-height:335px;border:1px solid #c6c9cf}
+#addrResult .addrList ul li {min-height:0;padding:0;border-top:1px solid #eff2f7}
+#addrResult .addrList ul li:first-child {border-top:0 none}
+#addrResult .addrList ul li a {position:relative;display:block;padding:13px 10px 13px 72px}
+#addrResult .addrList ul li a span {position:absolute;left:10px;top:13px}
+#addrResult .addrList .guide {color:#999}
+html.mobile #addrResult .layer {width:316px;margin-left:-160px}
+html.mobile #addrResult .guide {font-size:11px}
+html.mobile #addrResult .addrList ul {max-height:180px}
+html.mobile #addrResult .addrList ul li a {font-size:12px}
+
+/* 개명신청 레이어 */
+#LayerChangeName .layer {width:300px;margin-left:-150px;background-color:transparent}
+#LayerChangeName .layerContents {padding-top:10px}
+#LayerChangeName .guide {font-size:13px}
+#LayerChangeName .tabList {position:relative;margin:8px -20px 0;padding:52px 0 0;border-top:1px solid #d7d7d7}
+#LayerChangeName .tabList li {position:static;min-height:0;padding:0;border:0 none}
+#LayerChangeName .tabList li .tabTitle {position:absolute;top:0;width:50%;height:52px;font-size:15px;line-height:52px;text-align:center;color:#999;background:#f1f2f3;border-left:1px solid #d7d7d7}
+#LayerChangeName .tabList li .tabTitle.on {font-weight:bold;color:#000;background:#fff}
+#LayerChangeName .tabList li.phone .tabTitle {left:0}
+#LayerChangeName .tabList li.iPin .tabTitle {left:50%}
+#LayerChangeName .tabList li .guideTxt {padding:7px 0;font-size:12px;text-align:center;color:#3457f1;background:#dbe9fb;border-top:1px solid #adcdf5;border-bottom:1px solid #adcdf5}
+#LayerChangeName .tabList li.iPin .tabContents {display:none}
+#LayerChangeName .tabList li .cmdArea {padding:20px 20px 30px;font-size:15px;text-align:center}
+#LayerChangeName .tabList li .cmdArea .certify {font-size:15px;color:#666}
+#LayerChangeName .tabList li .cmdArea .btn {width:270px;margin-top:10px;padding:10px 0}
+#LayerChangeName .notice {margin:0;border-top:1px solid #ddd}
+#LayerChangeName .notice li {padding:10px 5px 0;font-size:12px;color:#666;border:0 none}
+#LayerChangeName .notice li span {font-weight:bold;padding-right:5px}
+html.mobile #LayerChangeName .layer {width:316px;margin-left:-160px}
+html.mobile #LayerChangeName .guide {font-size:11px}
+
+/*중복가입제한 레이어*/
+#LayerComregnoBlock .layer {width:300px;margin-left:-150px;background-color:transparent}
+#LayerComregnoBlock .sign__layer-guide-wrap {padding-bottom:0}
+#LayerComregnoBlock .sign__layer-guide-item {color:#999}
+#LayerComregnoBlock .sign__layer-explain-item {margin-top:10px;font-size:12px;color:#ff2a2a}
+html.mobile #LayerComregnoBlock .layer {width:316px;margin-left:-160px}
+
+/* 서비스이용제한 */
+.blokingLayer .filter {opacity:0.4;filter:alpha(opacity=40)}
+.blokingLayer .layer {z-index:999;position:fixed;top:50%;left:50%;width:300px;margin:-150px 0 0 -150px;border-radius:5px;background-color:#fff}
+.blokingLayer h1 {height:45px;text-align:center;font-weight:bold;font-size:16px;line-height:45px;color:#222;border-bottom:1px solid #eee}
+.blokingLayer .comment {padding:15px;line-height:1.4;color:#666}
+.blokingLayer .comment>strong {font-weight:normal;color:#222}
+.blokingLayer .comment>strong>em {color:#ff2a2a}
+.blokingLayer #divBreakAwayBtn {display:block}
+.blokingLayer .bloking-layer__btn-wrap {overflow:hidden;border-top:1px solid #eee}
+.blokingLayer .bloking-layer__btn-wrap .btn:first-child {border-right:1px solid #eee}
+.breakaway-btn {float:left;width:50%;height:45px;box-sizing:border-box;font-size:15px;text-align:center;line-height:45px;color:#999 !important}
+.breakaway-btn:first-child {border-right:1px solid #eee}
+.breakaway-btn--submit {color:#2346e4 !important}
+.blokingLayer #divBreakAwayRegForm {display:none}
+.blokingLayer .guide-wrap {margin:0 15px;padding:10px 0 8px;border-top:1px solid #eee}
+.blokingLayer .guide {position:relative;padding-left:7px;font-size:11px;line-height:1.5;color:#999}
+.blokingLayer .guide>span {position:absolute;top:0;left:0}
+.blocking-input-wrap {padding:0 15px 15px}
+.blocking-input-wrap>input {display:block;height:46px;padding:0 12px;border:1px solid #ddd;font-size:14px;line-height:46px}
+
+/* class - colWrap */
+.colWrap {position:relative;width:100%}
+.colWrap:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.colWrap .col {float:left;width:100%;margin-left:4px}
+.colWrap .col.first {margin-left:0 !important}
+.colWrap.two .col {width:50%}
+.colWrap.three .col {width:33.33%}
+.colWrap.four .col {width:25%}
+.colWrap .cell,
+.colWrap .dash {display:none}
+.colWrap .col .btn {display:block}
+
+/* class - inputForm */
+.inputForm {position:relative;border:1px solid #ddd;background-color:#fff}
+.inputForm.margin.first {margin-bottom:8px}
+.inputForm input.placeholder + label {display:block} 
+.inputForm--bar24 {margin-top:10px}
+.inputForm.change-biz {margin-bottom:8px}
+.inputForm li {position:relative;min-height:46px;padding:0 10px 0 12px;border-top:1px solid #eee}
+.inputForm li:first-child {border-top:0}
+.inputForm li.select-type {padding-right:0}
+.inputForm li .itemTitle {z-index:10;display:none;position:absolute;top:0;left:0;font-size:14px;line-height:46px;color:#bbb}
+.inputForm li.placeholder .itemTitle {display:block}
+.inputForm li .msg,
+.inputForm li .memo {display:none;overflow:hidden;margin-top:-10px;padding-bottom:8px;font-size:11px;color:#2346e4}
+#msg_tel {margin:2px 0 0 90px\0;*margin:2px 0 0 90px}
+.inputForm li .msg.show,
+.inputForm li .memo.show {display:block;position:relative}
+.inputForm li .msg em,
+.inputForm li .memo em {color:#f00}
+.inputForm li .guide {display:block;font-size:13px;color:#2346e4}
+.inputForm li .action {position:absolute;top:0;right:10px}
+.inputForm li.cert {display:none}
+.inputForm li.certMe,
+.inputForm li.certGbnContent {padding-right:98px}
+.inputForm li.certMe .certGbn .input {margin-right:40px}
+.inputForm li.certMe .memo,
+.inputForm li.certGbnContent .memo {display:none;margin-right:-128px}
+.inputForm .temporaryBizNum .input {float:right}
+.inputForm li:after {content:" ";display:block;clear:both}
+html.pc .inputForm.margin {margin:0 0 8px}
+html.pc .inputForm.margin.first {border-bottom:1px solid #ddd}
+
+/* 회원가입 - 메인 */
+body.ALBA .joinMain {padding-top:6px}
+.joinMain ul li.person {margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid #eee}
+.joinMain ul li .guide {position:relative;border:1px solid #eee;text-align:center;color:#222;background-color:#fff}
+.joinMain ul li .guide .join-icon {display:block;width:41px;height:32px;margin:0 auto 9px;background:url('//image.alba.kr/sign/join_pick.png') no-repeat 0 0;background-size:82px 82px}
+.joinMain ul li.biz .guide .join-icon {background-position:-41px 0}
+.joinMain ul li .join-link {display:block;padding:34px 0;color:#222}
+.joinMain ul li strong {font-weight:bold;font-size:16px;line-height:1.5}
+.joinMain ul li .join-guide-text {display:block;font-size:12px;line-height:1.5;color:#999}
+.joinMain ul li .snsJoin {display:block;overflow:hidden;border:1px solid #eee;color:#999}
+.joinMain ul li .snsJoin .sns {float:left;width:33.333%;height:42px;box-sizing:border-box;border-left:1px solid #eee;font-size:13px;line-height:42px;color:#666;background-color:#fff}
+.joinMain ul li .snsJoin--col3 .sns {width:33.333% !important}
+.joinMain ul li .snsJoin--col4 .sns {width:50% !important}
+.joinMain ul li .snsJoin--col5 .sns {width:20% !important}
+.joinMain ul li .snsJoin .sns:first-child {border-left:0}
+
+@media screen and (max-width:420px){
+  .joinMain ul li .snsJoin--col5 .sns {width:33.333% !important}
+  .joinMain ul li .snsJoin--col5 .sns:first-child, 
+  .joinMain ul li .snsJoin--col5 .sns:nth-child(2), 
+  .joinMain ul li .snsJoin--col5 .sns:nth-child(3) {border-bottom:1px solid #eee}
+  .joinMain ul li .snsJoin--col5 .sns:nth-child(4) {border-left:0}
+  .joinMain ul li .snsJoin--col5 .sns:nth-child(5) {border-right:1px solid #eee}
+}
+
+html.mobile .joinMain ul li .snsJoin .sns::before {content:'';display:inline-block;position:relative;top:4px;width:17px;height:17px;margin-right:3px;background:url('//image.alba.kr/sns/icon_sns_m_202104.png') no-repeat 0 0;background-size:204px auto}
+html.mobile .joinMain ul li .snsJoin .kakao::before {width:18px;background-position:-26px 0}
+html.mobile .joinMain ul li .snsJoin .facebook::before {background-position:-53px 0}
+html.mobile .joinMain ul li .snsJoin .google::before {background-position:-106px 0}
+html.mobile .joinMain ul li .snsJoin .apple::before {background-position:-80px 0}
+html.pc .joinMain ul li .snsJoin .sns::before {content:'';display:inline-block;position:relative;top:4px;width:17px;height:17px;margin-right:3px;background:url('//image.alba.kr/sns/icon_sns_pc_202104.png') no-repeat 0 0}
+html.pc .joinMain ul li .snsJoin .kakao::before {background-position:-27px 0}
+html.pc .joinMain ul li .snsJoin .facebook::before {background-position:-54px 0}
+html.pc .joinMain ul li .snsJoin .google::before {background-position:-108px 0}
+html.pc .joinMain ul li .snsJoin .apple::before {background-position:-81px 0}
+.joinMain ul li:first-child .btnAction {margin-bottom:6px}
+.joinCaution {margin-top:20px;font-size:12px;text-align:center;letter-spacing:-0.3px;line-height:1.5;color:#999}
+.joinCaution dt {padding-bottom:6px;font-weight:bold;color:#222}
+.joinMain .btnAction .btn {height:50px;font-size:15px;line-height:50px}
+html.mobile #JoinMain {height:100%}
+html.mobile #JoinMain #Section {display:flex;flex-direction:column;height:100%;padding-bottom:0;box-sizing:border-box}
+html.mobile #JoinMain .sign__copyright {margin-top:auto}
+
+html.ios .joinMain ul li .snsJoin .sns {line-height:44px}
+html.pc .joinMain ul li .snsJoin {margin-top:7px}
+html.pc .joinMain {padding-top:0}
+html.pc .joinMain ul li.person {margin-bottom:25px;padding-bottom:25px}
+html.pc .joinMain ul li .join-link {padding:44px 0}
+html.pc .joinMain ul li .guide span {margin-bottom:10px}
+html.pc .joinMain ul li:first-child .btnAction {margin-bottom:0}
+
+/* 회원가입 - 개인, 기업, SNS */
+.agreementCk ul li .agreeContents {display:block;overflow-y:scroll;width:100%;height:100%;box-sizing:border-box;border:1px solid #eee;-webkit-overflow-scrolling:touch}
+
+.join__welcome {padding:15px 0 18px;font-size:28px;text-align:center}
+html.mobile #JoinBiz.ALBA .join__welcome {color:#fff}
+html.pc .join__welcome {display:none}
+
+.join__title {display:none}
+.join__title--show {display:block;padding:12px 0 6px;font-weight:bold;font-size:13px;line-height:1.46}
+.join__sub-title {position:absolute;top:0;left:14px;font-size:13px;line-height:50px;color:#666}
+.join__section {margin-bottom:8px;background-color:#fff}
+.join__section--agreement {padding:0}
+.join__section--person-info {margin-bottom:0}
+
+.memberJoin .user {overflow:hidden;padding-bottom:15px}
+.memberJoin .user .photo {overflow:hidden;float:left;width:65px;height:65px;margin-right:8px;border-radius:50%;background-color:#c7ccd3}
+.memberJoin .user .photo>img {width:65px;height:65px}
+.memberJoin .user em {display:block;font-size:20px;padding-top:5px;line-height:1.38}
+
+.join__agreement {padding-bottom:8px}
+.join__agreement-list {padding-bottom:6px;border:1px solid #ddd;background-color:#fff}
+.join__agreement-item {overflow:hidden;padding:5px 12px}
+.join__agreement-item--all {margin-bottom:5px;padding:11px 12px;border-bottom:1px solid #ddd}
+.join__input-wrap {position:relative;font-size:0}
+.join__input-wrap::after {content:'';clear:both;display:table;width:100%;height:0}
+.join__input-wrap .input {float:left}
+.join__input-wrap .agreement-btn {z-index:10;display:block;overflow:hidden;position:relative}
+
+.join--new .msg {display:none;overflow:hidden;margin-top:-8px;padding-bottom:7px;font-size:11px;color:#2346e4}
+.join--new .msg.show {display:block}
+.join--new .msg.choice {color:#aaa}
+.join--new .msg em {color:#f00}
+html.pc .join--new .msg {position:relative}
+
+.join--new .memo {display:none;overflow:hidden;margin-top:-2px;padding-bottom:7px;font-size:11px;color:#2346e4}
+.join--new .memo.show {display:block}
+.join--new .memo em {font-size:11px !important;color:#f00}
+.sign__input-frame .success-report,
+.join__biz-info .success-report {position:absolute;top:17px;right:10px;height:15px;padding-left:19px;font-size:12px;color:#1da611;background:url('//image.alba.kr/sign/icon_certify.png') no-repeat 0 0;background-size:15px 15px}
+.sign-arrow {z-index:5;position:absolute;top:6px;right:0;width:14px;height:8px;transition:all 0.2s;-webkit-transition:all 0.2s;background:url('//image.alba.kr/sign/join_icon.png') no-repeat;background-size:108px 144px}
+.agreement-btn.on + .sign-arrow {transform:rotate(180deg);-webkit-transform:rotate(180deg)}
+.join-submit-btn {width:100%;height:50px;margin-top:25px;font-size:15px;background-color:#ffe000}
+.join-submit-btn--biz {color:#fff;background-color:#3266cc}
+html.ios .join-submit-btn {line-height:52px}
+html.pc .join-submit-btn {height:54px;line-height:54px}
+
+.agreement__content-wrap {display:none;width:100%;height:168px;box-sizing:border-box;background-color:#f5f5f5}
+.agreement__content-wrap.active {display:block;margin-top:9px}
+.agreement-btn {display:inline-block;font-size:14px;line-height:19px;letter-spacing:-0.5px;vertical-align:top;color:#666 !important}
+.agreement-btn.on .sign-arrow--agreement {transform:rotate(180deg);-webkit-transform:rotate(180deg)}
+.agreement-emphasis {vertical-align:top;color:#ff2a2a}
+.agreement-emphasis--coupon {display:block;height:16px;margin-top:7px;line-height:16px}
+.agreement-emphasis--coupon>span {display:inline-block;width:34px;height:16px;margin-left:5px;vertical-align:top;background:url('//image.alba.kr/sign/JoinComplete_coupon.png') no-repeat 0 -44px;background-size:60px 60px}
+.join__receive-title {display:inline-block;letter-spacing:-0.5px}
+html.ios .agreement__content-wrap {overflow-y:scroll;-webkit-overflow-scrolling:touch}
+html.ios .agreement-btn {line-height:22px}
+
+.join__account {position:relative}
+.password-guide-btn {position:absolute;top:15px;left:65px;width:20px;height:20px;font-size:0;color:transparent;background:url('//image.alba.kr/sign/join_v1.png') no-repeat 2px 2px;background-size:144px 144px}
+.password-view-btn {position:absolute;top:9px;right:5px;height:28px;padding:0 7px;font-size:12px;line-height:28px;color:#666;background-color:#fff}
+html.ios .password-view-btn {line-height:30px}
+
+.join__info-list {border:1px solid #ddd}
+.join__info-list--info {z-index:10;position:relative;margin-top:-1px;border-top-color:#eee}
+.join__info-item {position:relative;min-height:46px;padding:0 10px 0 12px;box-sizing:border-box;border-top:1px solid #eee;background-color:#fff}
+.join__info-item:first-child {border-top:0}
+.join__info-item--except {padding-left:102px}
+.join__info-item::after {content:'';clear:both;display:table;width:100%;height:0}
+.join__benefit {padding-bottom:15px;font-size:15px;line-height:1.47;color:#222}
+.join__benefit>img {display:block;width:50%;margin-bottom:10px}
+.join__benefit em {display:block;color:#2346e4}
+html.pc .join__benefit {margin-top:-4px}
+
+.certified {overflow:hidden;background-color:#fff}
+#JoinActing .certified {margin-bottom:6px}
+.certified-label-inner {float:left;box-sizing:border-box;width:50%;height:38px;border:1px solid #aaa;border-radius:4px 0 0 4px;font-size:13px;line-height:38px;text-align:center;}
+.certified-label-inner::after {content:"";display:inline-block;width:5px;height:5px;margin-left:3px;border-top:1px solid #222;border-right:1px solid #222;transform:rotate(45deg);-webkit-transform:rotate(45deg)}
+.certified-label-inner--ipin {float:right;border-radius:0 4px 4px 0;border-left:0 none}
+.certified-input:checked + label .certified-label-inner {border-color:#6da5ff;color:#fff;background-color:#6da5ff}
+.certified-input:checked + label .certified-label-inner::after {border-color:#fff}
+
+#userInfo .join__info-item--usernm,
+#userInfo .join__info-item--htel {padding-right:37px}
+#userInfo .success-report {position:absolute;top:50%;right:10px;height:15px;margin-top:-8px;padding-left:19px;font-size:12px;color:#1da611;background:url('//image.alba.kr/sign/icon_certify.png') no-repeat 0 0;background-size:15px 15px}
+
+.bar24-gender {overflow:hidden;border:1px solid #ddd;border-radius:4px}
+.bar24-gender>span {box-sizing:border-box;float:left;width:50%;height:38px;line-height:38px;text-align:center}
+.bar24-gender>span.on {border:1px solid #ffba00;background-color:#ffca00}
+#lblFemale {border-left:1px solid #ddd}
+
+.join__info-item.email input {width:44%}
+
+.sign-expire {position:relative}
+.sign-expire__title>a {display:inline-block;width:15px;height:15px;margin-top:2px;border-radius:50%;font-size:10px;text-align:center;vertical-align:top;color:#fff;background-color:#bbb}
+.sign-expire__layer {z-index:999;display:none;position:absolute;top:35px;left:0;padding:15px;border:1px solid #666;border-radius:5px;background-color:#fff}
+.sign-expire__layer-guide>dt {margin-bottom:5px;font-weight:bold;font-size:13px;color:#2346e4}
+.sign-expire__layer-guide>dd {font-size:13px;line-height:1.46}
+.sign-expire__layer-close {position:absolute;top:0;right:0;width:15px;height:15px;padding:10px;font-size:0;color:transparent;background:url('//image.alba.kr/sign/btn_close_black.png') no-repeat 10px 10px;background-size:15px 15px}
+.sign-expire__list>li {padding:12px}
+.sign-expire__list>li span.input {width:32%}
+.sign-expire__toast {z-index:997;position:absolute;top:35px;right:-1px;padding:7px 35px 7px 15px;border:1px solid #ccc;border-radius:8px;font-weight:bold;font-size:13px;letter-spacing:-1px;background-color:#fffdea}
+.sign-expire__toast>strong {color:#2346e4}
+.sign-expire__toast-arrow {z-index:998;position:absolute;top:15px;left:2px;width:18px;height:9px;background:url('//image.alba.kr/sign/arrow_top.png') no-repeat 0 0;background-size:18px 9px}
+.sign-expire__toast-close {position:absolute;top:0;right:0;width:15px;height:15px;padding:7px;font-size:0;color:transparent;background:url('//image.alba.kr/sign/btn_close_gray.png') no-repeat 7px 7px;background-size:15px 15px}
+html.ios .sign-expire__title>a {margin-top:1px;line-height:17px}
+html.ios .sign-expire__toast {padding-top:8px;padding-bottom:6px}
+html.pc .sign-expire__list>li {padding:12px 0}
+html.pc .sign-expire__list>li span.input {width:auto;padding:0 70px 0 20px}
+html.pc .sign-expire__toast {right:auto;left:280px}
+html.pc .sign-expire__toast-arrow {left:22px}
+
+.join-guide-text {display:block;font-size:12px;line-height:1.5;color:#999}
+.agreementCk +.join-guide-text {margin-bottom:10px}
+
+/* 회원가입 대행 */
+.memberJoin--agency .joinGuide {padding-bottom:15px;border-bottom:1px solid #eee}
+.memberJoin--agency .joinGuide_text {margin-bottom:10px;font-size:15px;line-height:1.46}
+.memberJoin--agency .joinGuide_emphasis {padding:9px 9px 9px 11px;border:1px solid #eee;font-size:12px;line-height:1.5;color:#2346e4;background-color:#f5f5f5}
+
+.memberJoin--agency .agreementCk {margin-top:8px}
+.memberJoin--agency .join__agreement-header {padding:10px 11px;border:1px solid #ddd;border-bottom:0;background-color:#fff}
+.memberJoin--agency .join__title {display:block;margin-bottom:5px;line-height:1.42;letter-spacing:-0.5px;color:#666}
+.memberJoin--agency .join__agreement-guide {font-size:12px;line-height:1.5;letter-spacing:-0.5px;color:#2346e4}
+.memberJoin--agency .join__agreement-list {padding-top:6px;border-top-color:#eee}
+
+.memberJoin--agency .agreeContents {overflow-y:hidden !important;padding:15px 0;text-align:center}
+.memberJoin--agency .agreeContents .input:first-child .check-label {margin-right:80px}
+
+.memberJoin--agency .customerAgree {margin-bottom:8px;border:1px solid #ddd;background-color:#fff}
+.memberJoin--agency .customerAgree .input {display:block;padding:11px 0 11px 9px;border-bottom:1px solid #eee}
+.memberJoin--agency .customerAgree-content {padding:11px 12px;color:#666}
+.memberJoin--agency .customerAgree-content em {display:block;padding-top:5px;font-size:12px;line-height:1.5;color:#ff2a2a}
+
+.memberJoin--agency .smsSend {border:1px solid #ddd;background-color:#fff}
+.memberJoin--agency .smsSend .smsSend_title {height:40px;padding-left:11px;line-height:40px;border-bottom:1px solid #eee}
+.memberJoin--agency .smsSend .smsSend_tel {padding:11px 0 12px 9px}
+.memberJoin--agency .smsSend .smsSend_tel .input {display:block;margin-top:10px}
+.memberJoin--agency .smsSend .smsSend_tel .input:first-child {margin-top:0}
+.memberJoin--agency .smsSend .smsSend_tel .input label {color:#666}
+
+.joinActingGuide {padding-bottom:15px;font-size:15px;line-height:1.47}
+
+html.pc .memberJoin--agency .joinGuide_emphasis  {border-color:#ddd;background-color:#eee}
+html.mobile #JoinActing #Section .header {padding-left:14px}
+
+#RestingUser .agreementCk,
+#JoinActing  .agreementCk {margin-bottom:15px}
+#RestingUser .agreementCk ul,
+#JoinActing .agreementCk ul {padding:12px;border:1px solid #ddd}
+#JoinActing .agreementCk ul {border-top:0}
+#RestingUser .agreementCk .agreement,
+#JoinActing .agreementCk .agreement {margin-bottom:11px}
+#RestingUser .agreementCk .input,
+#JoinActing .agreementCk .input {margin-bottom:9px}
+#RestingUser .agreementCk .input label em,
+#JoinActing .agreementCk .input label em {vertical-align:top;color:#ff2a2a}
+
+/* 비밀번호 안내 */
+.pwGuide-layer {z-index:999;display:none;position:absolute;top:39px;right:14px;left:14px;padding:15px;border:1px solid #666;border-radius:5px;letter-spacing:-0.5px;background-color:#fff}
+.pwGuide-layer-title {margin-bottom:13px;font-size:13px}
+.pwGuide-layer-rule {position:relative}
+.pwGuide-layer-rule>dt {padding-bottom:5px;font-size:12px;line-height:1.5;color:#222}
+.pwGuide-layer-rule>dd {padding-left:6px;font-size:12px;line-height:1.5;color:#666}
+.pwGuide-layer-rule>dd>.dot {position:absolute;width:2px;height:2px;margin:9px 0 0 -6px;font-size:0;color:transparent;background:#666}
+.pwGuide-layer-close {position:absolute;top:6px;right:6px;padding:4px;font-size:0;text-indent:-999em;color:transparent;background-color:#fff}
+.pwGuide-layer-close::before {content:'';display:block;width:15px;height:15px;background:url('//image.alba.kr/m/pop.png') no-repeat;background-size:48px 24px}
+
+/* 회원가입 완료 - 간편이력서 */
+.joinResume h2 {font-weight:bold;font-size:15px}
+.joinResume h2 span {display:block;font-weight:normal;font-size:12px;color:#666}
+.joinResume h2 span span {display:inline-block;zoom:1;*display:inline;}
+.joinResume .guideBox {margin-bottom:25px;padding:20px 15px;font-size:19px;background:#fff;border:1px solid #d7d7d7}
+.joinResume .guideBox p {padding:12px 0;font-size:14px;color:#666}
+.joinResume .guideBox p.save {padding:12px 0 0;color:#ff0000}
+.joinResume .guideBox a {width:118px;height:30px;line-height:28px;font-size:14px}
+.joinResume .joinResumeInfo {margin-top:12px}
+.joinResume .joinResumeInfo>li {position:relative;margin-top:-1px;padding:12px 12px 12px 100px;*padding-top:0;background:#fff;border:1px solid #d7d7d7}
+.joinResume .joinResumeInfo .item {position:absolute;left:14px;top:12px;font-weight:bold;line-height:32px;color:#000}
+.joinResume .joinResumeInfo .item em {padding-right:3px;color:#ff0000}
+.joinResume .joinResumeInfo select,
+.joinResume .joinResumeInfo .selectBox-dropdown {height:30px;border:1px solid #ccc}
+.joinResume .joinResumeInfo .selectBox-dropdown .selectBox-label {line-height:30px}
+.joinResume .joinResumeInfo .col {width:39%;margin-right:1%}
+.joinResume .joinResumeInfo .select {width:18%}
+.joinResume .joinResumeInfo .dash {display:inline-block;zoom:1;*display:inline;line-height:32px;vertical-align:middle}
+.joinResume .joinResumeInfo .helpTextGuide {display:block;margin-top:8px;color:#666}
+.joinResume .joinResumeInfo .selectBtn {height:30px;line-height:30px;vertical-align:top}
+.joinResume .joinResumeInfo li.type {padding-top:18px;*padding-top:0;padding-bottom:18px}
+.joinResume .joinResumeInfo li.type .input {margin-right:10px}
+.joinResume .joinResumeInfo li.week .weekDay {overflow:hidden;margin-top:10px}
+.joinResume .joinResumeInfo li.week .weekDay .input {float:left;margin-right:10px}
+.joinResume .lisAdd li {position:relative;margin-top:12px;padding:0}
+.joinResume .lisAdd li a.del {display:inline-block;width:14px;height:14px;margin-left:4px;font:0/0 Dotum;color:transparent;vertical-align:middle;background:url('/images/common/icon.png') no-repeat -288px 0}
+.joinResume .jobkind3 {display:none;overflow:hidden;margin-top:10px;padding:0 15px 15px;background:#f9f9f9}
+.joinResume .jobkind3 li {float:left;width:33.33%;margin-top:12px}
+.joinResume .joinResumeInfo li.kind .lisAdd li {padding:10px 75px 0 0;border-top:1px solid #d9d9d9}
+.joinResume .joinResumeInfo li.kind .lisAdd li .careeryn {position:absolute;right:0;top:8px}
+.proxy__banner-wrap {width:250px;margin:25px auto 0}
+.proxy-banner-link {display:block}
+.proxy-banner-link>img {width:100%;vertical-align:top}
+html.pc .proxy__banner-wrap {width:580px;margin-top:60px}
+
+html.mobile .joinResume .guideBox {font-size:16px;text-align:center}
+html.mobile .joinResume .guideBox p {font-size:12px}
+html.mobile .joinResume .guideBox a {width:215px;height:40px;line-height:38px}
+html.mobile .joinResume .joinResumeInfo>li {margin-top:5px}
+html.mobile .joinResume .joinResumeInfo>li.area,
+html.mobile .joinResume .joinResumeInfo>li.kind,
+html.mobile .joinResume .joinResumeInfo>li.type {padding:12px}
+html.mobile .joinResume .joinResumeInfo li.area .item,
+html.mobile .joinResume .joinResumeInfo li.kind .item,
+html.mobile .joinResume .joinResumeInfo li.type .item {position:static;display:block;margin-bottom:8px;line-height:1.4}
+html.mobile .joinResume .joinResumeInfo li.term .col,
+html.mobile .joinResume .joinResumeInfo li.week .col {width:100%}
+html.mobile .joinResume .joinResumeInfo li.week .weekDay {margin-left:-88px}
+html.mobile .joinResume .joinResumeInfo li.week .weekDay .input {width:14.28%;margin:0}
+html.mobile .joinResume .joinResumeInfo li.time .col {width:46.5%}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.joinResume .lisAdd li a.del {background-image:url('/images/common/icon_300.png');background-size:360px 360px}
+}
+
+/* 아이디,비밀번호 찾기 */
+.memberSearch {width:100%}
+.memberSearch .search-form.person {margin-bottom:11px;padding-bottom:15px;border-bottom:1px solid #eee} 
+.memberSearch .searchWrap legend {margin-bottom:8px;font-weight:bold;font-size:15px;line-height:1.47}
+.memberSearch .howtoTab {width:100%;box-sizing:border-box;border:1px solid #ddd;border-top:0}
+.memberSearch .howtoTab.cert {margin-bottom:-1px;border-bottom-color:#eee}
+.memberSearch .howtoTab::after {content:'';clear:both;display:table;width:100%;height:0}
+.memberSearch .howtoTab.person {margin-top:10px}
+.memberSearch .howtoTab .certInfo {display:none}
+.memberSearch .howtoTab>li {position:relative;border-top:1px solid #ddd}
+.memberSearch .howtoTab>li .searchTitle {z-index:1;position:absolute;top:0;left:12px;font-size:14px;line-height:46px;color:#bbb}
+.memberSearch .howtoTab>li .colWrap {position:relative;width:100%}
+.memberSearch .howtoTab>li .cell {display:none}
+.memberSearch .howtoTab>li .col {float:left;margin-left:4px}
+.memberSearch .howtoTab>li .col.first {margin-left:0 !important}
+.memberSearch .howtoTab>li .text-row {float:left;padding-top:10px}
+.memberSearch .howtoTab>li.joinInfo,
+.memberSearch .howtoTab>li.certInfo,
+.memberSearch .howtoTab>li.default {font-size:0}
+.memberSearch .howtoTab>li .input {width:50%;padding-left:12px;box-sizing:border-box}
+.memberSearch .howtoTab>li .input:last-child {padding-left:0}
+.memberSearch .howtoTab>li .input label {font-size:14px;letter-spacing:-0.5px}
+.memberSearch .howtoTab>li.default {line-height:46px}
+.memberSearch .howtoTab>li.mobile .col {width:31%}
+.memberSearch .howtoTab>li.email .col {width:45.8%}
+.memberSearch .howtoTab>li.bizNo .col {width:31%}
+.memberSearch .howtoTab>li input[type="text"],
+.memberSearch .howtoTab>li input[type="email"],
+.memberSearch .howtoTab>li input[type="tel"] {padding-left:12px}
+.memberSearch .howtoGuide {display:flex;display:-webkit-flex;height:94px;box-sizing:border-box;border:1px solid #eee;line-height:normal;text-align:center;background-color:#f5f5f5}
+.memberSearch .howtoGuide>div {margin:auto;font-size:12px;line-height:1.5}
+.memberSearch .howtoGuide em {color:#ff2a2a}
+html.ios .memberSearch .howtoTab>li .searchTitle {line-height:48px}
+html.pc .btnAction .btn {height:54px;line-height:54px}
+html.pc .memberSearch .searchWrap legend {margin-bottom:10px;font-size:16px}
+html.pc .memberSearch .howtoGuide>div {margin-top:25px}
+html.pc .memberSearch .search-form {margin-top:25px;padding-top:25px}
+html.pc .searchForm {background-color:#fff}
+.pwdSearchChangeResult {padding-top:6px}
+
+.resultInfo h2 {padding-bottom:10px;font-weight:bold;font-size:15px}
+.resultInfo .guideTxt {margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid #eee;font-size:15px;color:#222;background-color:#fff}
+html.pc .resultInfo .guideTxt {padding:15px;border:1px solid #eee}
+.resultInfo .guideTxt>strong {font-weight:normal;color:#2346e4}
+.resultInfo .resultWrap {margin-top:15px;margin-bottom:15px}
+.resultInfo .resultWrap:first-child {margin-top:0}
+.resultInfo .resultWrap ul {border:1px solid #ddd;background-color:#fff}
+.resultInfo .resultWrap ul li {position:relative;height:47px;box-sizing:border-box;border-top:1px solid #ddd;font-size:15px;line-height:47px}
+.resultInfo .resultWrap ul li:first-child {/*margin-bottom:-1px;*/border-top:0}
+.resultInfo .resultWrap ul.personalInfo li,
+.resultInfo .resultWrap ul li.id {padding-left:103px}
+.resultInfo .resultWrap ul.personalInfo li>strong {font-weight:normal}
+.resultInfo .resultWrap ul li .item {position:absolute;top:0;left:15px;font-size:14px;color:#666}
+.resultInfo .resultWrap ul li .msg {display:block;margin-top:5px;font-size:11px;color:#3457f1}
+.resultInfo .resultWrap ul li .msg em {color:#ff0000}
+.pwLevel {display:none}
+.resultInfo .find-result {height:48px;padding:0 12px;box-sizing:border-box;font-size:14px;line-height:46px;color:#222;text-align:left;background:#fff;border:1px solid #ddd}
+.resultInfo .guide {font-size:12px;color:#ff2a2a}
+.resultInfo .guide.convert {position:relative;margin:10px 0;padding-left:8px}
+.resultInfo .guide.convert span {position:absolute;top:0;left:0}
+.customer-guide {margin-top:15px;padding:10px 10px 11px;border:1px solid #eee;font-size:12px;line-height:1.5;text-align:left;color:#999;background-color:#f5f5f5}
+.customer-guide em span {color:#222}
+.customer-guide em a {color:#2346e4 !important}
+
+.find-guide-wrap {margin-top:15px;padding-top:15px;border-top:1px solid #eee}
+.find-guide {position:relative;padding-left:8px;font-size:12px;color:#999}
+.find-guide>span {position:absolute;top:0;left:0}
+.find-guide>a {color:#5b79fe !important}
+.find-guide>a span {display:inline-block;position:relative;top:1px;width:6px;height:11px;background:url('//image.alba.kr/m/arrow_blue.png') no-repeat;background-size:6px 11px}
+
+/* 회원정보 수정 - 개인,기업 */
+body.change {background-color:#eee}
+.memberChange .inputForm li .btn {height:36px;padding:0 5px;border:1px solid #aaa;border-radius:4px;font-weight:normal;font-size:13px;line-height:36px}
+.memberChange .inputForm li.srchaddr .btn {width:49px;letter-spacing:-0.8px}
+.memberChange .inputForm li .cert {display:inline-block;height:15px;margin-top:16px;padding-left:19px;font-size:12px;color:#1da611;background:url('//image.alba.kr/sign/icon_certify.png') no-repeat;background-size:15px 15px}
+.ios .memberChange .inputForm li .cert {line-height:18px}
+.memberChange .inputForm li.id .action {top:6px}
+.memberChange .inputForm li.name .action {top:0;right:0}
+.memberChange .inputForm li.name .cert {margin-right:10px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+  .memberChange .inputForm li.name .action {top:0;right:10px}
+  .memberChange .inputForm li.name .cert {margin-right:0}
+}
+.memberChange .inputForm li.name .subContents {margin:10px 0}
+.memberChange .inputForm li.name .changeNameBtn {top:46px}
+.memberChange .inputForm li.name .changeNameBtn>.btn {height:26px;padding:0 15px;border-radius:14px;line-height:26px}
+.memberChange .inputForm li.name .certNo {padding-right:94px}
+.memberChange .inputForm li.name .certNo .inputName {height:38px;line-height:38px}
+.memberChange .inputForm li.name .certNo .action {top:6px}
+.memberChange .inputForm li.name .certGbn {display:none;margin:0}
+.memberChange .inputForm li.name .certGbn .input {margin-top:6px}
+.memberChange .inputForm li.gender .input {margin-right:30px}
+.memberChange .inputForm li.birth .col {width:32%;margin-left:4px}
+.memberChange .inputForm li.tel .col {width:31%}
+.memberChange .inputForm li.tel .colWrap {margin-bottom:5px}
+.memberChange .inputForm li.tel #MobileCertNumInput {display:none;position:relative;clear:both;margin-top:5px}
+.memberChange .inputForm li.tel #MobileCertNumInput .action {position:absolute;right:0}
+.memberChange .inputForm li.tel #MobileCertNumInput .btn {padding:0 10px}
+.memberChange .inputForm li.email input {margin-right:10px;letter-spacing:0}
+.memberChange .inputForm li.email .colWrap {width:auto;padding-right:90px}
+.memberChange .inputForm li.email .action {top:6px}
+.memberChange .inputForm li.email .btn {width:84px;padding:0}
+.memberChange .inputForm li.email #EmailCertNumInput {display:none;position:relative;margin-top:5px;padding-right:51px}
+.memberChange .inputForm li.email #EmailCertNumInput .action {right:0}
+.memberChange .inputForm li.email #EmailCertNumInput .btn {padding:0 10px}
+.memberChange .inputForm li.srchaddr .colWrap {width:auto;padding-right:65px}
+.memberChange .inputForm li.srchaddr .action {top:6px}
+.memberChange .inputForm li.srchaddr .zipcode {margin:0}
+.memberChange .inputForm li.srchaddr .subContents {margin-top:5px}
+.memberChange .inputForm li.homepage .colWrap {width:auto;padding-left:40px}
+.memberChange .inputForm li.homepage .etc {position:absolute;top:10px;left:0}
+.memberChange .inputForm li.homepage .col {margin:0}
+.memberChange .inputForm li.workernum .colWrap {width:auto;padding-right:20px}
+.memberChange .inputForm li.workernum .col {margin:0}
+.memberChange .inputForm li.workernum .etc {position:absolute;top:0;right:10px;width:auto;height:46px;line-height:46px;color:#666}
+.memberChange .agreementCk .inputForm {padding:11px 0;border:1px solid #ddd}
+.memberChange .agreementCk .inputForm li {margin:0;border:0;min-height:auto}
+.memberChange .agreementCk .inputForm li.sms {padding:18px 0 0 12px}
+.memberChange .agreementCk .inputForm li.customSetup {padding-top:18px}
+.memberChange .agreementCk .inputForm li .input {display:block;margin-top:10px}
+.memberChange .agreementCk .inputForm li .input:first-child {margin-top:0}
+.memberChange__guide {padding-bottom:15px;font-weight:bold;font-size:15px;line-height:1.47}
+
+#BreakAwayInput .userInfo {margin-bottom:10px;border:0;border-bottom:1px solid #ddd}
+.change .userInfo {padding:15px 15px 0;background-color:#fff}
+.change .agreementCk {padding:8px 15px 0;background-color:#fff}
+.inputForm .fix {background-color:#f9f9f9}
+html.pc body.change,
+html.pc #ChangePw #Contents,
+html.pc #KaKao #Contents {background-color:#f8f8f8}
+html.pc .change .userInfo,
+html.pc .change .agreementCk {padding:0;background-color:transparent}
+html.pc #BreakAwayInput .userInfo {border:1px solid #eee}
+
+.user-info__fix-wrap {overflow:hidden;position:relative}
+.user-info-fix {float:left;height:46px;font-size:14px;line-height:46px;color:#222}
+.user-info-fix--title {width:90px;color:#666}
+.user-info-fix--text {color:#bbb}
+html.ios .user-info-fix {line-height:48px}
+
+.sign__sub-contents {margin:0 -1px;padding:15px 0 14px 90px;border-top:1px solid #eee}
+.sign__line-feed {position:relative;margin:0 -10px 0 -12px;padding-left:102px;border-top:1px solid #eee}
+.sign__line-feed-text {overflow:hidden;height:46px;font-size:13px;line-height:46px;color:#2346e4}
+html.ios .sign__line-feed-text {line-height:48px}
+
+
+.sign__cert-wrap  {display:none;margin:0 -1px;padding:10px 0;border-top:1px solid #eee}
+.sign__cert-wrap--show {display:block}
+.sign__biz-cert-wrap {margin-bottom:-1px}
+.sign__cert-list {overflow:hidden}
+.sign__cert-item {float:left;width:50%;margin-top:0 !important;padding:0 !important;border:0 !important;background-color:#fff}
+.sign__cert-item:first-child {margin-right:-1px} 
+#JoinBizAlbam .sign__cert-item {width:100%}
+.sign__cert-item .input {display:block;position:relative;padding:0 12px;border:1px solid #ddd}
+.sign__cert-item .input.on {z-index:10;border-color:#5a79f2}
+.sign__cert-item .input label {display:block;position:relative;height:46px;padding-left:20px;line-height:46px;background:none !important}
+.sign__cert-item .input label::after {content:'';position:absolute;top:17px;right:0;width:7px;height:12px;background:url('//image.alba.kr/sign/join_icon.png') no-repeat -36px -72px;background-size:108px 144px}
+.sign__cert-item .input label::before {content:'';position:absolute;top:15px;left:0;width:15px;height:15px;background:url('//image.alba.kr/sign/join_icon_202012.png') no-repeat !important;background-size:61px auto !important}
+.sign__cert-item .input.on label {color:#2346e4}
+.sign__cert-item .input.on label::after {background-position:-72px -72px}
+.sign__cert-item--phone .input label::before {background-position:-27px 0 !important}
+.sign__cert-item--phone .input.on label::before {background-position:-27px -18px !important}
+.sign__cert-item--ipin .input label::before {background-position:-46px 0 !important}
+.sign__cert-item--ipin .input.on label::before {background-position:-46px -18px !important}
+html.ios .sign__cert-item .input input[type="radio"] + label {line-height:48px !important}
+html.pc .sign__cert-item label {cursor:pointer}
+
+/*회원가입(기업) 핸드폰/아이핀 인증 별도*/
+#JoinBiz .sign__biz-cert-wrap {position:relative;margin-bottom:10px}
+#JoinBiz .sign-join__cert-list {overflow:hidden}
+#JoinBiz .sign-join__cert-item {float:left;width:50%;height:48px;line-height:46px;text-align:center;border:1px solid #ddd;border-bottom:1px solid #5a74f1;box-sizing:border-box;color:#666;background-color:#f9f9f9}
+#JoinBiz .sign-join__cert-item:link, .sign-join__cert-item:visited, .sign-join__cert-item:focus {color:#666}
+#JoinBiz .sign-join__cert-item:first-child {border-right:0}
+#JoinBiz .sign-join__cert-item::before {content:'';display:inline-block;width:15px;height:15px;margin:-3px 5px 0 0;vertical-align:middle;background:url('//image.alba.kr/sign/join_icon_202012.png') -27px 0 no-repeat;background-size:61px auto}
+#JoinBiz .sign-join__cert-item--ipin::before {background-position:-46px 0}
+#JoinBiz .sign-join__cert-item.on {border:1px solid #5a79f2;border-bottom:1px solid #fff;color:#2346e4;background-color:#fff}
+#JoinBiz .sign-join__cert-item--phone.on::before {background-position:-27px -18px}
+#JoinBiz .sign-join__cert-item--ipin.on::before {background-position:-46px -18px}
+#JoinBiz .sign-join__cert-item--phone.on + a {border-left:0}
+.sign__cert-contents {position:relative;padding:15px 10px;line-height:28px;text-align:center;border:1px solid #ddd;border-top:0;color:#666;background-color:#fff}
+.sign__cert-contents .input {width:78px;height:26px;margin-left:14px;border:1px solid #bbb;border-radius:2px;text-align:left}
+.sign__cert-contents .input label {height:26px;line-height:24px;font-size:12px;vertical-align:top;background:none !important}
+.sign__cert-contents .input label::before {content:'';position:absolute;top:7px;left:10px;width:14px;height:11px;background:url('//image.alba.kr/sign/join_icon_202012.png') 0 -27px no-repeat;background-size:61px auto}
+.sign__cert-contents--success {text-align:center !important}
+.sign__cert-contents--success>span {position:relative;padding-left:34px;color:#222}
+.sign__cert-contents--success>span::before {content:'';position:absolute;top:-2px;left:0;width:24px;height:24px;background:url('//image.alba.kr/sign/join_icon_202012.png')0 0 no-repeat;background-size:61px auto}
+html.ios .sign__cert-item {line-height:48px;}
+html.ios .sign__cert-contents {line-height:30px}
+html.ios .sign__cert-contents .input input[type="radio"] + label {line-height:28px !important}
+@media screen and (max-width:560px) {
+  .sign__cert-contents {text-align:left;word-break:keep-all;line-height:19px !important}
+  .sign__cert-contents__text {display:inline-block;padding-right:96px}
+  .sign__cert-contents .input {position:absolute;top:50%;right:15px;margin-left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%)}
+}
+
+/* 정보수정 - 회원탈퇴/카카오계정관리 */
+.memberBreakAway .guide {padding:15px;font-size:15px;line-height:1.43;background-color:#fff}
+.breakAwayInput  .guide {padding-bottom:0}
+.memberBreakAway .guide>dt {margin-bottom:10px;font-size:15px;line-height:1.47}
+.memberBreakAway .guide>dd {padding:10px;border:1px solid #eee;font-size:12px;line-height:1.5;color:#999;background-color:#f5f5f5}
+.memberBreakAway .guide>dd p {font-size:12px;color:#222}
+.memberBreakAway .guide>dd p a {color:#2346e4 !important}
+
+.memberBreakAway .afterGuide {margin-bottom:10px;padding:0 15px 15px;border-bottom:1px solid #ddd;background-color:#fff}
+.memberBreakAway .afterGuide>ol {padding-top:15px;border-top:1px solid #eee}
+.memberBreakAway .afterGuide li {margin-bottom:15px;font-size:13px;line-height:1.38}
+.memberBreakAway .afterGuide li strong {display:block;margin-bottom:4px;font-size:13px;font-weight:normal;line-height:1.46}
+.memberBreakAway .afterGuide li p {position:relative;padding-left:7px;font-size:13px;line-height:1.46;color:#999}
+.memberBreakAway .afterGuide li p span {position:absolute;top:0;left:0}
+.memberBreakAway .afterGuide>p {padding-top:15px;border-top:1px solid #eee;font-size:13px;line-height:1.46;color:#ff2a2a}
+
+.memberBreakAway .leaveGuide {padding:0 15px 15px;background-color:#fff}
+.memberBreakAway .leaveGuide>h2 {padding:15px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.47}
+.memberBreakAway .leavePrevent>li {padding-top:15px;color:#999}
+.memberBreakAway .leavePrevent>li strong {display:block;margin-bottom:3px;font-size:13px;line-height:1.46;color:#222}
+.memberBreakAway .leavePrevent>li p {position:relative;padding-left:7px;font-size:13px;line-height:1.46;color:#999}
+.memberBreakAway .leavePrevent>li p span {position:absolute;top:0;left:0}
+.memberBreakAway .leavePrevent>li a {display:block;width:88px;height:26px;margin:5px 0 0 7px;border:1px solid #ddd;border-radius:2px;font-size:12px;line-height:26px;text-align:center;background-color:#fff}
+.memberBreakAway .leavePrevent>li.kakao a {width:118px}
+html.ios .memberBreakAway .leavePrevent>li a {line-height:28px}
+
+.breakaway__input-list {margin-bottom:15px;border:1px solid #ddd}
+.breakaway__guide {display:none}
+.breakaway__sns-explain {padding:15px 0;border-top:1px solid #eee;font-size:13px;line-height:normal}
+.breakaway__sns-explain strong {font-weight:normal;color:#2346e4}
+.breakaway-reason {padding:0 15px 5px;border:0}
+.breakaway-reason>p {padding:15px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.47;color:#222}
+.breakaway-reason__list {padding-top:15px}
+.breakaway-reason__list li {min-height:auto;margin:0 0 10px;padding:0 !important;border:0 !important}
+.breakaway-reason__list label {font-size:13px}
+.breakaway-reason__list input {height:38px;margin-top:10px;padding:0 10px;box-sizing:border-box;border:1px solid #ddd;font-size:13px}
+html.pc .memberBreakAway .guide {border:1px solid #eee;border-bottom:0;padding:20px 20px 15px}
+html.pc .memberBreakAway .afterGuide {border:1px solid #eee;border-top:0;padding:0 20px 20px}
+html.pc .memberBreakAway .leaveGuide {padding:0 20px 20px;border:1px solid #eee}
+html.pc .memberBreakAway .leaveGuide>h2 {padding:20px 0 15px}
+html.pc .breakAwayInput  .guide {display:none}
+html.pc .breakaway__input-wrap {padding:20px;border-top:0;background-color:#fff}
+html.pc .breakaway__guide {display:block;padding-bottom:15px;font-size:15px;line-height:1.47}
+html.pc .breakaway-reason {margin-bottom:15px;padding:0 20px 5px;border:1px solid #eee}
+html.pc .breakaway-reason>p {padding:20px 0 15px}
+
+/* 휴면회원 안내 */
+.restingUser .guide {padding-bottom:15px;border-bottom:1px solid #eee;font-size:15px;line-height:normal;color:#222}
+.resting-user__guide {padding:15px 0 10px;font-size:13px;line-height:normal}
+.resting-user__guide em {color:#2346e4}
+.restingUser .inputForm {margin-bottom:0}
+
+/* 비정상 접근 */
+.memberUnusual .searchWrap {float:none !important;width:auto !important}
+.memberUnusual .searchWrap.person {margin:0 !important}
+.memberUnusual .guide-wrap {margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid #eee}
+.memberUnusual .guide {padding:10px;border:1px solid #eee;font-size:12px;line-height:normal;color:#999;background-color:#f5f5f5}
+.memberUnusual .guide p {font-size:12px;color:#222}
+.memberUnusual .guide em {color:#2346e4}
+.memberUnusual .guide span {display:block;margin-top:10px;color:#999}
+.highlight-guide {margin-bottom:10px;font-size:15px}
+.highlight-guide>em {color:#2346e4}
+html.pc .highlight-guide {margin-top:-5px}
+html.pc .memberUnusual .guide {margin-top:20px}
+
+/* 비정상 사업자등록번호 */
+.comregnoChange .infoNow h2 {margin-top:15px;padding:15px 0 10px;border-top:1px solid #eee;font-size:15px;font-weight:bold}
+.comregnoChange .infoChange legend {margin-bottom:10px}
+.comregnoChange .inputForm li.comregno .col.comregno1 {width:28%}
+.comregnoChange .inputForm li.comregno .col.comregno2 {width:20%}
+.comregnoChange .inputForm li.comregno .col.comregno3 {width:34%}
+.comregnoChange .inputForm li.comregno .col input {text-align:center}
+.comregnoChange .customer {margin-top:10px}
+.comregnoChange .customer p {padding:0 0 5px;font-size:12px;color:#666}
+
+/* 로딩중 */
+.loadingFilter {display:none}
+.loadingFilter .filter {z-index:8;position:fixed;left:0;top:0;width:100%;height:100%;background:#fff;filter:alpha(opacity=50);opacity:0.5}
+.loadingFilter img {z-index:9;position:fixed;left:50%;top:50%;margin:-64px 0 0 -64px}
+
+.loading-css {display:none;z-index:999;position:fixed;top:0;right:0;bottom:0;left:0}
+.loading-css__action {z-index:999;position:fixed;top:50%;left:50%;width:64px;height:64px;margin:-32px 0 0 -32px}
+.loading-css__action span {position:absolute;top:26px;width:12px;height:12px;border-radius:50%;background:#fff;animation-timing-function:cubic-bezier(0, 1, 1, 0)}
+.loading-css__action span:nth-child(1) {left:6px;animation:loading-css1 0.5s infinite}
+.loading-css__action span:nth-child(2) {left:6px;animation:loading-css2 0.5s infinite}
+.loading-css__action span:nth-child(3) {left:26px;animation:loading-css2 0.5s infinite}
+.loading-css__action span:nth-child(4) {left:46px;animation:loading-css3 0.5s infinite}
+@-webkit-keyframes loading-css1 {
+  0% {transform:scale(0)}
+  100% {transform:scale(1)}
+}
+@keyframes loading-css1 {
+  0% {transform:scale(0)}
+  100% {transform:scale(1)}
+}
+@-webkit-keyframes loading-css2 {
+  0% {transform:translate(0, 0)}
+  100% {transform:translate(20px, 0)}
+}
+@keyframes loading-css2 {
+  0% {transform:translate(0, 0)}
+  100% {transform:translate(20px, 0)}
+}
+@-webkit-keyframes loading-css3 {
+  0% {transform:scale(1)}
+  100% {transform:scale(0)}
+}
+@keyframes loading-css3 {
+  0% {transform:scale(1)}
+  100% {transform:scale(0)}
+}
+
+/* 고객 동의 및 녹음 완료 체크 */
+.customerAgree .input {margin-bottom:5px}
+.customerAgree p label {font-weight:bold}
+.customerAgree .msg {display:block}
+.customerAgree .msg em {color:#f00}
+
+/* 기업회원 가입 회사 셀렉트 영역 */
+.comtypeInner {float:left;position:relative;width:65%}
+.comformInner {float:right;position:relative;width:33%}
+.comtype .cell {display:none;float:left;width:2%;height:25px;background:url('/images/common/cell.png') no-repeat center 0}
+.comtype:after {content:" ";display:block;clear:both}
+
+/* 아이디변경 신청, 완료 레이어 */
+#idChangeLayer .layer {width:310px;margin-left:-155px}
+#idChangeLayer .layerContents {padding:0}
+#idChangeLayer .layerContents .guide {padding:20px 20px 0;margin-bottom:10px}
+#idChangeLayer .layerContents .colWrap {width:290px;padding:6px 10px;margin-bottom:20px;border-top:1px solid #ebebeb;border-bottom:1px solid #ebebeb}
+#idChangeLayer .layerContents .colWrap .msg {font-size:11px;color:#3457f1}
+#idChangeLayer .layerContents .colWrap .msg em {color:#f00}
+#idChangeLayer .layerContents .colWrap .msg.show {display:block}
+#idChangeLayer .layerContents .submitBtn {display:block;width:120px;height:36px;margin:0 auto;line-height:36px;}
+#idChangeLayer .layerContents .notice {padding:20px}
+html.pc #idChangeLayer .layer {width:594px;margin-left:-297px}
+html.pc #idChangeLayer .layerContents .colWrap {width:570px}
+
+#idChangeComplete .layer {width:330px;height:121px;padding:20px;margin:-80px 0 0 -185px;text-align:center}
+#idChangeComplete .layer strong {font-size:17px}
+#idChangeComplete .layer p {padding-top:15px;margin-bottom:15px}
+#idChangeComplete .layer .close {width:100px;height:30px;line-height:30px}
+
+/*개인회원가입 완료 신규*/
+#Section.new-complete--p {padding:0}
+#Section.new-complete--p * {font-family:'Malgun Gothic',Dotum,Gulim,Sans-serif}
+.complete-top {padding:20px;text-align:center;background:#ebedee}
+.complete-top__title {margin-bottom:18px;font-size:24px;font-weight:bold;color:#222}
+.complete-top__text--list {font-size:14px;line-height:20px;color:#666}
+.complete-top__text--list.color-blue {color:#3457f1}
+
+/*알바천국 간편이력서, 일반이력서 링크 컨텐츠*/
+.resume-main-wrap{padding:0 20px;background:#fff}
+.resume__list:nth-child(1) {border:none}
+.resume__list {border-top:1px solid #eee;background-color:#fff}
+.resume__list-link {display:block;padding:30px 0px;margin:0 auto;min-width:280px;max-width:320px;cursor:pointer}
+.resume__list-easy, .resume__list-normal {position:relative;overflow:hidden}
+.resume__list-bg {display:block;float:right;margin-top:-24px;width:140px}
+.resume__list-title {margin-bottom:11px;font-weight:bold;font-size:21px;color:#222}
+.resume__list-about {font-size:13px;line-height:17px;color:#999}
+.resume__list-title .resume__list-title--write {display:inline-block;zoom:1;*display:inline;position:absolute;bottom:0;left:0;font-weight:normal;font-size:14px;color:#444}
+.resume__list-title .resume__list-title--write-ico {display:inline-block;zoom:1;*display:inline;*margin-top:4px;margin-left:10px;width:14px;height:12px;vertical-align:middle}
+.resume__list-title .resume__list-title--write-ico img {width:100%;vertical-align:top}
+
+/*알바천국 회원가입 완료 링크버튼*/
+.complete-btn {text-align:center;font-size:0}
+a.complete-btn__link {display:inline-block;zoom:1;*display:inline;width:100%;height:53px;font-weight:bold;line-height:54px;border:1px solid #6c7785;font-size:18px;color:#fff;background:#838d9a}
+
+/*알바천국 회원가입 완료 pc버전*/
+html.pc .complete-top {padding:40px 0 36px}
+html.pc .complete-top__title {margin-bottom:18px;font-size:29px;font-weight:bold;color:#222}
+html.pc .resume__list-title {margin-bottom:15px;font-size:20px}
+html.pc .resume__list-about {font-size:12px}
+html.pc .resume__list-link {padding:40px 0px;max-width:300px}
+html.pc .resume__list-title .resume__list-title--write {font-size:13px}
+html.pc a.complete-btn__link {font-size:19px}
+
+/* 알바천국 기업회원가입 완료 웰컴 패키지 */
+.welcome-pack {margin-bottom:20px;padding:40px 0;text-align:center;border:1px solid #3366cc;background:#fff}
+.welcome-pack__about {font-size:22px;line-height:30px;color:#222}
+.welcome-pack__about strong {color:#3367cd}
+.welcome-pack__link {display:inline-block;margin-top:30px}
+
+/* class - pagination/paging */
+.pagination {width:100%;margin:10px 0;text-align:center}
+.pagination a {overflow:hidden;display:inline-block;width:28px;height:28px;margin:0 3px;padding:0;border:1px solid #e8e8e8;font-size:14px;line-height:29px;color:#666;background-color:#fff}
+.pagination a.prev span {display:inline-block;width:7px;height:12px;margin-top:8px;font:0/0 Dotum;color:transparent;vertical-align:top;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -180px -72px}
+.pagination a.next span {display:inline-block;width:7px;height:12px;margin-top:8px;font:0/0 Dotum;color:transparent;vertical-align:top;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -216px -72px}
+.pagination a.pageNum.on {border-color:#facc00;font-weight:bold;color:#fff;background-color:#ffd100}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.pagination a.prev span,
+	.pagination a.next span {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* 도로명 주소(정부) */
+.addr-road {overflow-x:hidden;overflow-y:auto;height:300px;padding:15px;background-color:#fff}
+.addr-road__search {margin-bottom:10px}
+.addr-road__input {position:relative;height:41px;margin-bottom:3px;padding-right:40px;border:2px solid #186bb9}
+.addr-road__input>legend {overflow:hidden;visibility:hidden;position:absolute;top:-999em;left:-999em;width:0;height:0;font-size:0}
+.addr-road__input>input {width:100%;height:41px;border:0 none;font-size:13px;text-indent:10px;color:#222;background-color:#fff !important}
+.addr-road__input>button {position:absolute;top:0;right:0;width:40px;height:40px;font:0/0 Dotum;color:transparent;background:#fff url('//image.alba.kr/m/header.png') no-repeat -80px -80px;background-size:160px 160px}
+.addr-road__example {font-size:12px;color:#186bb9}
+
+.addr-road__count {margin-bottom:7px;font-size:12px}
+.addr-road__count>span {font-weight:bold}
+.addr-road__count>strong {color:#186bb9}
+.addr-road__count-no {padding:30px 0;border-top:1px solid #000;border-bottom:1px solid #000;text-align:center}
+
+.addr-road__list {border:0 none;border-collapse:collapse}
+.addr-road__list th {padding:8px 0;border-top:1px solid #000;border-bottom:1px solid #000;font-size:12px;text-align:center}
+.addr-road__list td {padding:5px 0;border-bottom:1px solid #000;font-size:12px;text-align:center}
+.addr-road__list tr:nth-child(odd) td {background-color:#f7f7f7}
+.addr-road__list-no {width:10%}
+.addr-road__list-addr {width:70%}
+.addr-road__list-zipcode {width:20%}
+.addr-road__list td.addr-road__list-addr {text-align:left}
+
+/* 전문관 */
+body.BAR24.join--new .join-submit-btn {color:#fff;background-color:#d80000}
+body.GANHOJOB.join--new .join-submit-btn {color:#fff;background-color:#ff5b6c}
+body.GANGSA.join--new .join-submit-btn {color:#fff;background-color:#008e9f}
+body.JOBSEARCH.join--new .join-submit-btn {color:#fff;background-color:#0072f9}
+body.BAR24.biz .join-submit-btn,
+body.GANHOJOB.biz .join-submit-btn,
+body.GANGSA.biz .join-submit-btn,
+body.JOBSEARCH.biz .join-submit-btn {color:#fff;background-color:#46525b}
+body.BAR24 #msg_email {padding-left:0}
+
+/* 기업회원 가입완료 */
+.join-check-icon {display:block;width:50px;height:50px;margin:0 auto 15px;background:url('//image.alba.kr/sign/join_complete_icon.png') no-repeat 0 -50px;background-size:100px 150px}
+.join-check-icon--biz {background-position:0 -50px}
+
+#JoinCompleteBiz #Section {height:100%;padding:0}
+#JoinCompleteBiz #Contents {display:flex;display:-webkit-flex;flex-direction:column;-ms-flex-direction:column;height:100%;padding-bottom:50px;box-sizing:border-box}
+#JoinCompleteBiz .alba-join__wrap {margin:auto}
+#JoinCompleteBiz .alba-join {text-align:center}
+#JoinCompleteBiz .alba-join__title {margin-bottom:10px;font-weight:bold;font-size:18px;line-height:1.38;color:#222}
+#JoinCompleteBiz .alba-join__paragraph {margin-bottom:10px;padding-top:10px;line-height:1.3}
+#JoinCompleteBiz .alba-join__coupon {width:250px;margin:20px auto 0}
+#JoinCompleteBiz .alba-join__coupon-img {width:100%;vertical-align:top}
+#JoinCompleteBiz .alba-join__cashnote {width:250px;margin:15px auto;background-color:#f6f6f6}
+#JoinCompleteBiz .alba-join__cashnote>a {display:block;width:250px;height:35px;font-size:12px;line-height:35px;text-align:center;color:#555}
+#JoinCompleteBiz .alba-join__cashnote em {border-bottom:1px solid #2346e4;color:#2346e4}
+#JoinCompleteBiz .alba-join__infomation {font-size:13px;line-height:1.46;color:#999}
+#JoinCompleteBiz .alba-join__infomation strong {display:block;font-weight:normal;color:#2346e4}
+#JoinCompleteBiz .alba-join__regist-button {position:fixed;top:auto;right:0;bottom:0;left:0;width:100%;height:50px;font-size:15px;text-align:center;line-height:50px;color:#fff;background-color:#3266cc}
+#JoinCompleteBiz .agreementCk {padding:0 44px}
+#JoinCompleteBiz .agreementCk p {position:relative;padding:10px 0 10px 20px;border-top:1px solid #eee;border-bottom:1px solid #eee;font-size:13px;line-height:normal}
+#JoinCompleteBiz .agreementCk p>span {position:absolute;top:10px;left:0;width:15px;height:15px;background:url('//image.alba.kr/sign/join_icon.png') no-repeat 0 -108px;background-size:108px 144px}
+#JoinCompleteBiz .agreementCk p>strong {font-weight:normal;color:#2346e4}
+#JoinCompleteBiz .complete__agree-box {border-top:1px solid #eee}
+#JoinCompleteBiz .complete__agree-list {overflow:hidden;padding:15px 0}
+#JoinCompleteBiz .complete__agree-item {float:left;height:40px}
+#JoinCompleteBiz .complete__agree-item span.input label {color:#666}
+#JoinCompleteBiz .complete__agree-item span.input label>span {color:#2346e4}
+#JoinCompleteBiz .complete__agree-item--sms {float:right;margin-right:24px}
+#JoinCompleteBiz .agreementCk .agreement__save {display:block;height:38px;border:1px solid #5b79fe;font-size:14px;text-align:center;line-height:38px;color:#2346e4;background-color:#fff}
+html.pc .join-check-icon--biz {margin-bottom:21px}
+html.pc #JoinCompleteBiz .alba-join__title {margin-bottom:15px;font-weight:normal;font-size:28px;letter-spacing:-1.4px;line-height:1.35}
+html.pc #JoinCompleteBiz .alba-join__infomation {font-size:15px;line-height:1.46;color:#222}
+html.pc #JoinCompleteBiz #Section {padding-top:45px}
+html.pc #JoinCompleteBiz .alba-join__coupon {margin-top:30px}
+html.pc #JoinCompleteBiz .alba-join__coupon-item {padding-bottom:30px}
+html.pc #JoinCompleteBiz .join-coupon-wrap {display:block;padding-bottom:30px}
+html.pc #JoinCompleteBiz .agreementCk  {margin-bottom:30px;padding:0}
+html.pc #JoinCompleteBiz .complete__agree-item {height:auto}
+html.pc #JoinCompleteBiz .complete__agree-item--sms {float:left;margin:0 0 0 44px}
+html.pc #JoinCompleteBiz .alba-join__regist-button {display:block;position:static}
+
+/* 기업회원 가입완료 - 이벤트성 */
+.banner-event__action>img {width:100%}
+
+/* 이메일 수신거부 */
+.quiesce {width:100%}
+.quiesce .wrap {padding:0 10px;text-align:center}
+.quiesce dt {margin:0 0 10px;font-weight:bold;font-size:16px;line-height:1.3;letter-spacing:-0.05em}
+.quiesce dd {font-size:12px;line-height:1.4;color:#666}
+.quiesce p.date {padding-bottom:20px;font:bold 18px tahoma,gulim;letter-spacing:-0.05em}
+.quiesce p.email {width:330px;height:47px;margin:25px auto 0;font-weight:bold;font-size:13px;line-height:47px;text-align:center;color:#3457f1;background-color:#f9f9f9;border:1px solid #ececec}
+.quiesce p.email.FINDJOB,
+.quiesce p.email.GANGSA {color:#e64545}
+.quiesce p.action {margin:35px 0 0;text-align:center}
+.quiesce p.action a {margin:0 5px}
+
+/* 저브라우저 안내 */
+.explorer-wrapper {z-index:99999;position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%}
+.explorer__filter {z-index:9999;position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:#000;opacity:.5;filter:alpha(opacity=50)}
+.explorer__info {z-index:99999;position:fixed;left:50%;top:50%;margin:-170px 0 0 -250px;border:3px solid #545454;background:#fff}
+.explorer__content {padding:30px;text-align:center}
+.explorer__title {margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #e5e5e5;font-weight:bold;font-size:28px;color:#000}
+.explorer__text {margin-top:20px;font-size:14px;line-height:1.6;color:#555}
+.explorer__text:first-child {margin-top:0}
+.explorer__button-box {overflow:hidden;width:450px;height:34px;padding:6px 20px 10px;border-top:1px solid #dcdcdc;text-align:right;background:#f9f9f9}
+.explorer__button {position:relative;float:right}
+.explorer__button--today {top:8px;text-decoration:underline !important}
+.explorer__button--close {margin-left:20px;padding:8px 14px;border:1px solid #383e52;background:#626a70;color:#fff !important}
+
+/* 휴대폰인증안내 */
+.cert-question-icon {position:absolute;top:15px;left:65px;width:20px;height:20px;font-size:0;color:transparent;background:url('//image.alba.kr/sign/join_v1.png') no-repeat 2px 2px;background-size:144px 144px}
+.cert-guide-layer {z-index:999;display:none;position:absolute;top:0;right:14px;left:14px;padding:11px 14px;border:1px solid #cec9c2;border-radius:8px;background-color:#f0edea}
+.cert-guide-title {margin-bottom:13px;font-size:13px}
+.cert-guide-rule {position:relative}
+.cert-guide-rule>dt {font-weight:bold;font-size:13px;line-height:1.54}
+.cert-guide-rule>dd {padding-left:7px;font-size:13px;line-height:1.54}
+.cert-guide-rule>dd>.dot {position:absolute;width:2px;height:2px;margin:9px 0 0 -6px;font-size:0;color:transparent;background:#666}
+.cert-guide-close {position:absolute;top:0;right:0;width:16px;height:16px;padding:10px;font-size:0;color:transparent;background:url('//image.alba.kr/sign/popover_close.png') no-repeat center center;background-size:12px 12px}
+.pc .cert-guide-link {color:#438de8}
+.mobile .cert-guide-link {color:#3457f1}
+#JoinPerson .cert-question-icon {left:77px}
+#ChangePerson .cert-question-icon {left:auto;right:90px;top:58px}
+#ChangePerson .cert-guide-layer {top:98px}
+#PwdSearchCertNum .resultWrap {position:relative}
+#PwdSearchCertNum .cert-question-icon {left:160px}
+#PwdSearchCertNum .cert-guide-layer {top:40px}
+
+/* 성명변경 */
+html#ChangeNameFrameDoc,
+body#ChangeNameFrame {min-width:auto !important;height:100%;background:#fff}
+#ChangeNameFrame #Header,
+#ChangeNameFrame #Footer {display:none !important}
+#ChangeNameFrame #Section {min-width:auto !important;width:auto !important;padding:0 !important}
+.change-name-wrapper {z-index:99999;position:fixed;top:0;right:0;bottom:0;left:0}
+.change-name-filter {z-index:999;position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100%;background:#000;opacity:.4;filter:alpha(opacity=40)}
+.change-name-layer {z-index:1000;position:fixed;left:50%;top:50%;overflow:hidden;border-radius:6px}
+.change-name__head {height:45px;padding:0;border-bottom:1px solid #ddd;font-weight:bold;font-size:16px;line-height:45px;text-align:center;background:#fff}
+.change-name__body {padding:15px 20px}
+.change-name__description-list {margin-bottom:15px}
+.change-name__description-item {position:relative;padding-left:5px;font-size:12px;line-height:16px;letter-spacing:-1px;color:#666}
+.change-name__description-item:after {content:'';position:absolute;left:-5px;top:7px;width:2px;height:2px;border-radius:50%;background:#666}
+.change-name__input-wrap {border:1px solid #ddd}
+.change-name__row {overflow:hidden}
+.change-name__row:first-child {border-bottom:1px solid #eee;background-color:#f9f9f9}
+.change-name__label {float:left;width:90px;height:46px;padding-left:12px;font-size:14px;line-height:46px;color:#666}
+.change-name__value {overflow:hidden}
+.change-name__value--disabled {height:46px;line-height:46px;color:#bbb}
+.change-name__warning {display:none;margin-top:-7px;padding-bottom:7px;font-size:11px;color:#f00}
+.change-name__warning.show {display:block}
+.change-name__button-wrap {padding:17px 0 0;text-align:center;}
+.change-name__submit {width:150px;height:43px;border-radius:25px;font-weight:bold;font-size:15px;line-height:43px;text-align:center;background:#ffe102}
+.mobile .change-name-layer {width:300px;height:340px;margin:-170px 0 0 -150px}
+
+/* 회원가입 개편 */
+.valid-check input {background:url('//image.alba.kr/sign/valid_check.png') no-repeat right -20px;background-size:14px 72px}
+.valid-check.on input {background-position:right 16px}
+.valid-check .password-view-btn {right:26px}
+html.ios .valid-check input {background-position:right -22px}
+html.ios .valid-check.on input {background-position:right 14px}
+
+.placeholder-input.active + label {display:none}
+
+.sign__title {padding:44px 0 20px;font-size:28px;letter-spacing:-1.4px;color:#222}
+.sign__input-frame {display:flex}
+.sign__input-frame--relative {position:relative}
+.sign__input-frame .input {line-height:46px}
+.sign__input-frame .input:first-child {margin-right:30px}
+.sign__input-frame input:disabled {background-color:#fff}
+.sign__input-item {margin-bottom:15px;padding:0 10px 0 12px;border:1px solid #ddd;background-color:#fff}
+.sign__input-text {height:46px;line-height:46px}
+.sign__select-wrap {position:relative}
+.sign__select-wrap::after {content:'';position:absolute;top:50%;right:0;width:1px;height:20px;margin-top:-10px;background-color:#eee}
+.sign__select-wrap + input {padding-left:10px}
+.sign__copyright {padding:23px 0 25px;font-size:11px;text-align:center;color:#bbb}
+.sign__option-wrap {float:left}
+.sign__option-wrap label {line-height:1.43;color:#666 !important}
+.sign-option-label {float:left;width:90px;line-height:1.43;color:#666}
+.select-chian-input:disabled {background-color:#fff}
+html.ios .sign__input-text {line-height:48px}
+html.pc .sign__select-wrap {display:inline-block;*display:inline;*zoom:1}
+html.pc .select-chian-input {display:inline-block;*display:inline;*zoom:1;width:auto;padding-left:6px}
+
+.chain-label {float:left;width:90px;height:46px;font-size:14px;line-height:46px;color:#666}
+.chain-input {display:block;flex:1;overflow:hidden}
+.chain-select {padding:0 20px 0 0}
+.chain-select--full {width:100%;box-sizing:border-box}
+.chain-select:disabled {color:#222}
+.chain-input:disabled {background-color:#fff}
+.frame-function-btn {flex:none;width:80px;height:28px;margin-top:9px;box-sizing:border-box;border:1px solid #ddd;border-radius:2px;font-size:12px;letter-spacing:-0.5px;text-align:center;line-height:26px;background-color:#fff}
+.frame-function-btn--cert {margin-right:10px}
+.frame-function-btn--feed {float:right;margin-right:10px}
+.frame-function-btn--change {position:absolute;right:0}
+.frame-function-btn--variable {position:absolute;right:0;width:auto;padding:0 7px}
+.btn-check-icon {display:inline-block;width:14px;height:11px;margin-right:3px;vertical-align:middle;background:url('//image.alba.kr/sign/icon_btn_check.png');background-size:40px auto}
+.btn-check-icon.off {background-position:-60px 0}
+.sub-message {font-size:12px}
+
+.member-info__list {border:1px solid #ddd;background-color:#fff}
+.member-info__item {overflow:hidden;box-sizing:border-box;border-top:1px solid #ddd;font-size:14px}
+.member-info__item:first-child {border-top:0}
+.member-info__item::after {content:'';clear:both;display:table;width:100%;height:0}
+.member-info__title {float:left;width:90px;height:47px;padding-left:12px;line-height:47px;color:#666}
+.member-info__text {overflow:hidden;height:47px;line-height:47px}
+.member-info__text input {height:100%}
+
+html.ios .frame-function-btn {line-height:28px}
+html.ios .chain-label {line-height:48px}
+html.mobile .sign__title {display:none}
+html.pc #Footer {padding-top:40px}
+html.pc .header {display:none}
+html.pc .resultInfo .guideTxt {margin-top:-5px}
+html.pc .sign__copyright {display:none}
+html.pc .sign__input-frame {display:block;overflow:hidden;position:relative}
+html.pc .sign__input-frame>.inputName {display:inline-block;height:44px;line-height:44px}
+html.pc .frame-function-btn {position:absolute;top:0;right:0}
+html.pc .frame-function-btn--feed {right:10px;margin-right:0}
+
+/* 비밀번호 변경 */
+#ChangePwdGuide {background-color:#f8f8f8}
+.login-close-button {position:absolute;top:0;right:0;width:24px;height:24px;padding:10px;box-sizing:content-box;text-indent:-999em;background:url('//image.alba.kr/m/login_icon.png') no-repeat 10px -26px;background-size:36px 72px}
+.changePwdGuide .inputForm {margin:0}
+
+.memberChange .pwGuide-layer {display:block;position:static;margin-top:15px;padding:10px 0 0;border:0;border-top:1px solid #eee;background-color:transparent}
+.memberChange .pwGuide-layer-title {font-size:12px;line-height:1.5;margin-bottom:12px}
+.memberChange .pwGuide-layer-rule {font-size:12px}
+.memberChange .pwGuide-layer-rule>dt {padding-bottom:2px;font-weight:bold;color:#999}
+.memberChange .pwGuide-layer-rule>dd {position:relative;padding-left:7px;line-height:1.5;color:#999}
+.memberChange .pwGuide-layer-rule>dd span {position:absolute;top:0;left:0}
+
+#PwdSearchChange .pwGuide-layer {margin:0 0 15px;padding:10px;border:1px solid #eee;border-radius:0;background-color:#f5f5f5}
+#PwdSearchChange .pwGuide-layer-title {margin-bottom:8px}
+#PwdSearchChange .pwGuide-layer-rule>dd {line-height:1.5}
+
+#ChangePw #Contents,
+#KaKao #Contents {background-color:#eee}
+#ChangePw .pwGuide-layer {margin:0;padding:0 15px 15px;border:0;background-color:#fff}
+#ChangePw .pwGuide-layer-inner {padding:10px 12px 0;border:1px solid #eee;background-color:#f5f5f5}
+#ChangePw .pwGuide-layer-title {margin-bottom:8px}
+
+.pw-guide__button-wrap {position:fixed;right:0;bottom:0;left:0;width:100%;height:50px}
+.pw-guide__button-wrap::after {content:'';clear:both;display:table;width:100%;height:0}
+a.pw-guide-button {float:left;width:50%;height:50px;font-size:15px;text-align:center;line-height:50px}
+a.pw-guide-button--next {color:#fff !important;background-color:#7b7e8c}
+a.pw-guide-button--submit {color:#222 !important;background-color:#ffe000}
+
+html.pc #ChangePw .pwGuide-layer {padding:0;background-color:transparent}
+html.pc #ChangePw .pwGuide-layer-inner {border:0;background-color:transparent}
+html.pc .login-close-button {display:none}
+html.pc .memberChange__guide {margin-top:-5px;font-size:16px;line-height:1.5}
+html.pc .pw-guide__button-wrap {overflow:hidden;position:static;height:54px;padding-top:15px}
+html.pc .pw-guide-button {width:285px;height:54px;line-height:54px}
+html.pc .pw-guide-button--submit {float:right}
+html.pc .memberChange .pwGuide-layer {padding-top:15px}
+
+/* 이메일 자동검색 */
+.email-auto__list {z-index:10;display:none;overflow-y:auto;position:absolute;top:46px;right:-1px;left:-1px;max-height:174px;border:1px solid #ddd}
+.email-auto__item {width:100%;min-height:auto !important;margin:0;padding:0 !important;border:0 !important;background-color:#fff}
+.email-auto-pick {display:block;padding-left:12px;box-sizing:border-box;font-size:14px;line-height:2.1;color:#222 !important}
+.reset-button {display:none;position:absolute;top:50%;right:10px;width:18px;height:18px;margin-top:-9px;text-indent:-999em;color:transparent;background:url('//image.alba.kr/sign/input_reset_btn.png') no-repeat;background-size:18px 18px}
+input[type=password]::-ms-clear {display:none !important}
+
+/* 채용공고 등록 대행 */
+.proxy__button-title {margin-top:8px;border:1px solid #eee;text-align:center;background-color:#fff}
+.proxy-button {display:inline-block;position:relative;height:52px;padding-left:30px;font-size:15px;line-height:52px;color:#666 !important}
+.proxy-button::before {content:'';position:absolute;top:50%;left:0;width:24px;height:24px;margin-top:-12px;background:url('//image.alba.kr/m/call_icon.png') no-repeat;background-size:60px auto}
+html.ios .proxy-button {line-height:54px}
+html.pc .proxy-button{font-size:17px}
+
+/* 배민 로그인 화면 */
+.baemin .sign__title {text-align:center}
+.baemin .sign__text {margin:45px 0 50px;text-align:center;font-size:18px;line-height:24px;letter-spacing:-0.8px}
+.baemin .sign__text>span {font-size:14px;line-height:18px;color:#999}
+.baemin .joinMain ul li.person {padding:0;margin-bottom:8px;border:0}
+.baemin .joinMain ul li .guide .join-icon {display:block;width:30px;height:33px;margin:0 auto 9px;background:url('//image.alba.kr/sign/join_login_icon_202010.png') no-repeat -36px 0px;background-size:66px auto}
+.baemin .joinMain ul li.biz .guide .join-icon {height:32px;background-position:0 0}
+.baemin .joinMain .btnAction .btn {height:56px;line-height:56px;font-size:17px;color:#fff}
+.baemin .btn.btnType1 {background:#36486c}
+.baemin .btn.biz {background:#3266cc}
+html.mobile body.baemin {background:#fff}
+html.mobile body.ALBA.baemin #Section .header {display:none}
+html.mobile .baemin .sign__title {display:block;padding-bottom:0}
+html.mobile .baemin .sign__title>span {display:inline-block;width:207px;height:41px;text-indent:-9999em;font-size:0;vertical-align:top;background:url('//image.alba.kr/sign/albaXbaemin_m_logo_202010.png') no-repeat;background-size:207px auto}
+html.mobile .baemin .sign__title>img {width:85.456%}
+html.mobile .baemin .guide.model {display:none}
+html.pc .baemin .sign__title {padding:50px 0 25px;border-bottom:1px solid #e5e5e5}
+html.pc .baemin .sign__title>span {display:inline-block;width:227px;height:34px;text-indent:-9999em;font-size:0;vertical-align:top;background:url('//image.alba.kr/sign/albaXbaemin_pc_logo_202010.png') no-repeat;background-size:227px auto}
+html.pc .baemin .sign__text {margin:40px 0;font-size:28px;line-height:36px}
+html.pc .baemin .sign__text>span {font-size:16px;color:#666}
+html.pc .baemin .joinMain ul li.person {padding:0;margin-bottom:15px}
+html.pc .baemin .joinMain ul li strong {font-size:20px}
+html.pc .baemin .joinMain .btnAction .btn {font-size:18px}

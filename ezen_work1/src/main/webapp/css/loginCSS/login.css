@@ -1,0 +1,784 @@
+/* base */
+html, body {margin:0;padding:0}
+body {font:12px Gulim, AppleGothic, Sans-serif;color:#474747;background:#fff}
+div, ul, ol, dl, p,
+h1, h2, h3, h4, h5, h6,
+fieldset, legend,
+iframe,
+table {margin:0 auto;padding:0;font:1em Gulim, AppleGothic, Sans-serif;color:#474747;text-align:left}
+table {border-collapse:collapse}
+ul, ol, dl {list-style:none}
+dt, dd, li {margin:0;padding:0}
+form {margin:0}
+input, select, textarea {font:1em Gulim, AppleGothic, Sans-serif;vertical-align:middle;color:#474747} 
+textarea {resize:none}
+select {height:20px}
+img, fieldset, button {border:0}
+img {vertical-align:top}
+hr {display:none} 
+em, address {font-style:normal}
+select {font-family:tahoma}
+iframe {_vertical-align:top;border:0 none}
+iframe.hideFrame, caption, legend, .hide {visibility:hidden;width:0;height:0;margin:0;padding:0;font-size:0;line-height:0;position:absolute;top:-999em;left:-999em}
+
+/* link */
+a:link, a:visited {color:#474747;text-decoration:none}
+a:hover, a:active {color:#007cff;text-decoration:underline}
+
+/* class : radio/checkbox */
+input.typeRadio,
+input.typeCheckbox {width:13px;height:13px;margin:-3px 0 0;padding:0;vertical-align:middle}
+input.typeText {height:15px;padding:3px 0 0 5px;border:1px solid #c0bebe}
+input.input_box {height:16px;border:1px solid #C0BEBE;padding:3px 0 0 3px}  /*구버전 - 사용중 */
+
+.ALBA input.typeText {height:12px}
+* html input.typeText {margin:-1px 0}
+*:first-child+html input.typeText {margin:-1px 0}
+
+/* simple light box */
+.SLB_center {cursor:pointer;visibility:hidden;border: solid 2px #999999;background-color: #FFF }
+.SLB_close {cursor:pointer;display:none;font-family: dotum;font-size: 9pt;background-color:#000000;color: #ffffff;padding-bottom: 4px}
+.SLB_caption {cursor:pointer;display:none;font-family: dotum;font-size: 9pt;background-color:#999999;color: #ffffff;padding: 4px 0px 4px 0px}
+#SLB_content table {margin:0;padding:0}
+#SLB_content img {vertical-align:middle}
+#SLB_loading {cursor:pointer;display:none;z-index: 99998;position:absolute;font-family: verdana,tahoma;font-size: 9pt;background-color:#cccccc;color: #ffffff;padding: 2px 0px 2px 0px;border: solid 2px #cfcfcf}
+
+#layer {position:relative;width:504px;height:185px;overflow:hidden;background:url('/image/ALBA/layer_bg.gif') no-repeat left top}
+#layer p.close {position:absolute;right:20px;top:10px}
+#layer p.info {position:absolute;left:100px;top:58px;text-align:center;line-height:1.5}
+#layer ul {position:absolute;left:148px;bottom:30px;width:504px;margin:0 auto;text-align:center}
+#layer li {float:left;margin-right:8px}
+
+table.listForm td div.mobile {float:left}
+table.listForm td div.mobileCert {float:left;margin:0 0 0 10px;padding:0}
+table.listForm td div.mobileCert a {font:11px Dotum;letter-spacing:-1px;text-decoration:underline;color:#6c34e7}
+table.listForm td div.mobileCert a.guidePopup {position:relative;left:15px;color:#000}
+table.listForm td ul.addHelp {overflow:hidden;width:565px;margin:7px 0 0;padding:5px 0 2px 10px;background:#f5f0ff}
+table.listForm td ul.addHelp li {margin:0;padding:2px 0 2px 6px;font:11px Dotum;letter-spacing:-1px;color:#716195;background:url('/image/policy/bul_square_violet.gif') no-repeat left 6px}
+table.listForm td ul.addHelp li strong {font-weight:normal;color:#1400d3}
+
+/* LayOut */
+#Header {width:100%;height:61px;border-bottom:1px solid #dadada}
+#HeaderGnb {position:relative;width:900px;height:61px;margin:0 auto}
+#Footer {position:relative;clear:both;width:960px;margin:50px auto 0;padding:0;text-align:left;border-top:0 none}
+
+/* Header */
+#HeaderGnb h1 {position:absolute;top:14px;left:11px}
+#HeaderGnb ul {position:absolute;top:35px;right:0}
+#HeaderGnb ul li {float:left;padding:0 10px;background:url('/image/ALBA/line_gray_v.gif') no-repeat left top}
+#HeaderGnb ul li.login,
+#HeaderGnb ul li.logout {padding-left:0;background:none}
+
+/* Footer */
+#Footer ul.nav {width:958px;height:23px;padding:11px 0 0;text-align:center;background:#f5f5f5;border:1px solid #eaeaea}
+#Footer ul.nav li {display:inline;padding:0 4px 0 8px;font:11px dotum;letter-spacing:-1px;background:url('/image/ALBA/line_gray_v.gif') no-repeat left top}
+#Footer ul.nav li.first {padding-left:0;background:none}
+#Footer ul.nav li.privacy a {font-weight:bold;color:#0f7ec2}
+#Footer address {padding:10px 0;font:11px tahoma;text-align:center}
+#Footer address strong {font:bold 11px dotum;letter-spacing:-1px}
+#Footer div.familySite {position:absolute;top:10px;right:10px}
+#Footer div.familySite a {display:block}
+#Footer div.familySite ul {display:none;position:absolute;bottom:17px;right:0;width:98px;background:#fff;border:1px solid #aeaeae;border-bottom:0 none}
+#Footer div.familySite ul li {float:left;width:98px;border-bottom:1px solid #e5e5e5}
+#Footer div.familySite ul li a {display:block;width:83px;height:16px;padding:5px 0 0 15px}
+#Footer div.familySite ul li a:hover {background:#eef1f6}
+
+/* class - 도움말 */
+.helpText {z-index:100;position:absolute}
+.helpText p {padding:8px 8px 5px;font:11px Dotum;letter-spacing:-1px;line-height:1.4;background:#edf9ff;border:1px solid #9fc3c7}
+.helpText em.num {letter-spacing:0}
+.helpText em.ps {color:#9aa0a3}
+.helpText em.ps span {font:12px gulim}
+.helpText div.layerClose {position:absolute;right:5px}
+.helpText div.layerClose img {cursor:pointer}
+.helpTextUp {padding:6px 0 0;background:url('/image/ALBA/helpTextUp_bg_up.gif') no-repeat left top}
+.helpTextUp p {border-top:none}
+.helpTextUp div.layerClose {top:10px}
+.helpTextDown {padding:0 0 6px;background:url('/image/ALBA/helpTextUp_bg_down1.gif') no-repeat left bottom}
+.helpTextDown p {border-bottom:none}
+.helpTextDown div.layerClose {top:5px}
+
+#SmsHelpText {top:-68px;left:-23px}
+
+/* class - 비밀번호 등급 */
+.pwLevel {z-index:999;position:absolute;top:0;margin:0 !important;padding:0 0 0 4px !important;background:#fff url('/image/ALBA/pwLevel_bg.gif') no-repeat 0 -86px}
+.pwLevel li {display:none;height:auto !important;margin:0 !important;padding:10px 10px 8px !important;font:11px dotum;letter-spacing:-1px;color:#999;background:#fff;border:1px solid #a7a7a7;border-left:0 none}
+.pwLevel li strong {display:block;margin:0 0 5px;font:bold 12px gulim;background:url('/image/ALBA/pwLevel_bg.gif') no-repeat}
+.pwLevel li.pwLevel_1 strong {padding:2px 0 0 18px;color:#bd1811;background-position:0 0}
+.pwLevel li.pwLevel_2 strong {padding:0 70px 0 0;color:#bd1811;background-position:86px -26px}
+.pwLevel li.pwLevel_3 strong {padding:0 70px 0 0;color:#0a75b2;background-position:86px -46px}
+.pwLevel li.pwLevel_4 strong {padding:0 70px 0 0;color:#397c07;background-position:86px -66px}
+
+#PassWord .pwLevel {left:270px}
+#PwChange,
+#PwChangePop,
+#MemberJoin {position:relative}
+#PwChange .pwLevel {left:135px}
+#PwChangePop .pwLevel {width:173px;left:135px}
+#MemberJoin .pwLevel {left:160px}
+
+/* 회원가입 */
+.joinIntro {width:709px;margin:0 auto;background-repeat:no-repeat;background-position:0 0}
+.joinIntro h1 {width:709px;height:192px;font:0/0 dotum;color:#fff}
+.joinIntro h1 a {display:block;height:100%}
+.joinIntro ul {overflow:hidden;width:709px;height:190px}
+.joinIntro ul li {position:relative;float:left;width:350px;height:190px}
+.joinIntro ul li a {overflow:hidden;position:absolute;top:119px;left:90px;width:170px;height:45px;font:0/0 dotum;color:transparent}
+.joinIntro ul li a.id {left:29px;width:135px}
+.joinIntro ul li a.sns {top:126px; width:32px;height:32px}
+.joinIntro ul li a.sns.facebook {left:212px}
+.joinIntro ul li a.sns.naver {left:247px}
+.joinIntro ul li a.sns.kakao {left:282px}
+.joinIntro ul li.person {float:right}
+.joinIntro_JOBSEARCH {padding-top:100px;background-position:0 100px}
+
+.joinCaution {width:709px;padding:25px 0 0;text-align:center}
+.joinCaution h2 {margin:0 0 8px;padding:0 0 0 5px;font-weight:bold;letter-spacing:-1px;color:#666}
+.joinCaution ul {padding:0 0 0 5px}
+.joinCaution ul li {height:18px;padding-left:10px;font:12px dotum;letter-spacing:-1px;color:#666;background:url('/image/common/bul_dot_gray.png') no-repeat 0 5px}
+.joinCaution ul li a {position:relative;top:-4px;display:inline-block;width:58px;height:15px;height:14px\0;*height:14px;padding:3px 0 0;padding-top:4px\0;*padding-top:4px;font-weight:bold;font-size:11px;text-align:center;vertical-align:top;color:#666;background-color:#e7e7e7;border:1px solid #a7a7a7}
+.joinCaution .cautionEdge {margin-top:20px;line-height:1.4;}
+.joinCaution .cautionEdge strong {color:#ff0000}
+.joinCaution .cautionEdge dt {}
+.joinCaution .cautionEdge dd {padding-left:15px;}
+.joinCaution .cautionEdge dd strong {text-decoration:underline}
+
+
+/* 회원가입 - 약관동의 및 본인확인 ====================================사용하지 않을 페이지================================================================ */
+#JoinAgree {overflow:hidden;width:900px;margin:0 auto}
+#JoinAgree h1 {padding:45px 0 11px 13px}
+#JoinAgree div.agree {padding:35px 90px 0}
+#JoinAgree div.agree div.privacy {position:relative}
+#JoinAgree div.agree div.privacy p.viewAll {position:absolute;top:15px;right:0}
+#JoinAgree div.agree h2 {padding:20px 0 11px 5px;font:11px dotum;letter-spacing:-1px}
+#JoinAgree div.agree h2 img {margin:-2px 4px 0 0}
+#JoinAgree div.agree h2 strong {color:#b77000}
+#JoinAgree div.agree iframe {overflow:auto;width:720px;height:170px;border:1px solid #e4e4e4}
+#JoinAgree div.agree p.checkAgree {padding:10px 0 0;font-weight:bold;text-align:center}
+#JoinAgree div.agree div.box {overflow:hidden;width:678px;padding:20px 20px 15px;background:#fff9d8;border:1px solid #ffe57f}
+#JoinAgree div.agree div.box ul {position:relative;width:678px}
+#JoinAgree div.agree div.box ul li {float:left;width:678px}
+#JoinAgree div.agree div.box ul li a.tab {position:absolute;top:0;height:31px;text-indent:-999em;background:url('/image/ALBA/JoinAgree_tab1.gif') no-repeat}
+#JoinAgree div.agree div.box ul li div.info {width:678px;padding:31px 0 0}
+#JoinAgree div.agree div.box ul li div.info div.reg {width:628px;padding:25px 25px 15px;background:#fff;border:1px solid #f6b900;border-top:1px solid #b77000}
+#JoinAgree div.agree div.box ul li div.info div.reg p.guide {padding:0 0 10px;letter-spacing:-1px;border-bottom:1px dashed #b5b5b5}
+#JoinAgree div.agree div.box ul li div.info div.reg p.guide a {margin-left:5px;color:#1866a2}
+#JoinAgree div.agree div.box ul li div.info div.reg p.help {padding:13px 0 0;letter-spacing:-1px}
+#JoinAgree div.agree div.box ul li div.info div.reg dl {overflow:hidden;width:540px;margin:0 auto;padding:10px 0 0}
+#JoinAgree div.agree div.box ul li div.info div.reg dl dt {float:left;width:92px;padding:10px 0 0;font-weight:bold;color:#b77000;letter-spacing:-1px}
+#JoinAgree div.agree div.box ul li div.info div.reg dl dd {float:left;padding:5px 0}
+#JoinAgree div.agree div.box ul li div.info div.reg dl dd img {vertical-align:middle}
+#JoinAgree div.agree div.box ul li div.info div.reg dl dd input.typeText {width:83px;height:16px;padding:5px 0 0 5px;border:1px solid #e1e0e0}
+#JoinAgree div.agree div.box ul li div.info div.reg dl dd input.focused {border:1px solid #20a5d1}
+#JoinAgree div.agree div.box ul li div.info div.reg dl dd.regNo input.typeText,
+#JoinAgree div.agree div.box ul li div.info div.reg dl dd.bizNo input.typeText {ime-mode:disabled}submit
+#JoinAgree div.agree div.box ul li div.info div.reg dl dd.bizNo #comregno1 {width:63px}
+#JoinAgree div.agree div.box ul li div.info div.reg dl dd.bizNo #comregno2 {width:43px}
+#JoinAgree div.agree div.box ul li div.info p.guide {line-height:18px}
+#JoinAgree div.agree div.box ul li div.info p.guide strong {color:#0097ff}
+#JoinAgree div.agree div.box ul li div.info p.submit {padding:20px 0 0;text-align:center}
+#JoinAgree div.agree div.box ul li div.info p.caution {padding:20px 0 0 10px;font:11px/1.4 dotum}
+#JoinAgree div.agree div.box ul li div.info p.caution img {margin-top:-3px;vertical-align:middle}
+
+#JoinAgree div.agree div.box ul li.iPin a.tab {left:0;width:135px;background-position:left top}
+#JoinAgree div.agree div.box ul li.inland a.tab {left:137px;width:112px;background-position:-137px top}
+#JoinAgree div.agree div.box ul li.foreign a.tab {left:251px;width:135px;background-position:-251px top}
+#JoinAgree div.agree div.box ul li.iPin a.on {background-position:left bottom}
+#JoinAgree div.agree div.box ul li.inland a.on {background-position:-137px bottom}
+#JoinAgree div.agree div.box ul li.foreign a.on {background-position:-251px bottom}
+#JoinAgree div.agree div.box ul li.iPin div.info,
+#JoinAgree div.agree div.box ul li.foreign div.info {display:none}
+
+#JoinAgree div.biz div.box ul li.inland div.info div.reg dl dt.regNo {width:82px}
+#JoinAgree div.biz div.box ul li.inland div.info div.reg dl dd.name {width:140px}
+#JoinAgree div.biz div.box ul li.inland div.info div.reg dl dd.regNo {width:226px}
+#JoinAgree div.biz div.box ul li.inland div.info div.reg dl dd.bizNo {width:448px}
+#JoinAgree div.biz div.box ul li.foreign div.info div.reg dl dt {width:145px}
+#JoinAgree div.biz div.box ul li.foreign div.info div.reg dl dt.regNo {width:90px}
+#JoinAgree div.biz div.box ul li.foreign div.info div.reg dl dd.name {width:110px}
+#JoinAgree div.biz div.box ul li.iPin div.info div.reg dl dt {padding-left:105px}
+#JoinAgree div.person div.box ul li.inland div.info div.reg dl dt.name {width:32px;padding-left:50px}
+#JoinAgree div.person div.box ul li.inland div.info div.reg dl dt.regNo {width:80px}
+#JoinAgree div.person div.box ul li.inland div.info div.reg dl dd.name {width:140px}
+#JoinAgree div.person div.box ul li.foreign div.info div.reg dl dt.name {width:110px}
+#JoinAgree div.person div.box ul li.foreign div.info div.reg dl dd.name {width:140px}
+
+/* 회원가입 - 회원정보 입력 */
+.joinMember {position:relative;width:900px;margin:0 auto;text-align:center}
+.joinMember h1 {width:900px;height:52px;margin:0 auto;padding:70px 0 20px;border-bottom:4px solid #333}
+.joinMember p.step {position:absolute;top:55px;right:10px}
+
+#JoinInfo div.infoInput {padding:0 50px}
+#JoinInfo div.infoInput h2 {padding:40px 0 9px 5px;font:11px dotum;color:#999;letter-spacing:-1px}
+#JoinInfo div.infoInput h2 img {margin:-4px 4px 0 0}
+#JoinInfo div.infoInput h2 strong {font-weight:normal;color:#000}
+#JoinInfo div.infoInput table.inputForm {width:800px;margin-bottom:20px;border-top:1px solid #bfbfbf;border-bottom:1px solid #bfbfbf}
+#JoinInfo div.infoInput table.inputForm th {width:122px;padding:11px 0 9px 25px;text-align:left;background:#f9f9f9;border-top:1px solid #e7e7e7}
+#JoinInfo div.infoInput table.inputForm th span {font-weight:bold;color:#fe7801}
+#JoinInfo div.infoInput table.inputForm td {padding:7px 0 7px 14px;border-top:1px solid #e7e7e7}
+#JoinInfo div.infoInput table.inputForm td select {height:20px}
+#JoinInfo div.infoInput table.inputForm td input.typeText {width:150px;height:15px;margin:0;padding:3px 0 0 5px;vertical-align:top;border:1px solid #d6d5d5}
+#JoinInfo div.infoInput table.inputForm td input.focused {border:1px solid #20a5d1}
+#JoinInfo div.infoInput table.inputForm td span.help {display:inline-block;margin:5px 0 0 5px;font:11px dotum;letter-spacing:-1px;color:#818181;vertical-align:top}
+#JoinInfo div.infoInput table.inputForm td span.helpBlock {display:inline-block;margin:0 0 0 5px;font:11px/1.3 dotum;letter-spacing:-1px;color:#818181;vertical-align:top} /* 회원가입 정보입력 비밀번호 span 별도 작성 (패밀리 사이트 모두 적용) */
+#JoinInfo div.infoInput table.inputForm td em {color:#c47936}
+#JoinInfo div.infoInput table.inputForm td p.help {margin:7px 0 0;font:11px/1.3 dotum;letter-spacing:-1px;vertical-align:top;color:#818181}
+#JoinInfo div.infoInput table.inputForm td span.help a,
+#JoinInfo div.infoInput table.inputForm td p.help a.receiveSet {text-decoration:underline;color:#3d7ed8}
+#JoinInfo div.infoInput table.inputForm td span.dash,
+#JoinInfo div.infoInput table.inputForm td span.at {vertical-align:middle}
+#JoinInfo div.infoInput table.inputForm td span.used {display:block;margin-top:7px;font:11px dotum;letter-spacing:-1px;color:#ff5153}
+#JoinInfo div.infoInput table.inputForm td span.noCheck {display:inline-block;margin:4px 0 0 5px;vertical-align:top}
+#JoinInfo div.infoInput table.inputForm td.noForm {padding:11px 0 9px 14px}
+#JoinInfo div.infoInput table.inputForm tr.first th,
+#JoinInfo div.infoInput table.inputForm tr.first td {border-top:0 none}
+
+#JoinInfo div.infoInput div.info {position:relative;width:800px}
+#JoinInfo div.infoInput div.info p.guide {position:absolute;top:40px;right:0;font:11px dotum;color:#999}
+#JoinInfo div.infoInput div.info p.guide span {font-weight:bold;color:#fe7801}
+#JoinInfo div.infoInput div.info table.inputForm th {font-weight:normal}
+#JoinInfo div.infoInput div.info .helpGuide {margin:0 0 10px;font:11px dotum;letter-spacing:-1px;color:#3d7ed8}
+#JoinInfo div.infoInput table.inputForm tr.pw input.typeText {display:inline-block;margin:2px 0 0}
+#JoinInfo div.infoInput table.inputForm tr.tel td input.typeText,
+#JoinInfo div.infoInput table.inputForm tr.mobile td input.typeText,
+#JoinInfo div.infoInput table.inputForm tr.fax td input.typeText,
+#JoinInfo div.infoInput table.inputForm tr.staff td input.typeText,
+#JoinInfo div.infoInput table.inputForm tr td.comregno input.typeText,
+#JoinInfo div.infoInput table.inputForm tr.address td input.typeText {width:40px}
+#JoinInfo div.infoInput table.inputForm tr.email td input.typeText,
+#JoinInfo div.infoInput table.inputForm tr.certMe td input.typeText {width:120px}
+#JoinInfo div.infoInput table.inputForm tr td.bizcontents input.typeText {width:200px}
+#JoinInfo div.infoInput table.inputForm tr.address td input#addr1 {width:350px}
+#JoinInfo div.infoInput table.inputForm tr.address td input#addr2 {display:block;margin:6px 0 0;width:572px}
+#JoinInfo div.infoInput table.inputForm tr.company td input.typeText {width:150px}
+#JoinInfo div.infoInput table.inputForm tr.bizContent td input.typeText {width:572px}
+#JoinInfo div.infoInput table.inputForm tr.homepage td input.typeText {width:300px}
+#JoinInfo div.infoInput table.inputForm tr.bizNumber span.help {color:#fe7801}
+#JoinInfo div.infoInput table.inputForm tr.bizNumber p.help {padding:7px 7px 4px;font:11px/14px dotum;letter-spacing:-1px;color:#63756f;background:#f2fffb;border:1px solid #bde7da}
+#JoinInfo div.infoInput table.inputForm tr.certify label {display:inline-block;width:70px;margin:4px 0 0}
+#JoinInfo div.infoInput table.inputForm tr.certify label.ipin {width:40px}
+#JoinInfo div.infoInput table.inputForm tr.homepage td span.help {margin-left:0}
+#JoinInfo div.infoInput table.inputForm tr.email td {position:relative}
+#JoinInfo div.infoInput table.inputForm tr.email td .used.able {color:#049d41}
+#JoinInfo div.infoInput table.inputForm tr.mobile td span.mobile {display:inline-block;padding:5px 0 3px 0}
+#JoinInfo div.infoInput table.inputForm tr.certMe .certGbn {margin:0 0 10px;padding:5px 0 0}
+#JoinInfo div.infoInput table.inputForm tr.certMe .certGbn input {margin-right:40px}
+#JoinInfo div.infoInput table.inputForm tr.certMe .certGbnContent strong {display:inline-block;width:185px;padding-top:4px}
+#JoinInfo div.infoInput table.inputForm tr.certMe .certGbnContent input.typeText {width:178px}
+#JoinInfo div.infoInput table.inputForm tr.certMe #CertGbnMobileContent {display:none}
+
+#JoinInfo div.infoInput table.inputForm th.birth {padding-bottom:8px}
+#JoinInfo div.infoInput table.inputForm th.radioBtn {width:75px\9}
+#JoinInfo div.infoInput table.inputForm th.companyType {width:122px\9}
+#JoinInfo div.infoInput table.inputForm td.birth select.selcMonth,
+#JoinInfo div.infoInput table.inputForm td.birth select.selcDay {width:55px}
+#JoinInfo div.infoInput table.inputForm td.birth span,
+#JoinInfo div.infoInput table.inputForm td.gender span {display:inline-block;width:228px}
+#JoinInfo div.infoInput table.inputForm td.gender label {display:inline-block;width:50px}
+/*#JoinInfo div.infoInput div.infoPerson table.inputForm td span.help {margin:0;padding:1px 0 1px 8px;color:#81889b;letter-spacing:-1px;background:url('/image/ALBA/bul_arrow_green.gif') no-repeat left 2px}
+#JoinInfo div.infoInput div.infoSetup table.inputForm td span.help {margin:0 0 0 17px;padding-left:8px;color:#81889b;letter-spacing:-1px;background:url('/image/ALBA/bul_arrow_green.gif') no-repeat left 1px}
+#JoinInfo div.infoInput div.infoSetup table.inputForm tr.setup td {line-height:1.5}*/
+
+#JoinInfo div.terms {overflow:hidden;width:800px;margin:0 50px}
+#JoinInfo div.terms div {float:left}
+#JoinInfo div.terms div.agreement {margin-right:15px}
+#JoinInfo div.terms h2 {padding:20px 0 11px 5px;font:11px dotum;letter-spacing:-1px}
+#JoinInfo div.terms h2 img {margin:-2px 4px 0 0}
+#JoinInfo div.terms h2 strong {color:#b77000}
+#JoinInfo div.terms iframe {overflow:auto;width:390px;height:185px;border:1px solid #e4e4e4}
+#JoinInfo div.terms p.checkAgree {padding:10px 0 0;font-weight:bold;text-align:center}
+#JoinInfo div.submit {margin:30px 0 0;text-align:center}
+#JoinInfo div.submit img {margin-left:10px}
+
+/* 개인 회원가입 완료 - 알바천국 별도(간편가입 포함) */
+
+/* SNS 회원가입 */
+#JoinInfo.joinSns {width:802px;margin:95px auto 0}
+#JoinInfo.joinSns h1,
+#JoinInfo.joinSns p.step {display:none}
+#JoinInfo.joinSns .userInfo {width:720px;padding:35px 30px 35px 50px;border:1px solid #bfbfbf;}
+#JoinInfo.joinSns .userInfo .user {}
+#JoinInfo.joinSns .userInfo .user strong {font:bold 14px Dotum;color:#3f7cd9}
+#JoinInfo.joinSns .userInfo .infoInput {position:relative;width:505px;min-height:207px;margin-top:20px;padding:0 0 0 215px}
+#JoinInfo.joinSns .userInfo .infoInput .photo {position:absolute;left:0;top:8px;width:160px;height:160px;border:1px solid #d7d7d7}
+#JoinInfo.joinSns .userInfo .infoInput .photo img {width:160px;height:160px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm {width:505px;margin:0}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li {position:relative;padding:8px 0 8px 100px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li label {position:absolute;left:0;top:12px;font-weight:bold;color:#787878}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li input.typeText {height:15px;line-height:15px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li .help,
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li .helpBlock {padding-top:7px;font:11px/1.4 Dotum;letter-spacing:-1px;color:#c47938}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li .gender {padding-left:20px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li .gender label {position:static;padding-right:20px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.name input.typeText {width:150px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.birth select {width:60px;}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.birth select#birthyear {width:70px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.email .used {display:block;padding-top:7px;font:11px/1 Dotum;letter-spacing:-1px;color:#ff5153}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.email .used.able {color:#049d41}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.htel input.typeText {width:50px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.htel select {width:60px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.certMe .certGbn {margin:0 0 10px;padding:5px 0 0}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.certMe .certGbn label {position:static;font-weight:normal;color:#474747}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.certMe .certGbn input {margin-right:40px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.certMe .help,
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.certMe .helpBlock {display:block;padding:0;margin:0 0 10px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.certMe .help {margin-top:10px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.certMe .certGbnContent strong {display:inline-block;width:185px;padding-top:4px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.certMe .certGbnContent input.typeText {width:178px}
+#JoinInfo.joinSns .userInfo .infoInput ul.inputForm li.certMe #CertGbnMobileContent {display:none}
+#JoinInfo.joinSns .agreement {padding:20px 0 0;text-align:right;color:#808080}
+#JoinInfo.joinSns .agreement a {color:#3c7fd6;text-decoration:underline}
+#JoinInfo.joinSns div.submit {margin:50px 0 0}
+
+/* 메일수신설정 팝업 */
+#JoinInfo div.layerReceiveSet {z-index:1;display:none;position:absolute;left:340px;bottom:-20px;width:280px;margin:0 0 0 -141px;border:2px solid #999}
+#JoinInfo div.layerReceiveSet h2 {height:24px;margin:0;padding:30px 0 9px 18px;background:#575757}
+#JoinInfo div.layerReceiveSet .contents {width:260px;padding:30px 11px 10px;background:url('/image/common/JoinInfo_bg_layerReceiveSet.gif') no-repeat left top}
+#JoinInfo div.layerReceiveSet .contents p {margin:0 0 10px 25px}
+#JoinInfo div.layerReceiveSet .footerBtn {height:40px;text-align:center;background:url('/image/common/JoinInfo_bg_layerReceiveSet.gif') no-repeat left bottom}
+#JoinInfo div.layerReceiveSet a.close {overflow:hidden;position:absolute;display:block;right:9px;top:11px;width:16px;height:15px;text-indent:-999em;background:url('/image/common/btn_close1.gif') no-repeat left top}
+
+/* 회원가입 - 가입완료 */
+#JoinComplete {width:900px;margin:0 auto}
+#JoinComplete div.person p.welcome {height:71px;padding:65px 0 0 208px;line-height:1.4;background:url('/image/ALBA/JoinComplete_welcome_person2.gif') no-repeat left top}
+#JoinComplete div.person p.welcome strong {font-size:14px;color:#a94d09}
+#JoinComplete div.person p.eventBanner {margin-bottom:20px;text-align:center}
+
+#JoinComplete .memberJobSearch {padding:115px 0 100px}
+#JoinComplete .memberJobSearch * {text-align:center}
+#JoinComplete .memberJobSearch h2 {margin:0 0 15px;font:48px gulim;letter-spacing:-0.1em}
+#JoinComplete .memberJobSearch p.guide {margin:0 0 50px;font:13px/1.5 gulim}
+#JoinComplete .memberJobSearch .action img {margin:0 20px}
+
+#JoinComplete .memberAdsee {padding:50px 0}
+#JoinComplete .memberAdsee * {text-align:center}
+#JoinComplete .memberAdsee .action {margin-top:50px;}
+#JoinComplete .memberAdsee .action img {margin:0 20px}
+
+#JoinComplete .memberAlba {position:relative;width:900px;height:200px;font:0/0 dotum;color:transparent;background:url('/image/alba/JoinComplete_top.png') no-repeat 0 0}
+#JoinComplete .memberAlba p {position:absolute;top:150px;left:680px;font:bold 14px dotum;letter-spacing:-1px}
+#JoinComplete .memberAlba p a {text-decoration:underline}
+
+#JoinComplete .joinSimple {width:900px;border-top:4px solid #333}
+#JoinComplete .joinSimple h2 {width:800px;height:80px;font:0/0 dotum;color:transparent;background:url('/image/alba/JoinComplete_guide.png') no-repeat 0 0}
+#JoinComplete .joinSimple p.save {padding:10px 50px 10px 0;font:11px dotum;text-align:right;color:#818181}
+#JoinComplete .joinSimple p.complete {text-align:center}
+#JoinComplete .joinSimple table {width:800px;border-bottom:1px solid #bfbfbf}
+#JoinComplete .joinSimple table th {width:115px;height:auto;padding:3px 0 0 30px;font-weight:normal;text-align:left;background-color:#f9f9f9;border-top:1px solid #e7e7e7}
+#JoinComplete .joinSimple table td {width:640px;height:auto;padding:8px 0 8px 15px;border-top:1px solid #e7e7e7}
+#JoinComplete .joinSimple table td select {width:170px;font-family:tahoma;vertical-align:top}
+#JoinComplete .joinSimple table td span.helpTextGuide {display:inline-block;padding:4px 0;font:11px dotum;letter-spacing:-1px;color:#818181}
+#JoinComplete .joinSimple table td a.btn {display:inline-block;height:15px;height:14px\0;*height:14px;padding:3px 10px 0;padding-top:4px\0;*padding-top:4px;font:11px dotum;letter-spacing:-1px;text-align:center;vertical-align:top;color:#fff;background-color:#5e676e;border:1px solid #545c5f;border-radius:3px}
+#JoinComplete .joinSimple table td a.btn.del {height:14px;margin:0 1px;margin-top:-1px\0;*margin-top:-1px;padding:0 4px;font-family:arial}
+#JoinComplete .joinSimple table td ul {overflow:hidden;width:100%;padding:2px 0 0}
+#JoinComplete .joinSimple table td ul li {float:left;width:20%;padding:0 0 5px}
+#JoinComplete .joinSimple table td ul.lisAdd {display:none;padding:10px 0 0}
+#JoinComplete .joinSimple table td ul.lisAdd li {width:100%}
+#JoinComplete .joinSimple table td ul.lisAdd li a.btn {margin-top:-4px}
+#JoinComplete .joinSimple table tr.area td span.helpTextGuide {padding-left:5px}
+#JoinComplete .joinSimple table tr.kind td span.helpTextGuide {display:block}
+#JoinComplete .joinSimple table tr.kind td a.select {display:block;width:90%}
+#JoinComplete .joinSimple table tr.type td {padding-top:11px;padding-top:14px\0;*padding-top:14px;padding-bottom:11px;padding-bottom:8px\0;*padding-bottom:8px}
+#JoinComplete .joinSimple table tr.type td label {margin-right:10px}
+#JoinComplete .joinSimple table tr.weekTime td p.week {margin:8px 0 0}
+#JoinComplete .joinSimple table tr.weekTime td p.week span {margin-right:10px}
+#JoinComplete .joinSimple #temDisJobKind {display:none;width:600px;margin:0;border:1px solid #e7e7e7;border-left:0 none}
+#JoinComplete .joinSimple #temDisJobKind th {padding:8px 0;padding:8px 0 5px\0;*padding:8px 0 5px;text-align:center;border-top:0 none;border-left:1px solid #e7e7e7}
+#JoinComplete .joinSimple #temDisJobKind th.kind2 {width:179px}
+#JoinComplete .joinSimple #temDisJobKind th.kind3 {width:319px}
+#JoinComplete .joinSimple #temDisJobKind th.kindCareer {width:99px}
+#JoinComplete .joinSimple #temDisJobKind td {padding:8px 0 7px 10px;padding-bottom:5px\0;*padding-bottom:5px;line-height:1.5;border-left:1px solid #e7e7e7}
+#JoinComplete .joinSimple #temDisJobKind td.kind2 {width:169px}
+#JoinComplete .joinSimple #temDisJobKind td.kind3 {width:309px}
+#JoinComplete .joinSimple #temDisJobKind td.kindCareer {width:99px;padding-left:0;text-align:center}
+
+/* 회원가입 - 인증완료 */
+#JoinReserve {width:900px;margin:0 auto}
+#JoinReserve div.person div.action {height:202px;background:url('/image/common/JoinReserve_contents_bg.gif') no-repeat left top}
+#JoinReserve div.person div.action p {text-align:center}
+#JoinReserve div.person div.action p.info {margin:10px 0 15px;line-height:2}
+#JoinReserve div.person div.action p.info strong {font-size:14px;text-decoration:underline;color:#000}
+#JoinReserve div.person div.action p.btn {margin:0 0 30px}
+#JoinReserve div.person div.action p.btn a {display:inline-block;margin:0 auto;padding-left:3px;color:#fff;background:url('/image/common/btn_JoinReserve_mail.gif') no-repeat left top}
+#JoinReserve div.person div.action p.btn a span {display:block;padding:16px 10px;background:url('/image/common/btn_JoinReserve_mail.gif') no-repeat right top}
+#JoinReserve div.person div.action p.limit strong {color:#005aff}
+
+/* 이력서 작성 - 뮤지컬화랑 */
+#JoinComplete div.person span.eventlayer {position:absolute;right:150px;width:213px}
+#JoinComplete div.person span.eventlayer a.contents {display:block;height:195px;margin-top:20px;text-indent:-999em;background:url('http://image.alba.kr/event/20121205_musical/joinComplete_event_sticker.png') no-repeat left top}
+#JoinComplete div.person span.eventlayer a.close {position:absolute;right:24px;bottom:10px;width:18px;height:18px;text-indent:-999em}
+
+/* 통합회원 로그인 20110119 */
+fieldset {padding:0;margin:0;border:0}
+.login legend {overflow:hidden;position:absolute;top:-999em;height:0;line-height:0;font-size:0}
+td.layout {padding:50px 0 0;text-align:center}
+
+.loginCombine {width:700px;margin:0 auto;text-align:left}
+.loginHead {overflow:hidden;position:relative;height:62px;margin-bottom:40px;text-indent:-999em;background:url('//image.alba.kr/login/loginHead.png') no-repeat center 0}
+.loginHead.loginFail {height:82px;background-image:url('/image/ALBA/loginFail.png')}
+.loginHead.loginNotCookie {height:82px;background-image:url('/image/ALBA/loginTopNotCookie.png')}
+.loginHead.loginNotCookie h2 a {position:absolute;left:300px;top:67px;width:102px;height:16px}
+
+.loginArea {position:relative;padding:40px 50px;background:#f5f6f8;border:1px solid #dcdcdc;}
+.loginInput {position:relative;float:left;width:417px;height:93px;}
+fieldset.login {display:block;overflow:hidden;position:relative;width:598px;height:93px;}
+fieldset.login input.i_text {width:268px;height:41px;height:36px\0;*height:36px;padding:0 0 0 5px;padding-top:5px\0;*padding-top:5px;font:14px Dotum,'돋움';color:#585858;vertical-align:middle;border:1px solid #b4b4b4}
+fieldset.login dt label {position:absolute;top:-999em;height:0;line-height:0;font-size:0}
+fieldset.login dd {position:absolute;left:0;background-color:#fff;}
+fieldset.login dd.inputPw {top:50px}
+fieldset.login input.btnLogin {position:absolute;left:282px;top:0;border:0}
+
+.loginCaptcha {z-index:1;position:relative;width:100%;margin:0 0 20px}
+.loginCaptcha p.guide {padding:5px 0 0;line-height:1.5}
+.loginCaptcha .g-recaptcha {position:absolute;top:0;right:0;width:304px}
+
+.loginBtn {position:relative;float:right;width:140px;padding-left:40px;height:93px;border-left:1px solid #e1e1e3}
+.loginBtn a {display:block;height:19px;height:18px\0;*height:18px;padding-top:7px;padding-top:8px\0;*padding-top:8px;margin-bottom:4px;text-align:center;color:#767676;background:#fff;border:1px solid #ddd;border-bottom:1px solid #aaa}
+
+.checkArea {position:relative;margin:0 0 15px;}
+.checkArea span {margin-bottom:2px;*margin-bottom:0}
+.checkArea label {display:innline-block;margin:0 0 0 4px;padding-top:1px;font:normal 11px Dotum,'돋움';letter-spacing:-1px;color:#585858}
+.checkArea span.security {margin-left:7px;font:normal 11px Dotum,'돋움';letter-spacing:-1px;color:#585858;}
+.checkArea span.security span {display:inline;padding-right:2px;padding-left:13px;background:url('/image/ALBA/ic.gif') no-repeat 1px 0}
+
+.layerHelp {z-index:10;display:none;position:absolute;top:60px;left:0;width:360px;padding:10px;font:11px/1.4 dotum;letter-spacing:-1px;color:#888;background:#fff;border:2px solid #666}
+.layerHelp .viewDetail {display:block;padding:10px 0 0}
+.layerHelp .arrow {position:absolute;right:124px;top:-8px;width:11px;height:8px;padding:0;background:url('//image.alba.kr/e/main/201608/icon.png') no-repeat 0 -40px}
+.layerHelp .close {position:absolute;right:10px;top:10px;width:9px;height:9px;font:0/0 dotum;color:transparent;background:url('//image.alba.kr/e/main/201410/icon.png') no-repeat -20px -40px}
+.loginMaintain {right:auto;left:18px;width:140px}
+.loginMaintain .arrow {right:22px}
+.loginMaintain strong {font-weight:normal;color:#fd4a4a}
+.loginMaintainDetail {width:320px}
+.loginMaintainDetail .arrow {right:184px}
+.loginMaintainDetail p {margin:0 0 10px;line-height:1.4}
+.loginMaintainDetail p.title {font-weight:bold}
+.loginMaintainDetail p.caution {margin:0;padding-left:12px;border:1px solid #666;padding:10px 10px 10px 20px}
+.loginMaintainDetail p.caution>span {position:absolute;margin-left:-12px}
+.loginMaintainDetail strong {font-weight:normal;color:#fd4a4a}
+.secretHelp p {float:none;display:block;width:auto;height:auto;margin:0 0 5px;font-weight:bold;color:#474747}
+.secretHelp strong {color:#fd4a4a}
+.secretHelp strong em {text-decoration:underline;color:#fd4a4a}
+.secretHelp span {font-size:12px}
+.secretHelp em {font-weight:bold;color:#000}
+.secretHelp a {text-decoration:underline}
+.secretHelp.sha {display:block}
+.secretHelp.family {top:170px;left:39px}
+
+p.sns {overflow:hidden;position:absolute;left:317px;top:32px;height:24px;margin-top:3px;padding:0 0 6px 1px}
+p.sns.sns--col3 {left:340px !important}
+p.sns.sns--col4 {left:318px !important}
+p.sns.sns--col5 {left:290px !important}
+p.sns a {display:inline-block;float:left;width:24px;height:24px;margin-left:5px;text-indent:-999em;background:url('//image.alba.kr/sns/icon_sns_pc_202104.png') no-repeat}
+p.sns a:first-child {margin-left:0}
+p.sns a.facebook {background-position:-68px -67px}
+p.sns a.naver {background-position:-238px -67px}
+p.sns a.kakao {background-position:-34px -67px}
+p.sns a.apple {background-position:-204px -67px}
+p.sns a.google {background-position:-170px -67px}
+
+.loginContents {overflow:hidden;height:236px;margin-top:70px;text-indent:-999em;background:url('/image/ALBA/loginContents_1.png') no-repeat 0 0}
+.loginGuide {margin:20px 0 -20px;font:11px Dotum;letter-spacing:-1px;color:#ff1613}
+.loginGuide a {text-decoration:underline;color:#ff1613}
+
+/* popup 사업자번호변경 */
+.comRegInfo {width:570px;background-color:#fff}
+.comRegInfo h1 {width:570px;height:35px;text-indent:-999em;background:#575757 url('/image/ALBA/changeComRegNo_bg.gif') no-repeat 0 0;border-top:2px solid #038ed3}
+.comRegInfo h2 {width:470px;margin:15px auto 0;background:url('/image/ALBA/changeComRegNo_bg.gif') no-repeat 0 -129px}
+.comRegInfo h2 strong {overflow:hidden;display:inline-block;height:14px;line-height:999em;vertical-align:top}
+.comRegInfo p {width:470px;margin:0 auto}
+.comRegInfo p.guide {margin-top:15px;line-height:1.4}
+.comRegInfo p.guide strong {font-weight:normal;color:#0295ff}
+.comRegInfo p.user {width:448px;margin-top:6px;padding:8px 10px 5px;line-height:1.4;background-color:#fffde4;border:1px solid #e7e09c}
+.comRegInfo p.user strong {color:#de0e00}
+.comRegInfo p.btn {display:none;width:98px;margin-top:10px}
+.comRegInfo p.btn a {display:block;height:29px;text-indent:-999em;background:url('/image/ALBA/changeComRegNo_bg.gif') no-repeat 0 -90px}
+.comRegInfo dl {overflow:hidden;width:466px;margin:5px auto 0;border:2px solid #dedede;border-top-width:1px}
+.comRegInfo dl dt,
+.comRegInfo dl dd {height:19px;padding:8px 0 0 10px;border-top:1px solid #e1e1e1}
+.comRegInfo dl dt {float:left;width:100px;background-color:#f2f2f2}
+.comRegInfo dl dd {float:right;width:346px}
+.comRegInfo dl dd input {height:15px;padding:3px 0 0 5px;border:1px solid #b1b1b1}
+.comRegInfo .close {display:none;width:565px;height:25px;margin-top:10px;padding:5px 5px 0 0;text-align:right;background-color:#828282}
+.comRegInfo .close a {overflow:hidden;display:block;width:46px;height:20px;line-height:999em;vertical-align:top;background:url('/image/ALBA/changeComRegNo_bg.gif') no-repeat -108px -90px}
+.comRegInfo .customer {width:470px;margin:15px auto 0;padding:15px 0;background:url('/image/ALBA/changeComRegNo_bg.gif') no-repeat 10px -167px;border-top:1px solid #e8e8e8}
+.comRegInfo .customer p {width:405px;margin:0 0 3px 65px}
+.comRegInfo .customer p span {display:inline-block;width:52px;height:14px;padding-top:4px;font-size:11px;text-align:center;background:url('/image/ALBA/changeComRegNo_bg.gif') no-repeat -164px -90px}
+.comRegInfo .customer p strong {color:#de0e00}
+
+.infoNow h2 strong {width:86px}
+.infoNow h2 span {font-family:tahoma}
+.infoChange h2 {background-position:0 -153px}
+.infoChange p.btn {display:block}
+.infoChange dl dd {height:24px;padding-top:3px}
+
+.popup .infoChange,
+.popup .customer {display:none}
+.popup .infoNow .btn,
+.popup .close {display:block}
+
+/* 로그인 - 이력서 작성 안내 2011-11-02 오승환 */
+#SLB_content div#ResumeNo,
+#SLB_content div#ResumeNo p,
+#SLB_content p.button {text-align:center}
+#SLB_content p.button img {vertical-align:top}
+
+/* 아아디/비밀번호 찾기 */
+.idPwSearch {width:900px;margin:0 auto}
+.idPwSearch h1 {padding:45px 0 11px 13px}
+.idPwSearch p.guide {position:relative}
+.idPwSearch p.guide a {position:absolute;top:55px;left:650px}
+.idPwSearch p.guide a.pc {top:58px}
+.idPwSearch p.matter {position:relative;width:659px;margin:0 auto 20px;;padding:18px 0 18px 132px;line-height:1.6;color:#525252;background:#f6f6f6}
+.idPwSearch p.matter span {position:absolute;left:25px;top:15px;width:90px;height:62px;text-indent:-999em;background:url('/image/common/IdSearch_matter_bg.gif') no-repeat left top}
+.idPwSearch p.matter em {text-decoration:underline;color:#017ad3}
+.idPwSearch p.customer {margin:30px 0 0;text-align:center}
+.idPwSearch p.customer1 {width:721px;height:41px;margin:30px auto 0;padding:28px 0 0 70px;text-align:left;background:url('/image/common/IdPwSearch_bg_customer.gif') no-repeat left top}
+.idPwSearch p.customer1 a {position:relative;top:-5px}
+.idPwSearch p.customer1 img {vertical-align:top}
+.idPwSearch div.memberType {overflow:hidden;width:792px;margin:0 auto}
+.idPwSearch div.memberType h2 {padding:0 0 0 10px}
+.idPwSearch div.memberType div.info {width:384px}
+.idPwSearch div.memberType div.infoWrap {padding:15px 0 12px}
+.idPwSearch div.memberType div.infoWrap .tab {overflow:hidden;width:376px;height:43px;margin-top:-5px}
+.idPwSearch div.memberType div.infoWrap .tab li {position:relative;float:left;width:188px}
+.idPwSearch div.memberType div.infoWrap .tab li.certInfo {width:189px;margin-left:-1px}
+.idPwSearch div.memberType div.infoWrap .tab li.on {z-index:1}
+.idPwSearch div.memberType div.infoWrap .tab li input {position:absolute;left:-999em;top:0}
+.idPwSearch div.memberType div.infoWrap .tab li label {display:block;height:26px;padding-top:15px;font-weight:bold;text-align:center;cursor:pointer;background:#f3f3f3;border:1px solid #a8a8a9;border-bottom:1px solid #cbcbc8}
+.idPwSearch div.memberType div.infoWrap .tab li.on label {background-color:#fff;border-bottom:0 none}
+.idPwSearch div.memberType p.action {margin:20px 0 0;text-align:center}
+.idPwSearch div.memberType table {width:350px;margin:0 auto;letter-spacing:-1px}
+.idPwSearch div.memberType table th {width:100px;padding:3px 0 0 10px;text-align:left}
+.idPwSearch div.memberType table td {width:auto;padding:7px 0}
+.idPwSearch div.memberType table td label {margin-right:15px}
+.idPwSearch div.memberType table tr.certification td {padding:13px 0 10px;text-align:center}
+.idPwSearch div.memberType table tr.certNo td {padding:9px 0 6px}
+.idPwSearch div.memberType table tr.id td input.typeText,
+.idPwSearch div.memberType table tr.company td input.typeText,
+.idPwSearch div.memberType table tr.name td input.typeText {width:176px}
+.idPwSearch div.memberType table tr.email td input.typeText {width:76px}
+.idPwSearch div.memberType table tr.phone td input.typeText {width:47px}
+.idPwSearch div.memberType table tr.iPin td,
+.idPwSearch div.memberType table tr.phone td {position:relative;top:5px;padding:10px 0 7px;font:11px/1.4 dotum;letter-spacing:-1px;text-align:center}
+
+.idPwSearch div.memberType div.biz {position:relative;float:left;width:396px}
+.idPwSearch div.memberType div.biz div.info {width:396px}
+/*.idPwSearch div.memberType div.biz div.infoWrap {border:4px solid #2588e3}*/
+.idPwSearch div.memberType div.biz table th {width:125px}
+.idPwSearch div.memberType div.biz table th,
+.idPwSearch div.memberType div.biz table td {border-top:1px solid #d9ebf8}
+.idPwSearch div.memberType div.biz table tr.certification th,
+.idPwSearch div.memberType div.biz table tr.certification td {border-top:0 none}
+.idPwSearch div.memberType div.biz table tr.iPin td,
+.idPwSearch div.memberType div.biz table tr.phone td {background:#f4f4f4;border-top:0 none}
+.idPwSearch div.memberType div.biz table tr.iPin td em,
+.idPwSearch div.memberType div.biz table tr.phone td em {font-weight:bold;color:#008ce2}
+.idPwSearch div.memberType div.biz table tr.iPin td strong,
+.idPwSearch div.memberType div.biz table tr.phone td strong {font-weight:normal}
+/*
+.idPwSearch div.memberType div.biz ul.tab {position:absolute;top:4px;right:0}
+.idPwSearch div.memberType div.biz ul.tab li {float:left;width:85px;height:27px;margin-left:3px;font-weight:bold;color:#999;letter-spacing:-1px;text-align:center;background:url('/image/ALBA/IdPwSearch_tab.gif') no-repeat left top}
+.idPwSearch div.memberType div.biz ul.tab li a {display:block;width:85px;height:18px;padding:9px 0 0;color:#999;text-decoration:none}
+.idPwSearch div.memberType div.biz ul.tab li.on {background-position:left bottom}
+.idPwSearch div.memberType div.biz ul.tab li.on a {color:#fff}
+*/
+.idPwSearch div.memberType div.person {float:right;width:396px}
+.idPwSearch div.memberType div.person div.info {width:396px}
+/*.idPwSearch div.memberType div.person div.infoWrap {border:4px solid #69b602}*/
+.idPwSearch div.memberType div.person table th,
+.idPwSearch div.memberType div.person table td {border-top:1px solid #d4ebc4}
+.idPwSearch div.memberType div.person table tr.certification th,
+.idPwSearch div.memberType div.person table tr.certification td {border-top:0 none}
+.idPwSearch div.memberType div.person table tr.iPin td,
+.idPwSearch div.memberType div.person table tr.phone td {background:#f4f4f4;border-top:0 none}
+.idPwSearch div.memberType div.person table tr.iPin td em,
+.idPwSearch div.memberType div.person table tr.phone td em {font-weight:bold;color:#368800}
+.idPwSearch div.memberType div.person table tr.iPin td strong,
+.idPwSearch div.memberType div.person table tr.phone td strong {font-weight:normal}
+
+#IdSearch div.memberType div.info {height:184px;background:url('/image/common/IdSearch_memberType_bg.gif') no-repeat left top}
+#IdSearch div.memberType div.infoWrap {height:157px}
+#PwSearch div.memberType div.info {height:210px;background:url('/image/common/PwSearch_memberType_bg1.gif') no-repeat left top}
+#PwSearch div.memberType div.infoWrap {height:183px}
+
+/* 회원정보 수정 : 담당자명 부분의 개명신청을 위한 z-index */
+td div.inputWrap {z-index:150;position:relative}
+#ChangeName,
+span.changeName {display:inline-block;margin-left:5px;padding-left:12px;font:normal 11px '돋움',dotum,AppleGothic,sans-serif;letter-spacing:-1px;text-decoration:underline;color:#3915d9;background:url('/image/ALBA/bul_bg_layer.gif') no-repeat 0 0}
+span.changeName {text-decoration:none}
+
+/* 성명 변경 레이어 */
+#LayerChangeName {zoom:1;z-index:150;display:none;overflow:hidden;position:absolute;left:50%;top:200px;width:530px;height:auto;margin:0 0 0 -265px;padding:25px;background:#fff;border:3px solid #687ae0}
+.biz #LayerChangeName {top:168px}
+#LayerChangeName .typeText {height:20px;border-color:#6a79e0}
+.ALBA #LayerChangeName .typeText {height:16px}
+#LayerChangeName .blind {position:absolute;left:-999em;top:-999em;display:inline-block;width:0 !important;height:0 !important;overflow:hidden;text-indent:-999em}
+#LayerChangeName iframe.ieFix {z-index:-1;position:absolute;left:-3px;top:-3px;width:586px;height:349px;filter:alpha(opacity=0);opacity:0}
+#LayerChangeName .tabList {zoom:1;overflow:hidden;position:relative;margin:20px 0 0;padding:31px 0 0}
+.ALBA #LayerChangeName .tabList {margin:20px auto 0}
+#LayerChangeName .tabList li.tabWrap {zoom:1;clear:both;float:left;width:530px}
+#LayerChangeName .tabList li.tabWrap a.tabTitle {position:absolute;left:0;top:0;display:block;width:106px;width:121px\9;height:12px;padding:10px 0 9px 15px;text-align:center;white-space:nowrap;font:normal 900 12px/12px '굴림',gulim,AppleGothic,sans-serif;letter-spacing:-1px;text-decoration:none !important;color:#aeaeae;background:url('/image/ALBA/bg_tab_layer.gif') no-repeat 0 0}
+.ALBA #LayerChangeName .tabList li.tabWrap a.tabTitle {width:106px;padding:10px 0 9px 15px;padding:11px 0 8px 15px\9; }
+#LayerChangeName .tabList li a#ChangeByIpin {left:123px}
+#LayerChangeName .tabList li a#ChangeByPhone.on,
+#LayerChangeName .tabList li a#ChangeByIpin.on {color:#fff;background-position:0 -31px}
+#LayerChangeName .tabList li.tabWrap div.tabContents {border-top:1px solid #465bce}
+#LayerChangeName .tabList li.tabWrap div.tabContents .guide {clear:both;zoom:1;width:520px;min-height:18px;_height:18px;margin:0;padding:10px 5px;padding:11px 5px 9px\9;line-height:18px;letter-spacing:-1px;text-align:left}
+#LayerChangeName .tabList li.tabWrap div.tabContents .guide dt,
+#LayerChangeName .tabList li.tabWrap div.tabContents .guide dd {display:inline;margin:0;padding:0}
+#LayerChangeName .tabList li.tabWrap div.tabContents .guide dt {font-weight:900}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea {zoom:1;overflow:hidden;border-bottom:1px solid #465bce}
+#LayerChangeName .tabList li.iPin div.tabContents .cmdArea,
+#LayerChangeName .tabList li.phone div.tabContents .cmdArea {padding:15px 10px;background:#f1f2fb;border-bottom:1px solid #465bce;text-align:center}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea .typeText {width:80px}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea label {padding:0 10px 0 0;letter-spacing:-1px;text-align:center}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea p.inputWrap {overflow:hidden;padding:15px 10px;text-align:left;background:#f1f2fb}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea p.inputWrap label {display:inline-block;width:90px;text-align:right}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea strong.name,
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea strong.hp {display:inline-block;padding:2px 5px 0 0}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea strong.name {padding-right:35px}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea strong.hp input {width:45px;margin:1px 0 0}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea strong.hp label {padding-top:3px}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea p.submit {padding:10px 0;text-align:center; }
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea p.certify {font-weight:900;letter-spacing:-1px;line-height:16px;text-align:center;color:#6773d6}
+#LayerChangeName .tabList li.tabWrap div.tabContents .cmdArea a.submit {display:inline-block;margin:10px auto 0}
+#LayerChangeName .tabList li.tabWrap div.tabContents .notice {overflow:hidden;padding:0 5px}
+#LayerChangeName .tabList li.tabWrap div.tabContents .notice p {float:left;height:26px;height:25px\9;padding:5px 0 0 15px;padding:6px 0 0 15px\9;font:normal 11px/11px '돋움',dotum,AppleGothic,sans-serif;line-height:1.3;letter-spacing:-1px;color:#2939d6 !important;background:url('/image/ALBA/bul_bg_layer.gif') no-repeat 0 -44px}
+#LayerChangeName .tabList li.tabWrap div.tabContents .notice a {float:right;margin:4px 0 0}
+#LayerChangeName .btnWrap {clear:both;text-align:center}
+#LayerChangeName .btnWrap .guideList {zoom:1;overflow:hidden;width:530px\9;margin:5px 0 0;padding:5px 10px;text-align:left;background:#f6f6f6}
+.ALBA #LayerChangeName .btnWrap .guideList {width:auto;margin:5px auto 0}
+#LayerChangeName .btnWrap .guideList li {zoom:1;float:left;clear:both;width:500px;padding:3px 0 3px 10px;font:normal 11px/14px '돋움',dotum,AppleGothic,sans-serif;letter-spacing:-1px;color:#747373;background:url('/image/ALBA/bul_bg_layer.gif') no-repeat 0 -92px}
+#LayerChangeName .btnWrap a {display:inline-block;margin:20px auto 0}
+#ContentsChangeByIpin {display:none}
+#LayerChangeName .overcmd {position:absolute;right:-1px;top:-1px}
+
+/* 정보수정 - 비밀번호 변경 가이드 */
+#PassWord {position:relative;width:713px;margin:0 auto;padding:0 51px 40px;background:#fdfdfd;border:1px solid #d5d5d5;border-top:0 none}
+#PassWord h1 {margin:0 auto;padding-top:20px}
+#PassWord div.guide {padding:25px 0 35px 150px;line-height:18px;letter-spacing:-1px;color:#777;background:url('/image/common/PassWord_guide_bg.gif') no-repeat center top}
+#PassWord div.guide strong {display:block;margin-bottom:10px}
+#PassWord div.guide strong span.userId {color:#fea22b}
+#PassWord div.guide strong span.highlight {color:#000}
+#PassWord div.input {padding:25px 0 0;border:2px solid #a4cb56}
+#PassWord div.input p strong {display:block;margin:0 30px 15px;padding-left:17px;background:url('/image/common/PassWord_bul1.gif') no-repeat 5px center}
+#PassWord div.input p strong span {color:#76a01f}
+#PassWord div.input ul {margin:0 30px}
+#PassWord div.input ul li {position:relative;height:23px;margin-bottom:7px}
+#PassWord div.input ul li label {position:absolute;top:7px;padding-left:15px;background:url('/image/common/PassWord_label_bul.gif') no-repeat left center}
+#PassWord div.input ul li input {position:absolute;left:130px;top:0;width:130px;height:14px;padding:5px 3px 4px;border:1px solid #8c8c8c}
+#PassWord div.input ul li span {position:absolute;font:11px Dotum;letter-spacing:-1px;color:#9d9c9c}
+#PassWord div.input ul li span.reference {left:135px;top:23px;line-height:14px}
+#PassWord div.input ul li span.way {left:130px;top:30px;height:11px;padding:2px 0 0 15px;background:url('/image/common/PassWord_bul2.gif') no-repeat left center}
+#PassWord div.input p.action {margin:30px 0 15px;text-align:center}
+#PassWord div.input dl {padding-bottom:20px;background:#bcdf79}
+#PassWord div.input dl dt {overflow:hidden;height:62px;margin-bottom:12px;text-indent:-999em;background:url('/image/common/PassWord_bg_dt.gif') no-repeat center}
+#PassWord div.input dl dd {padding:0 50px 0 75px;line-height:22px;letter-spacing:-1px;color:#386800}
+#PassWord div.input dl dd span {font-weight:bold;color:#f1ffa1}
+
+/* 정보수정 - 비밀번호 변경(새 비밀번호 입력 참조문구) */
+.reference {display:block;margin:-23px 0 0 140px !important;margin-left:160px;line-height:14px;font:11px Dotum;letter-spacing:-1px;color:#9d9c9c}
+
+/* 로그인이 안된다면 확인해 보세요! */
+#LoginHelper {overflow-x:hidden;width:570px;height:9821px;background:url('/image/common/LoginHelper_bg.gif') no-repeat 0 0}
+#LoginHelper h1 {height:68px;text-indent:-999em}
+#LoginHelper ol {height:9647px;text-indent:-999em}
+#LoginHelper p.tip {height:106px;text-indent:-999em}
+#LoginHelper p.close {position:relative;height:30px}
+#LoginHelper p.close a {position:absolute;right:7px;top:5px;width:46px;height:20px}
+
+/* 로딩중 */
+.loadingFilter {display:none;}
+.loadingFilter .filter {z-index:8;position:fixed;left:0;top:0;width:100%;height:100%;background:#fff;filter:alpha(opacity=50);opacity:0.5}
+.loadingFilter img {z-index:9;position:fixed;left:50%;top:50%;margin:-64px 0 0 -64px}
+
+/* 잡서치 - 풋터 */
+/* footer */
+#FooterJobSearch {position:relative;width:850px;margin:30px auto;padding:20px 0;border-top:1px solid #ddd}
+#FooterJobSearch .infomation {margin-bottom:15px;text-align:center;}
+#FooterJobSearch .infomation li {display:inline;padding:0 10px;background:url('/image/ALBA/line_gray_v.gif') no-repeat left top}
+#FooterJobSearch .infomation li a {font:12px gulim;letter-spacing:-1px}
+#FooterJobSearch .infomation li.first {background:none}
+#FooterJobSearch .companyInfo {position:relative;border:0 none}
+#FooterJobSearch .companyInfo address {font:11px/18px dotum;letter-spacing:-1px;text-align:center;color:#777}
+
+/* 잡서치 - 로그인 */
+body#LoginJobSearch.JOBSEARCH {background:#f5f6f7}
+.loginJobSearch {width:720px;margin:0 auto}
+.loginJobSearch h1 {overflow:hidden;height:77px;padding:100px 0 30px;text-align:center}
+.loginJobSearch p.intro {padding:0 0 55px;text-align:center}
+.loginJobSearch fieldset {width:400px;margin:0 auto}
+.loginJobSearch fieldset legend,
+.loginJobSearch fieldset label {visibility:hidden;width:0;height:0;margin:0;padding:0;font-size:0;line-height:0;position:absolute;top:-999em;left:-999em}
+.loginJobSearch fieldset input.typeText {display:block;width:383px;height:48px;margin:0 0 10px;padding:0 0 0 15px;line-height:48px;border:1px solid #cdcdcd}
+.loginJobSearch fieldset .msgLogin {padding:10px 0 0;font:11px/1.4 dotum;letter-spacing:-1px;color:#ff6000}
+.loginJobSearch fieldset input.typeImage {padding:20px 0 12px}
+.loginJobSearch p.sns {position:static;width:400px;height:24px;margin:0 auto 30px}
+.loginJobSearch p.sns span {position:relative;top:6px;margin-left:10px;vertical-align:top}
+.loginJobSearch p.action {width:400px;margin:0 auto 100px;padding:18px 0 0;text-align:center;border-top:1px solid #e1e1e1}
+.loginJobSearch p.action a {padding:0 4px 0 9px;background:url('/image/ALBA/line_gray_v.gif') no-repeat left top}
+.loginJobSearch p.action a.searchId {background:none}
+
+/* 애드씨 - 로그인 */
+body#Adsee {background:#f5f6f7}
+.loginAdsee {position:relative;width:380px;margin:0 auto;padding:100px 0 0;}
+.loginAdsee h1 {position:static;margin-bottom:40px;text-align:center;color:#848796;}
+.loginAdsee h1 strong {display:block;margin-top:5px;font:bold 37px "맑은 고딕", "Malun Gotic", NanumGothic, AppleGothic, Sans-serif;letter-spacing:-1px;color:#63677b}
+.loginAdsee fieldset {width:380px;margin:0 auto;}
+.loginAdsee fieldset div {margin:0 auto 15px;border-bottom:1px solid #eaebeb}
+.loginAdsee fieldset legend,
+.loginAdsee fieldset label {visibility:hidden;width:0;height:0;margin:0;padding:0;font-size:0;line-height:0;position:absolute;top:-999em;left:-999em}
+.loginAdsee fieldset input.typeText {display:block;width:368px;height:48px;margin:0 0 10px;padding-left:10px;line-height:48px;border:1px solid #cdcdcd}
+.loginAdsee fieldset input.typeText:focus {width:364px;height:44px;line-height:44px;border:3px solid #ff4d61}
+.loginAdsee fieldset .msgLogin {padding:0 0 10px;;font:11px/1.4 dotum;letter-spacing:-1px;color:#ff4d61}
+.loginAdsee fieldset .loginBtn {display:block;height:46px;padding-top:12px;font-weight:bold;font-size:20px;text-align:center;color:#fff;background:#848796;border:1px solid #606371;}
+.loginAdsee .action {padding:40px 0;text-align:center;}
+.loginAdsee .action a {font:13px "맑은 고딕", "Malun Gotic", NanumGothic, AppleGothic, Sans-serif;color:#848796}
+.loginAdsee .action span {color:#e0e0e0}
+
+/* 애드씨 - 아이디찾기 */
+body#Adsee .idPwSearch {position:relative;padding:100px 0 0;}
+body#Adsee .idPwSearch h1 {position:static;margin-bottom:40px;padding:0;text-align:center;color:#848796;}
+body#Adsee .idPwSearch h1 strong {display:block;margin-top:5px;font:bold 37px "맑은 고딕", "Malun Gotic", NanumGothic, AppleGothic, Sans-serif;letter-spacing:-1px;color:#63677b}
+body#Adsee .idPwSearch div.memberType div.biz {float:none;width:380px;margin:0 auto;}
+body#Adsee .idPwSearch p.customer1 {margin-top:130px;}
+body#Adsee #IdSearch div.memberType div.info,
+body#Adsee #PwSearch div.memberType div.info {width:378px;background:#fff;border:1px solid #9c9c9c}
+
+
+/* 애드씨 - 푸터 */
+#FooterAdsee {width:380px;margin:0 auto;padding:50px 0;font:13px "맑은 고딕", "Malun Gotic", NanumGothic, AppleGothic, Sans-serif;text-align:center;color:#848796}
+
+
+/* 로그인 - 취업캠프 */
+body#CAMP {background:#47525d}
+body#CAMP * {font:1em 'Malgun Gothic'}
+#CAMP #HeaderWrap {width:100%;height:80px;border-bottom:1px solid #2d343b;background:#fff}
+#CAMP #HeaderWrap .header {position:relative;width:1070px;height:80px;margin:0 auto}
+#CAMP .loginArea {width:400px;margin:0 auto;border:0 none;background:none}
+#CAMP .loginArea h2 {margin-bottom:30px;font-size:50px;text-align:center;letter-spacing:0;color:#fff}
+#CAMP .loginArea ul {}
+#CAMP .loginArea ul li {position:relative;margin-top:1px;vertical-align:top}
+#CAMP .loginArea ul li label {position:absolute;left:30px;top:0;height:54px;font-size:20px;line-height:54px;color:#fff}
+#CAMP .loginArea ul li input {width:374px;height:54px;margin:0;padding:0 0 0 20px;font-size:20px;line-height:54px;border:0 none;background:#757d86;color:#fff}
+#CAMP .loginArea ul li input:focus {background-color:#545e68}
+#CAMP .loginArea ul li.id label,
+#CAMP .loginArea ul li.pw {*margin-top:-2px}
+#CAMP .loginArea ul li.pw label {letter-spacing:0}
+#CAMP .loginArea .msgLogin {padding:10px 0 0;font:11px/1.4 dotum;letter-spacing:-1px;color:#fff}
+#CAMP .loginArea .comment {padding:12px 0 30px 20px;font-size:14px;color:#8dbef9}
+#CAMP .loginArea #btnLogin {margin-top:30px}
+#CAMP .loginArea .inquiry {margin-top:110px}
+#CAMP .loginArea .inquiry p {font:14px/20px 'Malgun Gothic';text-align:center;color:#fff}
+#CAMP .loginArea .inquiry p span {color:#91979e}
+#CAMP .loginArea .inquiry p.contact {margin-top:20px;letter-spacing:0}
+
+#CAMP #FooterWrap {width:100%;background:#47525d}
+#CAMP #FooterWrap .footer {position:relative;width:1070px;padding:30px 0;margin:0 auto}
+#CAMP #FooterWrap .footer p {text-align:center;color:#fff}
+
+/* 로그인실패 - 취업캠프*/
+#CAMP .fail {width:398px;height:233px;padding:65px 0 0;text-align:center;border:1px solid #6c757d}
+#CAMP .fail p {font-size:20px;color:#fff}
+#CAMP .fail p.failComment {padding:25px 0 38px;font-size:14px;line-height:18px;color:#fe7b7b}
+#CAMP .fail a.agree {display:inline-block;width:124px;height:30px;padding-top:8px;font-size:16px;text-align:center;background:#fff;}
