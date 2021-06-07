@@ -131,7 +131,7 @@
         </div>
         <h2>F.A.Q</h2>
         <p></p>
-        <a href="../admin_faq/faq_index.jsp" target="_blank" class="icon-link">
+        <a href="#" onclick="window.open('../admin_faq/faq_index.jsp','','width=1200,height=730');" class="icon-link">
           Go to F.A.Q
           <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
         </a>

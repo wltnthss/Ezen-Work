@@ -1,6 +1,7 @@
 package admin.controller;
 
 import java.io.PrintWriter;
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -301,7 +302,7 @@ public class AdminController {
 	@RequestMapping(value="/admin/admin_login/ad_delete.do")
 	public ModelAndView ad_delete(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		request.setCharacterEncoding("utf-8");		
-		
+				
 		int num = Integer.parseInt(request.getParameter("num"));		
 		int pg =  Integer.parseInt(request.getParameter("pg"));
 		int result = adminService.ad_delete(num);
@@ -312,7 +313,10 @@ public class AdminController {
 		modelAndView.addObject("result",result);
 		modelAndView.setViewName("../admin_advertise/admin_advertise_delete_ok.jsp");
 		return modelAndView;				
+		
 	}
+	
+	
 	
 	
 }

@@ -13,7 +13,7 @@ body{
 	height:100%;
 }
 #header{
-	width:1000px;
+	width:1200px;
 	height:10%;
 	text-align: left;
 	border: 0.5px solid #28B4B4;
@@ -21,7 +21,7 @@ body{
 	color: white
 }
 #container{
-	width:1000px;
+	width:1200px;
 	height:450px;
 }
 #nav{
@@ -31,7 +31,7 @@ body{
 	background:#F9FFFF;		
 }
 #section{
-	width:750px;
+	width:850px;
 	height:100%;
 	float:left;
 }
