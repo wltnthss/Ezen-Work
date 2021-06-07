@@ -18,18 +18,9 @@ public class MemberDAO {
 	SqlSessionTemplate sqlSession;
 	
 	//회원가입
-	public String register(String name, String id, String pwd, String gender, String email, String tel, String addr) {
-		Map<String, String>map = new HashMap<String, String>();
-		map.put("name", name);
-		map.put("id", id);
-		map.put("pwd", pwd);
-		map.put("gender", gender);
-		map.put("email", email);
-		map.put("tel", tel);
-		map.put("addr", addr);
-		return sqlSession.selectOne("mybatis.memberMapper.register",map);
-	}
-	
+	public int register(MemberDTO dto) {
+		return sqlSession.insert("mybatis.memberMapper.register", dto);
+	}	
 	//id 중복검사
 	public boolean isExistId(String id) {
 		boolean exist = false;
@@ -72,8 +63,8 @@ public class MemberDAO {
 		return sqlSession.selectList("mybatis.memberMapper.resumeList", map);
 	}
 	// 총 데이터 갯수 구하기
-	public int getTotalA() {
-		return sqlSession.selectOne("mybatis.memberMapper.getTotalA");
+	public int getTotalA(String id) {
+		return sqlSession.selectOne("mybatis.memberMapper.getTotalA", id);
 	}
 	// 이력서 삭제
 	public int resumeDelete(int seq) {
@@ -94,4 +85,8 @@ public class MemberDAO {
 		map.put("pwd", pwd);
 		return sqlSession.selectOne("mybatis.memberMapper.company_login", map);
 	}
+	//이력서 데이터 확인2
+		public ResumeDTO getResume2(int seq) {
+			return sqlSession.selectOne("mybatis.memberMapper.getResume2", seq);
+		}	
 }

@@ -7,7 +7,7 @@ import resume.bean.ResumeDTO;
 
 public interface MemberService {
 	//회원가입
-	public String register(String name, String id, String pwd, String gender, String email, String tel, String addr);
+	public int register(MemberDTO dto);
 	//id 중복검사
 	public boolean isExistId(String id);
 	//로그인
@@ -25,11 +25,13 @@ public interface MemberService {
 	//이력서 목록 보기
 	public List<ResumeDTO> resumeList(int startNum, int endNum);
 	//총 데이터 갯수 구하기
-	public int getTotalA();
+	public int getTotalA(String id);
 	//이력서 삭제
 	public int resumeDelete(int seq);
 	//이력서 상세보기
 	public ResumeDTO resumeView(int seq);
 	//이력서 수정
 	public int resumeModify(ResumeDTO dto);
+	//이력서 데이터 확인2
+	public ResumeDTO getResume2(int seq);
 }

@@ -53,7 +53,15 @@ public class MemberController {
 		String addr = request.getParameter("addr");
 		
 		//DB
-		String result = memberservice.register(name, id, pwd, gender, email, tel, addr);
+		MemberDTO dto = new MemberDTO();
+		dto.setName(name);
+		dto.setId(id);
+		dto.setPwd(pwd);
+		dto.setGender(gender);
+		dto.setEmail(email);
+		dto.setTel(tel);
+		dto.setAddr(addr);
+		int result = memberservice.register(dto);
 		System.out.println(result);
 		
 		//화면 네비게이션
@@ -78,7 +86,7 @@ public class MemberController {
 		return modelAndView;
 	}
 	//회원 로그인
-	@RequestMapping(value = "/member/member_login/login.do")
+	@RequestMapping(value = "/login/login.do")
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
 		HttpSession session = request.getSession();
@@ -95,8 +103,6 @@ public class MemberController {
 		String pwd = request.getParameter("pwd");
 		int select = Integer.parseInt(request.getParameter("login"));
 		
-		System.out.println(select);
-		
 		//DB
 		if(select == 0) {
 			String name = memberservice.login(id, pwd);
@@ -104,33 +110,36 @@ public class MemberController {
 			if(name != null) {
 				session.setAttribute("memId", id);
 				session.setAttribute("memName", name);
-			
-				modelAndView.setViewName("../../main/index.jsp");
+				modelAndView.addObject("select", select);
+				modelAndView.setViewName("../login/loginOk.jsp");
 			} else {
 				modelAndView.setViewName("loginFail.jsp");
 			}			
 		} else {
-			String name = memberservice.company_login(id, pwd);		
-						
+			String name = memberservice.company_login(id, pwd);
+					
+			
+			System.out.println(id);
+			System.out.println(pwd);
 			if(name != null) {
 				String cname = memberservice.getCmember(id);
 				session.setAttribute("cmemId", id);
-				session.setAttribute("cmemName", cname);
+				session.setAttribute("cmemName", cname);				
 				String idc = (String) session.getAttribute("cmemId");
 				String idc1 = (String) session.getAttribute("cmemName");
-				System.out.println(idc);
-				System.out.println(idc1);
-				
+
+				modelAndView.addObject("select", select);
 				modelAndView.setViewName("../../main/index.jsp");
 			} else {
 				modelAndView.setViewName("loginFail.jsp");
-			}			
+			}				
 		}
 		//화면 네비게이션		
 		return modelAndView;
 	}
+	
 	//회원 로그아웃
-	@RequestMapping(value="/member/member_login/logout.do")
+	@RequestMapping(value="/login/logout.do")
 	public ModelAndView logout(HttpServletRequest request,HttpServletResponse response) throws Exception{
 				
 		HttpSession session = request.getSession();
@@ -215,7 +224,7 @@ public class MemberController {
 		if(request.getParameter("pg")!= null) {
 	         pg = Integer.parseInt(request.getParameter("pg"));
 	    }
-		int limit = 5;
+		int limit = 90;
 	    int endNum = pg*limit;  // 1 * 5 = 5
 	    int startNum = endNum - (limit -1); // 5 - (5-1) = 1
 	    
@@ -223,11 +232,10 @@ public class MemberController {
 		String id = (String)session.getAttribute("memId");
 		// 1명 데이터 읽어오기
 		MemberDTO dto = memberservice.getMember(id);
-		ResumeDTO dto1 = memberservice.getResume(id);
 		List<ResumeDTO> list = memberservice.resumeList(startNum, endNum);
 		
 		// 페이징
-		int totalA = memberservice.getTotalA();
+		int totalA = memberservice.getTotalA(id);
 	    int totalP = (totalA + (limit -1))/ limit;
 	    
 		int startPage = (pg-1)/3*3+1;
@@ -236,8 +244,8 @@ public class MemberController {
 	    
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("id1", id);
 		modelAndView.addObject("dto", dto);
-		modelAndView.addObject("dto1", dto1);
 		modelAndView.addObject("pg", pg);
 		modelAndView.addObject("list", list);
 		modelAndView.addObject("totalP", totalP);
@@ -262,11 +270,10 @@ public class MemberController {
 		String id = (String)session.getAttribute("memId");
 		// 1명 데이터 읽어오기
 		MemberDTO dto = memberservice.getMember(id);
-		ResumeDTO dto1 = memberservice.getResume(id);
 		List<ResumeDTO> list = memberservice.resumeList(startNum, endNum);
 		
 		// 페이징
-		int totalA = memberservice.getTotalA();
+		int totalA = memberservice.getTotalA(id);
 	    int totalP = (totalA + (limit -1))/ limit;
 	    
 		int startPage = (pg-1)/3*3+1;
@@ -276,7 +283,6 @@ public class MemberController {
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("dto", dto);
-		modelAndView.addObject("dto1", dto1);
 		modelAndView.addObject("pg", pg);
 		modelAndView.addObject("list", list);
 		modelAndView.addObject("totalP", totalP);
@@ -301,12 +307,10 @@ public class MemberController {
 		String id = (String)session.getAttribute("memId");
 		// 1명 데이터 읽어오기
 		MemberDTO dto = memberservice.getMember(id);
-		ResumeDTO dto1 = memberservice.getResume(id);
 		
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("dto", dto);
-		modelAndView.addObject("dto1", dto1);
 		modelAndView.setViewName("resumeWriteForm.jsp");
 		return modelAndView;
 	}
@@ -369,12 +373,12 @@ public class MemberController {
 		String id = (String)session.getAttribute("memId");
 		// 1명 데이터 읽어오기
 		MemberDTO dto = memberservice.getMember(id);
-		ResumeDTO dto1 = memberservice.getResume(id);
+		ResumeDTO dto2 = memberservice.getResume2(seq);
 		
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("dto", dto);
-		modelAndView.addObject("dto1", dto1);
+		modelAndView.addObject("dto2", dto2);
 		modelAndView.addObject("seq", seq);
 		modelAndView.addObject("pg", pg);
 		modelAndView.setViewName("resumeModifyForm.jsp");

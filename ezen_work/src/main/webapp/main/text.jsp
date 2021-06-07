@@ -27,10 +27,6 @@ body{
 	margin-left: 150px;
 	margin: auto;
 }
-.change{
-	width: 1000px;
-	height: 60%;
-}
 
 </style>
 </head>
@@ -60,315 +56,79 @@ body{
 		</c:if>	 	 
  	 </div>	
  	 <hr>
+ 	 
  	 <div class="header2">
-	 <!-- //회원,회사 마이페이지&&로그아웃 열람 -->
-	 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-	  <div class="carousel-inner">
-	    <div class="carousel-item active" data-bs-interval="2500">
-	      <img src="../img/444.png" class="d-block w-100" alt="..." style="width: 1000px; height: 400px;">
-	    </div>
-	    <div class="carousel-item" data-bs-interval="2500" >
-	      <img src="../img/222.png" class="d-block w-100" alt="..." style="width: 1000px; height: 400px;">
-	    </div>
-	    <div class="carousel-item" data-bs-interval="2500">
-	      <img src="../img/333.jpg" class="d-block w-100" alt="..." style="width: 1000px; height: 400px;">
-	    </div>
-	  </div>
-	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    <span class="visually-hidden">Previous</span>
-	  </button>
-	  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    <span class="visually-hidden">Next</span>
-	  </button>
-	</div>     
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 40px;">
-		<div class="container px-4 px-lg-5">	          
-	           
-	           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-	               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
-	               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
-	               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
-	               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
-	               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
-	               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
-	           </ul>
- 		    </div>
-     	 </div>
-     </nav>     
-	<nav style="width: 1150px; margin-left: 175px;">
-	  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-	    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="location.href='index.jsp'">Home</button>
-	    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">지역별/업종별</button>
-	    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"
-	    	onclick="location.href='index.jsp?req=exp_experience'">알바경험담
-	    </button>
-	    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">한줄톡</button>
-	    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">이벤트</button>	    
-	    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">공지사항</button>
-	    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" 
-	    	onclick="window.open('../admin/admin_faq/faq_index.jsp','','width=1130,height=730');">F.A.Q
-	    </button>
-	    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">신고/문의</button>
-	  </div>
-	</nav>
-	<div class="tab-content" id="nav-tabContent" style="width: 1150px; margin-left: 175px;" >
-	  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"></div>
-	  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"></div>	 
-	  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"></div>
-	   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"></div>
-	  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"></div>	   
-	  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"></div>
-	  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"></div>
-	  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"></div>
-	</div> 
+		 <!-- //회원,회사 마이페이지&&로그아웃 열람 -->
+		 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+		  <div class="carousel-inner">
+		    <div class="carousel-item active" data-bs-interval="2500">
+		      <img src="../img/444.png" class="d-block w-100" alt="..." style="width: 1000px; height: 400px;">
+		    </div>
+		    <div class="carousel-item" data-bs-interval="2500" >
+		      <img src="../img/222.png" class="d-block w-100" alt="..." style="width: 1000px; height: 400px;">
+		    </div>
+		    <div class="carousel-item" data-bs-interval="2500">
+		      <img src="../img/333.jpg" class="d-block w-100" alt="..." style="width: 1000px; height: 400px;">
+		    </div>
+		  </div>
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
+		</div>     
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 40px;">
+			<div class="container px-4 px-lg-5">	          
+		           
+		           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+		               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
+		               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
+		               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
+		               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
+		               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
+		               <li class="nav-item"><a class="nav-link" href="#!" ></a></li>
+		           </ul>
+	 		    </div>
+	     	 </div>
+	     </nav>     
+		<nav style="width: 1150px; margin-left: 127px;">
+		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+		    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="location.href='index.jsp'">Home</button>
+		    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">지역별/업종별</button>
+		    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"
+		    	onclick="location.href='index.jsp?req=exp_experience'">알바경험담
+		    </button>
+		    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">한줄톡</button>
+		    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">이벤트</button>	    
+		    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">공지사항</button>
+		    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" 
+		    	onclick="window.open('../admin/admin_faq/faq_index.jsp','','width=1130,height=730');">F.A.Q
+		    </button>
+		    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">신고/문의</button>
+		  </div>
+		</nav>
+		<div class="tab-content" id="nav-tabContent" style="width: 1150px; margin-left: 175px;" >
+		  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"></div>
+		  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"></div>	 
+		  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"></div>
+		   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"></div>
+		  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"></div>	   
+		  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"></div>
+		  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"></div>
+		  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"></div>
+		</div> 
 	</div> 	
 	
-	<section class="py-5">
-     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" style="width:1200px; height: 300; margin-left:auto; margin-right:auto; position: inherit;">
-         <div class="col mb-5">
-             <div class="card h-100">
-                 <!-- Product image-->
-                 <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                 <!-- Product details-->
-                 <div class="card-body p-4">
-                     <div class="text-center">
-                         <!-- Product name-->
-                         <h5 class="fw-bolder">회사이름</h5>
-                         <h5 class="fw-bolder">글제목</h5>
-                        <h5 class="fw-bolder">시급내용</h5>
-                         <h5 class="fw-bolder">알바내용</h5>
-                     </div>
-                 </div>
-			</div>
-         </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">회사이름</h5>
-                                    <h5 class="fw-bolder">글제목</h5>
-                                   <h5 class="fw-bolder">시급내용</h5>
-                                    <h5 class="fw-bolder">알바내용</h5>
-                                </div>
-                            </div>
-      </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">회사이름</h5>
-                                    <h5 class="fw-bolder">글제목</h5>
-                                   <h5 class="fw-bolder">시급내용</h5>
-                                    <h5 class="fw-bolder">알바내용</h5>
-                                </div>
-                            </div>
-      </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">회사이름</h5>
-                                    <h5 class="fw-bolder">글제목</h5>
-                                   <h5 class="fw-bolder">시급내용</h5>
-                                    <h5 class="fw-bolder">알바내용</h5>
-                                </div>
-                            </div>
-      </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">회사이름</h5>
-                                    <h5 class="fw-bolder">글제목</h5>
-                                   <h5 class="fw-bolder">시급내용</h5>
-                                    <h5 class="fw-bolder">알바내용</h5>
-                                </div>
-                            </div>
-      </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">회사이름</h5>
-                                    <h5 class="fw-bolder">글제목</h5>
-                                   <h5 class="fw-bolder">시급내용</h5>
-                                    <h5 class="fw-bolder">알바내용</h5>
-                                </div>
-                            </div>
-      </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">회사이름</h5>
-                                    <h5 class="fw-bolder">글제목</h5>
-                                   <h5 class="fw-bolder">시급내용</h5>
-                                    <h5 class="fw-bolder">알바내용</h5>
-                                </div>
-                            </div>
-      </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">회사이름</h5>
-                                    <h5 class="fw-bolder">글제목</h5>
-                                    <h5 class="fw-bolder">시급내용</h5>
-                                    <h5 class="fw-bolder">알바내용</h5>
-                                </div>
-                            </div>
-      </div>
-                    </div>
-                </div>
-      </section>
-        
-        <div class="table">
-         
-         <table class="table table-striped" style="width: 1200px; text-align: center; margin-left: 156px;">
-     <tr>
-         <th scope="col">회사명</th>
-         <th scope="col">내용</th>
-         <th scope="col">시급</th>
-       </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-        <tr>
-          <td>아라야회사이름이다</td>
-          <td>아라야내용이다</td>
-          <td>아라야시급이다</td>
-        </tr>
-   </table>
-</div> 	
-	
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright © Your Website 2021</p></div>
-    </footer>
+    
+    <div class="footer1">
+	    <footer class="py-5 bg-dark">
+	        <div class="container"><p class="m-0 text-center text-white">Copyright © Your Website 2021</p></div>
+	    </footer>
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>  
 </body>
 </html> 

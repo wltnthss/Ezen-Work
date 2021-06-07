@@ -1,16 +1,16 @@
 package member.bean;
 
 public class MemberDTO {
-	   private int member_seq;
-	   private String name;
-	   private String id;
-	   private String pwd;
-	   private String gender;
-	   private String email;
-	   private String tel;
-	   private String addr;
-	   private String member_date;
-	   
+	private int member_seq;
+	private String name;
+	private String id;
+	private String pwd;
+	private String gender;
+	private String email;
+	private String tel;
+	private String addr;
+	private String member_date;
+	
 	public int getMember_seq() {
 		return member_seq;
 	}
@@ -64,8 +64,5 @@ public class MemberDTO {
 	}
 	public void setMember_date(String member_date) {
 		this.member_date = member_date;
-	}
-	   
-	
-	  
+	}	
 }

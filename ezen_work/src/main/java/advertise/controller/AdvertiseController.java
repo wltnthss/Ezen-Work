@@ -65,7 +65,7 @@ public class AdvertiseController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		String cname = (String)session.getAttribute("cmemName");
+		String cname = (String)session.getAttribute("cname");
 		String ad_subject = request.getParameter("ad_subject");
 		String ad_num = request.getParameter("ad_num");
 		String gender = request.getParameter("gender");
@@ -101,7 +101,7 @@ public class AdvertiseController {
 		// 화면 네비게이션 : 데이터 공유 + view 처리 파일 선택
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("result", result);
-		modelAndView.setViewName("../advertise/advertiseWrite.jsp");
+		modelAndView.setViewName("advertiseWrite.jsp");
 				
 		return modelAndView;
 	}
@@ -146,7 +146,7 @@ public class AdvertiseController {
 			e.printStackTrace();
 		}
 		HttpSession session = request.getSession();
-		String cname = (String)session.getAttribute("cmemName");
+		String cname = (String)session.getAttribute("cname");
 		String ad_subject = request.getParameter("ad_subject");
 		String ad_num = request.getParameter("ad_num");
 		String gender = request.getParameter("gender");
@@ -203,7 +203,7 @@ public class AdvertiseController {
 	    int startNum = endNum - (limit -1); // 5 - (5-1) = 1
 	    
 	    HttpSession session = request.getSession();
-	    String cname = (String) session.getAttribute("cmemName");
+	    String cname = (String) session.getAttribute("cname");
 	    List<AdvertiseDTO> list = advertiseService.advertiseList(cname);
 	    // 페이징 : 10블럭
 	    int totalA = advertiseService.getTotalA(cname);
