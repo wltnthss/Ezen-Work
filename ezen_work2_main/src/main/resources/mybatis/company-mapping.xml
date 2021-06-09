@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.companyMapper">
+	<insert id="memberWrite" parameterType="companyDTO">
+		insert into cmember values
+		(company_seq.nextval, #{cname}, #{id}, #{pw}, #{bnumber1}, #{bnumber2}, #{bnumber3}, #{email}, #{email2}, #{tel}, #{tel2}, #{tel3}, sysdate)
+	</insert>
+	
+	<select id="isExistId" parameterType="String" resultType="String">
+		select * from cmember where id=#{id}
+	</select>
+	
+	<select id="login" parameterType="java.util.Map" resultType="String">
+		select * from cmember where id=#{id} and pw=#{pw}
+	</select>
+	
+	<select id="getMember" parameterType="String" resultType="companyDTO">
+		select * from cmember where id=#{id}
+	</select>
+	<update id="memberModify" parameterType="companyDTO">
+		update cmember set  pw=#{pw}, email=#{email}, email2=#{email2}, tel=#{tel}, tel2=#{tel2}, tel3=#{tel3} where id=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		delete cmember where id=#{id}
+	</delete>
+	<select id="getTotalA" parameterType="String" resultType="int">
+		select count(*) as cnt from user_enroll where cname=#{cname}
+	</select>
+	<select id="resumeList" parameterType="java.util.Map" resultType="MainFormDTO">
+		select cname, id, seq, title, logtime, opencount, to_char(logtime, 'YYYY.MM.DD') as logtime  from 
+		(select rownum rn, tt.* from  (select * from user_enroll order by seq desc) tt) 
+		where cname=#{cname}
+	</select>
+	<update id="updateHit" parameterType="int">
+	 	update user_enroll set opencount = opencount + 1 where seq=#{seq}
+	</update>
+	<select id="resumeView" parameterType="int" resultType="MainFormDTO">
+	 	select * from user_enroll where seq=#{seq}
+	</select>
+	<select id="getMember1" parameterType="String" resultType="MemberDTO">
+		select * from member where id=#{id}
+	</select>
+</mapper>

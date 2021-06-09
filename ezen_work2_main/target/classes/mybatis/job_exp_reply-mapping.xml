@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="mybatis.job_exp_replyMapper"> 
+ 	
+ 	<insert id="exp_reply_write" parameterType="job_exp_replyDTO">
+ 		insert into exp_reply values(#{id}, exp_reply_seq.nextval,
+ 			#{exp_seq}, #{exp_reply_content}, sysdate)
+ 	</insert>	
+ 	
+ 	<delete id="exp_reply_del" parameterType="int">
+ 		delete from exp_reply where exp_reply_seq=#{exp_reply_seq}
+ 	</delete> 
+ 	
+ 	<update id="exp_reply_count" parameterType="int">
+ 		 update exp set exp_reply_count = exp_reply_count+1 where exp_seq=#{seq}
+ 	</update>
+ 	
+ 	<update id="exp_reply_minus" parameterType="int">
+ 		 update exp set exp_reply_count = exp_reply_count-1 where exp_seq=#{seq}
+ 	</update>		 			
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

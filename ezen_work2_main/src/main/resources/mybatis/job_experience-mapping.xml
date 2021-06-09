@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="mybatis.job_experienceMapper"> 		
+ 	
+ 	<insert id="exp_write" parameterType="job_experienceDTO">
+ 		insert into exp values
+		(exp_seq.nextval,#{id}, #{exp_subject}, #{exp_content},
+		#{exp_image}, 0, sysdate,0)
+ 	</insert> 
+ 	
+ 	<select id="exp_list" parameterType="java.util.Map" resultType="job_experienceDTO">
+ 		<![CDATA[select exp_seq, id, exp_subject, exp_content, exp_image, exp_readcount,
+ 		to_char(exp_date, 'YYYY.MM.DD') as exp_date,exp_reply_count from 
+		(select rownum rn, tt.* from  (select * from exp order by exp_seq desc) tt) 
+		where rn>=#{startNum} and rn<=#{endNum}]]>
+ 	</select>	
+ 	
+ 	<select id="exp_getTotalA" resultType="int">
+		select count(*) as cnt from exp
+	</select> 
+	
+	<select id="exp_search" parameterType="String" resultType="job_experienceDTO">
+		<bind name="search" value="'%'+search+'%'"/>
+ 		<![CDATA[select exp_seq, id, exp_subject, exp_content, exp_image, exp_readcount,
+ 		to_char(exp_date, 'YYYY.MM.DD') as exp_date,exp_reply_count from 
+		(select rownum rn, tt.* from  (select * from exp order by exp_seq desc) tt) 
+		where exp_subject like #{search} or exp_content like #{search}]]>
+ 	</select>
+ 	
+ 	<select id="exp_search_total" parameterType="String" resultType="int">
+ 		<bind name="search" value="'%'+search+'%'"/>
+		select count(*) as cnt from exp where exp_subject like #{search} or exp_content like #{search}
+	</select> 
+	
+	<select id="exp_view" parameterType="int" resultType="job_experienceDTO">
+ 		select * from exp where exp_seq=#{seq}
+	</select>
+	
+	<update id="exp_hit" parameterType="int">
+ 		update exp set exp_readcount = exp_readcount+1 where exp_seq=#{seq}
+	</update>
+	
+	<update id="exp_modify" parameterType="job_experienceDTO">
+ 		update exp set exp_subject=#{exp_subject}, exp_content=#{exp_content},
+ 		exp_image=#{exp_image} where exp_seq=#{exp_seq}
+	</update>
+	
+	<delete id="exp_del" parameterType="int">
+		delete from exp where exp_seq=#{exp_seq}
+	</delete>
+	
+	<select id="exp_reply_list" parameterType="int" resultType="job_exp_replyDTO">
+		select id, exp_reply_seq, exp_seq, exp_reply_content,
+ 		exp_reply_date from 
+		(select rownum rn, tt.* from (select * from exp_reply order by exp_reply_seq desc) tt) 
+		where exp_seq=#{seq}
+	</select>
+	
+	<delete id="exp_reply_del" parameterType="int">
+		delete from exp_reply where exp_seq=#{seq}
+	</delete>
+	
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
