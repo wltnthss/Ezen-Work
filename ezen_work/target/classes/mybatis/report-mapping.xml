@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.reportmapper">
+	<insert id="report" parameterType="reportDTO">
+		insert into report values
+		(re_seq.nextval, #{id}, #{re_name}, #{re_report}, #{re_check}, #{re_content}, sysdate)
+	</insert>	
+	
+	<select id="reportList" parameterType="java.util.Map" resultType="reportDTO">
+		<![CDATA[select re_seq, id, re_name, re_report, re_check, re_content, logtime from 
+				(select rownum rn, tt.*from (select * from report order by re_seq desc)tt)
+				where rn>=#{startNum} and rn<=#{endNum}]]>
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		 select count (*) as cnt from report	
+	</select>
+	
+	<select id = "reportView" parameterType="int" resultType="reportDTO">
+		select * from report where re_seq = #{re_seq}
+	</select>
+	
+	<delete id = "reportDelete" parameterType="int">
+		delete report where re_seq = #{re_seq}
+	</delete>
+	
+		
+</mapper>

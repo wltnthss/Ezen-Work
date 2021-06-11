@@ -46,13 +46,6 @@ public class ResumeController {
 			String achieve = request.getParameter("achieve");
 			String loc = request.getParameter("loc");
 			
-			System.out.println(id);
-			System.out.println(fileName);
-			System.out.println(title);
-			System.out.println(age);
-			System.out.println(career);
-			System.out.println(achieve);
-			System.out.println(loc);
 			
 			//DB
 			ResumeDTO dto = new ResumeDTO();
@@ -65,7 +58,6 @@ public class ResumeController {
 			dto.setLoc(loc);
 			
 			int result = resumeservice.resumeWrite(dto);
-			System.out.println(result);
 			
 			//화면 네비게이션
 			ModelAndView modelAndView = new ModelAndView();

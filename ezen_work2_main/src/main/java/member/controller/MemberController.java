@@ -433,4 +433,29 @@ public class MemberController {
 		modelAndView.setViewName("resumeModify.jsp");
 		return modelAndView;
 	}
+		//회원 아이디 찾기
+		@RequestMapping(value="/login/find_id.do")
+		public ModelAndView find_id(HttpServletRequest request,HttpServletResponse response) throws Exception{
+					
+			HttpSession session = request.getSession();
+			
+			String find_name = request.getParameter("find_name");
+			String find_email = request.getParameter("find_email");
+			
+			System.out.println(find_name);
+			System.out.println(find_email);		
+			
+			String id = memberservice.findId(find_name, find_email);
+
+			// 화면 네비게이션
+			ModelAndView modelAndView = new ModelAndView();
+			if(id != null) {
+				modelAndView.setViewName("loginFindOk.jsp");	
+			} else {
+				modelAndView.setViewName("loginFindFail.jsp");
+			}
+			
+			modelAndView.addObject("id", id);
+			return modelAndView;				
+		}
 }

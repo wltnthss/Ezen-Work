@@ -39,4 +39,24 @@
      	(select rownum rn, tt.* from (select * from user_enroll order by seq desc) tt) 
       	where id=#{id}
 	</select>
+	<select id="tareaList1" parameterType="String" resultType="AdvertiseDTO">
+		<bind name="data3" value="'%'+data3+'%'"/>
+		select * from advertise where ad_area like #{data3}
+	</select>
+	<select id="tareaList2" parameterType="String" resultType="AdvertiseDTO">
+	<bind name="data3" value="'%'+data3+'%'"/>
+		select * from advertise where ad_job like #{data3}
+	</select>
+	<select id="getTotal1" parameterType="String" resultType="int">
+ 		<bind name="data3" value="'%'+data3+'%'"/>
+ 	 	select count (*) as cnt from advertise where ad_area like #{data3}
+ 	</select>
+ 	<select id="getTotal2" parameterType="String" resultType="int">
+ 		<bind name="data3" value="'%'+data3+'%'"/>
+ 	 	select count (*) as cnt from advertise where ad_job like #{data3}
+ 	</select>
+ 	
+ 	<select id="getresume1" parameterType="String" resultType="int">
+		select count (*) as cnt from resume where id=#{id}
+	</select>
  </mapper>

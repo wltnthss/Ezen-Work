@@ -63,4 +63,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getResume2" parameterType="int" resultType="resumeDTO">
 		select * from resume where seq=#{seq}
 	</select>		
+	
+	<select id="findId" parameterType="java.util.Map" resultType="String">
+		select id from member where name=#{name} and email=#{email}
+	</select>
 </mapper>

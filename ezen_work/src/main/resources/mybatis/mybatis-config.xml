@@ -7,14 +7,30 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias type="admin.bean.AdminDTO" alias="adminDTO"/>
 		<typeAlias type="member.bean.MemberDTO" alias="memberDTO"/>
-		<typeAlias type="mypage.bean.MypageDTO" alias="mypageDTO"/>
 		<typeAlias type="resume.bean.ResumeDTO" alias="resumeDTO"/>
+		<typeAlias type="job_experience.bean.Job_experienceDTO" alias="job_experienceDTO"/>	
+		<typeAlias type="job_exp_reply.bean.Job_exp_replyDTO" alias="job_exp_replyDTO"/>
+		<typeAlias type="talk.bean.TalkDTO" alias="talkDTO"/>	
+		<typeAlias type="company.bean.CompanyDTO" alias="companyDTO"/>
+		<typeAlias type="advertise.bean.AdvertiseDTO" alias="advertiseDTO"/>
+		<typeAlias type="mainForm.bean.MainFormDTO" alias="mainFormDTO"/>
+		<typeAlias type="report.bean.ReportDTO" alias="reportDTO"/>
+		<typeAlias type="notice.bean.NoticeDTO" alias="noticeDTO"/>
+		<typeAlias type="event.bean.EventDTO" alias="eventDTO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/admin-mapping.xml"/>
 		<mapper resource="mybatis/member-mapping.xml"/>
-		<mapper resource="mybatis/mypage-mapping.xml"/>
 		<mapper resource="mybatis/resume-mapping.xml"/>
+		<mapper resource="mybatis/job_experience-mapping.xml"/>	
+		<mapper resource="mybatis/job_exp_reply-mapping.xml"/>
+		<mapper resource="mybatis/talk-mapping.xml"/>
+		<mapper resource="mybatis/company-mapping.xml"/>
+		<mapper resource="mybatis/advertise-mapping.xml"/>
+		<mapper resource="mybatis/mainForm-mapping.xml"/>
+		<mapper resource="mybatis/report-mapping.xml"/>
+		<mapper resource="mybatis/notice-mapping.xml"/>
+		<mapper resource="mybatis/event-mapping.xml"/>
 	</mappers>
 </configuration>

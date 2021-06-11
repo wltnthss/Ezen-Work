@@ -16,8 +16,8 @@ public class MemberServiceImpl implements MemberService{
 	MemberDAO dao;
 	
 	@Override
-	public String register(String name, String id, String pwd, String gender, String email, String tel, String addr) {
-		return dao.register(name, id, pwd, gender, email, tel, addr);
+	public int register(MemberDTO dto) {
+		return dao.register(dto);
 	}
 
 	@Override
@@ -51,8 +51,8 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public int getTotalA() {
-		return dao.getTotalA();
+	public int getTotalA(String id) {
+		return dao.getTotalA(id);
 	}
 
 	@Override
@@ -68,5 +68,25 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public int resumeModify(ResumeDTO dto) {
 		return dao.resumeModify(dto);
+	}
+
+	@Override
+	public String company_login(String id, String pwd) {		
+		return dao.company_login(id,pwd);
+	}
+
+	@Override
+	public String getCmember(String id) {
+		return dao.getCmember(id);
+	}
+
+	@Override
+	public ResumeDTO getResume2(int seq) {
+		return dao.getResume2(seq);
+	}
+
+	@Override
+	public String findId(String name, String email) {
+		return dao.findId(name, email);
 	}
 }

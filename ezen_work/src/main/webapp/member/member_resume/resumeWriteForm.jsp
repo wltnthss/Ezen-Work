@@ -4,9 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko" class=" js "><head>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 <title>이력서 작성</title>
-<link rel="stylesheet" href="../css/resumeCSS/PersonRegist.css?v=1" type="text/css">
-<link rel="stylesheet" href="../css/resumeCSS/Repute.css" type="text/css">
-<link rel="stylesheet" href="../css/resumeCSS/jquery-ui.css" type="text/css">
+<link rel="stylesheet" href="../../css/resumeCSS/PersonRegist.css?v=1" type="text/css">
+<link rel="stylesheet" href="../../css/resumeCSS/Repute.css" type="text/css">
+<link rel="stylesheet" href="../../css/resumeCSS/jquery-ui.css" type="text/css">
 <meta name="referrer" content="always">
 <style type="text/css">
 html.pc .join-submit-btn{
@@ -50,12 +50,12 @@ button{
 	<!-- Header -->
 	<div id="Header">
 			<h1 class="headerBi">
-				<a href="../member_main/index.jsp"><img src="../images/Ezen_Work.png" class="headerBi__logo" alt="이젠일해요"></a>
+				<a href="../../main/index.do"><img src="../images/Ezen_Work.png" class="headerBi__logo" alt="이젠일해요"></a>
 			</h1>
 		
 			<ul class="headerLink">
-				<li class="login"><a href="../member_login/logout.do">로그아웃</a></li>	
-				<li class="modify"><a href="../member_main/index.jsp">HOME</a></li>
+				<li class="login"><a href="../../login/logout.do">로그아웃</a></li>	
+				<li class="modify"><a href="../../main/index.do">HOME</a></li>
 			</ul>
 	</div>
 	<!-- //Header -->
@@ -66,15 +66,15 @@ button{
 		<div id="HeaderMenu">
 					<!-- 알바스토리 /rsc/inc/common/GlobalMenuStory.inc 중복 관리 -->
 			<ul class="headerMenu headerMenu--login">
-								<li class="person on">
+				<li class="person on">
 					<a href="../member_mypage/mypageindex.do"><span></span>마이페이지</a>	
 				</li>		
 				<li class="job">
 					<a href="../member_resume/resumeWriteForm.do">이력서등록</a>	
+				</li>	
+				<li class="story">
+					<a href="../member_apply/memberAdList.do">이력서지원</a>
 				</li>			
-				<li class="brand">
-					<a href="../member_resume/resumeManageForm.do">이력서관리</a>
-				</li>		
 				<li class="story">
 					<a href="../member_modify/memberModifyForm.do">개인정보수정</a>
 				</li>	
@@ -108,21 +108,11 @@ button{
 						</span>
 						<!-- 사진아이콘 -->
 						<span class="applyBtn">
-							<!-- 사진있을 때 -->
-							<c:if test="${dto1.image != null }">
-								<img src="../../storage/${dto1.image }" id="resumephoto" alt="" style="width: 112px; height="134px; margin-top: 5px;" >
-								<button onclick="btnDelete();" style="margin-left: 25px; font-weight: bold" >이미지 삭제</button>
-							</c:if>
-							<!-- //사진 있을 때 -->
 							<!-- 사진없을 때 -->
-							<c:if test="${dto1.image == null }">
 								<span id="picReigst" style="">
-								<img src="../../storage/${dto1.image }" id="resumephoto" alt="">
 								<a class="noImgReg"><span></span>사진등록</a>
 								<input type="file" class="input_file" name="image">
-								</span>
-							</c:if>
-							
+								</span>						
 							<!-- //사진없을 때 -->
 						</span>
 						<!-- //사진아이콘 -->

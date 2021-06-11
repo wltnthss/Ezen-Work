@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import company.bean.CompanyDTO;
 import member.bean.MemberDTO;
 import resume.bean.ResumeDTO;
 
@@ -52,8 +53,15 @@ public class MemberController {
 		String addr = request.getParameter("addr");
 		
 		//DB
-		String result = memberservice.register(name, id, pwd, gender, email, tel, addr);
-		System.out.println(result);
+		MemberDTO dto = new MemberDTO();
+		dto.setName(name);
+		dto.setId(id);
+		dto.setPwd(pwd);
+		dto.setGender(gender);
+		dto.setEmail(email);
+		dto.setTel(tel);
+		dto.setAddr(addr);
+		int result = memberservice.register(dto);
 		
 		//화면 네비게이션
 		
@@ -77,8 +85,11 @@ public class MemberController {
 		return modelAndView;
 	}
 	//회원 로그인
-	@RequestMapping(value = "/member/member_login/login.do")
+	@RequestMapping(value = "/login/login.do")
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		
+		HttpSession session = request.getSession();
+		ModelAndView modelAndView = new ModelAndView();
 		
 		try {
 			request.setCharacterEncoding("utf-8");
@@ -89,24 +100,43 @@ public class MemberController {
 		//Data
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
+		int select = Integer.parseInt(request.getParameter("login"));
+		
 		//DB
-		String name = memberservice.login(id, pwd);
-		//화면 네비게이션
-		ModelAndView modelAndView = new ModelAndView();
-		HttpSession session = request.getSession();
-		
-		if(name != null) {
-			session.setAttribute("memId", id);
-			session.setAttribute("memName", name);
-		
-			modelAndView.setViewName("../member_main/index.jsp");
+		if(select == 0) {
+			String name = memberservice.login(id, pwd);
+			
+			if(name != null) {
+				session.setAttribute("memId", id);
+				session.setAttribute("memName", name);
+				modelAndView.addObject("select", select);
+				modelAndView.setViewName("../login/loginOk.jsp");
+			} else {
+				modelAndView.setViewName("loginFail.jsp");
+			}			
 		} else {
-			modelAndView.setViewName("loginFail.jsp");
+			String name = memberservice.company_login(id, pwd);
+					
+			
+			if(name != null) {
+				String cname = memberservice.getCmember(id);
+				session.setAttribute("cmemId", id);
+				session.setAttribute("cmemName", cname);				
+				String idc = (String) session.getAttribute("cmemId");
+				String idc1 = (String) session.getAttribute("cmemName");
+
+				modelAndView.addObject("select", select);
+				modelAndView.setViewName("../login/loginOk.jsp");
+			} else {
+				modelAndView.setViewName("loginFail.jsp");
+			}				
 		}
+		//화면 네비게이션		
 		return modelAndView;
 	}
+	
 	//회원 로그아웃
-	@RequestMapping(value="/member/member_login/logout.do")
+	@RequestMapping(value="/login/logout.do")
 	public ModelAndView logout(HttpServletRequest request,HttpServletResponse response) throws Exception{
 				
 		HttpSession session = request.getSession();
@@ -174,7 +204,6 @@ public class MemberController {
 		dto.setGender(gender);
 		
 		int result = memberservice.modify(dto);
-		System.out.println(result);
 		
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
@@ -191,7 +220,7 @@ public class MemberController {
 		if(request.getParameter("pg")!= null) {
 	         pg = Integer.parseInt(request.getParameter("pg"));
 	    }
-		int limit = 5;
+		int limit = 90;
 	    int endNum = pg*limit;  // 1 * 5 = 5
 	    int startNum = endNum - (limit -1); // 5 - (5-1) = 1
 	    
@@ -199,11 +228,10 @@ public class MemberController {
 		String id = (String)session.getAttribute("memId");
 		// 1명 데이터 읽어오기
 		MemberDTO dto = memberservice.getMember(id);
-		ResumeDTO dto1 = memberservice.getResume(id);
 		List<ResumeDTO> list = memberservice.resumeList(startNum, endNum);
 		
 		// 페이징
-		int totalA = memberservice.getTotalA();
+		int totalA = memberservice.getTotalA(id);
 	    int totalP = (totalA + (limit -1))/ limit;
 	    
 		int startPage = (pg-1)/3*3+1;
@@ -212,8 +240,8 @@ public class MemberController {
 	    
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("id1", id);
 		modelAndView.addObject("dto", dto);
-		modelAndView.addObject("dto1", dto1);
 		modelAndView.addObject("pg", pg);
 		modelAndView.addObject("list", list);
 		modelAndView.addObject("totalP", totalP);
@@ -238,11 +266,10 @@ public class MemberController {
 		String id = (String)session.getAttribute("memId");
 		// 1명 데이터 읽어오기
 		MemberDTO dto = memberservice.getMember(id);
-		ResumeDTO dto1 = memberservice.getResume(id);
 		List<ResumeDTO> list = memberservice.resumeList(startNum, endNum);
 		
 		// 페이징
-		int totalA = memberservice.getTotalA();
+		int totalA = memberservice.getTotalA(id);
 	    int totalP = (totalA + (limit -1))/ limit;
 	    
 		int startPage = (pg-1)/3*3+1;
@@ -252,7 +279,6 @@ public class MemberController {
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("dto", dto);
-		modelAndView.addObject("dto1", dto1);
 		modelAndView.addObject("pg", pg);
 		modelAndView.addObject("list", list);
 		modelAndView.addObject("totalP", totalP);
@@ -277,12 +303,10 @@ public class MemberController {
 		String id = (String)session.getAttribute("memId");
 		// 1명 데이터 읽어오기
 		MemberDTO dto = memberservice.getMember(id);
-		ResumeDTO dto1 = memberservice.getResume(id);
 		
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("dto", dto);
-		modelAndView.addObject("dto1", dto1);
 		modelAndView.setViewName("resumeWriteForm.jsp");
 		return modelAndView;
 	}
@@ -345,12 +369,12 @@ public class MemberController {
 		String id = (String)session.getAttribute("memId");
 		// 1명 데이터 읽어오기
 		MemberDTO dto = memberservice.getMember(id);
-		ResumeDTO dto1 = memberservice.getResume(id);
+		ResumeDTO dto2 = memberservice.getResume2(seq);
 		
 		// 화면 네비게이션
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("dto", dto);
-		modelAndView.addObject("dto1", dto1);
+		modelAndView.addObject("dto2", dto2);
 		modelAndView.addObject("seq", seq);
 		modelAndView.addObject("pg", pg);
 		modelAndView.setViewName("resumeModifyForm.jsp");
@@ -389,13 +413,6 @@ public class MemberController {
 		String loc = request.getParameter("loc");
 		String age = request.getParameter("age");
 		
-		System.out.println(seq);
-		System.out.println(title);
-		System.out.println(fileName);
-		System.out.println(achieve);
-		System.out.println(career);
-		System.out.println(loc);
-		System.out.println(age);
 		
 		ResumeDTO dto = new ResumeDTO();
 		dto.setSeq(seq);
@@ -416,4 +433,29 @@ public class MemberController {
 		modelAndView.setViewName("resumeModify.jsp");
 		return modelAndView;
 	}
+		//회원 아이디 찾기
+		@RequestMapping(value="/login/find_id.do")
+		public ModelAndView find_id(HttpServletRequest request,HttpServletResponse response) throws Exception{
+					
+			HttpSession session = request.getSession();
+			
+			String find_name = request.getParameter("find_name");
+			String find_email = request.getParameter("find_email");
+			
+			System.out.println(find_name);
+			System.out.println(find_email);		
+			
+			String id = memberservice.findId(find_name, find_email);
+
+			// 화면 네비게이션
+			ModelAndView modelAndView = new ModelAndView();
+			if(id != null) {
+				modelAndView.setViewName("loginFindOk.jsp");	
+			} else {
+				modelAndView.setViewName("loginFindFail.jsp");
+			}
+			
+			modelAndView.addObject("id", id);
+			return modelAndView;				
+		}
 }

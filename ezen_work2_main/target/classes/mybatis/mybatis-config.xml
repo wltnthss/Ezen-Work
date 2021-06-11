@@ -15,6 +15,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="advertise.bean.AdvertiseDTO" alias="advertiseDTO"/>
 		<typeAlias type="mainForm.bean.MainFormDTO" alias="mainFormDTO"/>
 		<typeAlias type="report.bean.ReportDTO" alias="reportDTO"/>
+		<typeAlias type="notice.bean.NoticeDTO" alias="noticeDTO"/>
+		<typeAlias type="event.bean.EventDTO" alias="eventDTO"/>
 	</typeAliases>
 	
 	<mappers>
@@ -27,6 +29,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/company-mapping.xml"/>
 		<mapper resource="mybatis/advertise-mapping.xml"/>
 		<mapper resource="mybatis/mainForm-mapping.xml"/>
-		<mapper resource="mybatis/report-mapping.xml"/>	
+		<mapper resource="mybatis/report-mapping.xml"/>
+		<mapper resource="mybatis/notice-mapping.xml"/>
+		<mapper resource="mybatis/event-mapping.xml"/>
 	</mappers>
 </configuration>

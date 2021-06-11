@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	alert("이력서 삭제 완료");
-	location.href = "../member_resume/resumeManageForm.do";
+	location.href = "../member_mypage/mypageindex.do";
 </script>
 </head>
 <body>

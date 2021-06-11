@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 alert("   로그아웃   ");
-location.href = "../admin_main/index.jsp";
+location.href = "../admin_login/loginForm.jsp";
 </script>
 </head>
 <body>

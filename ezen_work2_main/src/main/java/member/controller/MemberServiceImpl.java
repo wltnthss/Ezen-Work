@@ -84,4 +84,9 @@ public class MemberServiceImpl implements MemberService{
 	public ResumeDTO getResume2(int seq) {
 		return dao.getResume2(seq);
 	}
+
+	@Override
+	public String findId(String name, String email) {
+		return dao.findId(name, email);
+	}
 }

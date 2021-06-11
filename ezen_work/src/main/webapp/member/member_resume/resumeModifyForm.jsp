@@ -4,9 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko" class=" js "><head>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 <title>이력서 작성</title>
-<link rel="stylesheet" href="../css/resumeCSS/PersonRegist.css?v=1" type="text/css">
-<link rel="stylesheet" href="../css/resumeCSS/Repute.css" type="text/css">
-<link rel="stylesheet" href="../css/resumeCSS/jquery-ui.css" type="text/css">
+<link rel="stylesheet" href="../../css/resumeCSS/PersonRegist.css" type="text/css">
+<link rel="stylesheet" href="../../css/resumeCSS/Repute.css" type="text/css">
+<link rel="stylesheet" href="../../css/resumeCSS/jquery-ui.css" type="text/css">
 <meta name="referrer" content="always">
 <style type="text/css">
 html.pc .join-submit-btn{
@@ -50,12 +50,12 @@ button{
 	<!-- Header -->
 	<div id="Header">
 			<h1 class="headerBi">
-				<a href="../member_main/index.jsp"><img src="../images/Ezen_Work.png" class="headerBi__logo" alt="이젠일해요"></a>
+				<a href="../../main/index.do"><img src="../images/Ezen_Work.png" class="headerBi__logo" alt="이젠일해요"></a>
 			</h1>
 		
 			<ul class="headerLink">
-				<li class="login"><a href="../member_login/logout.do">로그아웃</a></li>	
-				<li class="modify"><a href="../member_main/index.jsp">HOME</a></li>
+				<li class="login"><a href="../login/logout.do">로그아웃</a></li>	
+				<li class="modify"><a href="../../main/index.do">HOME</a></li>
 			</ul>
 	</div>
 	<!-- //Header -->
@@ -71,10 +71,7 @@ button{
 				</li>		
 				<li class="job">
 					<a href="../member_resume/resumeWriteForm.do">이력서등록</a>	
-				</li>			
-				<li class="brand">
-					<a href="../member_resume/resumeManageForm.do">이력서관리</a>
-				</li>		
+				</li>				
 				<li class="story">
 					<a href="../member_modify/memberModifyForm.do">개인정보수정</a>
 				</li>	
@@ -170,7 +167,7 @@ button{
 			<div id="RegistTitle" class="registArea">
 				<h2>이력서 제목<span class="necessary">*</span></h2>
 				<div class="registForm registForm--title">
-					<input type="text" name="title" value="${dto1.title }" maxlength="25" placeholder="나를 표현할 한마디를 적어보세요" required="required">
+					<input type="text" name="title" value="${dto2.title }" maxlength="25" placeholder="나를 표현할 한마디를 적어보세요" required="required">
 				</div>
 			</div>
 			<!-- //이력서 제목 -->
@@ -183,7 +180,7 @@ button{
 						학력<span class="necessary">*</span>
 					</h2>
 					<div class="registForm registForm--title">
-						<input type="text" id="achieve1" name="achieve" value="${dto1.achieve }" maxlength="40" autocomplete="off" placeholder="학력을 입력하세요" required="required" style="width: 728px;">
+						<input type="text" id="achieve1" name="achieve" value="${dto2.achieve }" maxlength="40" autocomplete="off" placeholder="학력을 입력하세요" required="required" style="width: 728px;">
 					</div>
 				</div>
 			</div>
@@ -218,13 +215,13 @@ button{
 							<!-- 희망지역선택 -->
 							<div class="regist__title"><strong>희망지역</strong></div>
 							<div class="searchValue regist__item">
-								<input type="text" id="title" name="loc" value="${dto1.loc }" maxlength="40" autocomplete="off" placeholder="희망지역을 입력하세요" required="required" style="width: 620px;">
+								<input type="text" id="title" name="loc" value="${dto2.loc }" maxlength="40" autocomplete="off" placeholder="희망지역을 입력하세요" required="required" style="width: 620px;">
 							</div>
 						</li>
 						<li>
 							<div class="regist__title"><strong>나이</strong></div>
 							<div class="searchValue regist__item">
-								<input type="text" id="title" name="age" value="${dto1.age }" maxlength="40" autocomplete="off" placeholder="나이를 입력하세요" required="required" style="width: 620px;">
+								<input type="text" id="title" name="age" value="${dto2.age }" maxlength="40" autocomplete="off" placeholder="나이를 입력하세요" required="required" style="width: 620px;">
 							</div>
 						</li>
 					</ul>

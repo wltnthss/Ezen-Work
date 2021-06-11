@@ -86,7 +86,14 @@ public class MemberDAO {
 		return sqlSession.selectOne("mybatis.memberMapper.company_login", map);
 	}
 	//이력서 데이터 확인2
-		public ResumeDTO getResume2(int seq) {
-			return sqlSession.selectOne("mybatis.memberMapper.getResume2", seq);
-		}	
+	public ResumeDTO getResume2(int seq) {
+		return sqlSession.selectOne("mybatis.memberMapper.getResume2", seq);
+	}
+	//로그인
+	public String findId(String name, String email) {
+		Map<String, String>map = new HashMap<String, String>();
+		map.put("name", name);
+		map.put("email", email);
+		return sqlSession.selectOne("mybatis.memberMapper.findId", map);
+	}
 }

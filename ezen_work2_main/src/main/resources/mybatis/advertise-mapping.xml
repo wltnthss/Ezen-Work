@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="advertiseList" parameterType="String" resultType="advertiseDTO">
-		select num, image, cname, ad_subject, salary, ad_content, advertise_date from 
+		select num, image, cname, ad_subject, salary, advertise_date, ad_content from 
 		(select rownum rn, tt.* from  (select * from advertise order by num desc) tt) 
 		where cname=#{cname}
 	</select>

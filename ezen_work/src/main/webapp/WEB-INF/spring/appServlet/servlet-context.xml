@@ -26,10 +26,20 @@
 	<context:component-scan base-package="com.spring.ezen_work" />
 	
 	<resources location="/script/" mapping="/script/**"/>
+	<resources location="/storage/" mapping="/storage/**"/>
 	 
 	<context:component-scan base-package="admin"/>
 	<context:component-scan base-package="member"/>
 	<context:component-scan base-package="resume"/>
+	<context:component-scan base-package="job_experience"/>
+	<context:component-scan base-package="job_exp_reply"/>	
+	<context:component-scan base-package="talk"/>
+	<context:component-scan base-package="company"/>
+	<context:component-scan base-package="advertise"/>	
+	<context:component-scan base-package="mainForm"/>
+	<context:component-scan base-package="report"/>
+	<context:component-scan base-package="notice"/>
+	<context:component-scan base-package="event"/>
 	
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
       <beans:property name="maxUploadSize" value="5000000"/>

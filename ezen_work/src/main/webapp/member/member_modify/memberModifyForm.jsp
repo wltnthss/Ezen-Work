@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 
-<link rel="stylesheet" href="../css/memberCSS/memberModify.css">
+<link rel="stylesheet" href="../../css/memberCSS/memberModify.css">
 <link rel="icon" sizes="32x32" href="/favicon.ico">
 
 </head><body id="ChangePerson" class="ALBA change person" cz-shortcut-listen="true"><input type="hidden" id="device" name="device" value="">
@@ -17,15 +17,15 @@
 <header id="Header">
 	<div id="HeaderGnb">
 	
-			<h1><a href="../member_main/index.jsp"><img src="../images/Ezen_Work.png" alt="이젠일해요"></a></h1>
+			<h1><a href="../../main/index.do"><img src="../images/Ezen_Work.png" alt="이젠일해요"></a></h1>
 	
 
 		<ul>
-			<li class="home"><a href="../member_main/index.jsp">HOME</a></li>
+			<li class="home"><a href="../../main/index.do">HOME</a></li>
 		
-			<li class="service"><a href="../member_mypage/mypageindex.jsp">마이페이지</a></li>
+			<li class="service"><a href="../member_mypage/mypageindex.do">마이페이지</a></li>
 		
-			<li class="logout"><a href="../member_login/logout.do">로그아웃</a></li>
+			<li class="logout"><a href="../../login/logout.do">로그아웃</a></li>
 		
 		</ul>
 	</div>

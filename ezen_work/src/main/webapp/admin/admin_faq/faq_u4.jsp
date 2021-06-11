@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(function(){		
 		$("#sh > .qes").click(function(){
@@ -43,13 +43,13 @@ a:hover {font-weight: bold;}
 </style>
 </head>
 <body>
-	<p class='head'>FAQ > 개인회원 > <span>기타</span></p>
+	<p class='head'>FAQ > 개인회원 > <span>기타 문의</span></p>
 	<hr>
 	<div>
 		<div id="sh">
 			<a href="#" class="qes"><span>Q.</span> Windows10 Edge 브라우저 이용안내</a><br>			
 			<p class="ans"><br>
-			Windows10의 기본 브라우저인 Edge 브라우저에서 알바몬을 접속하실 경우 정상적인 이용이 어렵습니다.<br><br>
+			Windows10의 기본 브라우저인 Edge 브라우저에서 Ezen일해요를 접속하실 경우 정상적인 이용이 어렵습니다.<br><br>
 			Edge 브라우저 대신 Internet Explorer 11을 이용해 주시기 바라며,<br>
 			이는 아래와 같은 방법으로 이용하실 수 있습니다.<br><br>
 			

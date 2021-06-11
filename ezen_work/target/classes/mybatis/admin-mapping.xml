@@ -8,4 +8,101 @@
  		select * from admin where id=#{id} and pwd=#{pwd}
  	</select>
  	
+ 	<select id="user_list" parameterType="java.util.Map" resultType="memberDTO">
+ 		<![CDATA[select member_seq, name, id, pwd, gender, email, tel,
+ 		addr, to_char(member_date , 'YYYY.MM.DD') as member_date from 
+		(select member_seq rn, tt.* from  (select * from member order by member_seq desc) tt) 
+		where rn>=#{startNum} and rn<=#{endNum}]]>
+ 	</select>
+ 	
+ 	<select id="getTotal_user" resultType="int">
+ 		select count (*) as cnt from member
+ 	</select>
+ 	
+ 	<select id="search_user_list" parameterType="java.util.Map" resultType="memberDTO">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		<![CDATA[select member_seq, name, id, pwd, gender, email, tel,
+ 		addr, to_char(member_date , 'YYYY.MM.DD') as member_date from 
+		(select member_seq rn, tt.* from  (select * from member order by member_seq desc) tt) 
+		where (rn>=#{startNum} and rn<=#{endNum}) and (id like #{top_subject} or name like #{top_subject})]]>
+ 	</select>
+ 	
+ 	<select id="search_user_listT" parameterType="String" resultType="int">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		select count(*) as cnt from member where id like #{top_subject} or name like #{top_subject}
+ 	</select>
+ 	
+ 	<delete id="user_delete" parameterType="String">
+ 		delete member where id=#{id}
+ 	</delete>
+ 	
+ 	<select id="company_list" parameterType="java.util.Map" resultType="companyDTO">
+ 		<![CDATA[select company_seq, cname, id, pw, bnumber1, bnumber2, bnumber3,
+ 		email,email2,tel,tel2,tel3, to_char(company_date , 'YYYY.MM.DD') as company_date from 
+		(select company_seq rn, tt.* from  (select * from cmember order by company_seq desc) tt) 
+		where rn>=#{startNum} and rn<=#{endNum}]]>
+ 	</select>
+ 	
+ 	<select id="getTotal_company" resultType="int">
+ 		select count (*) as cnt from cmember
+ 	</select>
+ 	
+ 	<select id="search_company_list" parameterType="java.util.Map" resultType="companyDTO">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		<![CDATA[select company_seq, cname, id, pw, bnumber1, bnumber2, bnumber3,
+ 		email,email2,tel,tel2,tel3, to_char(company_date , 'YYYY.MM.DD') as company_date from 
+		(select company_seq rn, tt.* from  (select * from cmember order by company_seq desc) tt) 
+		where (rn>=#{startNum} and rn<=#{endNum}) and (id like #{top_subject} or cname like #{top_subject})]]>
+ 	</select>
+ 	
+ 	<select id="search_company_listT" parameterType="String" resultType="int">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		select count(*) as cnt from cmember where id like #{top_subject} or cname like #{top_subject}
+ 	</select>
+ 	
+ 	<delete id="company_delete" parameterType="String">
+ 		delete cmember where id=#{id}
+ 	</delete>
+ 	
+ 	<select id="ad_list" parameterType="java.util.Map" resultType="advertiseDTO">
+ 		<![CDATA[select num, cname, image, ad_subject, ad_num, gender, age,salary,ad_content,
+ 		ad_job,ad_area,ad_time,ad_period,content, to_char(advertise_date , 'YYYY.MM.DD') as advertise_date from 
+		(select num rn, tt.* from  (select * from advertise order by num desc) tt) 
+		where rn>=#{startNum} and rn<=#{endNum}]]>
+ 	</select>
+ 	
+ 	<select id="ad_listT" resultType="int">
+ 		select count (*) as cnt from advertise
+ 	</select>
+ 	
+ 	<select id="search_advertise_list" parameterType="java.util.Map" resultType="advertiseDTO">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		<![CDATA[select num, cname, image, ad_subject, ad_num, gender, age,salary,ad_content,
+ 		ad_job,ad_area,ad_time,ad_period,content, to_char(advertise_date , 'YYYY.MM.DD') as advertise_date from 
+		(select num rn, tt.* from  (select * from advertise order by num desc) tt) 
+		where (rn>=#{startNum} and rn<=#{endNum}) and (cname like #{top_subject} or ad_subject like #{top_subject})]]>
+ 	</select>
+ 	
+ 	<select id="search_advertise_listT" parameterType="String" resultType="int">
+ 		<bind name="top_subject" value="'%'+top_subject+'%'"/>
+ 		select count(*) as cnt from advertise where cname like #{top_subject} or ad_subject like #{top_subject}
+ 	</select>
+ 	
+ 	<delete id="ad_delete" parameterType="int">
+ 		delete advertise where num=#{num}
+ 	</delete>
+ 	
  </mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

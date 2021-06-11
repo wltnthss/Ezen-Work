@@ -4,9 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
 	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 	<title>마이페이지</title>
-	<link rel="stylesheet" href="../css/mypageCSS/sub.css" type="text/css">
-	<link rel="stylesheet" href="../css/mypageCSS/repute.css" type="text/css">
-	<link rel="stylesheet" href="../css/mypageCSS/person.css" type="text/css">
+	<link rel="stylesheet" href="../../css/mypageCSS/sub.css" type="text/css">
+	<link rel="stylesheet" href="../../css/mypageCSS/repute.css" type="text/css">
+	<link rel="stylesheet" href="../../css/mypageCSS/person.css" type="text/css">
 	<meta name="referrer" content="always">
 
 </head>
@@ -31,12 +31,12 @@
 	<!-- Header -->
 	<div id="Header">	
 			<h1 class="headerBi">
-				<a href="../member_main/index.jsp"><img src="../images/Ezen_Work.png" class="headerBi__logo" alt="이젠일해요"></a>
+				<a href="../../main/index.do"><img src="../images/Ezen_Work.png" class="headerBi__logo" alt="이젠일해요"></a>
 			</h1>
 		
 			<ul class="headerLink">				
-						<li class="login"><a href="../member_login/logout.do">로그아웃</a></li>			
-						<li class="event"><a href="../member_main/index.jsp">HOME</a></li>
+						<li class="login"><a href="../../login/logout.do">로그아웃</a></li>			
+						<li class="event"><a href="../../main/index.do">HOME</a></li>
 			</ul>	
 	</div>
 	<div id="HeaderMenuWrap">
@@ -49,13 +49,14 @@
 				</li>		
 				<li class="job">
 					<a href="../member_resume/resumeWriteForm.do">이력서등록</a>	
+				</li>	
+				<li class="story">
+					<a href="../member_apply/memberAdList.do">이력서지원</a>
 				</li>			
-				<li class="brand">
-					<a href="../member_resume/resumeManageForm.do">이력서관리</a>
-				</li>		
 				<li class="story">
 					<a href="../member_modify/memberModifyForm.do">개인정보수정</a>
-				</li>				
+				</li>	
+						
 			</ul>
 		</div>
 		<!-- //HeaderMenu -->
@@ -64,48 +65,6 @@
 </div>
 <!-- //Global -->
 <iframe src="" name="photoAlbum" id="photoAlbum" width="0" height="0" frameborder="0" scrolling="no" style="display:none;"></iframe>
-<!-- PersonHead -->
-<div id="PersonHead1" class="person-head">
-	<input type="hidden" id="hidmainphotoidx" name="hidmainphotoidx" value="">
-	<div class="person-head__wrap">
-		<div class="person-head__who">
-			<div class="person-head__who-photo">
-				<div class="who-photo__picture" id="idmainresumephoto">
-					<img src="../../storage/${dto1.image }" id="resumephoto" alt="">
-				</div>
-				<div class="who-photo__action">
-					<!-- 사진없을 때 -->
-					<span id="picReigst" style="">
-						<a class="who-photo__action-regist" href="https://www.alba.co.kr/person/popup/PicRegistResume.asp?registreform=Y" onclick="window.open(this.href, 'popupName','width=567,height=740,top=0,left=0,status=no,scrollbars=yes,resizable=no'); return false"><span></span>사진등록</a>
-					</span>
-					<!-- //사진없을 때 -->
-					<!-- 사진있을 때 -->
-					<span id="picModify" style="display: none;">
-						<a class="who-photo__action-modify" href="https://www.alba.co.kr/person/popup/PicRegistResume.asp" onclick="window.open(this.href, 'popupName','width=567,height=740,top=0,left=0,status=no,scrollbars=yes,resizable=no'); return false"><span></span>변경</a>
-						<a class="who-photo__action-delete" href="#" onclick="delMainPhoto(); return false;"><span></span>삭제</a>
-					</span>
-					<!-- //사진있을 때 -->
-				</div>			
-			</div>
-			<div class="person-head__who-name">
-				<strong>${dto.name }</strong>
-				<em class="num">${dto.gender }</em>
-			</div>
-			<a href="../member_modify/memberModifyForm.do" class="person-head__who-modify" target="_blank">개인정보수정</a>
-		</div>
-
-		<ul class="person-head__state">
-			<li class="person-head__state-item--resume">				
-					<a class="state-item__link state-item__link--Y" href="../member_resume/resumeManageForm.do">
-						<span class="state-item__link-icon"><span></span></span>
-						<span class="state-item__link-title">${dto1.title }</span>
-						<span class="state-item__link-date">작성일 <em>${dto1.logtime }</em></span>
-					</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<!-- //PersonHead -->
 
 <!-- subWrap-->
 <div id="SubWrap">
@@ -116,15 +75,15 @@
 			<table id="resumelist" cellspacing="0" summary="내 이력서 목록">
 				<thead>
 					<tr>
-						<th scope="col" class="num">이력서 번호</th>
-						<th scope="col" class="title">이력서 제목</th>
-						<th scope="col" class="date">작성일</th>
-						<th scope="col" class="count">열람확인</th>
-						<th scope="col" class="mag">이력서 관리</th>
+						<th scope="col" class="num" style="width: 100px;">이력서 번호</th>
+						<th scope="col" class="title" style="width: 700px;">이력서 제목</th>
+						<th scope="col" class="date" style="width: 200px;">작성일</th>
+						<th scope="col" class="count" style="width: 150px;">이력서 관리</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="bean" items="${list }">
+					<c:if test="${bean.id == id1 }">
 					<tr class="default"> 	
 						<td class="num">  
 							${bean.seq }
@@ -136,12 +95,10 @@
 							${bean.logtime }
 						</td> 	
 						<td class="count">
-							${bean.opencount }
-						</td> 	
-					
-						<td class="mag">		
-						<a class="button-type" href="../member_resume/resumeManageForm.do">관리</a> 	
+							<a class="button-type" onclick="isView(${bean.seq})">관리</a>
+						</td> 	 	
 					</tr> 
+					</c:if>
 					</c:forEach>
 					<!-- 페이지 표시 -->
 					<tr>
@@ -167,7 +124,6 @@
 					</tr>					
 				</tbody>
 			</table>
-			<a href="../member_resume/resumeManageForm.jsp" class="moreBtn">내 이력서 더보기<span></span></a>
 		</div>
 	</div>
 	<!-- //subContents -->

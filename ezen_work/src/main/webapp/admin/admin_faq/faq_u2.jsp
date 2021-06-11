@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(function(){		
 		$("#sh > .qes").click(function(){
@@ -62,7 +62,7 @@ a:hover {font-weight: bold;}
 			비밀번호 변경은 로그인 후 개인서비스 > 개인정보관리 > 비밀번호 변경 에서<br>
 			수정하실 수 있습니다.<br><br>
 			<span>소셜 로그인 회원의 경우</span><br>
-			알바몬에서는 소셜 로그인의 비밀번호를 저장하고 있지 않습니다.<br>
+			Ezen일해요에서는 소셜 로그인의 비밀번호를 저장하고 있지 않습니다.<br>
 			연동한 각 소셜서비스의 사이트를 방문해 비밀번호를 변경해 주세요.<br>
 			</p>				
 			<br><br>
@@ -71,14 +71,15 @@ a:hover {font-weight: bold;}
 			Ezen일해요의 회원정보에서 이름을 변경하고 싶으신 경우, 우선 실명확인을 위하여<br>
 			실명인증기관에 본인의 바뀐 정보를 등록하셔야 합니다.<br><br>
 			① 실명인증기관에 실명DB를 수정 요청하세요.<br>
-			실명인증기관에 팩스나 이메일을 통해 실명확인에 필요한 증빙서류를 제출하여 개인 실명DB를 수정하시기 바랍니다.<br>
+			실명인증기관에 팩스나 이메일을 통해 실명확인에 필요한 증빙서류를 제출하여<br>
+			개인 실명DB를 수정하시기 바랍니다.<br>
 			② PC/모바일에서 개인회원 로그인 후 회원정보 수정페이지에서 [본인인증 하기]를 클릭하세요.<br>
 			③ 본인 인증 후 이름 변경 완료!<br>
 			</p>				
 			<br><br>
 			<a href="#" class="qes3"><span>Q.</span> 간편 로그인 관리는 무엇인가요?</a><br>			
 			<p class="ans3"><br>
-			알바몬 아이디를 소셜서비스 계정과 연결하여 간편하게 로그인 할 수 있는 서비스입니다.<br>
+			Ezen일해요 아이디를 소셜서비스 계정과 연결하여 간편하게 로그인 할 수 있는 서비스입니다.<br>
 			네이버, 카카오, 페이스북, 구글, 애플 계정이 있다면 알바몬 아이디와 연결 후,<br>
 			 각 소셜서비스 로그인으로 쉽게 로그인하세요.<br>
 			</p>				

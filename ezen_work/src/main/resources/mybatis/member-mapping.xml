@@ -5,8 +5,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="mybatis.memberMapper">
 	<insert id="register" parameterType="memberDTO">
 		insert into member values
-		(#{name}, #{id}, #{pwd}, #{gender}, #{email}, 
-		#{tel}, #{addr})
+		(member_seq.nextval, #{name}, #{id}, #{pwd}, #{gender}, #{email}, 
+		#{tel}, #{addr}, sysdate)
 	</insert>	
 	
 	<select id="isExistId" parameterType="String" resultType="String">
@@ -15,6 +15,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="login" parameterType="java.util.Map" resultType="String">
 		select * from member where id=#{id} and pwd=#{pwd}
+	</select>
+	
+	<select id="company_login" parameterType="java.util.Map" resultType="String">
+		select * from cmember where id=#{id} and pw=#{pwd}
 	</select>
 	
 	<select id="getMember" parameterType="String" resultType="memberDTO">
@@ -32,13 +36,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>		
 	
 	<select id="resumeList" parameterType="java.util.Map" resultType="resumeDTO">
-		<![CDATA[select seq, title, logtime, opencount, to_char(logtime, 'YYYY.MM.DD') as logtime  from 
+		<![CDATA[select id, seq, title, logtime, opencount, to_char(logtime, 'YYYY.MM.DD') as logtime  from 
 		(select rownum rn, tt.* from  (select * from resume order by seq desc) tt) 
 		where rn>=#{startNum} and rn<=#{endNum}]]>
 	</select>
-	
-	<select id="getTotalA" resultType="int">
-		select count(*) as cnt from resume
+	<select id="getTotalA" parameterType="String" resultType="int">
+		select count(*) as cnt from resume where id=#{id}
 	</select>
 
 	<select id="resumeView" parameterType="int" resultType="resumeDTO">
@@ -52,4 +55,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="resumeModify" parameterType="resumeDTO">
 		update resume set image=#{image}, title=#{title}, achieve=#{achieve}, career=#{career}, loc=#{loc}, age=#{age} where seq=#{seq}
 	</update>
+	
+	<select id="getCmember" parameterType="String" resultType="String">
+		select cname from cmember where id=#{id}
+	</select>
+	
+	<select id="getResume2" parameterType="int" resultType="resumeDTO">
+		select * from resume where seq=#{seq}
+	</select>		
+	
+	<select id="findId" parameterType="java.util.Map" resultType="String">
+		select id from member where name=#{name} and email=#{email}
+	</select>
 </mapper>

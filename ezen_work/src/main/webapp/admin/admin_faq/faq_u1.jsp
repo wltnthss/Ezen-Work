@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(function(){		
 		$("#sh > .qes").click(function(){
@@ -82,7 +82,8 @@ a:hover {font-weight: bold;}
 			<span>한번 부여받으신 아이디는 변경하실 수 없습니다.</span><br>
 			부득이하게 아이디 변경을 원하실 경우 회원탈퇴 후, 원하시는 아이디로 재가입하셔야 합니다.<br><br>
 			<span>※ 회원탈퇴를 하시면<br></span>
-			작성된 이력서와 개인정보가 모두 영구히 삭제되어 복구가 불가능하므로 신중하게 생각하신 후 탈퇴를 하시기 바랍니다.<br>
+			작성된 이력서와 개인정보가 모두 영구히 삭제되어 복구가 불가능하므로 신중하게 생각하신 후<br>
+			탈퇴를 하시기 바랍니다.<br>
 			</p>				
 			<br><br>
 			<a href="#" class="qes5"><span>Q.</span> 아이디와 비밀번호를 잊어벼렸어요.</a><br>			

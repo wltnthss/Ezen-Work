@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 
-<link rel="stylesheet" href="../../css/registrationCSS/registration.css">
+<link rel="stylesheet" href="../../css/registrationCSS/registration.css?v=1">
 
 <link rel="icon" sizes="32x32" href="/favicon.ico">
 
@@ -16,6 +16,62 @@
 .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
 .fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_new_ui_mobile_overlay_active{overflow:hidden}@keyframes fb_mpn_landing_page_slide_in{0%{border-radius:50%;margin:0 24px;width:60px}40%{border-radius:18px}100%{margin:0 12px;width:100% - 24px}}@keyframes fb_mpn_landing_page_slide_in_from_left{0%{border-radius:50%;left:12px;margin:0 24px;width:60px}40%{border-radius:18px}100%{left:12px;margin:0 12px;width:100% - 24px}}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head><body id="JoinMain" class="ALBA join" cz-shortcut-listen="true"><input type="hidden" id="device" name="device" value="">
 
+<!-- 카카오 API 로그인 -->             
+<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.js" charset="utf-8"></script>
+<script type="text/javascript">
+//초기화 시키기. 	
+	Kakao.init('f3676c5bda16eec7ed57df64654e01ae');
+	Kakao.isInitialized();
+</script>
+<script type="text/javascript">
+function kakaoLogin() {
+	Kakao.Auth.login({
+		success: function (response) {
+		Kakao.API.request({
+			url: '/v2/user/me',
+			success: function (response) {
+				kakaoLoginPro(response)
+			},
+			fail: function (error) {
+				console.log(error)
+			},
+		})
+	},
+		fail: function (error) {
+			console.log(error)
+		},
+	})
+}
+
+function kakaoLoginPro(response){
+	var data = {id:response.id,email:response.kakao_account.email}
+	$.ajax({
+		type : 'POST',
+		url : '/ezen_work2_main/kakaoLoginPro.do',
+		data : data,
+		dataType : 'json',
+		success : function(data){
+			console.log(data)
+			if(data.JavaData == "YES"){
+				alert("로그인되었습니다.");
+				location.href = '/ezen_work2_main/usermain.do'
+			}else if(data.JavaData == "register"){
+				$("#kakaoEmail").val(response.kakao_account.email);
+				$("#kakaoId").val(response.id);
+				$("#kakaoForm").submit();
+			}else{
+				alert("로그인에 실패했습니다");
+			}
+			
+		},
+		error: function(xhr, status, error){
+			alert("로그인에 실패했습니다."+error);
+		}
+	});
+</script>
+
+
+<!-- //카카오 API 로그인 -->
 <style>
 html {height:100%}
 </style>
@@ -68,7 +124,7 @@ html {height:100%}
 				
 				<!-- 버튼 노출 갯수에 따라서 col3, col4, col5 컨트롤 -->
 				<div class="snsJoin snsJoin--col4">
-					<button type="button" onclick="OauthLoginCLS.doLogin('N');" class="sns naver">네이버</button>			
+					<button type="button" onclick="kakaoLogin();" class="sns kakao">카카오</button>			
 				</div>
 				<div id="OauthFrame"></div>
 				
@@ -89,104 +145,11 @@ html {height:100%}
 		</ul>
 		
 	</article>
-
-	<script>
-		$(".proxy-button").on('click', function() {
-			ga('send', 'event', 'CRM 배너', '회원가입 하단');
-			BA.Collect("EVENT", {
-				"pageurl" : location.pathname
-			,	"category1" : "CRM 배너"
-			,	"category2" : "회원가입 하단"
-			});
-		});
-		
-	</script>
-	
-
-	<div class="sign__copyright">© 미디어윌네트웍스</div>
 </section>
 <!-- Footer -->
 <footer id="Footer">
 	Copyright ⓒ <strong>EZEN-IT</strong>. All Rights Reserved.
 </footer>
-
-<!--[if lte IE 8]>
-<div class="explorer-wrapper">
-	<div class="explorer__filter"></div>
-	<div class="explorer__info">
-		<div class="explorer__content">
-			<h2 class="explorer__title">Internet Explorer 이용안내</h2>
-			<p class="explorer__text explorer__text--first">Internet Explorer 하위 버전을 이용중인 경우<br />회원가입 시 일부 기능이 작동하지 않아 가입이 안되는 경우가 있으니<br />최신 버전의 브라우저를 이용해주시기 바랍니다.</p>
-			<p class="explorer__text">최신 버전 사용중인데 오류가 나는 경우에는<br />[도구]->[호환성 보기 설정]에서 호환성 보기에 추가한 웹사이트 목록에서<br />'alba.co.kr'를 제거 후 이용해주시기 바랍니다.</p>
-		</div>
-		<div class="explorer__button-box">
-			<a href="#" class="explorer__button explorer__button--close" onclick="explorerLayer('');return false;">닫기</a>
-			<a href="#" class="explorer__button explorer__button--today" onclick="explorerLayer('today');return false;">오늘 하루 보지 않기</a>
-		</div>
-	</div>
-</div>
-<script>
-function explorerLayer(type) {
-	$('.explorer-wrapper').hide();
-	if (type == 'today') {
-		CookieCLS.setCookie('explorer_info', '1', 1);
-	}
-}
-(function() {
-	if (CookieCLS.getCookie('explorer_info') == "1") {
-		$('.explorer-wrapper').hide();
-	}
-})();
-</script>
-<![endif]-->
-
-<input type="hidden" id="mobileyn" value="N"><!-- DO NOT DELETE //-->
-<iframe id="hideFrame" name="hideFrame" src="about:blank" class="hide" title="빈 프레임"></iframe><!-- DO NOT DELETE //-->
-<script>
-// placeholder 적용 (플러그인)
-if (!Modernizr.input.placeholder) {
-	$("input, textarea").placeholder();
-}
-</script>
-
-<!-- 알바 스크립트 -->
-
-<script src="//trk.alba.co.kr/TA.js?202105261330"></script><div id="_BA"><img src="https://trk.alba.co.kr/Collect?servicetype=PCWEB&amp;logtype=VIEW&amp;cookieenabled=Y&amp;enctype=UTF-8&amp;scheme=https&amp;host=sign.alba.co.kr&amp;port=443&amp;pageurl=%2Fuser%2Fjoin%2F&amp;fullurl=https%3A%2F%2Fsign.alba.co.kr%2Fuser%2Fjoin%2F%3Fsite%3DWWW&amp;getdata=site%3DWWW&amp;referurl=http%3A%2F%2Fwww.alba.co.kr%2FMain.asp&amp;referparam=utm_source%3Dgoogle%26utm_medium%3Dpaidsearch%26utm_campaign%3Dorganic%26utm_content%3Dpc_cpc%26utm_term%3D.%25EC%2595%258C%25EB%25B0%2594%25EC%25B2%259C%25EA%25B5%25AD%26gclid%3DCjwKCAjwqcKFBhAhEiwAfEr7zRsANS1V5mc5P_1cmsREpokwCAGvtoTsMBY0FWcBtxYxuI3Q-GiAGhoCgggQAvD_BwE&amp;category1=%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85&amp;osversion=&amp;cid=B4172419275E4AB8A426BFB58B021846" width="1" height="1" style="display:none" alt=""></div>
-<script>
-
-BA.Collect("VIEW", {
-
-	"servicetype":"PCWEB"
-
-});
-</script>
-
-<!-- //알바 스크립트 -->
-
-<!-- 통계 스크립트 -->
-
-<!-- (PC) Google Log Script Start -->
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-34867276-1', 'auto');
-	ga('require', 'displayfeatures');
-	ga('require', 'ecommerce', 'ecommerce.js');
-	ga('send', 'pageview');
-</script>
-<!-- (PC) Google Log Script End -->
-
-<!-- //통계 스크립트 -->
-
-
-<!-- WIDERPLANET SCRIPT START -->
-<!--include virtual = "/rsc/inc/WiderScriptCode.inc" //-->
-<!-- WIDERPLANET SCRIPT END -->
-
 <!-- //Footer -->
-
 
 <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>
