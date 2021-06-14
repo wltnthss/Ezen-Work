@@ -204,15 +204,7 @@ button{
 						<li>
 							<div class="regist__title"><strong>직종</strong></div>
 							<div class="searchValue regist__item">
-								<c:if test="${dto.ad_job == 'service'}">
-									서비스
-								</c:if>
-								<c:if test="${dto.ad_job == 'IT'}">
-									IT.컴퓨터
-								</c:if>
-								<c:if test="${dto.ad_job == 'design'}">
-									디자인
-								</c:if>
+								${dto.ad_job}
 							</div>
 						</li>
 						<li>
@@ -237,7 +229,9 @@ button{
 				</div>
 			</div>
 		</div>
+		<c:if test="${memId != null }">
 				<input type="button" class="join-submit-btn join-submit-btn--person" value="지원하기" onclick="checkApply();">
+		</c:if>		
 				<input type="button" class="join-submit-btn join-submit-btn--person" value="뒤로" onclick="location.href='../../main/index.do'">
 		</form>
 		</div>

@@ -36,14 +36,14 @@ public class Job_experienceController {
 		if(request.getParameter("pg")!= null) {
 	         pg = Integer.parseInt(request.getParameter("pg"));
 	    }		
-		// 목록 : 20개
+		// 紐⑸줉 : 20媛�
 	    int limit = 20;
 	    int endNum = pg*limit; 
 	    int startNum = endNum - (limit -1);
 	    
 	    List<Job_experienceDTO> list = job_experienceService.exp_list(startNum, endNum);	    
 	    
-	    // 페이징 : 10블럭
+	    // �럹�씠吏� : 10釉붾윮
 	    int totalA = job_experienceService.exp_getTotalA();	    
 	    
 	    int totalP = (totalA + (limit -1))/ limit;
@@ -52,7 +52,7 @@ public class Job_experienceController {
 	    int endPage = startPage + 9;
 	    if(endPage > totalP) endPage = totalP;  
 	    
-	    // 화면 네비게이션 : 데이터 전달 + view처리
+	    // �솕硫� �꽕鍮꾧쾶�씠�뀡 : �뜲�씠�꽣 �쟾�떖 + view泥섎━
 	    ModelAndView modelAndView = new ModelAndView();
 	    modelAndView.addObject("pg", pg);
 	    modelAndView.addObject("list", list);	 
@@ -102,7 +102,7 @@ public class Job_experienceController {
 		    int endPage = startPage + 9;
 		    if(endPage > totalP) endPage = totalP;  
 		    
-		    // 화면 네비게이션 : 데이터 전달 + view처리		   
+		    // �솕硫� �꽕鍮꾧쾶�씠�뀡 : �뜲�씠�꽣 �쟾�떖 + view泥섎━		   
 		    modelAndView.addObject("pg", pg);
 		    modelAndView.addObject("list", list);
 		    modelAndView.addObject("totalP", totalP);
@@ -120,11 +120,17 @@ public class Job_experienceController {
 		HttpSession session = request.getSession();
 		
 		//Data		
-		String id = (String) session.getAttribute("amemId");		
+		String id = null;
+		if((String)session.getAttribute("memId") != null) {
+			id = (String) session.getAttribute("memId");
+		}else if((String) session.getAttribute("amemId") != null){
+			id = (String) session.getAttribute("amemId");
+		}
+		
 		String filePath = request.getSession().getServletContext().getRealPath("/storage");
 		String fileName = exp_image.getOriginalFilename();
 		
-		// 파일 복사 : 파일 저장
+		// �뙆�씪 蹂듭궗 : �뙆�씪 ���옣
 		File file = new File(filePath, fileName);
 		try {
 			FileCopyUtils.copy(exp_image.getInputStream(), new FileOutputStream(file));
@@ -226,13 +232,13 @@ public class Job_experienceController {
 		HttpSession session = request.getSession();
 		
 		//Data		
-		String id = (String) session.getAttribute("amemId");		
+		String id = (String) session.getAttribute("memId");		
 		String filePath = request.getSession().getServletContext().getRealPath("/storage");
 		String fileName = exp_image.getOriginalFilename();
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		
-		// 파일 복사 : 파일 저장
+		// �뙆�씪 蹂듭궗 : �뙆�씪 ���옣
 		File file = new File(filePath, fileName);
 		try {
 			FileCopyUtils.copy(exp_image.getInputStream(), new FileOutputStream(file));

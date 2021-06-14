@@ -89,4 +89,9 @@ public class MemberServiceImpl implements MemberService{
 	public String findId(String name, String email) {
 		return dao.findId(name, email);
 	}
+
+	@Override
+	public String findPwd(String id, String name, String email) {
+		return dao.findPwd(id, name, email);
+	}
 }

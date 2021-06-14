@@ -69,4 +69,19 @@ public class CompanyDAO {
 	public MemberDTO getMember1(String id) {
 		return sqlSession.selectOne("mybatis.companyMapper.getMember1", id);
 	}
+	//기업 아이디 찾기
+	public String findId(String cname, String email) {
+		Map<String, String>map = new HashMap<String, String>();
+		map.put("cname", cname);
+		map.put("email", email);
+		return sqlSession.selectOne("mybatis.companyMapper.findId1", map);
+	}
+	//패스워드찾기
+	public String findPwd(String id, String cname, String email) {
+		Map<String, String>map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("cname", cname);
+		map.put("email", email);
+		return sqlSession.selectOne("mybatis.companyMapper.findPw1", map);
+	}
 }

@@ -231,6 +231,7 @@ public class AdvertiseController {
 		String cname = (String) session.getAttribute("cmemName");
 		//DB
 		AdvertiseDTO dto = advertiseService.advertiseView(num); 
+		System.out.println(dto.getAd_job());
 		dto.setCname(cname);
 		// 화면 네비게이션 : 데이터 공유 + view 처리 파일 선택
 		ModelAndView modelAndView = new ModelAndView();

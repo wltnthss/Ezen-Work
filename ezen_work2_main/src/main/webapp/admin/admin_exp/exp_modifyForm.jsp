@@ -29,7 +29,14 @@ p{font-size: 12px;}
 </head>
 <body>
 	<form action="job_experience_modify.do?seq=${seq}&pg=${pg}" enctype="multipart/form-data" method="post" name="exp_write">
-		<h3>알바경험담 수정페이지</h3>
+		<table style="margin-left: 630px; font-size: 30px; font-weight: bold;">
+         <tr>
+            <td style="font-size: 30px; font-weight: bold;">
+               <img alt="..." src="../image/Ezen_Work.png" width="200px;" height="90px;">                    
+            </td> 
+            <td>알바경험담 수정페이지</td>
+         </tr>
+      </table>
 		<div align="center">
 		<table>
 			<tr>

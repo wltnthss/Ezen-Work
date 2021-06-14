@@ -89,11 +89,19 @@ public class MemberDAO {
 	public ResumeDTO getResume2(int seq) {
 		return sqlSession.selectOne("mybatis.memberMapper.getResume2", seq);
 	}
-	//로그인
+	//아이디찾기
 	public String findId(String name, String email) {
 		Map<String, String>map = new HashMap<String, String>();
 		map.put("name", name);
 		map.put("email", email);
 		return sqlSession.selectOne("mybatis.memberMapper.findId", map);
+	}
+	//패스워드찾기
+	public String findPwd(String id, String name, String email) {
+		Map<String, String>map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("name", name);
+		map.put("email", email);
+		return sqlSession.selectOne("mybatis.memberMapper.findPwd", map);
 	}
 }

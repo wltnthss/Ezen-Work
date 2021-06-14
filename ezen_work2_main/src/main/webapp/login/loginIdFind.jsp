@@ -2,12 +2,17 @@
     pageEncoding="UTF-8"%>
 <html lang="ko" class="pc full js "><head></head>
 <meta charset="utf-8">
-<title>알바천국, 쓸수록 천국</title>
+<title>아이디 찾기</title>
 <script type="text/javascript">
 function findId(){
 	var frm = document.frmP;
 	
 	frm.submit();
+}
+function findId1(){
+	var frm1 = document.frmP1;
+	
+	frm1.submit();
 }
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
@@ -89,52 +94,32 @@ function findId(){
 		<!-- //개인회원 아이디 찾기 -->
 		
 		<!-- 기업회원 아이디 찾기 -->
-		<form id="frmC" class="search-form" name="frmC" method="post">
-		<input type="hidden" id="usertype_C" name="usertype" value="C">
-		<input type="hidden" id="enc_data_C" name="enc_data">
-		<input type="hidden" id="dupinfo_C" name="dupinfo">
 		<fieldset class="searchWrap biz">		
 			<legend>기업회원</legend>
 			<div class="searchForm">
-				<ul class="howtoTab cert">
-					<li class="default">
-						<span class="input on"><input type="radio" id="howto_MOBILE_C" name="howto" value="MOBILE" checked="checked" onclick="IdSearchCLS.changeHowToC()"><label for="howto_MOBILE_C">휴대폰 번호</label></span>
-						<span class="input"><input type="radio" id="howto_IPIN_C" name="howto" value="IPIN" onclick="IdSearchCLS.changeHowToC()"><label for="howto_IPIN_C">아이핀(i-PIN)인증</label></span>
-					</li>
+				<ul class="navTab">
+					<li id="JoinInfoP" class="joininfo on"><a href="#" onclick="IdSearchCLS.changeTab('P', 'joininfo');return false">이메일로 찾기</a></li>
 				</ul>
-				<ul class="howtoTab biz">
-					<li class="bizNo">
-						<div class="colWrap">
-							<input type="tel" id="comregno" class="placeholder-input" name="comregno" value="" maxlength="10">
-							<label class="searchTitle" for="comregno">사업자등록번호 (- 제외 번호 입력)</label>
-							<input type="hidden" id="comregno1" name="comregno1" value="">
-							<input type="hidden" id="comregno2" name="comregno2" value="">
-							<input type="hidden" id="comregno3" name="comregno3" value="">
-						</div>
-					</li>
+				<form id="frmP1" class="search-form person" name="frmP1" method="post" action="find_id1.do">
+				<ul class="howtoTab person">					
 					<li class="name">
 						<div class="colWrap">
-							<input type="text" id="usernm_C" class="placeholder-input" name="usernm" value="" maxlength="20">
-							<label class="searchTitle" for="usernm_C">담당자명</label>
+							<input type="text" id="" class="placeholder-input" name="find_cname" value="" maxlength="30" placeholder="회사명">
 						</div>
 					</li>
 					<li class="mobile">
 						<div class="colWrap">
-							<input type="text" id="htel_C" class="placeholder-input" name="htel" value="" maxlength="11" title="휴대폰번호">
-							<label class="searchTitle" for="htel_C">휴대폰번호</label>
-							<input type="hidden" id="htel1_C" name="htel1" value="">
-							<input type="hidden" id="htel2_C" name="htel2" value="">
-							<input type="hidden" id="htel3_C" name="htel3" value="">
+							<input type="text" id="" class="placeholder-input" name="find_email" value="" maxlength="30" placeholder="이메일">
 						</div>
 					</li>
+					
 				</ul>
-				<div class="howtoGuide iPin" style="display: none;">
-					<div>사업자등록번호 입력 후 <strong>아이핀(I-PIN)인증</strong>으로<br>새로운 비밀번호를 설정할 수 있습니다.</div>
-				</div>
+				</form>
 			</div>
-			<div class="btnAction"><a href="#" onclick="IdSearchCLS.doSearch('C');return false" class="btn biz">기업 아이디 찾기</a></div>
+			<div class="btnAction">
+				<a href="#" onclick="findId1();" class="btn biz">기업 아이디 찾기</a>
+			</div>
 		</fieldset>
-		</form>
 		<!-- //기업회원 아이디 찾기 -->		
 	</article>
 </section>

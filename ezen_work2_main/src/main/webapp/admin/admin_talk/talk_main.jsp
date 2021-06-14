@@ -13,7 +13,7 @@
 <title>한줄 꿀팁</title>
 <script type="text/javascript">
 function talk_content(){
-	if(${(memId != null) or (amemId != null)}){	
+	if(${(memId != null) or (cmemId != null) or (amemId != null)}){	
 		var frm = document.talk_write;
 		
 		if(!frm.talk_write1.value){
@@ -90,7 +90,7 @@ a:hover{color: blue; font-weight: bold; text-decoration: underline;}
 						<tr>
 							<th>
 								<span style="color: #5050FF	">${dto.id}</span> | ${dto.talk_date}
-								<c:if test="${(memId == dto.id) or (amemId != null)}">
+								<c:if test="${(memId == dto.id) or (cmemId == dto.id) or (amemId != null)}">
 									<a href="talk_del.do?seq=${dto.talk_seq}&pg=${pg}" style="float: right; text-decoration: none;">삭제</a>
 								</c:if>
 							</th>					

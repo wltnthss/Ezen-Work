@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/main/java/job_exp_reply/controller/Job_exp_replyController.java=UTF-8
+encoding//src/main/java/job_experience/controller/Job_experienceController.java=UTF-8
 encoding//src/main/java/mainForm/controller/MainFormController.java=UTF-8
 encoding//src/main/java/mainForm/controller/MainFormService.java=UTF-8
 encoding//src/main/java/mainForm/dao/MainFormDAO.java=UTF-8
+encoding//src/main/java/member/controller/MemberController.java=UTF-8
+encoding//src/main/java/talk/controller/TalkController.java=UTF-8

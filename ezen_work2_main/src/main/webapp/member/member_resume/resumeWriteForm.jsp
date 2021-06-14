@@ -66,10 +66,10 @@ button{
 		<div id="HeaderMenu">
 					<!-- 알바스토리 /rsc/inc/common/GlobalMenuStory.inc 중복 관리 -->
 			<ul class="headerMenu headerMenu--login">
-				<li class="person on">
+				<li class="person">
 					<a href="../member_mypage/mypageindex.do"><span></span>마이페이지</a>	
 				</li>		
-				<li class="job">
+				<li class="job on">
 					<a href="../member_resume/resumeWriteForm.do">이력서등록</a>	
 				</li>	
 				<li class="story">

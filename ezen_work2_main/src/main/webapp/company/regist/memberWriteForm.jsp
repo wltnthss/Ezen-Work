@@ -6,6 +6,64 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 <script type="text/javascript" src="../../script/companyScript.js?v=5"></script>
+<script type="text/javascript">
+function checkWrite(){
+	var frm = document.writeForm;
+	
+	if(!frm.id.value){
+		alert("아이디를 입력해주세요")
+		frm.id.focus();
+	}else if(!frm.pw.value){
+		alert("비밀번호를 입력해주세요")
+		frm.pw.focus();
+	}else if(frm.pw.value != frm.repw.value) {
+   	  alert("비밀번호가 맞지 않습니다.");
+   	  frm.repw.focus();
+   	}else if(!frm.cname.value){
+		alert("회사명을 입력해주세요")
+		frm.cname.focus();
+	}else if(!frm.email.value){
+		alert("이메일을 입력해주세요")
+		frm.email.focus();
+	}else if(frm.email2.value == "00"){
+		alert("이메일중 하나를 선택해주세요.");
+		frm.email2.focus();
+	}else if(frm.tel.value == "00"){
+		alert("번호중 하나를 선택해주세요.");
+		frm.tel.focus();
+	}else if (frm.tel2.value.length < 4){
+		alert("4자리로 입력해주세요")
+		frm.tel2.focus();
+	}else if (frm.tel3.value.length < 4){
+		alert("4자리로 입력해주세요")
+		frm.tel3.focus();
+    }else if (frm.bnumber1.value.length < 3){
+		alert("3자리로 입력해주세요")
+		frm.bnumber1.focus();
+	}else if (frm.bnumber2.value.length < 2){
+		alert("2자리로 입력해주세요")
+		frm.bnumber2.focus();
+	}else if (frm.bnumber3.value.length < 5){
+		alert("5자리로 입력해주세요")
+		frm.bnumber3.focus();
+	}else {		
+		frm.submit();
+	}
+}
+function checkId() {
+	var sId = document.writeForm.id.value;
+		
+	if(!sId) {
+		alert("먼저 아이디를 입력하세요.");
+		document.writeForm.id.focus();
+	} else {
+		window.open("checkId.do?id=" + sId, "",
+					 "width=400 height=100 left=500 top=200");
+	}
+
+}
+</script>
+
 <link rel="stylesheet" href="../css/memberWrite.css">
 </head>
 <body id="JoinMain" class="ALBA join join--new person">
@@ -94,7 +152,6 @@
 								<input type="text" name="bnumber1" maxlength="3" size="3" class="chain-input" placeholder="3자리 입력해주세요">
 								<input type="text" name="bnumber2" maxlength="2" size="2" class="chain-input" placeholder="2자리 입력해주세요">
 								<input type="text" name="bnumber3" maxlength="5" size="5" class="chain-input" placeholder="5자리 입력해주세요">
-								<input type="button" value="확인" onclick="">
 							</div>
 						</li>
 					</ul>

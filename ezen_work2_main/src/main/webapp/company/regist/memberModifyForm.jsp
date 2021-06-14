@@ -5,7 +5,40 @@
 <head>
 <meta charset="UTF-8">
 <title>회원정보수정</title>
-<script type="text/javascript" src="../../script/companyScript.js"></script>
+<script type="text/javascript">
+function modify() {
+ 	var frm = document.modifyForm;
+ 	
+ 	if(!frm.pw.value) {
+		alert("비밀번호를 입력하세요.");
+		frm.pw.focus();		
+	} else if(!frm.repw.value){
+		alert("비밀번호 재확인란 입력하세요");
+		frm.repw.focus();	
+	} else if(frm.pw.value != frm.repw.value) {
+		alert("비밀번호가 맞지않습니다.");
+		frm.pw.focus();
+	}else if(!frm.email.value){
+		alert("이메일을 입력해주세요")
+		frm.email.focus();
+	}else if(frm.email2.value == "00"){
+		alert("이메일중 하나를 선택해주세요.");
+		frm.email2.focus();
+	}else if(frm.tel.value == "00"){
+		alert("번호중 하나를 선택해주세요.");
+		frm.tel.focus();
+	}else if (frm.tel2.value.length < 4){
+		alert("4자리로 입력해주세요")
+		frm.tel2.focus();
+	}else if (frm.tel3.value.length < 4){
+		alert("4자리로 입력해주세요")
+		frm.tel3.focus();
+	}else {
+		frm.submit();
+	}
+}
+</script>
+
 <link rel="stylesheet" href="../css/memberWrite.css">
 </head>
 <body id="ChangePerson" class="ALBA change person">

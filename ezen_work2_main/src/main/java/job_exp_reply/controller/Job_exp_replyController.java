@@ -22,7 +22,15 @@ public class Job_exp_replyController {
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		
-		String id = (String) session.getAttribute("amemId");
+		String id = null;
+		if((String)session.getAttribute("memId") != null) {
+			id = (String) session.getAttribute("memId");
+		}else if((String) session.getAttribute("amemId") != null){
+			id = (String) session.getAttribute("amemId");
+		}else if((String) session.getAttribute("cmemId") != null) {
+			id = (String) session.getAttribute("cmemId");
+		}		
+		
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		String exp_reply_content = request.getParameter("reply_content");
@@ -39,7 +47,7 @@ public class Job_exp_replyController {
 		int result1 = job_exp_replyService.exp_reply_count(seq);
 		
 		
-	    // 화면 네비게이션 : 데이터 전달 + view처리		
+	    // �솕硫� �꽕鍮꾧쾶�씠�뀡 : �뜲�씠�꽣 �쟾�떖 + view泥섎━		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("result",result);
 		modelAndView.addObject("seq",seq);
@@ -60,7 +68,7 @@ public class Job_exp_replyController {
 		int result = job_exp_replyService.exp_reply_del(exp_reply_seq);
 		job_exp_replyService.exp_reply_minus(seq);
 		
-	    // 화면 네비게이션 : 데이터 전달 + view처리		
+	    // �솕硫� �꽕鍮꾧쾶�씠�뀡 : �뜲�씠�꽣 �쟾�떖 + view泥섎━		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("result",result);
 		modelAndView.addObject("seq",seq);

@@ -289,5 +289,67 @@ public class CompanyController {
 			modelAndView.setViewName("resumeView.jsp");
 			
 			return modelAndView;
-		}	
+		}
+		//기업 아이디 찾기
+		@RequestMapping(value="/login/find_id1.do")
+		public ModelAndView find_id(HttpServletRequest request,HttpServletResponse response) throws Exception{
+			try {
+				request.setCharacterEncoding("utf-8");
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+									
+			HttpSession session = request.getSession();
+							
+			String find_cname = request.getParameter("find_cname");
+			String find_email = request.getParameter("find_email");
+							
+			System.out.println(find_cname);
+			System.out.println(find_email);		
+							
+			String id = memberService.findId(find_cname, find_email);
+
+			// 화면 네비게이션
+			ModelAndView modelAndView = new ModelAndView();
+			if(id != null) {
+				modelAndView.setViewName("loginFindOk.jsp");	
+			} else {
+				modelAndView.setViewName("loginFindFail.jsp");
+			}
+							
+			modelAndView.addObject("id", id);
+			return modelAndView;				
+		}
+		@RequestMapping(value = "/login/loginPwdFind1.do")
+		public ModelAndView find_pwd(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+			HttpSession session = request.getSession();
+			
+			try {
+				request.setCharacterEncoding("utf-8");
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+			
+			String find_id = request.getParameter("find_id");
+			String find_cname = request.getParameter("find_cname");
+			String find_email = request.getParameter("find_email");
+
+			System.out.println(find_id);
+			System.out.println(find_cname);
+			System.out.println(find_email);
+
+			String pwd = memberService.findPwd(find_id, find_cname, find_email);
+
+			// �솕硫� �꽕鍮꾧쾶�씠�뀡
+			ModelAndView modelAndView = new ModelAndView();
+			if (pwd != null) {
+				modelAndView.setViewName("loginPwdFindOk.jsp");
+			} else {
+				modelAndView.setViewName("loginPwdFindFail.jsp");
+			}
+
+			modelAndView.addObject("pwd", pwd);
+			return modelAndView;
+		}
 }

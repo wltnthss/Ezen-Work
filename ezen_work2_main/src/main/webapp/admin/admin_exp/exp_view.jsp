@@ -17,6 +17,11 @@ function del(){
 		history.back();
 	}
 }
+
+function reply_enroll1(){
+	alert("로그인 후 이용가능합니다.");
+}
+
 </script>
 <style type="text/css">
 .header{width: 1000px; height: 100px; padding-left: 430px;}
@@ -82,7 +87,7 @@ textarea{resize: none;}
 						<tr>
 							<td align="left" width="150px;" style="font-size: 15px;"><span class='subid' style="font-weight: bold;">${dto.id}</span></td>						
 							<td align="left" width="170px;" style="font-size: 15px;"> ${dto.exp_reply_date }</td>
-							<c:if test="${amemId == dto.id}">
+							<c:if test="${(memId == dto.id) or (amemId != null) or (cmemId == dto.id)}">
 								<td align="right" width="540px;" style="font-size: 15px;"><a href="exp_reply_del.do?seq=${seq}&exp_reply_seq=${dto.exp_reply_seq}&pg=${pg}" style="text-decoration: none;">삭제</a></td>
 							</c:if>
 						</tr>
@@ -95,17 +100,18 @@ textarea{resize: none;}
 			</div>	
 			<br>		
 			<div class='reply'>
-				<c:if test="${(memId != null)or (amemId != null)}">
-					<span class='mem'>${memId}</span><br>
+				<c:if test="${(memId != null) or (amemId != null) or (cmemId != null)}">
+					<span class='mem'>${memId}${cmemId}${amemId}</span><br>
 				</c:if>
-				<c:if test="${memId == null }">
+				<c:if test="${(memId == null) and (amemId == null) and (cmemId == null)}">
 					<span class='mem'>* 로그인 후 글 작성 가능합니다.</span><br>
 				</c:if>			
 				<textarea rows="2" cols="115" id="reply_content" name='reply_content' placeholder=
 				"광고글, 타인 비방글 등은 제대를 받을 수 있으며 게시물에 대한 모든 법적인 책임은 작성자 본인에게 있습니다."></textarea>				
-									
+				
+				<c:if test="${(memId != null) or (amemId != null) or (cmemId != null)}">					
 				<input type="image" src="../image/exp_enroll.JPG" alt="등록" width="80px;" height="55px;" onclick="reply_enroll(); return false;"/>			
-										
+				</c:if>										
 			</div>
 			<br>
 			<input type="button" class="exp_list" value="목록" onclick="location.href='job_experience_main.do?pg=${pg}'">					

@@ -36,4 +36,6 @@ public interface MemberService {
 	public ResumeDTO getResume2(int seq);
 	//회원 아이디 찾기
 	public String findId(String name, String email);
+	//회원 비밀번호 찾기
+	public String findPwd(String id, String name, String email);
 }

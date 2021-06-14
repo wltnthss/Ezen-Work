@@ -189,15 +189,7 @@ button{
 						<li>
 							<div class="regist__title"><strong>직종</strong></div>
 							<div class="searchValue regist__item">
-								<c:if test="${dto.ad_job == 'service'}">
-									서비스
-								</c:if>
-								<c:if test="${dto.ad_job == 'IT'}">
-									IT.컴퓨터
-								</c:if>
-								<c:if test="${dto.ad_job == 'design'}">
-									디자인
-								</c:if>
+								${dto.ad_job}
 							</div>
 						</li>
 						<li>

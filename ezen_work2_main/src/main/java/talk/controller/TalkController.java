@@ -31,14 +31,14 @@ public class TalkController {
 		if(request.getParameter("pg")!= null) {
 	         pg = Integer.parseInt(request.getParameter("pg"));
 	    }		
-		// 목록 : 20개
+		// 紐⑸줉 : 20媛�
 	    int limit = 20;
 	    int endNum = pg*limit; 
 	    int startNum = endNum - (limit -1);
 	    
 	    List<TalkDTO> list = talkService.talk_list(startNum, endNum);	    
 	     
-	    // 페이징 : 10블럭
+	    // �럹�씠吏� : 10釉붾윮
 	    int totalA = talkService.talk_getTotalA();	    
 	    
 	    int totalP = (totalA + (limit -1))/ limit;
@@ -47,7 +47,7 @@ public class TalkController {
 	    int endPage = startPage + 9;
 	    if(endPage > totalP) endPage = totalP;  
 	    
-	    // 화면 네비게이션 : 데이터 전달 + view처리
+	    // �솕硫� �꽕鍮꾧쾶�씠�뀡 : �뜲�씠�꽣 �쟾�떖 + view泥섎━
 	    ModelAndView modelAndView = new ModelAndView();
 	    modelAndView.addObject("click", click);
 	    modelAndView.addObject("pg", pg);
@@ -71,8 +71,8 @@ public class TalkController {
 			id = (String) session.getAttribute("amemId");	
 		}else if(id != (String) session.getAttribute("memId")) {
 			id = (String) session.getAttribute("memId");	
-		}else {
-			id = (String) session.getAttribute("cmemId");
+		}else if(id != (String) session.getAttribute("cmemId")) {
+			id = (String) session.getAttribute("cmemId");	
 		}
 	    
 		String talk_subject = request.getParameter("talk_write1");

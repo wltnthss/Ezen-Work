@@ -68,4 +68,12 @@ public class CompanyServiceImpl implements CompanyService{
 	public MemberDTO getMember1(String id) {
 		return dao.getMember1(id);
 	}
+	@Override
+	public String findId(String cname, String email) {
+		return dao.findId(cname, email);
+	}
+	@Override
+	public String findPwd(String id, String cname, String email) {
+		return dao.findPwd(id, cname, email);
+	}
 }
